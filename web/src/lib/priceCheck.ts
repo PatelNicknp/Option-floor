@@ -27,6 +27,8 @@ export type PriceBoard = {
   hv60: number | null
   earningsDate: string | null
   expirations: CheckerExpiry[]
+  /** True when this board was loaded just now, not from the saved file. */
+  fresh?: boolean
 }
 
 export type JudgeInput = {
