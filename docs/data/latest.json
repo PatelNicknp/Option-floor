@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-04T23:54:43.210635-05:00",
+  "generatedAt": "2026-11-05T02:21:59.786946-05:00",
   "runLabel": "Manual check",
   "disclaimer": "Options Floor is not a broker and not advice. It never places trades, never connects to a brokerage, and does not send alerts. Options can expire worthless. You can lose the whole premium.",
-  "banner": "Every source that was checked answered, and no idea passed the rules. Waiting is a result.",
+  "banner": "Some data sources did not answer, and nothing passed the rules. FDA.",
   "stale": false,
   "sourceHealth": [
     {
@@ -57,8 +57,8 @@
     {
       "id": "fda",
       "label": "FDA",
-      "ok": true,
-      "detail": "20 items"
+      "ok": false,
+      "detail": "Skipped. HTTP 404 for https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml"
     },
     {
       "id": "congress",
@@ -76,7 +76,7 @@
       "id": "federal_register",
       "label": "Federal Register",
       "ok": true,
-      "detail": "4 items"
+      "detail": "3 items"
     },
     {
       "id": "fomc",
@@ -124,7 +124,7 @@
       "id": "yahoo_options",
       "label": "Yahoo option chains",
       "ok": true,
-      "detail": "Loaded option chains for 16 of 17 tickers. Skipped HBIA."
+      "detail": "Loaded option chains for 17 of 18 tickers. Skipped HBIA."
     }
   ],
   "regime": {
@@ -162,6 +162,7 @@
       "flow": true,
       "squeeze": true,
       "underpriced": true,
+      "priceCheck": true,
       "sizing": true,
       "scorecard": true,
       "mood": true,
@@ -169,28 +170,28 @@
     }
   },
   "universe": {
-    "candidates": 123,
+    "candidates": 116,
     "priced": 36,
-    "chains": 16
+    "chains": 17
   },
   "ideas": [],
   "watch": [],
   "skipped": [
     {
-      "ticker": "MRVL",
-      "reason": "The stock is $159.80, outside the $5 to $40 range."
+      "ticker": "IONQ",
+      "reason": "No cheap, tradable contract matched the rules."
     },
     {
       "ticker": "INO",
       "reason": "The stock is $1.62, outside the $5 to $40 range."
     },
     {
-      "ticker": "SWKS",
-      "reason": "The stock is $82.92, outside the $5 to $40 range."
+      "ticker": "SHLS",
+      "reason": "There is no strong company catalyst."
     },
     {
-      "ticker": "IONQ",
-      "reason": "Earnings are in the next two days. The option can collapse right after the announcement, so skip it."
+      "ticker": "MRVL",
+      "reason": "The stock is $159.80, outside the $5 to $40 range."
     },
     {
       "ticker": "TSLA",
@@ -198,64 +199,46 @@
     },
     {
       "ticker": "ARRY",
-      "reason": "Earnings are in the next two days. The option can collapse right after the announcement, so skip it."
-    },
-    {
-      "ticker": "SHLS",
       "reason": "The news does not clearly point to a call or a put."
     },
     {
-      "ticker": "GRAL",
-      "reason": "The stock is $143.66, outside the $5 to $40 range."
+      "ticker": "AGL",
+      "reason": "The stock is $96.23, outside the $5 to $40 range."
     },
     {
       "ticker": "JAN",
       "reason": "No cheap, tradable contract matched the rules."
     },
     {
-      "ticker": "LITE",
-      "reason": "The stock is $626.75, outside the $5 to $40 range."
-    },
-    {
-      "ticker": "SONM",
-      "reason": "The stock is $2.57, outside the $5 to $40 range."
+      "ticker": "IREN",
+      "reason": "No cheap, tradable contract matched the rules."
     },
     {
       "ticker": "NDAQ",
       "reason": "The stock is $109.70, outside the $5 to $40 range."
     },
     {
-      "ticker": "SD",
-      "reason": "The news does not clearly point to a call or a put."
-    },
-    {
       "ticker": "ACCS",
       "reason": "The stock is $3.58, outside the $5 to $40 range."
     },
     {
-      "ticker": "ADBE",
-      "reason": "The stock is $248.48, outside the $5 to $40 range."
+      "ticker": "SD",
+      "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "MSFT",
+      "reason": "The stock is $555.80, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "SONM",
+      "reason": "The stock is $2.57, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "SLDE",
+      "reason": "The news does not clearly point to a call or a put."
     }
   ],
   "catalysts": [
-    {
-      "date": "2026-10-30",
-      "kind": "fda",
-      "title": "FDA Approves First Plasmid DNA-based Immunotherapy for Adults with Recurrent Respiratory Papillomatosis",
-      "url": "http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
-      "tickers": [
-        "SONM"
-      ],
-      "plain": "The U.S. Food and Drug Administration today granted accelerated approval for Voceryq (doruxapapogene ralaplasmid and lalikinogene sifuplasmid-gxfd) for treatment of adults with recurrent respiratory papillomatosis (RRP)."
-    },
-    {
-      "date": "2026-10-30",
-      "kind": "policy",
-      "title": "WHAT THEY ARE SAYING: President Trump Puts America\u2019s Fishermen First and Secures American Seafood Dominance",
-      "url": "https://www.whitehouse.gov/releases/2026/10/what-they-are-saying-president-trump-puts-americas-fishermen-first-and-secures-american-seafood-dominance/",
-      "tickers": [],
-      "plain": "President Trump has delivered historic wins for America\u2019s fishing industry by putting American fishermen first, unlocking billions of dollars in economic growth, revitalizing the industry, and providing critical regulatory relief. Just one week ago, the Trump Administration unveiled its historic America First Seafood Strategy and launched Seafood.gov, to ensure that American fishermen, workers, industry, and coastal communities thrive from [\u2026] The post WHAT THEY ARE SAYING: President Trump Puts "
-    },
     {
       "date": "2026-10-31",
       "kind": "policy",
@@ -273,16 +256,6 @@
       "url": "https://www.whitehouse.gov/briefings-statements/2026/11/presidential-message-on-all-saints-day-3b81/",
       "tickers": [],
       "plain": "On All Saints\u2019 Day, I join Christians across our Nation in honoring the men and women through the centuries whose extraordinary lives of faithfulness reveal the great goodness and love to which human beings can aspire. Every generation of Americans has understood the profound power of the example of a heroic and holy life, which [\u2026] The post Presidential Message on All Saints\u2019 Day appeared first on The White House ."
-    },
-    {
-      "date": "2026-11-02",
-      "kind": "fda",
-      "title": "A pharmacy plans to start dispensing six compounded drugs in November. They are not FDA-approved. - Stock Titan",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXNxR0tlaHo0SlhNc3RkRUNoRl9DVDUyeWRKaHpNY0hjOEdNN25KcFlmWTF3bFFMekczTzg5eDlVYUhCWlhISmN0Z2pyT3dmSEFvRkk1VmNMVUtVd3VvRUE4NkFubTJ0QUhnMlVBUXJickMxcE1LSEd0bm5tZ0dZak9XT2xYSEVoT281dDBqWm9hUjZIVlB0dFFlcV9DcklxRlgxc1BaY3ZodUIycC1vVzkzd3VJWFhzZGc?oc=5",
-      "tickers": [
-        "SATLF"
-      ],
-      "plain": "A pharmacy plans to start dispensing six compounded drugs in November. They are not FDA-approved. Stock Titan"
     },
     {
       "date": "2026-11-02",
@@ -328,22 +301,22 @@
     {
       "date": "2026-11-02",
       "kind": "fda",
-      "title": "FDA Provides Clarity to Support Cell and Gene Therapy Development and Quality",
-      "url": "http://www.fda.gov/news-events/press-announcements/fda-provides-clarity-support-cell-and-gene-therapy-development-and-quality",
-      "tickers": [
-        "QIND"
-      ],
-      "plain": "The U.S. Food and Drug Administration today issued final guidance for manufacturers of cellular and gene therapy (CGT) products to implement a comprehensive, science- and risk-based plan for making sure their products meet potency standards."
-    },
-    {
-      "date": "2026-11-02",
-      "kind": "fda",
       "title": "INOVIO Receives FDA Accelerated Approval for VOCERYQ to Reduce Surgery Frequency in Adults with RRP - Yahoo Finance",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNY0hRdFRMbVJDQ2lFNWIxcUlGVnRoQXBoSXg1MUY0NXk2S3h1NjNmM05HNHBudUZiT3BCeDhpeHY1TF93MElIQWtGVXNSQzZwOUcyT3k5RVpKQTZaLUlTaXMtX2ZQR1lzNjVsQ1hUbWdoTFEwbzN0dW5SNXozVjBIbE5aVHFvVHhWQ0RBcTdoX21Ub2lQWDVvd3hpMlJKSWZlQ3dz?oc=5",
       "tickers": [
         "INO"
       ],
       "plain": "INOVIO Receives FDA Accelerated Approval for VOCERYQ to Reduce Surgery Frequency in Adults with RRP Yahoo Finance"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "Inovio Pharmaceuticals Receives FDA Approval for VOCERYQ - TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQa2ljZjR2c2IzZUZMOTYtVTZzR3A3dTBOdW1fUmpVa1hFWXJrRXhCTnpCbkZfUnh4Q3NXMlg0QUd4dFJBM2U2Rm5mVUJpME90VTRKQWtvYVo2Mm9oWFVOUUY5cEFFSWRMMHRrZk80XzBJTUE4OTJVb1RQSXYtR2xINXp1RWwzRm81bFdENmstSXhhcmlheVhIQUlXSnpBVERoV3EwUlhNbnhzYzRW?oc=5",
+      "tickers": [
+        "INO"
+      ],
+      "plain": "Inovio Pharmaceuticals Receives FDA Approval for VOCERYQ TipRanks"
     },
     {
       "date": "2026-11-02",
@@ -364,6 +337,16 @@
         "DRVN"
       ],
       "plain": "Medincell shares gain 16% over one month, driven by FDA approval Id\u00e9al Investisseur"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "NRx Pharmaceuticals Gains FDA Approval for Preservative-Free Ketamine - TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTE9ZelgtYzJhZkFrS0dicDBHUjBPWmI4UVl3dlNzU3AtVXRYUDI4dHZFYm4zVllkLWdWRGNxZ1BGV2hUVXpuU0xXX2NoWHZnM09CTTBnMHdkbGdQLTBweWhraE1BN3hFc1d1cWJlWEFXMmpseFdGbnp6b1o4OEFQVGtOemd0Uk8tWEpyVVdzbnR4MU94dXhUZnJkNDl2ekNvUGM5VHhySjZHTmluNjE2cXFMc0Z6dXRmb19TaTB3?oc=5",
+      "tickers": [
+        "NRXP"
+      ],
+      "plain": "NRx Pharmaceuticals Gains FDA Approval for Preservative-Free Ketamine TipRanks"
     },
     {
       "date": "2026-11-02",
@@ -393,16 +376,6 @@
       "url": "https://www.whitehouse.gov/releases/2026/11/president-trumps-second-term-promises-made-promises-kept-results-delivered/",
       "tickers": [],
       "plain": "President Donald J. Trump has executed the most sweeping restoration of American sovereignty, strength, and prosperity in modern history. With ferocious speed and resolve, President Trump has reversed decades of decline, kept more promises than any modern President, and delivered results for working families that once seemed impossible. Here are 127 Promises Made, Promises Kept [\u2026] The post President Trump\u2019s Second Term: Promises Made, Promises Kept, Results Delivered appeared first on The White"
-    },
-    {
-      "date": "2026-11-02",
-      "kind": "fda",
-      "title": "Update: Inovio Shares Surge After HC Wainwright Upgrade Following FDA Approval for Voceryq - Yahoo! Finance Canada",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQMDl4d2lrN3JiZk96dlBITERyUVlEUzdUcXFHVzJ3SVlueHNsSy1RWGVMdmFZWXhoZHFJTFFKbTZ4SUNhTG94RlkyTnNTV2J4UHB2cUVOUGlLS1NIU19UWHdGaDNBOG8zWWNFRHJTRTlTRUN0cjlJdFNHN0lXVVRsdlVGUmQwcVZBZ2c?oc=5",
-      "tickers": [
-        "INO"
-      ],
-      "plain": "Update: Inovio Shares Surge After HC Wainwright Upgrade Following FDA Approval for Voceryq Yahoo! Finance Canada"
     },
     {
       "date": "2026-11-03",
@@ -614,106 +587,40 @@
       "url": "https://www.sec.gov/Archives/edgar/data/1561032/000156103226000071/0001561032-26-000071-index.htm",
       "tickers": [],
       "plain": "Filed: 2026-11-04 AccNo: 0001561032-26-000071 Size: 1 MB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - NewLake Capital Partners, Inc. (0001854964) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1854964/000185496426000033/0001854964-26-000033-index.htm",
+      "tickers": [
+        "NLCP"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001854964-26-000033 Size: 4 MB Item 2.02: Results of Operations and Financial Condition Item 7.01: Regulation FD Disclosure Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - OLIN Corp (0000074303) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/74303/000095015726001202/0000950157-26-001202-index.htm",
+      "tickers": [
+        "OLN"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0000950157-26-001202 Size: 257 KB Item 1.01: Entry into a Material Definitive Agreement Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - Quoin Pharmaceuticals Ltd. (0001671502) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1671502/000110465926122790/0001104659-26-122790-index.htm",
+      "tickers": [
+        "QNRX"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001104659-26-122790 Size: 583 KB Item 1.01: Entry into a Material Definitive Agreement Item 9.01: Financial Statements and Exhibits"
     }
   ],
-  "flow": [
-    {
-      "ticker": "AAP",
-      "contract": "AAP261106P00053000",
-      "side": "put",
-      "strike": 53.0,
-      "expiry": "2026-11-06",
-      "volume": 1000,
-      "oi": 1,
-      "ratio": 1000.0,
-      "note": "AAP put $53 expiring 2026-11-06 traded 1000 contracts versus 1 open. That is a jump, not a reason by itself to copy the trade."
-    },
-    {
-      "ticker": "IONQ",
-      "contract": "IONQ270115P00070000",
-      "side": "put",
-      "strike": 70.0,
-      "expiry": "2027-01-15",
-      "volume": 2286,
-      "oi": 14,
-      "ratio": 163.29,
-      "note": "IONQ put $70 expiring 2027-01-15 traded 2286 contracts versus 14 open. That is a jump, not a reason by itself to copy the trade."
-    },
-    {
-      "ticker": "DOX",
-      "contract": "DOX261120P00050000",
-      "side": "put",
-      "strike": 50.0,
-      "expiry": "2026-11-20",
-      "volume": 1502,
-      "oi": 13,
-      "ratio": 115.54,
-      "note": "DOX put $50 expiring 2026-11-20 traded 1502 contracts versus 13 open. That is a jump, not a reason by itself to copy the trade."
-    },
-    {
-      "ticker": "AAP",
-      "contract": "AAP261106C00054000",
-      "side": "call",
-      "strike": 54.0,
-      "expiry": "2026-11-06",
-      "volume": 1804,
-      "oi": 67,
-      "ratio": 26.93,
-      "note": "AAP call $54 expiring 2026-11-06 traded 1804 contracts versus 67 open. That is a jump, not a reason by itself to copy the trade."
-    },
-    {
-      "ticker": "AAP",
-      "contract": "AAP261106P00041000",
-      "side": "put",
-      "strike": 41.0,
-      "expiry": "2026-11-06",
-      "volume": 1385,
-      "oi": 58,
-      "ratio": 23.88,
-      "note": "AAP put $41 expiring 2026-11-06 traded 1385 contracts versus 58 open. That is a jump, not a reason by itself to copy the trade."
-    },
-    {
-      "ticker": "FIG",
-      "contract": "FIG261106P00018000",
-      "side": "put",
-      "strike": 18.0,
-      "expiry": "2026-11-06",
-      "volume": 2409,
-      "oi": 484,
-      "ratio": 4.98,
-      "note": "FIG put $18 expiring 2026-11-06 traded 2409 contracts versus 484 open. That is a jump, not a reason by itself to copy the trade."
-    },
-    {
-      "ticker": "FIG",
-      "contract": "FIG261106C00029000",
-      "side": "call",
-      "strike": 29.0,
-      "expiry": "2026-11-06",
-      "volume": 1055,
-      "oi": 287,
-      "ratio": 3.68,
-      "note": "FIG call $29 expiring 2026-11-06 traded 1055 contracts versus 287 open. That is a jump, not a reason by itself to copy the trade."
-    },
-    {
-      "ticker": "IONQ",
-      "contract": "IONQ270115P00120000",
-      "side": "put",
-      "strike": 120.0,
-      "expiry": "2027-01-15",
-      "volume": 9000,
-      "oi": 3000,
-      "ratio": 3.0,
-      "note": "IONQ put $120 expiring 2027-01-15 traded 9000 contracts versus 3000 open. That is a jump, not a reason by itself to copy the trade."
-    }
-  ],
+  "flow": [],
   "squeezes": [
-    {
-      "ticker": "SWKS",
-      "shortRatio": 0.784,
-      "headline": "Skyworks Q4 Earnings Beat Estimates, Revenues Decline Y/Y",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/skyworks-q4-earnings-beat-estimates-171800153.html?.tsrc=rss",
-      "note": "About 78% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
-    },
     {
       "ticker": "ARRY",
       "shortRatio": 0.621,
@@ -722,11 +629,1100 @@
       "note": "About 62% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
     },
     {
+      "ticker": "FRSH",
+      "shortRatio": 0.595,
+      "headline": "Earnings Beat Could Reset The Freshworks Stock Story - Yahoo Finance UK",
+      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxNOC04WklKQURpSFMtR2NWZGdVSmtlZWhLSmdNTmRUVVpiM0xic2JDOEY1UnNxb0tjcEQ1VDlmQXdnT0Vad0VXYXdXY3RLODEtR0d5dUt3RUNjbHF5aWtieFVGeUY5bGJWYTFhWnFRVzZhNXJwWlI2SzJnUVFxcVhkUFlQcjl3ZG8wZUY4UlBB?oc=5",
+      "note": "About 60% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    },
+    {
+      "ticker": "BE",
+      "shortRatio": 0.538,
+      "headline": "Bloom Energy Stock Upgrade Points to Staying Power for AI Data Centers - Barron's",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxNTk1aR2UwVEtWR18yTDJLSG1XSlZxcl9fYjgxYTdjdFBNWl90cmdQbHg3dl93ZnJNNmZPZHUtdU1wMUZpVVhLaHBIN2hpSFUyaE5rbnY2aThuRGlkNE8zODJ5LW0tdkRIc2xfUXRteGxjTDB4UUZqOEY1YWhuUGtLSDZpVnJNWXd2bzcxTA?oc=5",
+      "note": "About 54% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    },
+    {
+      "ticker": "NRXP",
+      "shortRatio": 0.504,
+      "headline": "NRx Pharmaceuticals Gains FDA Approval for Preservative-Free Ketamine - TipRanks",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNTE9ZelgtYzJhZkFrS0dicDBHUjBPWmI4UVl3dlNzU3AtVXRYUDI4dHZFYm4zVllkLWdWRGNxZ1BGV2hUVXpuU0xXX2NoWHZnM09CTTBnMHdkbGdQLTBweWhraE1BN3hFc1d1cWJlWEFXMmpseFdGbnp6b1o4OEFQVGtOemd0Uk8tWEpyVVdzbnR4MU94dXhUZnJkNDl2ekNvUGM5VHhySjZHTmluNjE2cXFMc0Z6dXRmb19TaTB3?oc=5",
+      "note": "About 50% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    },
+    {
       "ticker": "IONQ",
       "shortRatio": 0.454,
-      "headline": "IonQ Partners with QuantumCT to Expand Quantum Computing Access Across Connecticut",
-      "url": "https://investorshub.advfn.com/market-news/article/39283/ionq-partners-with-quantumct-to-expand-quantum-computing-access-across-connecticut?.tsrc=rss",
+      "headline": "IonQ (IONQ) Acquires Security Firm And Expands Quantum Access In Connecticut",
+      "url": "https://finance.yahoo.com/technology/ai/articles/ionq-ionq-acquires-security-firm-044114956.html?.tsrc=rss",
       "note": "About 45% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    }
+  ],
+  "priceChecks": [
+    {
+      "ticker": "ARRY",
+      "company": "Array Technologies, Inc. - Common Stock",
+      "price": 5.33,
+      "hv20": 1.1022,
+      "hv60": 0.7616,
+      "earningsDate": "2026-11-05",
+      "expirations": [
+        {
+          "expiry": "2026-11-20",
+          "calls": [
+            {
+              "strike": 14.0,
+              "bid": 0.05,
+              "ask": 0.2,
+              "oi": 9,
+              "iv": 2.9219,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": []
+        },
+        {
+          "expiry": "2028-01-21",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 10.0,
+              "bid": 5.6,
+              "ask": 8.1,
+              "oi": 31,
+              "iv": 1.3779,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 20.0,
+              "bid": 12.8,
+              "ask": 15.2,
+              "oi": 1,
+              "iv": 0.9766,
+              "ivPercentile": 91
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "ATNI",
+      "company": "ATN International, Inc. - Common Stock",
+      "price": 25.79,
+      "hv20": 0.4581,
+      "hv60": 0.321,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2026-12-18",
+          "calls": [
+            {
+              "strike": 15.0,
+              "bid": 9.0,
+              "ask": 13.5,
+              "oi": 1,
+              "iv": 1.2773,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 20.0,
+              "bid": 4.7,
+              "ask": 8.5,
+              "oi": 0,
+              "iv": 0.8926,
+              "ivPercentile": 92
+            }
+          ],
+          "puts": []
+        }
+      ]
+    },
+    {
+      "ticker": "CAPR",
+      "company": "Capricor Therapeutics, Inc. - Common Stock",
+      "price": 8.92,
+      "hv20": 1.1124,
+      "hv60": 1.4534,
+      "earningsDate": "2026-11-10",
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [
+            {
+              "strike": 33.0,
+              "bid": 0.05,
+              "ask": 3.7,
+              "oi": 37,
+              "iv": 3.1045,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 43.0,
+              "bid": 0.1,
+              "ask": 3.4,
+              "oi": 10,
+              "iv": 3.3018,
+              "ivPercentile": 84
+            }
+          ],
+          "puts": [
+            {
+              "strike": 17.5,
+              "bid": 10.0,
+              "ask": 14.2,
+              "oi": 4,
+              "iv": 3.3926,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 25.0,
+              "bid": 16.9,
+              "ask": 20.2,
+              "oi": 78,
+              "iv": 3.1689,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 26.0,
+              "bid": 17.0,
+              "ask": 21.4,
+              "oi": 15,
+              "iv": 2.9932,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 27.0,
+              "bid": 18.5,
+              "ask": 22.5,
+              "oi": 122,
+              "iv": 3.2285,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 29.0,
+              "bid": 20.5,
+              "ask": 24.5,
+              "oi": 9,
+              "iv": 3.3105,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 32.0,
+              "bid": 10.6,
+              "ask": 15.3,
+              "oi": 34,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 33.0,
+              "bid": 15.6,
+              "ask": 20.5,
+              "oi": 75,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 36.0,
+              "bid": 14.0,
+              "ask": 18.3,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 37.0,
+              "bid": 16.0,
+              "ask": 21.0,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 38.0,
+              "bid": 20.0,
+              "ask": 24.5,
+              "oi": 2,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 42.0,
+              "bid": 20.0,
+              "ask": 24.5,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 45.0,
+              "bid": 20.5,
+              "ask": 25.2,
+              "oi": 5,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 47.0,
+              "bid": 24.0,
+              "ask": 28.5,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 60.0,
+              "bid": 48.5,
+              "ask": 53.4,
+              "oi": 0,
+              "iv": 4.0068,
+              "ivPercentile": 90
+            }
+          ]
+        },
+        {
+          "expiry": "2028-01-21",
+          "calls": [
+            {
+              "strike": 32.0,
+              "bid": 5.5,
+              "ask": 10.5,
+              "oi": 310,
+              "iv": 3.459,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 37.0,
+              "bid": 0.05,
+              "ask": 5.0,
+              "oi": 1,
+              "iv": 1.4697,
+              "ivPercentile": 79
+            }
+          ],
+          "puts": [
+            {
+              "strike": 12.0,
+              "bid": 6.1,
+              "ask": 11.0,
+              "oi": 5,
+              "iv": 1.749,
+              "ivPercentile": 79
+            },
+            {
+              "strike": 18.0,
+              "bid": 6.0,
+              "ask": 11.0,
+              "oi": 3,
+              "iv": 0.9697,
+              "ivPercentile": 70
+            },
+            {
+              "strike": 20.0,
+              "bid": 11.7,
+              "ask": 16.5,
+              "oi": 1,
+              "iv": 1.3071,
+              "ivPercentile": 77
+            },
+            {
+              "strike": 23.0,
+              "bid": 14.5,
+              "ask": 19.5,
+              "oi": 63,
+              "iv": 1.3521,
+              "ivPercentile": 78
+            },
+            {
+              "strike": 25.0,
+              "bid": 16.1,
+              "ask": 21.0,
+              "oi": 225,
+              "iv": 1.2778,
+              "ivPercentile": 77
+            },
+            {
+              "strike": 27.0,
+              "bid": 18.0,
+              "ask": 23.0,
+              "oi": 1,
+              "iv": 1.3018,
+              "ivPercentile": 77
+            },
+            {
+              "strike": 30.0,
+              "bid": 21.8,
+              "ask": 26.4,
+              "oi": 6,
+              "iv": 1.5039,
+              "ivPercentile": 79
+            },
+            {
+              "strike": 40.0,
+              "bid": 30.0,
+              "ask": 34.5,
+              "oi": 6,
+              "iv": 1.1387,
+              "ivPercentile": 75
+            },
+            {
+              "strike": 42.0,
+              "bid": 32.0,
+              "ask": 37.0,
+              "oi": 1,
+              "iv": 1.2314,
+              "ivPercentile": 76
+            },
+            {
+              "strike": 50.0,
+              "bid": 27.5,
+              "ask": 32.5,
+              "oi": 8,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "CIFR",
+      "company": "Cipher Digital Inc. - Common Stock",
+      "price": 6.5,
+      "hv20": 1.4006,
+      "hv60": 1.1431,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 31.0,
+              "bid": 14.0,
+              "ask": 14.6,
+              "oi": 9,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 33.0,
+              "bid": 15.8,
+              "ask": 16.5,
+              "oi": 265,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 34.0,
+              "bid": 18.65,
+              "ask": 19.75,
+              "oi": 121,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 35.0,
+              "bid": 19.6,
+              "ask": 20.7,
+              "oi": 64,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 37.0,
+              "bid": 14.05,
+              "ask": 17.0,
+              "oi": 8,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 38.0,
+              "bid": 19.15,
+              "ask": 20.8,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 42.0,
+              "bid": 19.6,
+              "ask": 20.8,
+              "oi": 60,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "DOX",
+      "company": "Amdocs Limited - Ordinary Shares",
+      "price": 43.66,
+      "hv20": 1.3026,
+      "hv60": 0.7707,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2026-11-20",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 45.0,
+              "bid": 1.9,
+              "ask": 2.55,
+              "oi": 2,
+              "iv": 0.4868,
+              "ivPercentile": 100
+            }
+          ]
+        },
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 90.0,
+              "bid": 36.4,
+              "ask": 40.4,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "DRVN",
+      "company": "Driven Brands Holdings Inc. - Common Stock",
+      "price": 11.91,
+      "hv20": 0.5996,
+      "hv60": 0.4383,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [
+            {
+              "strike": 7.5,
+              "bid": 4.5,
+              "ask": 8.2,
+              "oi": 1,
+              "iv": 2.3106,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": [
+            {
+              "strike": 15.0,
+              "bid": 1.35,
+              "ask": 4.0,
+              "oi": 10,
+              "iv": 0.8926,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 22.5,
+              "bid": 6.8,
+              "ask": 9.9,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "FIG",
+      "company": "Figma, Inc. Class A Common Stock",
+      "price": 22.13,
+      "hv20": 0.6225,
+      "hv60": 0.6152,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 80.0,
+              "bid": 50.65,
+              "ask": 54.55,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 85.0,
+              "bid": 63.95,
+              "ask": 68.25,
+              "oi": 0,
+              "iv": 2.7568,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 90.0,
+              "bid": 60.05,
+              "ask": 65.0,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 95.0,
+              "bid": 67.45,
+              "ask": 68.85,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 110.0,
+              "bid": 72.0,
+              "ask": 75.05,
+              "oi": 26,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 115.0,
+              "bid": 83.5,
+              "ask": 88.5,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 120.0,
+              "bid": 91.5,
+              "ask": 96.5,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 125.0,
+              "bid": 75.7,
+              "ask": 77.9,
+              "oi": 5,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "FRSH",
+      "company": "Freshworks Inc. - Class A Common Stock",
+      "price": 13.26,
+      "hv20": 0.4674,
+      "hv60": 0.4626,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 5.0,
+              "bid": 0.05,
+              "ask": 0.5,
+              "oi": 208,
+              "iv": 1.707,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 22.5,
+              "bid": 8.7,
+              "ask": 10.0,
+              "oi": 1,
+              "iv": 0.7188,
+              "ivPercentile": 92
+            }
+          ]
+        },
+        {
+          "expiry": "2028-01-21",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 2.5,
+              "bid": 0.05,
+              "ask": 0.35,
+              "oi": 1,
+              "iv": 1.0547,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 7.5,
+              "bid": 0.05,
+              "ask": 1.0,
+              "oi": 536,
+              "iv": 0.542,
+              "ivPercentile": 76
+            },
+            {
+              "strike": 12.5,
+              "bid": 0.7,
+              "ask": 3.7,
+              "oi": 36,
+              "iv": 0.739,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 20.0,
+              "bid": 10.8,
+              "ask": 13.9,
+              "oi": 10,
+              "iv": 1.2883,
+              "ivPercentile": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "GNK",
+      "company": "Genco Shipping & Trading Limited Ordinary Shares New (Marshall Islands)",
+      "price": 24.71,
+      "hv20": 0.396,
+      "hv60": 0.3492,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2026-11-20",
+          "calls": [
+            {
+              "strike": 12.5,
+              "bid": 10.2,
+              "ask": 14.0,
+              "oi": 0,
+              "iv": 4.1543,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": []
+        },
+        {
+          "expiry": "2027-02-19",
+          "calls": [
+            {
+              "strike": 12.5,
+              "bid": 12.5,
+              "ask": 16.5,
+              "oi": 0,
+              "iv": 1.7988,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 17.5,
+              "bid": 8.5,
+              "ask": 12.5,
+              "oi": 0,
+              "iv": 1.417,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": []
+        }
+      ]
+    },
+    {
+      "ticker": "IONQ",
+      "company": "IonQ, Inc. Common Stock",
+      "price": 29.54,
+      "hv20": 0.8472,
+      "hv60": 0.7154,
+      "earningsDate": "2026-11-05",
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 110.0,
+              "bid": 74.75,
+              "ask": 77.85,
+              "oi": 31,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 130.0,
+              "bid": 86.85,
+              "ask": 90.6,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        },
+        {
+          "expiry": "2028-01-21",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 115.0,
+              "bid": 78.6,
+              "ask": 81.9,
+              "oi": 3,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 130.0,
+              "bid": 89.5,
+              "ask": 92.95,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "IREN",
+      "company": "IREN Limited - Ordinary Shares",
+      "price": 21.71,
+      "hv20": 1.1045,
+      "hv60": 0.8963,
+      "earningsDate": "2026-11-05",
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 95.0,
+              "bid": 69.1,
+              "ask": 71.05,
+              "oi": 0,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 115.0,
+              "bid": 73.35,
+              "ask": 77.1,
+              "oi": 6,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 120.0,
+              "bid": 78.3,
+              "ask": 81.95,
+              "oi": 13,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 130.0,
+              "bid": 88.15,
+              "ask": 92.05,
+              "oi": 3,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        },
+        {
+          "expiry": "2027-08-20",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 65.0,
+              "bid": 39.4,
+              "ask": 42.5,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 70.0,
+              "bid": 44.35,
+              "ask": 46.45,
+              "oi": 14,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "KNTK",
+      "company": "Kinetik Holdings Inc. Class A Common Stock",
+      "price": 51.17,
+      "hv20": 0.4227,
+      "hv60": 0.2963,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2026-11-20",
+          "calls": [
+            {
+              "strike": 45.0,
+              "bid": 9.2,
+              "ask": 12.4,
+              "oi": 5,
+              "iv": 1.832,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": []
+        },
+        {
+          "expiry": "2027-03-19",
+          "calls": [
+            {
+              "strike": 35.0,
+              "bid": 18.2,
+              "ask": 21.8,
+              "oi": 0,
+              "iv": 0.9705,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": []
+        }
+      ]
+    },
+    {
+      "ticker": "KVUE",
+      "company": "Kenvue Inc.",
+      "price": 19.31,
+      "hv20": null,
+      "hv60": null,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [
+            {
+              "strike": 3.0,
+              "bid": 14.65,
+              "ask": 18.65,
+              "oi": 0,
+              "iv": 3.0469,
+              "ivPercentile": null
+            }
+          ],
+          "puts": [
+            {
+              "strike": 22.0,
+              "bid": 0.66,
+              "ask": 4.55,
+              "oi": 194,
+              "iv": 0.8301,
+              "ivPercentile": null
+            },
+            {
+              "strike": 25.0,
+              "bid": 4.4,
+              "ask": 8.4,
+              "oi": 320,
+              "iv": 0.6768,
+              "ivPercentile": null
+            },
+            {
+              "strike": 30.0,
+              "bid": 11.0,
+              "ask": 15.95,
+              "oi": 0,
+              "iv": 1.6265,
+              "ivPercentile": null
+            },
+            {
+              "strike": 35.0,
+              "bid": 15.0,
+              "ask": 19.95,
+              "oi": 0,
+              "iv": 1.5273,
+              "ivPercentile": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "SD",
+      "company": "SandRidge Energy, Inc. Common Stock",
+      "price": 12.63,
+      "hv20": 0.4056,
+      "hv60": 0.2953,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [
+            {
+              "strike": 2.3,
+              "bid": 11.2,
+              "ask": 12.3,
+              "oi": 0,
+              "iv": 5.9648,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 4.8,
+              "bid": 9.3,
+              "ask": 10.5,
+              "oi": 1,
+              "iv": 3.9805,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 9.8,
+              "bid": 4.3,
+              "ask": 5.6,
+              "oi": 2,
+              "iv": 1.7344,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": [
+            {
+              "strike": 9.8,
+              "bid": 0.05,
+              "ask": 0.45,
+              "oi": 1,
+              "iv": 0.584,
+              "ivPercentile": 100
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "SHLS",
+      "company": "Shoals Technologies Group, Inc. - Class A Common Stock",
+      "price": 9.16,
+      "hv20": 0.7963,
+      "hv60": 0.6891,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2026-11-20",
+          "calls": [
+            {
+              "strike": 4.0,
+              "bid": 6.9,
+              "ask": 8.3,
+              "oi": 3,
+              "iv": 10.5859,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 22.0,
+              "bid": 0.65,
+              "ask": 1.1,
+              "oi": 3,
+              "iv": 4.0293,
+              "ivPercentile": 100
+            }
+          ],
+          "puts": [
+            {
+              "strike": 13.0,
+              "bid": 4.9,
+              "ask": 5.9,
+              "oi": 24,
+              "iv": 3.4688,
+              "ivPercentile": 100
+            }
+          ]
+        },
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 12.0,
+              "bid": 4.8,
+              "ask": 5.5,
+              "oi": 46,
+              "iv": 1.9668,
+              "ivPercentile": 100
+            }
+          ]
+        },
+        {
+          "expiry": "2028-01-21",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 12.0,
+              "bid": 3.0,
+              "ask": 8.0,
+              "oi": 11,
+              "iv": 0.8813,
+              "ivPercentile": 70
+            },
+            {
+              "strike": 15.0,
+              "bid": 6.9,
+              "ask": 7.8,
+              "oi": 4,
+              "iv": 0.7354,
+              "ivPercentile": 53
+            },
+            {
+              "strike": 17.0,
+              "bid": 8.4,
+              "ask": 9.4,
+              "oi": 20,
+              "iv": 0.6885,
+              "ivPercentile": 39
+            },
+            {
+              "strike": 20.0,
+              "bid": 11.8,
+              "ask": 15.2,
+              "oi": 115,
+              "iv": 1.1831,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 22.0,
+              "bid": 13.3,
+              "ask": 14.3,
+              "oi": 14,
+              "iv": 0.7915,
+              "ivPercentile": 60
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "SLDE",
+      "company": "Slide Insurance Holdings, Inc. - Common Stock",
+      "price": 27.28,
+      "hv20": 0.2976,
+      "hv60": 0.3406,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2027-01-15",
+          "calls": [],
+          "puts": [
+            {
+              "strike": 35.0,
+              "bid": 14.0,
+              "ask": 17.4,
+              "oi": 0,
+              "iv": 2.1621,
+              "ivPercentile": 100
+            }
+          ]
+        }
+      ]
     }
   ],
   "scorecard": {
