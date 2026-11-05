@@ -1,5 +1,87 @@
 {
-  "trades": [],
+  "trades": [
+    {
+      "id": "FIS-put-25-2027-01-15",
+      "openedAt": "2026-11-05T16:28:59.059584-05:00",
+      "ticker": "FIS",
+      "company": "Fidelity National Information Services",
+      "action": "BUY PUT",
+      "contractSymbol": "FIS270115P00025000",
+      "expiry": "2027-01-15",
+      "strike": 25.0,
+      "side": "put",
+      "entry": 0.525,
+      "contracts": 1,
+      "halfClosed": false,
+      "remainingContracts": 1,
+      "status": "open",
+      "lastMark": 0.525,
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "pass",
+        "sentiment": "yes",
+        "chart": "pass",
+        "options": "yes",
+        "risk": "yes",
+        "devil": "yes",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap",
+        "underpriced"
+      ],
+      "lastExitDate": "2027-01-01",
+      "reason": "Fidelity National Information Services is about $29.39. FIS SHAREHOLDER INVESTIGATION: SueWallSt Notifies Investors of Potential Securities Claims Involving Fideli.... The daily chart is mixed. The January 15, 2027 $25 put is about $0.53.",
+      "newsUrl": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQV3dFU05GakJ1MFhwdlhEMms4V256V1E0SHVmR0RvQUVkMVVNM1diN2wwYlQ5dkRIenFLdDhVZG5WN1JDSW9uNXp2MENlVzVZZnlIT3lFemQ5TkRLUG52NmhFeVdlTjR6eFY0S1VqU0NLS3dlQzVjVE56RURmRmhXempBbTNXN01fblZ5LVJEVll2Tm5JRG9tU1RuNmV0VEVXY2lEeUFnSTZVNXk1TjhJSzRKbWdBZGVBWUxJMmRZTEIzdFdodUkwMmVIRXpWWFJQazVBY1QxeUhXYThSSjExVThTak45VUQ2ZzVCR29wSmFDWm5xcVhDSElzTE0zUnliLUJxbkphS3MxYWdqdl95bzVITWdRWm12NUtwYWo5SEVWb0tVNnc?oc=5",
+      "confidence": "High",
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-05"
+    },
+    {
+      "id": "BB-call-10-2027-01-15",
+      "openedAt": "2026-11-05T16:28:59.059584-05:00",
+      "ticker": "BB",
+      "company": "BlackBerry",
+      "action": "BUY CALL",
+      "contractSymbol": "BB270115C00010000",
+      "expiry": "2027-01-15",
+      "strike": 10.0,
+      "side": "call",
+      "entry": 0.57,
+      "contracts": 1,
+      "halfClosed": false,
+      "remainingContracts": 1,
+      "status": "open",
+      "lastMark": 0.57,
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "pass",
+        "sentiment": "yes",
+        "chart": "pass",
+        "options": "yes",
+        "risk": "yes",
+        "devil": "pass",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap"
+      ],
+      "lastExitDate": "2027-01-01",
+      "reason": "BlackBerry is about $8.37. Why BlackBerry Stock Is Worth Watching After Earnings Upgrade - Yahoo Finance Singapore. The daily chart is mixed. The January 15, 2027 $10 call is about $0.57.",
+      "newsUrl": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOSEVJQVdtaHI3MFlWSnYxT2FTeDBJNXpBN2M2aXQ0QXdpeWxKRkVUQ0Flb0FpTngxN3JGWF9OTlNNeV9OMk9mNDMxUXFtbkpCVmQzQmZMMVdsdVI5bElDUlNuZ2haLVRKZ1dUb0FSWkRWY1JQSk5nSzFHY0lEeUx0dkJ4cVdVYkF1ajlMdQ?oc=5",
+      "confidence": "Low",
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-05"
+    }
+  ],
   "agentStats": {
     "news": {
       "wins": 0,
