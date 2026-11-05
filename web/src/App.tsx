@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { ChartLegend } from "./components/Chart"
 import { FeatureBlock } from "./components/FeatureBlock"
+import { PriceChecker } from "./components/PriceChecker"
 import { TradeCard } from "./components/TradeCard"
 import { Button } from "./components/ui/button"
 import { Input } from "./components/ui/input"
@@ -19,6 +20,7 @@ import type { Idea, Report } from "./types"
 
 const NAV = [
   ["ideas", "Ideas"],
+  ["priceCheck", "Price check"],
   ["mood", "Mood"],
   ["calendar", "Calendar"],
   ["flow", "Flow"],
@@ -252,6 +254,50 @@ export function App() {
             ) : null}
           </div>
         ) : null}
+      </FeatureBlock>
+
+      <FeatureBlock
+        id="priceCheck"
+        kicker="Your ticker"
+        title="Option Price Checker"
+        description="Type a ticker, pick an expiration, and pick a call or put strike. You get Cheap, Fair, or Expensive, with one sentence on why. It uses the free Yahoo chains saved on the last run, because a website cannot pull those prices live."
+        enabled={settings.features.priceCheck}
+        onToggle={() => toggle("priceCheck")}
+        settings={
+          <div className="grid gap-4 sm:grid-cols-2">
+            <NumberField
+              label="Hide strikes with fewer open contracts than this"
+              value={settings.checkerMinOi}
+              step={10}
+              onChange={(checkerMinOi) => patch({ checkerMinOi })}
+            />
+            <NumberField
+              label="Earnings count as the reason for a rich price within this many days"
+              value={settings.checkerEarningsDays}
+              step={1}
+              onChange={(checkerEarningsDays) => patch({ checkerEarningsDays })}
+            />
+          </div>
+        }
+        help={
+          <div className="space-y-2">
+            <p>Type the ticker the way it looks on a quote, such as SOFI. Then pick the date and the strike, and choose call or put. Cheap means the price assumes a smaller move than this stock has been making. Fair means the two are close. Expensive means you are paying for a bigger move than usual.</p>
+            <p>The job already downloads Yahoo option chains for names in the news. Those saved chains are what this uses. Yahoo does not let a website ask for option prices from your browser, and the chain needs a key that stays on the job. There is no login and no paid feed. A name that was not in the last run is not on this page until a later run saves it.</p>
+            <p>Implied volatility is the yearly swing baked into the option price. The checker compares it with the stock's own 20-day and 60-day swings. The priced-in move is how far the stock would travel by expiration at that implied number. The usual move uses the stock's own recent swings over the same number of days.</p>
+            <p>A real rank of this option would need a year of its old prices. Free data does not include that. The stand-in asks where today's option price sits among the stock's own 20-day swings over the past year. If that history is short, the rank is skipped.</p>
+            <p>A wide gap between the bid and the ask, or very few open contracts, pushes the answer toward expensive, because you pay the ask and may have trouble selling. Earnings inside the day count you set, and before this expiration, inflate the price on purpose. That usually reads as Fair unless the price is extreme even for an announcement.</p>
+            <p>Greeks sit under the answer. Delta is a rough chance the contract finishes in the money. Theta is about how many dollars one contract loses per day if the stock sits still. Vega is how many dollars it changes if the expected yearly swing moves by 1 point, such as from 40% to 41%. Gamma is how fast delta changes when the stock moves $1. If one day of that loss is at least 3% of what you pay, the answer moves toward Expensive. A very small chance of finishing in the money keeps a Cheap reading from looking like a bargain. The model assumes a 4% interest rate and no dividend, because the free quote does not include them.</p>
+            <p>This is a rough look from the last check, not a live broker quote and not advice. You can lose the whole premium.</p>
+          </div>
+        }
+      >
+        <PriceChecker
+          boards={report?.priceChecks ?? []}
+          generatedAt={report?.generatedAt}
+          minOi={settings.checkerMinOi}
+          earningsWindow={settings.checkerEarningsDays}
+          fileHasChecker={Boolean(report && Object.prototype.hasOwnProperty.call(report, "priceChecks"))}
+        />
       </FeatureBlock>
 
       <FeatureBlock

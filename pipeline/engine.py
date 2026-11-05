@@ -31,6 +31,7 @@ from pipeline.market_math import (
     size_trade,
 )
 from pipeline.models import Bundle, Equity, NewsItem, Vote
+from pipeline.price_check import build_price_checks
 from pipeline.scorecard import (
     ensure_stats,
     mark_trades,
@@ -121,6 +122,7 @@ def run_from_bundle(bundle: Bundle, config: dict, scorecard: dict | None) -> tup
     catalysts = _catalysts(bundle, used_tickers, today) if feature_on(config, "calendar") else []
     flow = _flow(bundle) if feature_on(config, "flow") else []
     squeezes = _squeezes(bundle, ranked) if feature_on(config, "squeeze") else []
+    price_checks = build_price_checks(bundle, today) if feature_on(config, "priceCheck") else []
     report = {
         "version": 1,
         "generatedAt": now.isoformat(),
@@ -152,6 +154,7 @@ def run_from_bundle(bundle: Bundle, config: dict, scorecard: dict | None) -> tup
         "catalysts": catalysts,
         "flow": flow,
         "squeezes": squeezes,
+        "priceChecks": price_checks,
         "scorecard": public_scorecard(book, float(config["account"])) if tracking else _paused_scorecard(config),
         "weeklyReview": review,
         "xPosts": "X posts are skipped. There is no stable way to read them without a login.",
@@ -606,6 +609,8 @@ def keep_last_good(report: dict, previous: dict | None, now: datetime) -> dict:
     if age_days > 5:
         return report
     report["ideas"] = previous["ideas"]
+    if not report.get("priceChecks") and previous.get("priceChecks"):
+        report["priceChecks"] = previous["priceChecks"]
     report["stale"] = True
     report["staleFrom"] = generated
     report["banner"] = (

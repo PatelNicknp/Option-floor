@@ -21,6 +21,7 @@ FEATURE_KEYS = (
     "flow",
     "squeeze",
     "underpriced",
+    "priceCheck",
     "sizing",
     "scorecard",
     "mood",
