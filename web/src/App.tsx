@@ -260,7 +260,7 @@ export function App() {
         id="priceCheck"
         kicker="Your ticker"
         title="Option Price Checker"
-        description="Type a ticker, pick an expiration, and pick a call or put strike. You get Cheap, Fair, or Expensive, with one sentence on why. It uses the free Yahoo chains saved on the last run, because a website cannot pull those prices live."
+        description="Type any US ticker and press Check this stock. Then pick an expiration and a call or put strike. You get Cheap, Fair, or Expensive, with one sentence on why. No login. The quote is delayed."
         enabled={settings.features.priceCheck}
         onToggle={() => toggle("priceCheck")}
         settings={
@@ -281,8 +281,8 @@ export function App() {
         }
         help={
           <div className="space-y-2">
-            <p>Type the ticker the way it looks on a quote, such as SOFI. Then pick the date and the strike, and choose call or put. Cheap means the price assumes a smaller move than this stock has been making. Fair means the two are close. Expensive means you are paying for a bigger move than usual.</p>
-            <p>The job already downloads Yahoo option chains for names in the news. Those saved chains are what this uses. Yahoo does not let a website ask for option prices from your browser, and the chain needs a key that stays on the job. There is no login and no paid feed. A name that was not in the last run is not on this page until a later run saves it.</p>
+            <p>Type a US ticker the way it looks on a quote, such as F or AAPL, and press Check this stock. Then pick the date and the strike, and choose call or put. The ticker, date, and strike boxes stay on the page even when nothing is saved yet. Cheap means the price assumes a smaller move than this stock has been making. Fair means the two are close. Expensive means you are paying for a bigger move than usual.</p>
+            <p>Check this stock reads a delayed Cboe option chain and Yahoo daily prices. Those sites do not let this page read them directly, and starting the GitHub job from the page would need a token, so the page does not do that. A free public reader fetches the pages instead. No login and nothing to paste. The reader can be slow or briefly down, and the quote is delayed, not a broker's live price. A name already saved by the morning or evening job still opens when you type it.</p>
             <p>Implied volatility is the yearly swing baked into the option price. The checker compares it with the stock's own 20-day and 60-day swings. The priced-in move is how far the stock would travel by expiration at that implied number. The usual move uses the stock's own recent swings over the same number of days.</p>
             <p>A real rank of this option would need a year of its old prices. Free data does not include that. The stand-in asks where today's option price sits among the stock's own 20-day swings over the past year. If that history is short, the rank is skipped.</p>
             <p>A wide gap between the bid and the ask, or very few open contracts, pushes the answer toward expensive, because you pay the ask and may have trouble selling. Earnings inside the day count you set, and before this expiration, inflate the price on purpose. That usually reads as Fair unless the price is extreme even for an announcement.</p>
