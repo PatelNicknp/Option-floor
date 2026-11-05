@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react"
 import { longDate, premium, ranAt } from "../lib/format"
+import { lookupTicker, normalizeTicker } from "../lib/lookup"
 import {
   daysUntil,
   judgeOption,
@@ -31,10 +32,35 @@ export function PriceChecker({
   const [side, setSide] = useState<Side>("call")
   const [expiry, setExpiry] = useState("")
   const [strike, setStrike] = useState<number | null>(null)
+  const [fetched, setFetched] = useState<Record<string, PriceBoard>>({})
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle")
+  const [lookupError, setLookupError] = useState<string | null>(null)
   const today = new Date().toISOString().slice(0, 10)
   const typed = query.trim().toUpperCase()
-  const board = boards.find((item) => item.ticker === typed) ?? null
+  const board = (typed && fetched[typed]) || boards.find((item) => item.ticker === typed) || null
   const suggestions = boards.filter((item) => item.ticker.startsWith(typed)).slice(0, 12)
+
+  async function checkStock() {
+    const ticker = normalizeTicker(query)
+    if (!ticker) {
+      setStatus("error")
+      setLookupError("Use a US ticker, such as F or AAPL.")
+      return
+    }
+    setStatus("loading")
+    setLookupError(null)
+    try {
+      const next = await lookupTicker(ticker, today)
+      setFetched((current) => ({ ...current, [next.ticker]: next }))
+      setQuery(next.ticker)
+      setExpiry("")
+      setStrike(null)
+      setStatus("idle")
+    } catch (error) {
+      setStatus("error")
+      setLookupError(error instanceof Error ? error.message : "The lookup did not finish.")
+    }
+  }
 
   const liveExpirations = useMemo(() => {
     if (!board) return []
@@ -45,177 +71,172 @@ export function PriceChecker({
   const quotes = board && chosenExpiry ? quotesFor(board, side, chosenExpiry, minOi) : []
   const chosen = quotes.find((quote) => quote.strike === strike) ?? nearestQuote(quotes, board?.price ?? 0)
 
-  if (!boards.length) {
-    return (
-      <p className="max-w-3xl text-sm leading-relaxed">
-        {fileHasChecker
-          ? "This run did not save an option chain, so there is nothing to check yet. The next morning or evening run will save chains for the names it already looks up."
-          : "This file was built before the price checker. The next run will fill it. The page cannot ask Yahoo itself."}
-      </p>
-    )
-  }
+  const waiting = !board
+  const statusLine = status === "loading"
+    ? `Looking up ${normalizeTicker(query) ?? "that ticker"}. This usually takes under a minute. No login.`
+    : lookupError
+      ? lookupError
+      : board?.fresh
+        ? "Loaded just now from a delayed free quote. Not a live broker price. Earnings dates are not in this lookup."
+        : board
+          ? `From the last saved check${generatedAt ? ` · ${ranAt(generatedAt)}` : ""}. Not a live broker quote.`
+          : typed
+            ? `No chain yet for ${typed}. Press Check this stock. Any US ticker works, even when the last run saved nothing.`
+            : boards.length
+              ? "Type any US ticker, or pick a saved name. Then choose a date and a strike."
+              : fileHasChecker
+                ? "This run did not save a chain. Type any US ticker and press Check this stock."
+                : "Type any US ticker, such as F or AAPL, and press Check this stock. The date and strike boxes fill in after the chain loads."
 
   return (
-    <div className="space-y-4">
-      <p className="text-sm text-muted">
-        {boards.length} name{boards.length === 1 ? "" : "s"} from the last check
-        {generatedAt ? ` · ${ranAt(generatedAt)}` : ""}. Not a live broker quote.
-      </p>
-      <label className="block max-w-sm text-sm">
-        <span className="mb-1 block text-muted">Ticker</span>
-        <Input
-          value={query}
-          placeholder="Such as SOFI"
-          aria-label="Ticker"
-          autoCapitalize="characters"
-          onChange={(event) => {
-            setQuery(event.target.value.toUpperCase())
-            setStrike(null)
-          }}
-        />
-      </label>
-      {board ? null : (
-        <div>
-          <p className="text-sm leading-relaxed">
-            {typed
-              ? `${typed} is not in this file. The checker only has names the last run already pulled a chain for.`
-              : "Pick a name from the last run, or type its ticker."}
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {(typed ? suggestions : boards.slice(0, 12)).map((item) => (
-              <Button key={item.ticker} onClick={() => { setQuery(item.ticker); setStrike(null) }}>
-                {item.ticker}
-              </Button>
-            ))}
-          </div>
-          {!typed && boards.length > 12 ? <p className="mt-2 text-sm text-muted">Type to find the rest.</p> : null}
+    <form
+      className="space-y-4"
+      onSubmit={(event) => {
+        event.preventDefault()
+        void checkStock()
+      }}
+    >
+      <p className="text-sm leading-relaxed">{statusLine}</p>
+      <div className="flex flex-wrap items-end gap-2">
+        <label className="block w-full max-w-sm text-sm">
+          <span className="mb-1 block text-muted">Ticker</span>
+          <Input
+            value={query}
+            placeholder="Such as F or AAPL"
+            aria-label="Ticker"
+            autoCapitalize="characters"
+            onChange={(event) => {
+              setQuery(event.target.value.toUpperCase())
+              setStrike(null)
+              setLookupError(null)
+              if (status === "error") setStatus("idle")
+            }}
+          />
+        </label>
+        <Button type="submit" variant="default" disabled={status === "loading"}>
+          {status === "loading" ? "Checking…" : "Check this stock"}
+        </Button>
+      </div>
+      {suggestions.length > 0 && !board ? (
+        <div className="flex flex-wrap gap-2">
+          {suggestions.map((item) => (
+            <Button
+              key={item.ticker}
+              type="button"
+              onClick={() => {
+                setQuery(item.ticker)
+                setStrike(null)
+                setLookupError(null)
+              }}
+            >
+              {item.ticker}
+            </Button>
+          ))}
         </div>
-      )}
-      {board ? (
-        <CheckerForm
-          board={board}
-          side={side}
-          expiry={chosenExpiry}
-          quotes={quotes}
-          chosen={chosen}
-          today={today}
-          earningsWindow={earningsWindow}
-          onSide={(next) => {
-            setSide(next)
-            setStrike(null)
-          }}
-          onExpiry={(next) => {
-            setExpiry(next)
-            setStrike(null)
-          }}
-          onStrike={setStrike}
-          expirations={liveExpirations.map((row) => row.expiry)}
-        />
       ) : null}
-    </div>
-  )
-}
-
-function CheckerForm({
-  board,
-  side,
-  expiry,
-  quotes,
-  chosen,
-  today,
-  earningsWindow,
-  expirations,
-  onSide,
-  onExpiry,
-  onStrike,
-}: {
-  board: PriceBoard
-  side: Side
-  expiry: string
-  quotes: CheckerQuote[]
-  chosen: CheckerQuote | null
-  today: string
-  earningsWindow: number
-  expirations: string[]
-  onSide: (side: Side) => void
-  onExpiry: (expiry: string) => void
-  onStrike: (strike: number) => void
-}) {
-  const dte = expiry ? daysUntil(expiry, today) : 0
-  const earningsDays = board.earningsDate ? daysUntil(board.earningsDate, today) : null
-  const judged = chosen
-    ? judgeOption({
-        spot: board.price,
-        iv: chosen.iv,
-        hv20: board.hv20,
-        hv60: board.hv60,
-        ivPercentile: chosen.ivPercentile,
-        bid: chosen.bid,
-        ask: chosen.ask,
-        oi: chosen.oi,
-        dte,
-        earningsDays,
-        earningsWindow,
-        strike: chosen.strike,
-        side,
-      })
-    : null
-
-  return (
-    <div className="space-y-4">
-      <p className="text-sm text-muted">
-        {board.company} · about {premium(board.price)} in this file
-        {board.earningsDate ? ` · earnings ${longDate(board.earningsDate)}` : " · no earnings date in this file"}
-      </p>
       <div className="flex flex-wrap gap-2">
-        <Button variant={side === "call" ? "default" : "outline"} onClick={() => onSide("call")}>
+        <Button type="button" variant={side === "call" ? "default" : "outline"} onClick={() => { setSide("call"); setStrike(null) }}>
           Call
         </Button>
-        <Button variant={side === "put" ? "default" : "outline"} onClick={() => onSide("put")}>
+        <Button type="button" variant={side === "put" ? "default" : "outline"} onClick={() => { setSide("put"); setStrike(null) }}>
           Put
         </Button>
       </div>
-      {expirations.length === 0 ? (
-        <p className="text-sm leading-relaxed">The saved dates have passed. The next run will load new ones.</p>
-      ) : (
-        <div className="grid gap-4 sm:grid-cols-2">
-          <label className="text-sm">
-            <span className="mb-1 block text-muted">Expiration</span>
-            <select
-              className="h-11 w-full rounded-md border border-line bg-card px-3"
-              value={expiry}
-              aria-label="Expiration"
-              onChange={(event) => onExpiry(event.target.value)}
-            >
-              {expirations.map((item) => (
-                <option key={item} value={item}>
-                  {longDate(item)} · {daysUntil(item, today)} days
-                </option>
-              ))}
-            </select>
-          </label>
-          {quotes.length ? (
-            <label className="text-sm">
-              <span className="mb-1 block text-muted">Strike</span>
-              <select
-                className="h-11 w-full rounded-md border border-line bg-card px-3"
-                value={chosen ? String(chosen.strike) : ""}
-                aria-label="Strike"
-                onChange={(event) => onStrike(Number(event.target.value))}
-              >
-                {quotes.map((quote) => (
-                  <option key={quote.strike} value={quote.strike}>
-                    {premium(quote.strike)} {side} · bid {premium(quote.bid)} ask {premium(quote.ask)}
-                  </option>
-                ))}
-              </select>
-            </label>
-          ) : (
-            <p className="text-sm leading-relaxed">No {side}s on this date have that many open contracts. Lower the number in Settings.</p>
-          )}
-        </div>
-      )}
-      {judged ? <VerdictCard result={judged} board={board} quote={chosen} dte={dte} earningsDays={earningsDays} /> : null}
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="text-sm">
+          <span className="mb-1 block text-muted">Expiration</span>
+          <select
+            className="h-11 w-full rounded-md border border-line bg-card px-3 disabled:text-muted"
+            value={chosenExpiry}
+            aria-label="Expiration"
+            disabled={waiting || liveExpirations.length === 0}
+            onChange={(event) => {
+              setExpiry(event.target.value)
+              setStrike(null)
+            }}
+          >
+            {liveExpirations.length === 0 ? <option value="">Waiting for a chain</option> : null}
+            {liveExpirations.map((row) => (
+              <option key={row.expiry} value={row.expiry}>
+                {longDate(row.expiry)} · {daysUntil(row.expiry, today) === 1 ? "1 day" : `${daysUntil(row.expiry, today)} days`}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="text-sm">
+          <span className="mb-1 block text-muted">Strike</span>
+          <select
+            className="h-11 w-full rounded-md border border-line bg-card px-3 disabled:text-muted"
+            value={chosen ? String(chosen.strike) : ""}
+            aria-label="Strike"
+            disabled={!quotes.length}
+            onChange={(event) => setStrike(Number(event.target.value))}
+          >
+            {quotes.length === 0 ? <option value="">Waiting for a chain</option> : null}
+            {quotes.map((quote) => (
+              <option key={quote.strike} value={quote.strike}>
+                {premium(quote.strike)} {side} · bid {premium(quote.bid)} ask {premium(quote.ask)}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+      {board && quotes.length === 0 && liveExpirations.length > 0 ? (
+        <p className="text-sm leading-relaxed">No {side}s on this date have that many open contracts. Lower the number in Settings.</p>
+      ) : null}
+      {board && chosen ? (
+        <VerdictOnly
+          board={board}
+          quote={chosen}
+          side={side}
+          expiry={chosenExpiry}
+          today={today}
+          earningsWindow={earningsWindow}
+        />
+      ) : null}
+    </form>
+  )
+}
+
+function VerdictOnly({
+  board,
+  quote,
+  side,
+  expiry,
+  today,
+  earningsWindow,
+}: {
+  board: PriceBoard
+  quote: CheckerQuote
+  side: Side
+  expiry: string
+  today: string
+  earningsWindow: number
+}) {
+  const dte = daysUntil(expiry, today)
+  const earningsDays = board.earningsDate ? daysUntil(board.earningsDate, today) : null
+  const judged = judgeOption({
+    spot: board.price,
+    iv: quote.iv,
+    hv20: board.hv20,
+    hv60: board.hv60,
+    ivPercentile: quote.ivPercentile,
+    bid: quote.bid,
+    ask: quote.ask,
+    oi: quote.oi,
+    dte,
+    earningsDays,
+    earningsWindow,
+    strike: quote.strike,
+    side,
+  })
+  return (
+    <div className="space-y-2">
+      <p className="text-sm text-muted">
+        {board.company} · about {premium(board.price)}
+        {board.earningsDate ? ` · earnings ${longDate(board.earningsDate)}` : " · no earnings date in this lookup"}
+      </p>
+      <VerdictCard result={judged} board={board} quote={quote} dte={dte} earningsDays={earningsDays} />
     </div>
   )
 }
