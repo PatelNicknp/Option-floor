@@ -1,0 +1,814 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-04T23:54:43.210635-05:00",
+  "runLabel": "Manual check",
+  "disclaimer": "Options Floor is not a broker and not advice. It never places trades, never connects to a brokerage, and does not send alerts. Options can expire worthless. You can lose the whole premium.",
+  "banner": "Every source that was checked answered, and no idea passed the rules. Waiting is a result.",
+  "stale": false,
+  "sourceHealth": [
+    {
+      "id": "nasdaq_listed",
+      "label": "Nasdaq symbol list",
+      "ok": true,
+      "detail": "3370 stocks"
+    },
+    {
+      "id": "other_listed",
+      "label": "NYSE and other symbol list",
+      "ok": true,
+      "detail": "2282 stocks"
+    },
+    {
+      "id": "sec_tickers",
+      "label": "SEC company list",
+      "ok": true,
+      "detail": "Added 3897 names that were not already listed"
+    },
+    {
+      "id": "google_news",
+      "label": "Google News",
+      "ok": true,
+      "detail": "100 headlines"
+    },
+    {
+      "id": "sec_filings",
+      "label": "SEC filings",
+      "ok": true,
+      "detail": "25 items"
+    },
+    {
+      "id": "fed",
+      "label": "Federal Reserve",
+      "ok": true,
+      "detail": "20 items"
+    },
+    {
+      "id": "whitehouse",
+      "label": "White House",
+      "ok": true,
+      "detail": "25 items"
+    },
+    {
+      "id": "whitehouse_actions",
+      "label": "White House actions",
+      "ok": true,
+      "detail": "25 items"
+    },
+    {
+      "id": "fda",
+      "label": "FDA",
+      "ok": true,
+      "detail": "20 items"
+    },
+    {
+      "id": "congress",
+      "label": "Congress",
+      "ok": true,
+      "detail": "0 items"
+    },
+    {
+      "id": "congress_bills",
+      "label": "Congress bills",
+      "ok": true,
+      "detail": "1 items"
+    },
+    {
+      "id": "federal_register",
+      "label": "Federal Register",
+      "ok": true,
+      "detail": "4 items"
+    },
+    {
+      "id": "fomc",
+      "label": "Fed meeting calendar",
+      "ok": true,
+      "detail": "1 items"
+    },
+    {
+      "id": "yahoo_headlines",
+      "label": "Yahoo Finance headlines",
+      "ok": true,
+      "detail": "58 headlines"
+    },
+    {
+      "id": "nasdaq_earnings",
+      "label": "Nasdaq earnings calendar",
+      "ok": true,
+      "detail": "1692 items"
+    },
+    {
+      "id": "finra_short",
+      "label": "FINRA short volume",
+      "ok": true,
+      "detail": "12302 rows"
+    },
+    {
+      "id": "spy",
+      "label": "S&P 500 daily prices",
+      "ok": true,
+      "detail": "Loaded"
+    },
+    {
+      "id": "vix",
+      "label": "VIX",
+      "ok": true,
+      "detail": "Loaded"
+    },
+    {
+      "id": "yahoo_prices",
+      "label": "Yahoo daily prices",
+      "ok": true,
+      "detail": "Loaded 36 of 36 daily charts."
+    },
+    {
+      "id": "yahoo_options",
+      "label": "Yahoo option chains",
+      "ok": true,
+      "detail": "Loaded option chains for 16 of 17 tickers. Skipped HBIA."
+    }
+  ],
+  "regime": {
+    "vix": 16.61,
+    "spyPrice": 766.81,
+    "spyAbove50": true,
+    "spyAbove200": true,
+    "mood": "calm-uptrend",
+    "prefer": "call",
+    "title": "Calm uptrend",
+    "summary": "The S&P 500 is above its 10, 50, and 200 day averages and the VIX is under 18. The desk prefers calls.",
+    "applied": true
+  },
+  "configEcho": {
+    "account": 800.0,
+    "minSpend": 40.0,
+    "maxSpend": 80.0,
+    "maxOpen": 5,
+    "maxPremium": 0.8,
+    "minOpenInterest": 50,
+    "priceMin": 5.0,
+    "priceMax": 40.0,
+    "features": {
+      "news": true,
+      "policy": true,
+      "sentiment": true,
+      "chart": true,
+      "options": true,
+      "risk": true,
+      "devil": true,
+      "head": true,
+      "calendar": true,
+      "cheap": true,
+      "payoff": true,
+      "flow": true,
+      "squeeze": true,
+      "underpriced": true,
+      "sizing": true,
+      "scorecard": true,
+      "mood": true,
+      "review": true
+    }
+  },
+  "universe": {
+    "candidates": 123,
+    "priced": 36,
+    "chains": 16
+  },
+  "ideas": [],
+  "watch": [],
+  "skipped": [
+    {
+      "ticker": "MRVL",
+      "reason": "The stock is $159.80, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "INO",
+      "reason": "The stock is $1.62, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "SWKS",
+      "reason": "The stock is $82.92, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "IONQ",
+      "reason": "Earnings are in the next two days. The option can collapse right after the announcement, so skip it."
+    },
+    {
+      "ticker": "TSLA",
+      "reason": "The stock is $385.19, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "ARRY",
+      "reason": "Earnings are in the next two days. The option can collapse right after the announcement, so skip it."
+    },
+    {
+      "ticker": "SHLS",
+      "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "GRAL",
+      "reason": "The stock is $143.66, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "JAN",
+      "reason": "No cheap, tradable contract matched the rules."
+    },
+    {
+      "ticker": "LITE",
+      "reason": "The stock is $626.75, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "SONM",
+      "reason": "The stock is $2.57, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "NDAQ",
+      "reason": "The stock is $109.70, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "SD",
+      "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "ACCS",
+      "reason": "The stock is $3.58, outside the $5 to $40 range."
+    },
+    {
+      "ticker": "ADBE",
+      "reason": "The stock is $248.48, outside the $5 to $40 range."
+    }
+  ],
+  "catalysts": [
+    {
+      "date": "2026-10-30",
+      "kind": "fda",
+      "title": "FDA Approves First Plasmid DNA-based Immunotherapy for Adults with Recurrent Respiratory Papillomatosis",
+      "url": "http://www.fda.gov/news-events/press-announcements/fda-approves-first-plasmid-dna-based-immunotherapy-adults-recurrent-respiratory-papillomatosis",
+      "tickers": [
+        "SONM"
+      ],
+      "plain": "The U.S. Food and Drug Administration today granted accelerated approval for Voceryq (doruxapapogene ralaplasmid and lalikinogene sifuplasmid-gxfd) for treatment of adults with recurrent respiratory papillomatosis (RRP)."
+    },
+    {
+      "date": "2026-10-30",
+      "kind": "policy",
+      "title": "WHAT THEY ARE SAYING: President Trump Puts America\u2019s Fishermen First and Secures American Seafood Dominance",
+      "url": "https://www.whitehouse.gov/releases/2026/10/what-they-are-saying-president-trump-puts-americas-fishermen-first-and-secures-american-seafood-dominance/",
+      "tickers": [],
+      "plain": "President Trump has delivered historic wins for America\u2019s fishing industry by putting American fishermen first, unlocking billions of dollars in economic growth, revitalizing the industry, and providing critical regulatory relief. Just one week ago, the Trump Administration unveiled its historic America First Seafood Strategy and launched Seafood.gov, to ensure that American fishermen, workers, industry, and coastal communities thrive from [\u2026] The post WHAT THEY ARE SAYING: President Trump Puts "
+    },
+    {
+      "date": "2026-10-31",
+      "kind": "policy",
+      "title": "Presidential Message on Reformation Day",
+      "url": "https://www.whitehouse.gov/briefings-statements/2026/10/presidential-message-on-reformation-day/",
+      "tickers": [
+        "REF"
+      ],
+      "plain": "From the earliest days of our Republic, prayer and faith in Almighty God have stood as the foundation of our strength, the source of our unity, and the fount of our greatness. This Reformation Day, I send my best wishes to the countless Christians across our country commemorating the Protestant Reformation and its enduring message [\u2026] The post Presidential Message on Reformation Day appeared first on The White House ."
+    },
+    {
+      "date": "2026-11-01",
+      "kind": "policy",
+      "title": "Presidential Message on All Saints\u2019 Day",
+      "url": "https://www.whitehouse.gov/briefings-statements/2026/11/presidential-message-on-all-saints-day-3b81/",
+      "tickers": [],
+      "plain": "On All Saints\u2019 Day, I join Christians across our Nation in honoring the men and women through the centuries whose extraordinary lives of faithfulness reveal the great goodness and love to which human beings can aspire. Every generation of Americans has understood the profound power of the example of a heroic and holy life, which [\u2026] The post Presidential Message on All Saints\u2019 Day appeared first on The White House ."
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "A pharmacy plans to start dispensing six compounded drugs in November. They are not FDA-approved. - Stock Titan",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeXNxR0tlaHo0SlhNc3RkRUNoRl9DVDUyeWRKaHpNY0hjOEdNN25KcFlmWTF3bFFMekczTzg5eDlVYUhCWlhISmN0Z2pyT3dmSEFvRkk1VmNMVUtVd3VvRUE4NkFubTJ0QUhnMlVBUXJickMxcE1LSEd0bm5tZ0dZak9XT2xYSEVoT281dDBqWm9hUjZIVlB0dFFlcV9DcklxRlgxc1BaY3ZodUIycC1vVzkzd3VJWFhzZGc?oc=5",
+      "tickers": [
+        "SATLF"
+      ],
+      "plain": "A pharmacy plans to start dispensing six compounded drugs in November. They are not FDA-approved. Stock Titan"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "Dr Reddy\u2019s secures tentative US FDA approval for generic injectable HIV prevention drug; stock rises 1% - Upstox",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPVHEycWx1ZldUbHZvQU0yUGNGa2tLZEE5cWxoXzR2MTFwbElKRjAwZFBDUjd5SFQ1X3NpMTY1UF95aDhjVllGSm55X3J0ZWJudkRjbEYwMlRxdXFZRTRDUnVBSEpBbDQ1eFpBTTFiSUlfaG1LMWplVkJndzdKd3RFb1NyeGtJSEI3ci13eGdqSXVWT19ZRjBVZHZoRnU4MElSbUltSEVlN1I2aWNHc3laR3MzcXlrR2FCWHZnaHUyS2ZTcDVobWY5SXRqVDBNNFlfQlBPR1dET09FTmdyZjRTMWhkV1BzaFM0bkd2ZmEwOFBXS28?oc=5",
+      "tickers": [
+        "RDY"
+      ],
+      "plain": "Dr Reddy\u2019s secures tentative US FDA approval for generic injectable HIV prevention drug; stock rises 1% Upstox"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "FDA Approves First Plasmid DNA-Based Immunotherapy for Adults With RRP - The American Journal of Managed Care",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPbnBLQi1ELUczdkp3ejJWSmRjdTV1X3dvLVY2MHd4WXhOYWV6bmp4S0ZGc1lFeXNoRmEwNmNOSEdDd0dvd1dpUjZRQTdwejltSHVjSnZ3blc2NENJREFTUWNnYjlzU0FoQzhNa3NwOFJOX3g4Z2RhVFpwS05iYmpOX2c2dU9RdEVNYzZ5cHd1MWJveVF1ay1icEVPWEY?oc=5",
+      "tickers": [
+        "SONM"
+      ],
+      "plain": "FDA Approves First Plasmid DNA-Based Immunotherapy for Adults With RRP The American Journal of Managed Care"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "FDA Grants Accelerated Approval to INOVIO\u2019s Voceryq for RRP, Reducing Surgical Burden - Pharmaceutical Executive",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOLVhlUF9NS2trSG9rM2ZyTHgzT0dJeFJ5VS1DaVRCWlFyVFpjLXREa3FhOWJsbExVSlZQeW5tZVQ1VmU2WTVnMVFvdjRXanpHU0VSc2xOWm5ZVTdxeXRIZTRCR1VtcVI4Q3lveUU1MmtWNzdjNjM0Q2owakpNRWFTUA?oc=5",
+      "tickers": [
+        "INO"
+      ],
+      "plain": "FDA Grants Accelerated Approval to INOVIO\u2019s Voceryq for RRP, Reducing Surgical Burden Pharmaceutical Executive"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "FDA Grants Accelerated Approval to Inovio DNA Immunotherapy for RRP - BioPharm International",
+      "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPNWFVNzRFNnl1ZzZJZTc2U3EybVJ4THhwWW0waDloNjlNVTlmbFJWRmJ2Ymh5Qk1wblpoenU4ZkxndjJudTR4YVltcVdmRndSdDZjTHFPa0plZWxJRkVEdHgyUHRxMVFlYkFrNVFfVmRaNVd5X3U4eDlKbVNoYmhNRG1sYzFrbm0xMGRJaE1CbEt1YUo2NjJjYmxuSzVKcy15WlFENlYxaw?oc=5",
+      "tickers": [
+        "INO",
+        "SONM"
+      ],
+      "plain": "FDA Grants Accelerated Approval to Inovio DNA Immunotherapy for RRP BioPharm International"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "FDA Provides Clarity to Support Cell and Gene Therapy Development and Quality",
+      "url": "http://www.fda.gov/news-events/press-announcements/fda-provides-clarity-support-cell-and-gene-therapy-development-and-quality",
+      "tickers": [
+        "QIND"
+      ],
+      "plain": "The U.S. Food and Drug Administration today issued final guidance for manufacturers of cellular and gene therapy (CGT) products to implement a comprehensive, science- and risk-based plan for making sure their products meet potency standards."
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "INOVIO Receives FDA Accelerated Approval for VOCERYQ to Reduce Surgery Frequency in Adults with RRP - Yahoo Finance",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNY0hRdFRMbVJDQ2lFNWIxcUlGVnRoQXBoSXg1MUY0NXk2S3h1NjNmM05HNHBudUZiT3BCeDhpeHY1TF93MElIQWtGVXNSQzZwOUcyT3k5RVpKQTZaLUlTaXMtX2ZQR1lzNjVsQ1hUbWdoTFEwbzN0dW5SNXozVjBIbE5aVHFvVHhWQ0RBcTdoX21Ub2lQWDVvd3hpMlJKSWZlQ3dz?oc=5",
+      "tickers": [
+        "INO"
+      ],
+      "plain": "INOVIO Receives FDA Accelerated Approval for VOCERYQ to Reduce Surgery Frequency in Adults with RRP Yahoo Finance"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "Inovio stock rating upgraded to buy at H.C. Wainwright on FDA approval - Investing.com",
+      "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPYjE0VFBxQlJVUk10X25LNnc3WnIwQkZQR1RONlRfTzRkUGxacmVXVEdpSFN2Q1g1SDVwTERUa2dCaXJ5NEEzYXNSbDdMZE5yWC1yNEkzeGMzQkxnRkxFLVRxaUtnOW9KVDd2YWV5dFFHSUplcEFlb0Yta0xmSHZCMnIyNmkyb2xONkZjMkNiVDR4WWRpOWJ5UkFWZXNfWTdPa2xfVS11eEkzRy1zRWJiZVhHZnRCNjIxbHpMSndLR0VjdUpid00w?oc=5",
+      "tickers": [
+        "INO"
+      ],
+      "plain": "Inovio stock rating upgraded to buy at H.C. Wainwright on FDA approval Investing.com"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "Medincell shares gain 16% over one month, driven by FDA approval - Id\u00e9al Investisseur",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQMDI0ZUg5ajNkdTAyb1EtalpwX1pxSWYzQy1FZWlSRXNjdFJyak9Qd0liU0hHMEYtRjB6dUJuYXpSRmVKOWxCVDdlaVJNc0o1ZngzeGJXMVFBZG5qakhjVVhSRHpOejBfVkFQbXFqbG5IRkJlM3BsTzdBeGx5c0ZBMWRzRnNZaE5wcVRIS3hETXBRZnA2UV9ndklZNm40MVpRenN5NzJYOEVZbS1aV1o2eVU4VFR4TE9XX3dla0hB?oc=5",
+      "tickers": [
+        "DRVN"
+      ],
+      "plain": "Medincell shares gain 16% over one month, driven by FDA approval Id\u00e9al Investisseur"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "Precigen Sinks 26% as Inovio Wins FDA Approval for Papzimeos Rival Days Before Earnings - TIKR.com",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQMjJ5VTBFeGJLYXlPd0xld3ZEaktQaWZVbWtfemtTQXNvZ3d0cllWNmZqLXdmX2U2b2c4WTNxYS1HdzRfM0RsMFlDSU5nSWtjMVhTUjVMZXA4empsU2o2Q0lkTnBObk5yTFU0V2ZaNVh6amRIVl90ZDZuOUJYZDZLakRWUGNiZHNiX1dMZy1IYXhHTWk3dDQ2TE5idDNwc2FSbmtGN05WM1NTMFFHb2wwNXln?oc=5",
+      "tickers": [
+        "INO",
+        "PGEN"
+      ],
+      "plain": "Precigen Sinks 26% as Inovio Wins FDA Approval for Papzimeos Rival Days Before Earnings TIKR.com"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "policy",
+      "title": "President Trump Completes Historic Travel Blitz: 30 Events, 20 States, 32 Days",
+      "url": "https://www.whitehouse.gov/releases/2026/11/president-trump-completes-historic-travel-blitz-30-events-20-states-32-days/",
+      "tickers": [
+        "TNL"
+      ],
+      "plain": "President Donald J. Trump has just completed one of the most relentless, far-reaching travel schedules of any modern presidency: 20 states in 32 days, from Wasilla, Alaska, to Daytona Beach, Florida. At every stop, President Trump took his Administration\u2019s record of results directly to the American people. Here are the highlights from President Trump\u2019s travel: The post President Trump Completes Historic Travel Blitz: 30 Events, 20 States, 32 Days appeared first on The White House ."
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "policy",
+      "title": "President Trump\u2019s Second Term: Promises Made, Promises Kept, Results Delivered",
+      "url": "https://www.whitehouse.gov/releases/2026/11/president-trumps-second-term-promises-made-promises-kept-results-delivered/",
+      "tickers": [],
+      "plain": "President Donald J. Trump has executed the most sweeping restoration of American sovereignty, strength, and prosperity in modern history. With ferocious speed and resolve, President Trump has reversed decades of decline, kept more promises than any modern President, and delivered results for working families that once seemed impossible. Here are 127 Promises Made, Promises Kept [\u2026] The post President Trump\u2019s Second Term: Promises Made, Promises Kept, Results Delivered appeared first on The White"
+    },
+    {
+      "date": "2026-11-02",
+      "kind": "fda",
+      "title": "Update: Inovio Shares Surge After HC Wainwright Upgrade Following FDA Approval for Voceryq - Yahoo! Finance Canada",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQMDl4d2lrN3JiZk96dlBITERyUVlEUzdUcXFHVzJ3SVlueHNsSy1RWGVMdmFZWXhoZHFJTFFKbTZ4SUNhTG94RlkyTnNTV2J4UHB2cUVOUGlLS1NIU19UWHdGaDNBOG8zWWNFRHJTRTlTRUN0cjlJdFNHN0lXVVRsdlVGUmQwcVZBZ2c?oc=5",
+      "tickers": [
+        "INO"
+      ],
+      "plain": "Update: Inovio Shares Surge After HC Wainwright Upgrade Following FDA Approval for Voceryq Yahoo! Finance Canada"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "policy",
+      "title": "ANTI-COMMUNISM WEEK, 2026",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/11/anti-communism-week-2026/",
+      "tickers": [],
+      "plain": "BY THE PRESIDENT OF THE UNITED STATES OF AMERICA A PROCLAMATION For more than a century, human freedom has been threatened by communist and socialist ideologies that eliminate individual opportunity, subjugate individuals to the state, and extinguish the God-given rights upon which free nations are built. This Anti-Communism Week, we are reminded of the devastating [\u2026] The post ANTI-COMMUNISM WEEK, 2026 appeared first on The White House ."
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "fda",
+      "title": "CAPR Stock Rises As Clinical Trial Investigators Write To FDA Urging Approval For Deramiocel - Stocktwits",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxOZDctV3d2VVkxQmRTSWgwWXhNV3ZuajY1ai1Hb3RlYUZISFpLVVg1Y1R6R3hvWVpOb1RhdWdfU3dGaTJTS1JxejFQUXRnZXZVeWh1aFloUUFFZzVBQnBBMUVrdnRNYUdYT1paZGRPWXAzdHN0UHVtT0RCQllaaG5pZmZQaGZIenlwbE5ma3lDUk1jSzFzcURBS3YzbmNOckFKU2syYjZtWjBqTTByUE03YUlQOU1oTzVfLUVMZ084UzUxeUwtV3BvLVR6MTFma04xN251MUx1TU8tNlpxenVoZl9waV91SEtfT3l2dQ?oc=5",
+      "tickers": [
+        "CAPR"
+      ],
+      "plain": "CAPR Stock Rises As Clinical Trial Investigators Write To FDA Urging Approval For Deramiocel Stocktwits"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "policy",
+      "title": "Congressional Bills H.R. 1744 and H.R. 8205 Signed into Law",
+      "url": "https://www.whitehouse.gov/briefings-statements/2026/11/congressional-bills-h-r-1744-and-h-r-8205-signed-into-law/",
+      "tickers": [],
+      "plain": "On Tuesday, November 3, 2026, the President signed into law: H.R. 1744, the \u201cUnited States Commission on International Religious Freedom Reauthorization Act of 2026,\u201d which extends and authorizes annual appropriations for the United States Commission on International Religious Freedom through Fiscal Year 2028; and H.R. 8205, the \u201cAccelerating Access to Critical Therapies for ALS Reauthorization Act [\u2026] The post Congressional Bills H.R. 1744 and H.R. 8205 Signed into Law appeared first on The Whi"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "policy",
+      "title": "First Lady Melania Trump to Convene Russian and Ukrainian Representatives at the White House",
+      "url": "https://www.whitehouse.gov/briefings-statements/2026/11/first-lady-melania-trump-to-convene-russian-and-ukrainian-representatives-at-the-white-house/",
+      "tickers": [],
+      "plain": "First Lady Melania Trump will personally bring representatives of Russia and Ukraine, two nations actively at war, together at the White House. This event represents an extraordinary moment in American history. Mrs. Trump independently initiated engagement between the two warring nations and successfully secured a ceasefire in Oleshky and the surrounding Kherson region. This achievement [\u2026] The post First Lady Melania Trump to Convene Russian and Ukrainian Representatives at the White House appe"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "policy",
+      "title": "ICYMI: Drug Prices Are Falling at the Fastest Rate in Over 60 Years Under President Trump",
+      "url": "https://www.whitehouse.gov/releases/2026/11/icymi-drug-prices-are-falling-at-the-fastest-rate-in-over-60-years-under-president-trump/",
+      "tickers": [],
+      "plain": "Prescription drug prices are plummeting for the first time in decades under the leadership of President Donald J. Trump \u2014 delivering real, measurable relief to millions of Americans. In City Journal, Dr. Joel Zinberg explains why this is a major accomplishment: \u201cYet few Americans realize that drug prices\u2014a major complaint\u2014are actually falling. The Consumer Price [\u2026] The post ICYMI: Drug Prices Are Falling at the Fastest Rate in Over 60 Years Under President Trump appeared first on The White Hous"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "policy",
+      "title": "ICYMI: Relentless Travel Schedule Puts Trump Administration\u2019s Results Front and Center",
+      "url": "https://www.whitehouse.gov/releases/2026/11/icymi-relentless-travel-schedule-puts-trump-administrations-results-front-and-center/",
+      "tickers": [
+        "TNL"
+      ],
+      "plain": "Over the past month, President Donald J. Trump and Vice President JD Vance maintained an unmatched pace of travel across the country, meeting with Americans face-to-face to highlight the Administration\u2019s Promises Made, Promises Kept record. Recent coverage underscored the scale of the travel: The Daily Wire: Trump Touts Drug Discounts, Patient Payments In Final Midterm Push\u201cAs [\u2026] The post ICYMI: Relentless Travel Schedule Puts Trump Administration\u2019s Results Front and Center appeared first on Th"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "fda",
+      "title": "Learn Why The Bull Case For Viridian Therapeutics Stock Could Change Following FDA Approval - Simply Wall St",
+      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxQR3I0MUdOSEd1ekRfcnNZWmJqWXpXc2lyQTlBUnBIdjQzQ3V3bktscjR0c18wc2xOTkZLRVFRVE9idDMxd0QyZzRpUmZXSzE5bnpCREFpNHNCeEJlbzc2b0JSRW81dXlPRzM2MDZOQ0dsRFhMXzhZZHNrWDBqaXlwTDM0OVdGOEc4WnZLRXc1by1pNEdIakNWa2dXMVJIRGxMeTNGemVZX0lTMHNMZEJUdHRvSm1aZ2Z0M2pYSVJnZTY2WXJLTkFnc3B5cmN3VWhOVGFCX3NJcGowdmRoWXlldjluZl9Pd095OTRZ0gHwAUFVX3lxTE9HcUg2Mm5sY1ExSFJickhMNTJNOUx4UzZ6N3hYWDNqTjdvcGExX2Vkdm0xQl9nams3LVdfRzZURmxQc2F4NWlIa1kwSVRhUVNIX1d2aHhLeDNhTG1DUHZyOTctR2lLTy1qMWRNQVJJR2NVZURJRGR5V1E3YWJtd0pxQzFyLWY1TW1MQzUyU0wtRkwwa0xDdU9WT1ZYc1VNaVNGRl9CQklXZjRZNldIQjl3d2ZUQ0VVWGpfTDFMWVRpT3lhOVgzbmhoR3JTUEhZRm12aUoxNHI3aWJvNUk3MUdZOUdnc1lEUmkxOUpGclM3bA?oc=5",
+      "tickers": [
+        "VRDN"
+      ],
+      "plain": "Learn Why The Bull Case For Viridian Therapeutics Stock Could Change Following FDA Approval Simply Wall St"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "court",
+      "title": "Mackinac Center Lawsuit Challenges Michigan\u2019s Proposal 2 to Protect Free Speech - Mackinac Center",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxNeU5UVHFHeFYwblBSZ1FVekM2TzJtTTBMNllZN2RsRnZsTl9qeXNSWHM3MmhBejIwRFNiWENFeDdhcXFPR3ZsZmU0ak9hc2JmMzUwVXlUS0RQRS16S1M4MXNmRDVETndlVjB1bndvYnZEc1FFMFdCU0toOW05UEJBNjJ1T3RIX1pMVVluYllVUG5fNWp1NzN3TTVRWXo3RV9YSnhEOVhwVDhWS09fVXZpUldYZGZHcDg1cFE?oc=5",
+      "tickers": [],
+      "plain": "Mackinac Center Lawsuit Challenges Michigan\u2019s Proposal 2 to Protect Free Speech Mackinac Center"
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "policy",
+      "title": "President Trump Is Powering an American Manufacturing Renaissance",
+      "url": "https://www.whitehouse.gov/releases/2026/11/president-trump-is-powering-an-american-manufacturing-renaissance/",
+      "tickers": [],
+      "plain": "American manufacturing is surging under President Donald J. Trump. A new report shows the sector expanding for the tenth consecutive month, with production growing at its fastest pace in nearly five years. Factories are expanding. Jobs are returning. Paychecks are rising faster than inflation. And companies are investing trillions to build their futures in America. [\u2026] The post President Trump Is Powering an American Manufacturing Renaissance appeared first on The White House ."
+    },
+    {
+      "date": "2026-11-03",
+      "kind": "policy",
+      "title": "THE AMERICAN DECLARATION OF FREEDOM IN SPACE",
+      "url": "https://www.whitehouse.gov/presidential-actions/2026/11/the-american-declaration-of-freedom-in-space/",
+      "tickers": [],
+      "plain": "BY THE PRESIDENT OF THE UNITED STATES OF AMERICA A PROCLAMATION It is America\u2019s destiny to explore and expand our frontiers beyond Earth to the farthest depths of space. Today, my Administration reaffirms that our solar system and all of outer space beyond Earth are the province of all humans, and that our Nation will lead [\u2026] The post THE AMERICAN DECLARATION OF FREEDOM IN SPACE appeared first on The White House ."
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - AGL Private Credit Income Fund (0002011498) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2011498/000119312526447614/0001193125-26-447614-index.htm",
+      "tickers": [
+        "AGL",
+        "PBAM"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001193125-26-447614 Size: 11 MB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - ATN International, Inc. (0000879585) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/879585/000162828026070291/0001628280-26-070291-index.htm",
+      "tickers": [
+        "ATNI"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001628280-26-070291 Size: 3 MB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - BLACK HILLS CORP /SD/ (0001130464) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1130464/000119312526447656/0001193125-26-447656-index.htm",
+      "tickers": [
+        "SD",
+        "BKH",
+        "HBIA"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001193125-26-447656 Size: 1 MB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - Bio Green Med Solution, Inc. (0001130166) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1130166/000149315226049999/0001493152-26-049999-index.htm",
+      "tickers": [],
+      "plain": "Filed: 2026-11-04 AccNo: 0001493152-26-049999 Size: 237 KB Item 3.01: Notice of Delisting or Failure to Satisfy a Continued Listing Rule or Standard; Transfer of Listing Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - Cayson Acquisition Corp (0002024203) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2024203/000149315226049993/0001493152-26-049993-index.htm",
+      "tickers": [],
+      "plain": "Filed: 2026-11-04 AccNo: 0001493152-26-049993 Size: 269 KB Item 3.01: Notice of Delisting or Failure to Satisfy a Continued Listing Rule or Standard; Transfer of Listing"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - GENCO SHIPPING & TRADING LTD (0001326200) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1326200/000114036126041978/0001140361-26-041978-index.htm",
+      "tickers": [
+        "GNK"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001140361-26-041978 Size: 2 MB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - GRI Bio, Inc. (0001824293) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1824293/000182429326000063/0001824293-26-000063-index.htm",
+      "tickers": [
+        "GRI"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001824293-26-000063 Size: 311 KB Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers Item 5.07: Submission of Matters to a Vote of Security Holders Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - Kenvue Inc. (0001944048) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1944048/000110465926122777/0001104659-26-122777-index.htm",
+      "tickers": [
+        "KVUE"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001104659-26-122777 Size: 199 KB Item 3.03: Material Modifications to Rights of Security Holders Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - Kinetik Holdings Inc. (0001692787) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1692787/000169278726000142/0001692787-26-000142-index.htm",
+      "tickers": [
+        "KNTK"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001692787-26-000142 Size: 1 MB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - MGT CAPITAL INVESTMENTS, INC. (0001001601) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1001601/000149315226049995/0001493152-26-049995-index.htm",
+      "tickers": [
+        "MGTI"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001493152-26-049995 Size: 566 KB Item 1.01: Entry into a Material Definitive Agreement Item 3.02: Unregistered Sales of Equity Securities Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - Medicus Pharma Ltd. (0001997296) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1997296/000106299326005748/0001062993-26-005748-index.htm",
+      "tickers": [
+        "PBSV"
+      ],
+      "plain": "Filed: 2026-11-04 AccNo: 0001062993-26-005748 Size: 340 KB Item 7.01: Regulation FD Disclosure Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - NATURES SUNSHINE PRODUCTS INC (0000275053) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/275053/000162828026070297/0001628280-26-070297-index.htm",
+      "tickers": [],
+      "plain": "Filed: 2026-11-04 AccNo: 0001628280-26-070297 Size: 752 KB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-04",
+      "kind": "filing",
+      "title": "8-K - National Healthcare Properties, Inc. (0001561032) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1561032/000156103226000071/0001561032-26-000071-index.htm",
+      "tickers": [],
+      "plain": "Filed: 2026-11-04 AccNo: 0001561032-26-000071 Size: 1 MB Item 2.02: Results of Operations and Financial Condition Item 9.01: Financial Statements and Exhibits"
+    }
+  ],
+  "flow": [
+    {
+      "ticker": "AAP",
+      "contract": "AAP261106P00053000",
+      "side": "put",
+      "strike": 53.0,
+      "expiry": "2026-11-06",
+      "volume": 1000,
+      "oi": 1,
+      "ratio": 1000.0,
+      "note": "AAP put $53 expiring 2026-11-06 traded 1000 contracts versus 1 open. That is a jump, not a reason by itself to copy the trade."
+    },
+    {
+      "ticker": "IONQ",
+      "contract": "IONQ270115P00070000",
+      "side": "put",
+      "strike": 70.0,
+      "expiry": "2027-01-15",
+      "volume": 2286,
+      "oi": 14,
+      "ratio": 163.29,
+      "note": "IONQ put $70 expiring 2027-01-15 traded 2286 contracts versus 14 open. That is a jump, not a reason by itself to copy the trade."
+    },
+    {
+      "ticker": "DOX",
+      "contract": "DOX261120P00050000",
+      "side": "put",
+      "strike": 50.0,
+      "expiry": "2026-11-20",
+      "volume": 1502,
+      "oi": 13,
+      "ratio": 115.54,
+      "note": "DOX put $50 expiring 2026-11-20 traded 1502 contracts versus 13 open. That is a jump, not a reason by itself to copy the trade."
+    },
+    {
+      "ticker": "AAP",
+      "contract": "AAP261106C00054000",
+      "side": "call",
+      "strike": 54.0,
+      "expiry": "2026-11-06",
+      "volume": 1804,
+      "oi": 67,
+      "ratio": 26.93,
+      "note": "AAP call $54 expiring 2026-11-06 traded 1804 contracts versus 67 open. That is a jump, not a reason by itself to copy the trade."
+    },
+    {
+      "ticker": "AAP",
+      "contract": "AAP261106P00041000",
+      "side": "put",
+      "strike": 41.0,
+      "expiry": "2026-11-06",
+      "volume": 1385,
+      "oi": 58,
+      "ratio": 23.88,
+      "note": "AAP put $41 expiring 2026-11-06 traded 1385 contracts versus 58 open. That is a jump, not a reason by itself to copy the trade."
+    },
+    {
+      "ticker": "FIG",
+      "contract": "FIG261106P00018000",
+      "side": "put",
+      "strike": 18.0,
+      "expiry": "2026-11-06",
+      "volume": 2409,
+      "oi": 484,
+      "ratio": 4.98,
+      "note": "FIG put $18 expiring 2026-11-06 traded 2409 contracts versus 484 open. That is a jump, not a reason by itself to copy the trade."
+    },
+    {
+      "ticker": "FIG",
+      "contract": "FIG261106C00029000",
+      "side": "call",
+      "strike": 29.0,
+      "expiry": "2026-11-06",
+      "volume": 1055,
+      "oi": 287,
+      "ratio": 3.68,
+      "note": "FIG call $29 expiring 2026-11-06 traded 1055 contracts versus 287 open. That is a jump, not a reason by itself to copy the trade."
+    },
+    {
+      "ticker": "IONQ",
+      "contract": "IONQ270115P00120000",
+      "side": "put",
+      "strike": 120.0,
+      "expiry": "2027-01-15",
+      "volume": 9000,
+      "oi": 3000,
+      "ratio": 3.0,
+      "note": "IONQ put $120 expiring 2027-01-15 traded 9000 contracts versus 3000 open. That is a jump, not a reason by itself to copy the trade."
+    }
+  ],
+  "squeezes": [
+    {
+      "ticker": "SWKS",
+      "shortRatio": 0.784,
+      "headline": "Skyworks Q4 Earnings Beat Estimates, Revenues Decline Y/Y",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/skyworks-q4-earnings-beat-estimates-171800153.html?.tsrc=rss",
+      "note": "About 78% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    },
+    {
+      "ticker": "ARRY",
+      "shortRatio": 0.621,
+      "headline": "Array\u2019s (NASDAQ:ARRY) Q3 2026 sales beat estimates but full-year sales guidance misses expectations significantly",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/array-nasdaq-arry-q3-2026-224142737.html?.tsrc=rss",
+      "note": "About 62% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    },
+    {
+      "ticker": "IONQ",
+      "shortRatio": 0.454,
+      "headline": "IonQ Partners with QuantumCT to Expand Quantum Computing Access Across Connecticut",
+      "url": "https://investorshub.advfn.com/market-news/article/39283/ionq-partners-with-quantumct-to-expand-quantum-computing-access-across-connecticut?.tsrc=rss",
+      "note": "About 45% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    }
+  ],
+  "scorecard": {
+    "account": 800.0,
+    "openCount": 0,
+    "openRisk": 0,
+    "realizedPnl": 0,
+    "open": [],
+    "closed": [],
+    "agents": [
+      {
+        "id": "news",
+        "name": "News Scout",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      },
+      {
+        "id": "policy",
+        "name": "Policy & Politics Scout",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      },
+      {
+        "id": "sentiment",
+        "name": "Sentiment Scout",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      },
+      {
+        "id": "chart",
+        "name": "Chart Reader",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      },
+      {
+        "id": "options",
+        "name": "Options Picker",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      },
+      {
+        "id": "risk",
+        "name": "Risk Checker",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      },
+      {
+        "id": "devil",
+        "name": "Devil's Advocate",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      },
+      {
+        "id": "head",
+        "name": "Head Trader",
+        "wins": 0,
+        "losses": 0,
+        "weight": 1.0,
+        "plain": "Even weight until this scout has a yes vote on at least 4 finished ideas."
+      }
+    ],
+    "setupStats": {},
+    "summary": "Paper account starts at $800. Finished ideas are flat $0. 0 open idea(s) are using about $0. Open ideas are not counted as profit until they finish."
+  },
+  "weeklyReview": {
+    "weekOf": "2026-11-04",
+    "note": "No paper ideas opened or finished in the last seven days. That is allowed. The desk would rather wait than invent a trade. Scout weights are still even because there are not enough finished ideas yet. Market mood: Calm uptrend. The S&P 500 is above its 10, 50, and 200 day averages and the VIX is under 18. The desk prefers calls. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
+    "paused": false
+  },
+  "xPosts": "X posts are skipped. There is no stable way to read them without a login."
+}

@@ -1,0 +1,3 @@
+# The data job uses the Python standard library only.
+# pytest is for the test suite (local and GitHub Actions).
+pytest>=8.0

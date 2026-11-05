@@ -1,0 +1,53 @@
+{
+  "trades": [],
+  "agentStats": {
+    "news": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    },
+    "policy": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    },
+    "sentiment": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    },
+    "chart": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    },
+    "options": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    },
+    "risk": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    },
+    "devil": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    },
+    "head": {
+      "wins": 0,
+      "losses": 0,
+      "weight": 1.0
+    }
+  },
+  "setupStats": {},
+  "reviews": [
+    {
+      "weekOf": "2026-11-04",
+      "note": "No paper ideas opened or finished in the last seven days. That is allowed. The desk would rather wait than invent a trade. Scout weights are still even because there are not enough finished ideas yet. Market mood: Calm uptrend. The S&P 500 is above its 10, 50, and 200 day averages and the VIX is under 18. The desk prefers calls. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
+      "paused": false
+    }
+  ]
+}
