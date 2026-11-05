@@ -156,6 +156,8 @@ function CheckerForm({
         dte,
         earningsDays,
         earningsWindow,
+        strike: chosen.strike,
+        side,
       })
     : null
 
@@ -259,6 +261,27 @@ function VerdictCard({
               : `${earningsDays === 0 ? "Earnings are today." : earningsDays === 1 ? "Earnings are in 1 day." : `Earnings are in ${earningsDays} days.`} ${earningsDays <= dte ? "That is before this option expires." : "That is after this option expires, so it is not part of this price."}`}
         </li>
       </ul>
+      {result.greeks ? (
+        <div className="mt-4 rounded-lg border border-line bg-paper px-4 py-3">
+          <p className="text-xs font-medium uppercase tracking-[0.16em] text-copper">Greeks</p>
+          <ul className="mt-2 space-y-2 text-sm leading-relaxed">
+            <li>{result.greeks.deltaLine}</li>
+            <li>{result.greeks.gammaLine}</li>
+            <li>{result.greeks.thetaLine}</li>
+            <li>{result.greeks.vegaLine}</li>
+          </ul>
+          {result.greeks.warnings.length ? (
+            <ul className="mt-3 space-y-1 text-sm leading-relaxed text-put">
+              {result.greeks.warnings.map((warning) => (
+                <li key={warning}>{warning}</li>
+              ))}
+            </ul>
+          ) : null}
+          <p className="mt-2 text-xs leading-relaxed text-muted">
+            A simple model from the stock price, the strike, the time left, and the option's expected swing. It assumes a 4% interest rate and no dividend. It is not your broker's number.
+          </p>
+        </div>
+      ) : null}
     </div>
   )
 }

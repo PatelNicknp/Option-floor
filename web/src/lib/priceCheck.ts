@@ -1,5 +1,7 @@
 /** Cheap, Fair, or Expensive for one saved contract. No network. */
 
+import { blackScholesGreeks, type Greeks } from "./greeks"
+
 export type VerdictName = "Cheap" | "Fair" | "Expensive"
 
 export type CheckerQuote = {
@@ -39,6 +41,8 @@ export type JudgeInput = {
   dte: number
   earningsDays: number | null
   earningsWindow: number
+  strike?: number
+  side?: "call" | "put"
 }
 
 export type JudgeResult = {
@@ -47,6 +51,7 @@ export type JudgeResult = {
   expectedMove: number | null
   typicalMove: number | null
   spreadPct: number | null
+  greeks: Greeks | null
 }
 
 const CHEAP_RATIO = 0.85
@@ -55,6 +60,8 @@ const EXTREME_RATIO = 2
 const LOW_OI = 50
 const WIDE_SPREAD = 0.3
 const THIN_SPREAD = 0.15
+const HIGH_THETA_SHARE = 0.03
+const LOW_DELTA = 0.15
 
 export function daysUntil(iso: string, todayIso: string): number {
   const parse = (value: string) => {
@@ -78,6 +85,7 @@ export function judgeOption(input: JudgeInput): JudgeResult {
     expectedMove: null,
     typicalMove: null,
     spreadPct: null,
+    greeks: null,
   })
 
   if (!(input.spot > 0) || !(input.dte >= 1)) {
@@ -139,6 +147,47 @@ export function judgeOption(input: JudgeInput): JudgeResult {
     }
   }
 
+  const greeks =
+    input.side && input.strike != null
+      ? blackScholesGreeks({
+          spot: input.spot,
+          strike: input.strike,
+          iv: input.iv,
+          dte: input.dte,
+          side: input.side,
+        })
+      : null
+  let thetaShifted = false
+  let longShotShifted = false
+  const premiumDollars = mid * 100
+  const thetaShare = greeks && premiumDollars > 0 ? greeks.dollarsLostPerDay / premiumDollars : 0
+  const highTheta = Boolean(greeks && thetaShare >= HIGH_THETA_SHARE)
+  const lowDelta = Boolean(greeks && Math.abs(greeks.delta) < LOW_DELTA)
+  const chancePct = greeks ? Math.round(Math.abs(greeks.delta) * 100) : null
+  if (highTheta) {
+    if (verdict === "Cheap") {
+      verdict = "Fair"
+      thetaShifted = true
+    } else if (verdict === "Fair") {
+      verdict = "Expensive"
+      thetaShifted = true
+    }
+  }
+  if (lowDelta && verdict === "Cheap") {
+    verdict = "Fair"
+    longShotShifted = true
+  }
+  if (greeks) {
+    if (highTheta && !thetaShifted) {
+      greeks.warnings.push(
+        `Time decay is high relative to the price: about ${moneyMove(greeks.dollarsLostPerDay)} a day, which is ${Math.round(thetaShare * 100)}% of what you pay.`,
+      )
+    }
+    if (lowDelta && !longShotShifted && !thetaShifted && chancePct != null) {
+      greeks.warnings.push(`The rough chance of finishing in the money is only about ${chancePct}%. That is a long shot.`)
+    }
+  }
+
   return {
     verdict,
     reason: reasonLine({
@@ -156,10 +205,17 @@ export function judgeOption(input: JudgeInput): JudgeResult {
       beforeRank,
       percentile,
       oi: input.oi,
+      thetaShifted,
+      thetaLoss: greeks?.dollarsLostPerDay ?? null,
+      thetaShare,
+      longShotShifted,
+      lowDelta,
+      chancePct,
     }),
     expectedMove,
     typicalMove,
     spreadPct,
+    greeks,
   }
 }
 
@@ -193,6 +249,12 @@ function reasonLine(input: {
   beforeRank: VerdictName
   percentile: number | null
   oi: number
+  thetaShifted?: boolean
+  thetaLoss?: number | null
+  thetaShare?: number
+  longShotShifted?: boolean
+  lowDelta?: boolean
+  chancePct?: number | null
 }): string {
   const look = input.verdict.toLowerCase()
   const priced = moneyMove(input.expectedMove)
@@ -202,6 +264,17 @@ function reasonLine(input: {
   const when = earningsWhen(input.earningsDays)
   const open = openPhrase(input.oi)
 
+  if (input.thetaShifted && input.thetaLoss != null && input.thetaShare != null) {
+    const pct = Math.round(input.thetaShare * 100)
+    const chance =
+      input.lowDelta && input.chancePct != null
+        ? `, and the rough chance of finishing in the money is only about ${input.chancePct}%`
+        : ""
+    return `This looks ${look} because one contract loses about ${moneyMove(input.thetaLoss)} a day, about ${pct}% of what you pay, if the stock sits still${chance}.`
+  }
+  if (input.longShotShifted && input.chancePct != null) {
+    return `This looks fair because the rough chance of finishing in the money is only about ${input.chancePct}%, so a lower price is still a long shot.`
+  }
   if (input.spreadShifted && gap != null) {
     const thin = input.oi < LOW_OI ? ` and ${open}` : ""
     const earn = input.earningsInPlay ? `, even with earnings ${when}` : ""

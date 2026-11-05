@@ -96,6 +96,48 @@ describe("judgeOption", () => {
     expect(result.reason).toContain("higher than 90% of this stock's own swings")
   })
 
+  it("moves a fair price toward expensive when a day of decay is a large share of the premium", () => {
+    const fast = judgeOption(base({ iv: 0.4, dte: 7, bid: 0.4, ask: 0.44, strike: 20, side: "call" }))
+    expect(fast.verdict).toBe("Expensive")
+    expect(fast.reason).toContain("loses about $3.26 a day")
+    expect(fast.reason).toContain("8% of what you pay")
+    expect(fast.greeks?.warnings).toEqual([])
+    expect(fast.greeks?.thetaLine).toContain("lost per day per contract")
+
+    const sameDecayOnAPriceyContract = judgeOption(base({ iv: 0.4, dte: 7, bid: 2, ask: 2.2, strike: 20, side: "call" }))
+    expect(sameDecayOnAPriceyContract.verdict).toBe("Fair")
+    expect(sameDecayOnAPriceyContract.greeks?.warnings).toEqual([])
+  })
+
+  it("warns when decay is high but the price was already expensive", () => {
+    const result = judgeOption(base({ iv: 0.7, dte: 7, bid: 0.48, ask: 0.52, strike: 20, side: "call" }))
+    expect(result.verdict).toBe("Expensive")
+    expect(result.reason).not.toContain("a day")
+    expect(result.greeks?.warnings.join(" ")).toContain("Time decay is high")
+  })
+
+  it("keeps a cheap long shot from reading as a bargain", () => {
+    const result = judgeOption(base({ iv: 0.3, dte: 90, bid: 0.38, ask: 0.42, strike: 26, side: "call" }))
+    expect(result.verdict).toBe("Fair")
+    expect(result.reason).toContain("only about 5%")
+    expect(result.reason).toContain("long shot")
+    expect(result.greeks?.delta).toBeCloseTo(0.0526, 3)
+    expect(result.greeks?.warnings).toEqual([])
+  })
+
+  it("warns on a low chance without changing a fair price", () => {
+    const result = judgeOption(base({ iv: 0.4, dte: 90, bid: 0.38, ask: 0.42, strike: 26, side: "call" }))
+    expect(result.verdict).toBe("Fair")
+    expect(result.reason).not.toContain("long shot")
+    expect(result.greeks?.warnings.join(" ")).toContain("long shot")
+  })
+
+  it("leaves the verdict alone when no strike was passed", () => {
+    const result = judgeOption(base())
+    expect(result.greeks).toBeNull()
+    expect(result.verdict).toBe("Fair")
+  })
+
   it("refuses a verdict when the quote or the history is missing", () => {
     expect(judgeOption(base({ iv: null })).verdict).toBeNull()
     expect(judgeOption(base({ bid: 0 })).reason).toContain("bid and ask")
