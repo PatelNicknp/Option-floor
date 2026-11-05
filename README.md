@@ -77,7 +77,7 @@ The scouts are rules with a written vote, not hidden models:
 - Devil’s Advocate
 - Head Trader
 
-Also on the page: a catalyst calendar, the cheap-option cap, an expiration payoff table, unusual volume versus open interest, a squeeze list, an implied-volatility check, small-bet sizing, a paper scorecard, and a weekly note.
+Also on the page: a catalyst calendar, the cheap-option cap, an expiration payoff table, unusual volume versus open interest, a squeeze list, an implied-volatility check, an option price checker (type a ticker from the last run and get Cheap, Fair, or Expensive), small-bet sizing, a paper scorecard, and a weekly note.
 
 The scorecard is how the desk “learns.” After a scout has voted yes on at least four finished paper ideas, a better record counts a little more and a worse record counts a little less. Squeeze and “cheap versus recent swings” tags do the same. Until then every vote counts evenly.
 

@@ -1,3 +1,5 @@
+import type { PriceBoard } from "./lib/priceCheck"
+
 export type Vote = {
   id: string
   name: string
@@ -122,6 +124,7 @@ export type Report = {
   catalysts?: { date: string; kind: string; title: string; url: string; tickers: string[]; plain: string }[]
   flow?: { ticker: string; contract: string; side: string; strike: number; expiry: string; volume: number; oi: number; ratio: number; note: string }[]
   squeezes?: { ticker: string; shortRatio: number; headline: string; url: string; note: string }[]
+  priceChecks?: PriceBoard[]
   scorecard?: {
     account?: number
     openCount?: number

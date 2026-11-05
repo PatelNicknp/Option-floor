@@ -9,6 +9,7 @@ from pipeline.engine import keep_last_good, run_from_bundle
 from pipeline.http_client import attempt
 from pipeline.market_math import payoff_rows, pick_option, realized_vol, size_trade, sma, trend_label
 from pipeline.models import Bundle, Equity, NewsItem, OptionContract, SymbolInfo
+from pipeline.price_check import build_price_checks, percentile_below
 from pipeline.parsers import parse_finra_short_volume, parse_fomc_dates, parse_nasdaq_listed, parse_feed
 from pipeline.scorecard import empty_scorecard, mark_trades, record_ideas
 from pipeline.textutil import build_index, catalyst_scores, match_tickers, sentiment_counts, strip_publisher
@@ -376,6 +377,82 @@ def test_devil_blocks_a_pile_of_problems():
     vote, block = devil_vote("call", equity, contract, [], "down", "put", TODAY)
     assert block is True
     assert vote.vote == "no"
+
+
+def test_price_check_keeps_the_nearest_quoted_strikes_and_a_year_rank():
+    closes = [20 + ((index % 9) - 4) * 0.15 for index in range(120)]
+    equity = _equity(closes)
+    equity.price = 10
+    equity.earnings_date = TODAY + timedelta(days=9)
+    contracts = []
+    for strike in range(1, 21):
+        contracts.append(OptionContract(f"C{strike}", "call", float(strike), TODAY + timedelta(days=30), 0.40, 0.48, 0.44, 10, 100 + strike, 0.55))
+    contracts.append(OptionContract("C10B", "call", 10, TODAY + timedelta(days=30), 0.41, 0.47, 0.44, 10, 5000, 0.55))
+    contracts.append(OptionContract("NOBID", "call", 10, TODAY + timedelta(days=30), 0, 0.40, 0.20, 10, 9000, 0.55))
+    contracts.append(OptionContract("PUT", "put", 10, TODAY + timedelta(days=30), 0.30, 0.36, 0.33, 10, 80, 0.50))
+    board = build_price_checks(_bundle(equity, contracts[0], "SoFi raises guidance"), TODAY)
+    # The helper bundle only has the first contract. Build from a chain we control.
+    bundle = _bundle(equity, contracts[0], "SoFi raises guidance")
+    bundle.chains = {"SOFI": contracts}
+    bundle.quotes = {"SOFI": equity}
+    saved = build_price_checks(bundle, TODAY)
+    assert saved[0]["ticker"] == "SOFI"
+    assert saved[0]["earningsDate"] == (TODAY + timedelta(days=9)).isoformat()
+    assert saved[0]["hv20"] is not None
+    calls = saved[0]["expirations"][0]["calls"]
+    assert [row["strike"] for row in calls] == list(range(3, 18))
+    ten = next(row for row in calls if row["strike"] == 10)
+    assert ten["oi"] == 5000
+    assert ten["ivPercentile"] == 100
+    assert saved[0]["expirations"][0]["puts"][0]["strike"] == 10
+    assert board  # the single quoted contract still produces a board
+
+
+def test_price_check_drops_past_earnings_and_can_be_turned_off_without_changing_the_idea():
+    closes = [10 + index * 0.05 for index in range(220)]
+    equity = _equity(closes)
+    equity.earnings_date = TODAY - timedelta(days=2)
+    contract = OptionContract("SOFI261218C00022000", "call", 22, date(2026, 12, 18), 0.48, 0.52, 0.50, 400, 5000, 0.55)
+    bundle = _bundle(equity, contract, "SoFi raises guidance after a record quarter")
+    saved = build_price_checks(bundle, TODAY)
+    assert saved[0]["earningsDate"] is None
+    assert saved[0]["expirations"][0]["calls"][0]["strike"] == 22
+    config = load_config("config.json")
+    assert config["features"]["priceCheck"] is True
+    on_report, _book = run_from_bundle(bundle, config, empty_scorecard())
+    assert on_report["ideas"][0]["action"] == "BUY CALL"
+    assert on_report["priceChecks"][0]["ticker"] == "SOFI"
+    config["features"]["priceCheck"] = False
+    off_report, _book = run_from_bundle(bundle, config, empty_scorecard())
+    assert off_report["ideas"][0]["action"] == "BUY CALL"
+    assert off_report["ideas"][0]["contract"]["strike"] == on_report["ideas"][0]["contract"]["strike"]
+    assert off_report["priceChecks"] == []
+
+
+def test_percentile_below_needs_a_real_history():
+    assert percentile_below([0.2] * 40, 0.5) == 100
+    assert percentile_below([0.2] * 40, 0.1) == 0
+    assert percentile_below([0.2] * 10, 0.5) is None
+    assert percentile_below([], 0.5) is None
+
+
+def test_a_failed_run_keeps_the_last_price_check_with_the_last_ideas():
+    previous = {
+        "generatedAt": "2026-11-04T18:30:00-05:00",
+        "ideas": [{"ticker": "SOFI", "action": "BUY CALL"}],
+        "priceChecks": [{"ticker": "SOFI"}],
+    }
+    fresh = {
+        "generatedAt": "2026-11-05T18:30:00-05:00",
+        "ideas": [],
+        "priceChecks": [],
+        "sourceHealth": [{"ok": False, "label": "A"}, {"ok": False, "label": "B"}, {"ok": False, "label": "C"}],
+        "banner": "",
+        "stale": False,
+    }
+    merged = keep_last_good(fresh, previous, datetime(2026, 11, 5, 23, 30, tzinfo=timezone.utc))
+    assert merged["stale"] is True
+    assert merged["priceChecks"] == [{"ticker": "SOFI"}]
 
 
 def test_news_scout_can_be_turned_off_without_losing_the_idea():

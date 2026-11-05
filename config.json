@@ -29,6 +29,7 @@
     "flow": true,
     "squeeze": true,
     "underpriced": true,
+    "priceCheck": true,
     "sizing": true,
     "scorecard": true,
     "mood": true,

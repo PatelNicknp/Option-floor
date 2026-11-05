@@ -10,6 +10,7 @@ export const FEATURE_IDS = [
   "cheap",
   "payoff",
   "underpriced",
+  "priceCheck",
   "sizing",
   "news",
   "policy",
@@ -44,6 +45,8 @@ export type Settings = {
   flowRatio: number
   squeezeRatio: number
   calendarDays: number
+  checkerMinOi: number
+  checkerEarningsDays: number
 }
 
 export const STORAGE_KEY = "options-floor-settings-v1"
@@ -69,6 +72,8 @@ export function defaultSettings(): Settings {
     flowRatio: 5,
     squeezeRatio: 0.45,
     calendarDays: 21,
+    checkerMinOi: 0,
+    checkerEarningsDays: 14,
   }
 }
 
