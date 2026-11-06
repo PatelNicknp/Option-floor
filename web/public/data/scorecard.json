@@ -15,7 +15,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.525,
+      "lastMark": 0.6,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -39,7 +39,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-05"
+      "lastChecked": "2026-11-06"
     },
     {
       "id": "BB-call-10-2027-01-15",
@@ -56,7 +56,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.57,
+      "lastMark": 0.685,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -79,7 +79,48 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-05"
+      "lastChecked": "2026-11-06"
+    },
+    {
+      "id": "ATEC-put-7.5-2026-11-20",
+      "openedAt": "2026-11-06T15:55:44.102843-05:00",
+      "ticker": "ATEC",
+      "company": "Alphatec Holdings, Inc. -",
+      "action": "BUY PUT",
+      "contractSymbol": "ATEC261120P00007500",
+      "expiry": "2026-11-20",
+      "strike": 7.5,
+      "side": "put",
+      "entry": 0.35,
+      "contracts": 2,
+      "halfClosed": false,
+      "remainingContracts": 2,
+      "status": "open",
+      "lastMark": 0.35,
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "pass",
+        "sentiment": "yes",
+        "chart": "yes",
+        "options": "yes",
+        "risk": "yes",
+        "devil": "yes",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap",
+        "underpriced"
+      ],
+      "lastExitDate": "2026-11-18",
+      "reason": "Alphatec Holdings, Inc. - is about $7.45. Alphatec Holdings (ATEC) Securities Investigation Notice - Levi & Korsinsky - Morningstar. The daily trend points down. The November 20, 2026 $7.5 put is about $0.35.",
+      "newsUrl": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPQ0lwQXJHaHZEd19Lay1lTzcxTDNzLWZiR0dkZmNXM3hQSmxsenM5SnBrU01kRHZYY2tmdnVaTWRmRWlhZ2VEdHVyckhUbmlfbmQ0bF9uR0Jzb2g2aWhZNHE4Ny00UmstRHIzY2V4RGdpZE5kdl9GRjdaSWlJbmx3MU9teEtSMjJVTkNPZTRaV1BxNm9ZUVNSXzlXeUtyMDZkS0lBRWJjYUplaFZnTHVIMERxZnVqSE1jYWh6VVdGZkRoUTZ0bVF3eEt3?oc=5",
+      "confidence": "High",
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-06"
     }
   ],
   "agentStats": {
@@ -129,6 +170,11 @@
     {
       "weekOf": "2026-11-04",
       "note": "No paper ideas opened or finished in the last seven days. That is allowed. The desk would rather wait than invent a trade. Scout weights are still even because there are not enough finished ideas yet. Market mood: Calm uptrend. The S&P 500 is above its 10, 50, and 200 day averages and the VIX is under 18. The desk prefers calls. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
+      "paused": false
+    },
+    {
+      "weekOf": "2026-11-06",
+      "note": "In the last seven days the desk opened 3 paper idea(s) and finished 0. 0 finished ahead and 0 did not. Finished ideas are flat $0. Scout weights are still even because there are not enough finished ideas yet. Market mood: Market mood is unclear. The market is not a clear calm uptrend or a clear fearful tape. The desk would rather wait than force a side. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
       "paused": false
     }
   ]
