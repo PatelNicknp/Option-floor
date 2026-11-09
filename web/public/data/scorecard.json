@@ -15,7 +15,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.65,
+      "lastMark": 0.625,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -39,7 +39,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-06"
+      "lastChecked": "2026-11-09"
     },
     {
       "id": "BB-call-10-2027-01-15",
@@ -56,7 +56,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.665,
+      "lastMark": 0.77,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -79,7 +79,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-06"
+      "lastChecked": "2026-11-09"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -96,7 +96,7 @@
       "halfClosed": false,
       "remainingContracts": 2,
       "status": "open",
-      "lastMark": 0.425,
+      "lastMark": 0.4,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -120,7 +120,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-06"
+      "lastChecked": "2026-11-09"
     },
     {
       "id": "DKNG-put-15-2027-01-15",
@@ -137,7 +137,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.495,
+      "lastMark": 0.425,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -161,7 +161,48 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-06"
+      "lastChecked": "2026-11-09"
+    },
+    {
+      "id": "PFE-call-31-2027-01-15",
+      "openedAt": "2026-11-09T18:48:18.526313-05:00",
+      "ticker": "PFE",
+      "company": "Pfizer",
+      "action": "BUY CALL",
+      "contractSymbol": "PFE270115C00031000",
+      "expiry": "2027-01-15",
+      "strike": 31.0,
+      "side": "call",
+      "entry": 0.64,
+      "contracts": 1,
+      "halfClosed": false,
+      "remainingContracts": 1,
+      "status": "open",
+      "lastMark": 0.64,
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "yes",
+        "sentiment": "yes",
+        "chart": "yes",
+        "options": "yes",
+        "risk": "yes",
+        "devil": "yes",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap",
+        "policy"
+      ],
+      "lastExitDate": "2027-01-01",
+      "reason": "Pfizer is about $29.23. FDA Approval for HYMPAVZI issued to PFIZER INC - Quantisnow. The daily trend leans up. The January 15, 2027 $31 call is about $0.64.",
+      "newsUrl": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPdEVpXzhjLVFIcEszLXU5cjRGY1E4X1U0S1RHR25CRVdIMDNTakVzNVVNQWFFNWczYnVXbmxNLUV5WmFQWXVxZUR1ZzNWTW1aaVAyUGFZQU9EQUVpTlpqWVdDYWd5TFlXZWZmMHJpdUtkVklKZXNGeDU4czlHQS14VzA0R2pPaFpiNF8yVGoxTTdTWjQ?oc=5",
+      "confidence": "High",
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-09"
     }
   ],
   "agentStats": {
