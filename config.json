@@ -35,6 +35,8 @@
     "squeeze": true,
     "underpriced": true,
     "priceCheck": true,
+    "self_heal_schedule": true,
+    "self_heal_keeper": true,
     "sizing": true,
     "scorecard": true,
     "mood": true,

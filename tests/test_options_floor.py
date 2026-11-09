@@ -137,6 +137,9 @@ def test_short_title_case_words_and_law_firm_ads():
     assert match_tickers("FDA Approves a Heart Valve Designed to Grow with Children", index) == []
     assert match_tickers("SoFi raises guidance", index) == ["SOFI"]
     assert is_noise_headline("BAC Investors Have Opportunity to Lead Bank of America Corporation Securities Fraud Lawsuit")
+    assert is_noise_headline(
+        "DraftKings Investigation Notice: Levi & Korsinsky Notifies Investors of Pending Investigation Into DraftKings (DKNG)"
+    )
     names = {
         "QUBT": SymbolInfo("QUBT", "Quantum Computing Inc. Common Stock", "QUBT"),
         "IONQ": SymbolInfo("IONQ", "IonQ, Inc. Common Stock", "IONQ"),

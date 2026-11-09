@@ -1,0 +1,44 @@
+name: Options Floor watchdog
+
+# Fills in the research run only when GitHub skipped a 10:15 or 18:30 Eastern slot.
+# It does nothing while a run is queued or going, or when that slot already ran.
+# It also starts keeper.yml if none is alive. It does not read market data.
+on:
+  schedule:
+    - cron: "7,22,37,52 14-23 * * 1-5"
+    - cron: "7,22,37,52 0 * * 2-6"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Only print the decision. Do not start a research run."
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: options-floor-watchdog
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Start the missed slot if it never ran
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: python3 watchdog.py check
+      - name: Start a keeper if none is live
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: python3 watchdog.py ensure-keeper

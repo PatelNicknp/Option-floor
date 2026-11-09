@@ -2,14 +2,23 @@ name: Options Floor
 
 on:
   schedule:
-    # 10:15 US Eastern Standard Time. During daylight time this is 11:15 ET.
+    # 10:15 Eastern, both daylight time and standard time. The guard runs only the clock that matches New York.
+    - cron: "15 14 * * 1-5"
     - cron: "15 15 * * 1-5"
-    # 18:30 US Eastern Standard Time. During daylight time this is 19:30 ET.
+    # 18:30 Eastern, both seasons.
+    - cron: "30 22 * * 1-5"
     - cron: "30 23 * * 1-5"
   workflow_dispatch:
+    inputs:
+      reason:
+        description: "manual, watchdog, or keeper"
+        required: false
+        default: manual
+        type: string
 
 permissions:
   contents: write
+  actions: write
 
 concurrency:
   group: options-floor
@@ -20,27 +29,44 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - name: Skip when this New York slot already ran
+        id: guard
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && (inputs.reason == 'watchdog' || inputs.reason == 'keeper' || inputs.reason == 'keeper_retry'))
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+          REASON: ${{ inputs.reason }}
+          SCHEDULE: ${{ github.event.schedule }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 watchdog.py guard
       - uses: actions/setup-python@v5
+        if: steps.guard.outputs.skip != 'true'
         with:
           python-version: "3.12"
       - uses: actions/setup-node@v4
+        if: steps.guard.outputs.skip != 'true'
         with:
           node-version: "22"
           cache: npm
           cache-dependency-path: web/package-lock.json
       - name: Install and test the research job
+        if: steps.guard.outputs.skip != 'true'
         run: |
           python -m pip install -r requirements.txt
           python -m pytest
       - name: Build today's idea file
+        if: steps.guard.outputs.skip != 'true'
         run: python -m pipeline.run
       - name: Test and build the site
+        if: steps.guard.outputs.skip != 'true'
         working-directory: web
         run: |
           npm ci
           npm test
           npm run build
       - name: Publish the idea file and the site
+        if: steps.guard.outputs.skip != 'true'
         run: |
           git config user.name "options-floor"
           git config user.email "actions@users.noreply.github.com"
@@ -51,3 +77,9 @@ jobs:
             git commit -m "Update Options Floor ideas"
             git push
           fi
+      - name: Start a keeper if none is live
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 watchdog.py ensure-keeper

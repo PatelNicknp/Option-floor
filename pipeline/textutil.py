@@ -243,7 +243,9 @@ def build_index(symbols: dict[str, SymbolInfo]) -> NameIndex:
 
 _NOISE = re.compile(
     r"investors have opportunity|lead plaintiff|class action|shareholder alert|"
-    r"reminds investors|encourages investors|law firm investigates|securities fraud lawsuit",
+    r"reminds investors|encourages investors|notifies investors|investigation notice|"
+    r"pending investigation|shareholder investigation|potential securities claims|"
+    r"law firm investigates|securities fraud lawsuit",
     re.I,
 )
 

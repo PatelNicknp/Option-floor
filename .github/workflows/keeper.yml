@@ -1,0 +1,29 @@
+name: Options Floor keeper
+
+# One keeper stays alive. It sleeps until 10 minutes past the next 10:15 or 18:30 Eastern
+# slot, and starts the research run if that slot never began. Before the 6 hour job limit
+# it starts the next keeper and exits. It does not read market data.
+# Switch: features.self_heal_keeper in config.json.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  actions: write
+  contents: read
+
+concurrency:
+  group: options-floor-keeper
+  cancel-in-progress: false
+
+jobs:
+  keep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 350
+    steps:
+      - uses: actions/checkout@v4
+      - name: Sleep to each slot and make up a missed one
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_RUN_ID: ${{ github.run_id }}
+        run: python3 -u watchdog.py keeper
