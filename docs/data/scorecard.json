@@ -15,7 +15,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.625,
+      "lastMark": 0.65,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -39,7 +39,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-09"
+      "lastChecked": "2026-11-10"
     },
     {
       "id": "BB-call-10-2027-01-15",
@@ -56,7 +56,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.77,
+      "lastMark": 0.78,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -79,7 +79,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-09"
+      "lastChecked": "2026-11-10"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -96,7 +96,7 @@
       "halfClosed": false,
       "remainingContracts": 2,
       "status": "open",
-      "lastMark": 0.4,
+      "lastMark": 0.625,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -120,7 +120,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-09"
+      "lastChecked": "2026-11-10"
     },
     {
       "id": "DKNG-put-15-2027-01-15",
@@ -137,7 +137,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.425,
+      "lastMark": 0.36,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -161,7 +161,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-09"
+      "lastChecked": "2026-11-10"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -178,7 +178,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.64,
+      "lastMark": 0.63,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -202,7 +202,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-09"
+      "lastChecked": "2026-11-10"
     }
   ],
   "agentStats": {
