@@ -15,7 +15,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.4,
+      "lastMark": 0.375,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -55,10 +55,15 @@
           "at": "2026-11-11T14:46:46.019941-05:00",
           "mark": 0.4,
           "stock": 30.32
+        },
+        {
+          "at": "2026-11-11T16:59:39.602923-05:00",
+          "mark": 0.375,
+          "stock": 30.21
         }
       ],
-      "lastStock": 30.32,
-      "lastStockAt": "2026-11-11T14:46:46.019941-05:00"
+      "lastStock": 30.21,
+      "lastStockAt": "2026-11-11T16:59:39.602923-05:00"
     },
     {
       "id": "BB-call-10-2027-01-15",
@@ -75,7 +80,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 1.015,
+      "lastMark": 0.895,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -114,10 +119,15 @@
           "at": "2026-11-11T14:46:46.019941-05:00",
           "mark": 1.015,
           "stock": 9.55
+        },
+        {
+          "at": "2026-11-11T16:59:39.602923-05:00",
+          "mark": 0.895,
+          "stock": 9.4
         }
       ],
-      "lastStock": 9.55,
-      "lastStockAt": "2026-11-11T14:46:46.019941-05:00"
+      "lastStock": 9.4,
+      "lastStockAt": "2026-11-11T16:59:39.602923-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -174,10 +184,15 @@
           "at": "2026-11-11T14:46:46.019941-05:00",
           "mark": 0.375,
           "stock": 7.3
+        },
+        {
+          "at": "2026-11-11T16:59:39.602923-05:00",
+          "mark": 0.375,
+          "stock": 7.35
         }
       ],
-      "lastStock": 7.3,
-      "lastStockAt": "2026-11-11T14:46:46.019941-05:00"
+      "lastStock": 7.35,
+      "lastStockAt": "2026-11-11T16:59:39.602923-05:00"
     },
     {
       "id": "DKNG-put-15-2027-01-15",
@@ -194,7 +209,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.33,
+      "lastMark": 0.285,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -234,10 +249,15 @@
           "at": "2026-11-11T14:46:46.019941-05:00",
           "mark": 0.33,
           "stock": 19.69
+        },
+        {
+          "at": "2026-11-11T16:59:39.602923-05:00",
+          "mark": 0.285,
+          "stock": 19.64
         }
       ],
-      "lastStock": 19.69,
-      "lastStockAt": "2026-11-11T14:46:46.019941-05:00"
+      "lastStock": 19.64,
+      "lastStockAt": "2026-11-11T16:59:39.602923-05:00"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -254,7 +274,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.61,
+      "lastMark": 0.665,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -294,10 +314,15 @@
           "at": "2026-11-11T14:46:46.019941-05:00",
           "mark": 0.61,
           "stock": 29.37
+        },
+        {
+          "at": "2026-11-11T16:59:39.602923-05:00",
+          "mark": 0.665,
+          "stock": 29.45
         }
       ],
-      "lastStock": 29.37,
-      "lastStockAt": "2026-11-11T14:46:46.019941-05:00"
+      "lastStock": 29.45,
+      "lastStockAt": "2026-11-11T16:59:39.602923-05:00"
     }
   ],
   "agentStats": {
