@@ -62,6 +62,16 @@ GitHub schedules use UTC and do not follow daylight saving. In the summer the ru
 
 News comes first. The job reads Google News, Yahoo Finance headlines, SEC 8-K filings, the Federal Register, the White House, the Federal Reserve, FDA press releases, and Congress feeds. It keeps roughly the best few dozen company names that have a real catalyst, prefers stocks around **$5 to $40**, and only then asks Yahoo for daily prices and option chains. A pricier stock can still appear when a LEAPS contract is under the premium cap.
 
+Press-release wires come in too: PR Newswire, GlobeNewswire, and Business Wire. A release that says "(NASDAQ: ABC)" is tied to that ticker. If a wire's own feed refuses the request, the job reads that wire's releases through Google News instead. The FDA feed works the same way: the official press-release feed first, then fda.gov pages through Google News.
+
+**Price first.** Before pulling any daily charts, one quick Yahoo call per 20 names checks the price of every news name. Names inside `priceMin` to `priceMax` go first, then cheap-LEAPS names up to `higherPriceMax`. Big names outside the range are listed as skipped instead of using up chart and option-chain pulls. Turn this off with `"priceFirst": false`.
+
+**Probably good or bad news.** With `"acceptProbableNews": true` (the default), a headline that only leans good or bad can still become an idea, but the Head Trader never stamps it above **Low** confidence and the card says so. Set it to `false` to go back to clear news only.
+
+If the Nasdaq earnings calendar refuses the request, the job reads the next earnings date for each in-range name from Yahoo (`earningsBackupTickers`, default 20).
+
+**Open trades.** Every run saves the option price (and the stock price) for each open paper trade in `markHistory`. The Scorecard shows each open trade's cost, value now, gain or loss in dollars and percent, a small price line since entry, a bar from the half-loss exit to the double, days held and days left, and one plain sentence. Trades opened before this history existed start with the two prices that were really stored (entry and last check). Their entry stock price shows as "Not recorded".
+
 Nasdaq Trader symbol files supply the stock list. FINRA’s daily short-volume file supplies the squeeze check. No source needs a login or an API key.
 
 Each idea shows the ticker, buy call or buy put, the exact contract, a limit-price range, dollars to spend, the take-profit, the stop, the last exit date, a plain reason, a news link, every scout’s vote, and a confidence stamp.

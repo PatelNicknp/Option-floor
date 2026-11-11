@@ -47,6 +47,8 @@ export type Settings = {
   calendarDays: number
   checkerMinOi: number
   checkerEarningsDays: number
+  acceptProbableNews: boolean
+  priceFirst: boolean
 }
 
 export const STORAGE_KEY = "options-floor-settings-v1"
@@ -74,6 +76,8 @@ export function defaultSettings(): Settings {
     calendarDays: 21,
     checkerMinOi: 0,
     checkerEarningsDays: 14,
+    acceptProbableNews: true,
+    priceFirst: true,
   }
 }
 
@@ -88,6 +92,8 @@ export function settingsFromEcho(echo: Report["configEcho"]): Settings {
   if (typeof echo.minOpenInterest === "number") next.minOpenInterest = echo.minOpenInterest
   if (typeof echo.priceMin === "number") next.priceMin = echo.priceMin
   if (typeof echo.priceMax === "number") next.priceMax = echo.priceMax
+  if (typeof echo.acceptProbableNews === "boolean") next.acceptProbableNews = echo.acceptProbableNews
+  if (typeof echo.priceFirst === "boolean") next.priceFirst = echo.priceFirst
   for (const id of JOB_FEATURES) {
     const value = echo.features?.[id]
     if (typeof value === "boolean") next.features[id] = value
@@ -136,6 +142,11 @@ export function toJobConfig(settings: Settings) {
     headlineBatch: 15,
     requestPauseSeconds: 0.4,
     earningsDays: 6,
+    priceFirst: settings.priceFirst,
+    priceScanTickers: 160,
+    acceptProbableNews: settings.acceptProbableNews,
+    earningsBackupTickers: 20,
+    markHistoryMax: 120,
     features,
   }
 }

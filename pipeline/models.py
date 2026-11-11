@@ -114,3 +114,7 @@ class Bundle:
     vix: float | None = None
     source_health: list[dict] = field(default_factory=list)
     marks: dict[str, float] = field(default_factory=dict)
+    # Latest stock price for tickers with an open paper trade (from any fresh source this run).
+    stock_marks: dict[str, float] = field(default_factory=dict)
+    # Tickers left out before the daily-chart pull because a quick price check put them outside the range.
+    price_skips: dict[str, float] = field(default_factory=dict)

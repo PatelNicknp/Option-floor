@@ -12,6 +12,7 @@ const TAGS: Record<string, string> = {
   "earnings-soon": "Earnings are close",
   filing: "Fresh filing",
   policy: "Policy in the mix",
+  "probable-news": "News only leans this way (Low confidence max)",
 }
 
 export function TradeCard({ idea, settings }: { idea: Idea; settings: Settings }) {

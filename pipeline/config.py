@@ -44,6 +44,11 @@ DEFAULT_CONFIG: dict = {
     "headlineBatch": 15,
     "requestPauseSeconds": 0.4,
     "earningsDays": 6,
+    "priceFirst": True,
+    "priceScanTickers": 160,
+    "acceptProbableNews": True,
+    "earningsBackupTickers": 20,
+    "markHistoryMax": 120,
     "features": {key: True for key in FEATURE_KEYS},
 }
 
@@ -76,6 +81,11 @@ def load_config(path: str | Path) -> dict:
     cfg["headlineBatch"] = int(cfg["headlineBatch"])
     cfg["requestPauseSeconds"] = float(cfg["requestPauseSeconds"])
     cfg["earningsDays"] = int(cfg["earningsDays"])
+    cfg["priceFirst"] = bool(cfg["priceFirst"])
+    cfg["priceScanTickers"] = int(cfg["priceScanTickers"])
+    cfg["acceptProbableNews"] = bool(cfg["acceptProbableNews"])
+    cfg["earningsBackupTickers"] = int(cfg["earningsBackupTickers"])
+    cfg["markHistoryMax"] = int(cfg["markHistoryMax"])
     return cfg
 
 
