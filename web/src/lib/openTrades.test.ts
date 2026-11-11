@@ -77,3 +77,13 @@ describe("open trade view", () => {
     expect(daysBetween("2026-11-05T23:00:00-05:00", Date.UTC(2026, 10, 6))).toBe(1)
   })
 })
+
+import { moneyLines } from "../components/OpenTrades"
+
+describe("cost lines", () => {
+  it("shows per share, total, and per contract when there are several", () => {
+    expect(moneyLines(0.57, 1)).toEqual({ share: "$0.57 a share", total: "$57.00 for 1 contract", each: null })
+    expect(moneyLines(0.35, 2)).toEqual({ share: "$0.35 a share", total: "$70.00 for 2 contracts", each: "$35.00 per contract" })
+    expect(moneyLines(null, 1)).toBeNull()
+  })
+})

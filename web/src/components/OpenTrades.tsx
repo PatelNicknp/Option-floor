@@ -110,6 +110,35 @@ function ProgressBar({ trade, position, pct }: { trade: PaperTrade; position: nu
   )
 }
 
+export function moneyLines(perShare: number | null, count: number): { share: string; total: string; each: string | null } | null {
+  if (perShare == null) return null
+  const each = perShare * 100
+  const total = each * count
+  return {
+    share: `${premium(perShare)} a share`,
+    total: `$${total.toFixed(2)} for ${count} contract${count === 1 ? "" : "s"}`,
+    each: count > 1 ? `$${each.toFixed(2)} per contract` : null,
+  }
+}
+
+function MoneyBox({ label, perShare, count, tone: color }: { label: string; perShare: number | null; count: number; tone?: string }) {
+  const lines = moneyLines(perShare, count)
+  return (
+    <div className="rounded-lg bg-paper px-3 py-2">
+      <p className="text-xs uppercase tracking-wide text-muted">{label}</p>
+      {lines ? (
+        <>
+          <p className={`mt-0.5 text-lg font-semibold leading-tight ${color ?? ""}`}>{lines.total.split(" for ")[0]}</p>
+          <p className="text-xs text-muted">for {count} contract{count === 1 ? "" : "s"}{lines.each ? ` · ${lines.each}` : ""}</p>
+          <p className="mt-0.5 text-sm">{lines.share}</p>
+        </>
+      ) : (
+        <p className="mt-0.5 text-sm italic text-muted">No price yet</p>
+      )}
+    </div>
+  )
+}
+
 function Fact({ label, value, muted }: { label: string; value: string; muted?: boolean }) {
   return (
     <div>
@@ -141,11 +170,13 @@ export function OpenTradeCard({ trade }: { trade: PaperTrade }) {
           </div>
         </div>
 
-        <p className="mt-3 text-sm">
-          Paid <span className="font-medium">{trade.entry != null ? premium(trade.entry) : "?"}</span>
-          {" → "}now <span className="font-medium">{trade.lastMark != null ? premium(trade.lastMark) : "?"}</span>
-          <span className="text-muted"> a share · {view.cost != null ? `$${view.cost.toFixed(0)} in` : ""}{view.value != null ? `, $${view.value.toFixed(0)} now` : ""}</span>
-        </p>
+        <div className="mt-3 grid grid-cols-2 gap-2 text-sm">
+          <MoneyBox label="Cost" perShare={trade.entry ?? null} count={count} />
+          <MoneyBox label="Worth now" perShare={trade.lastMark ?? null} count={count} tone={tone(view.pnl)} />
+        </div>
+        {trade.halfClosed && trade.contracts && trade.contracts !== count ? (
+          <p className="mt-2 text-xs text-muted">Started with {trade.contracts} contracts. Half were sold at a double, so these numbers count the {count} still open.</p>
+        ) : null}
 
         <Sparkline trade={trade} up={up} />
         <ProgressBar trade={trade} position={view.barPosition} pct={view.pct} />
