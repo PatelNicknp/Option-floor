@@ -41,7 +41,7 @@ from pipeline.scorecard import (
     record_ideas,
     weights as scorecard_weights,
 )
-from pipeline.textutil import best_headline, catalyst_scores, propose_direction, sentiment_counts
+from pipeline.textutil import best_headline, catalyst_scores, lean_direction, propose_direction, sentiment_counts
 
 ET = ZoneInfo("America/New_York")
 DISCLAIMER = (
@@ -58,7 +58,14 @@ def run_from_bundle(bundle: Bundle, config: dict, scorecard: dict | None) -> tup
     tracking = feature_on(config, "scorecard")
     marks = _collect_marks(bundle)
     if tracking:
-        mark_trades(book, marks, today)
+        mark_trades(
+            book,
+            marks,
+            today,
+            stocks=_collect_stock_marks(bundle),
+            at=now.isoformat(),
+            history_max=int(config.get("markHistoryMax") or 120),
+        )
     agent_weights = scorecard_weights(book) if tracking else {key: 1.0 for key in AGENT_NAMES}
     regime = market_mood(bundle.spy_closes, bundle.vix)
     regime["applied"] = feature_on(config, "mood")
@@ -86,6 +93,17 @@ def run_from_bundle(bundle: Bundle, config: dict, scorecard: dict | None) -> tup
                 skipped.append({"ticker": ticker, "reason": reason})
             continue
         ideas.append(result)
+
+    for ticker, price in (bundle.price_skips or {}).items():
+        if ticker in used_tickers:
+            continue
+        used_tickers.add(ticker)
+        skipped.append(
+            {
+                "ticker": ticker,
+                "reason": f"The stock is ${price:.2f}, outside the ${config['priceMin']:.0f} to ${config['priceMax']:.0f} range. Checked before pulling charts.",
+            }
+        )
 
     ideas.sort(key=lambda idea: (-idea["score"], idea["ticker"]))
     threshold = 68 if feature_on(config, "mood") and regime.get("prefer") == "wait" else 60
@@ -141,12 +159,16 @@ def run_from_bundle(bundle: Bundle, config: dict, scorecard: dict | None) -> tup
             "minOpenInterest": config["minOpenInterest"],
             "priceMin": config["priceMin"],
             "priceMax": config["priceMax"],
+            "acceptProbableNews": bool(config.get("acceptProbableNews", True)),
+            "priceFirst": bool(config.get("priceFirst", True)),
             "features": config.get("features") or {},
         },
         "universe": {
             "candidates": len(ranked),
             "priced": len(bundle.quotes),
             "chains": len(bundle.chains),
+            "priceChecked": len(bundle.quotes) + len(bundle.price_skips or {}),
+            "inRange": sum(1 for equity in bundle.quotes.values() if config["priceMin"] <= equity.price <= config["priceMax"]),
         },
         "ideas": chosen,
         "watch": watches[:5],
@@ -175,11 +197,18 @@ def _consider(ticker, equity: Equity, bundle: Bundle, config, regime, agent_weig
     bull, bear = catalyst_scores(text)
     positive, negative = sentiment_counts(text)
     direction = propose_direction(bull, bear, positive, negative)
-    if direction is None:
-        return None, "The news does not clearly point to a call or a put."
-    catalyst_ok = (direction == "call" and bull >= 2 and bull > bear) or (direction == "put" and bear >= 2 and bear > bull)
+    catalyst_ok = direction is not None and (
+        (direction == "call" and bull >= 2 and bull > bear) or (direction == "put" and bear >= 2 and bear > bull)
+    )
+    probable = False
     if not catalyst_ok:
-        return None, "There is no strong company catalyst."
+        lean = lean_direction(bull, bear, positive, negative) if config.get("acceptProbableNews", True) else None
+        if lean is None:
+            if direction is None:
+                return None, "The news does not clearly point to a call or a put."
+            return None, "There is no strong company catalyst."
+        direction = lean
+        probable = True
     if not feature_on(config, "options"):
         return None, "Options Picker is turned off, so no exact contract is named."
     chain = bundle.chains.get(ticker) or []
@@ -271,11 +300,17 @@ def _consider(ticker, equity: Equity, bundle: Bundle, config, regime, agent_weig
     confidence = confidence_for(score_value, votes)
     if prefer in {"call", "put"} and prefer != direction and confidence == "High":
         confidence = "Medium"
+    if probable:
+        # "Probably good" or "probably bad" news is allowed in, but never above Low.
+        confidence = "Low"
+        tags.append("probable-news")
     action = "BUY CALL" if direction == "call" else "BUY PUT"
     headline = best_headline(items, direction) or items[0]
     company = _pretty_company(equity.name, ticker)
     reason = _one_liner(company, price, headline.title, direction, contract.strike, contract.expiry, contract.mid, phrase if feature_on(config, "chart") else "")
     head_reason = f"{confidence} confidence. {reason}"
+    if probable:
+        head_reason += " The news only leans this way, so this stays Low confidence."
     if feature_on(config, "head"):
         votes.append(Vote("head", AGENT_NAMES["head"], "yes", head_reason, weight=float(agent_weights.get("head", 1))))
     exit_on = last_exit_date(contract.expiry, today)
@@ -289,6 +324,7 @@ def _consider(ticker, equity: Equity, bundle: Bundle, config, regime, agent_weig
         "action": action,
         "side": direction,
         "confidence": confidence,
+        "probableNews": probable,
         "score": score_value,
         "contract": {
             "symbol": contract.symbol,
@@ -360,6 +396,17 @@ def _collect_marks(bundle: Bundle) -> dict[str, float]:
         if mid and mid > 0:
             marks[symbol] = float(mid)
     return marks
+
+
+def _collect_stock_marks(bundle: Bundle) -> dict[str, float]:
+    stocks: dict[str, float] = {}
+    for ticker, equity in bundle.quotes.items():
+        if equity.price and equity.price > 0:
+            stocks[ticker] = float(equity.price)
+    for ticker, price in (bundle.stock_marks or {}).items():
+        if price and price > 0:
+            stocks[ticker] = float(price)
+    return stocks
 
 
 def _pretty_company(name: str, ticker: str) -> str:

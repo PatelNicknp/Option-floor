@@ -86,7 +86,16 @@ export type PaperTrade = {
   reason?: string
   newsUrl?: string
   confidence?: string
+  side?: string
+  stockAtEntry?: number | null
+  lastStock?: number | null
+  lastStockAt?: string
+  lastChecked?: string
+  markHistory?: MarkPoint[]
+  probableNews?: boolean
 }
+
+export type MarkPoint = { at: string; mark: number; stock?: number | null }
 
 export type Report = {
   version: number
@@ -115,9 +124,11 @@ export type Report = {
     minOpenInterest?: number
     priceMin?: number
     priceMax?: number
+    acceptProbableNews?: boolean
+    priceFirst?: boolean
     features?: Record<string, boolean>
   }
-  universe?: { candidates?: number; priced?: number; chains?: number }
+  universe?: { candidates?: number; priced?: number; chains?: number; priceChecked?: number; inRange?: number }
   ideas?: Idea[]
   watch?: Idea[]
   skipped?: { ticker: string; reason: string }[]

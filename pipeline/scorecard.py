@@ -51,13 +51,58 @@ def open_trades(scorecard: dict) -> list[dict]:
     ]
 
 
-def mark_trades(scorecard: dict, marks: dict[str, float], today: date) -> list[dict]:
+def ensure_history(trade: dict) -> list[dict]:
+    """Make sure a trade has a price history.
+
+    Older trades were stored before the job kept a history. For those, start the
+    history with the two prices that really were stored: the entry and the last
+    check. Nothing in between is made up.
+    """
+    history = trade.get("markHistory")
+    if isinstance(history, list) and history:
+        return history
+    history = []
+    entry = trade.get("entry")
+    opened = str(trade.get("openedAt") or "")
+    if entry is not None and opened:
+        history.append({"at": opened, "mark": round(float(entry), 4), "stock": _num(trade.get("stockAtEntry"))})
+    last = trade.get("lastMark")
+    checked = str(trade.get("lastChecked") or "")
+    if last is not None and checked and checked[:10] > opened[:10]:
+        history.append({"at": checked, "mark": round(float(last), 4), "stock": None})
+    trade["markHistory"] = history
+    return history
+
+
+def _num(value) -> float | None:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return None
+    return round(number, 4) if number > 0 else None
+
+
+def mark_trades(
+    scorecard: dict,
+    marks: dict[str, float],
+    today: date,
+    stocks: dict[str, float] | None = None,
+    at: str | None = None,
+    history_max: int = 120,
+) -> list[dict]:
     """Update open paper trades from the latest option mid. Returns newly closed trades."""
     ensure_stats(scorecard)
+    stocks = stocks or {}
+    stamp = at or today.isoformat()
     closed: list[dict] = []
     for trade in scorecard["trades"]:
         if trade.get("status") != "open":
             continue
+        history = ensure_history(trade)
+        stock_now = _num(stocks.get(trade.get("ticker") or ""))
+        if stock_now is not None:
+            trade["lastStock"] = stock_now
+            trade["lastStockAt"] = stamp
         symbol = trade.get("contractSymbol") or ""
         if symbol not in marks:
             trade["checkNote"] = "Could not check the option price this run."
@@ -69,6 +114,11 @@ def mark_trades(scorecard: dict, marks: dict[str, float], today: date) -> list[d
         trade["lastMark"] = round(mid, 4)
         trade["lastChecked"] = today.isoformat()
         trade["checkNote"] = ""
+        if not history or history[-1].get("at") != stamp:
+            history.append({"at": stamp, "mark": round(mid, 4), "stock": stock_now})
+        if history_max > 2 and len(history) > history_max:
+            # Keep the entry point, drop the oldest checks after it.
+            trade["markHistory"] = [history[0]] + history[-(history_max - 1) :]
         entry = float(trade["entry"])
         remaining = int(trade["remainingContracts"])
         exit_on = date.fromisoformat(trade["lastExitDate"])
@@ -148,6 +198,8 @@ def record_ideas(scorecard: dict, ideas: list[dict], opened_at: str) -> None:
                 "remainingContracts": idea["contracts"],
                 "status": "open",
                 "lastMark": idea["entry"]["mid"],
+                "stockAtEntry": idea.get("price"),
+                "markHistory": [{"at": opened_at, "mark": idea["entry"]["mid"], "stock": idea.get("price")}],
                 "realizedPnl": 0,
                 "agentVotes": {vote["id"]: vote["vote"] for vote in idea["agents"]},
                 "tags": idea.get("tags") or [],
@@ -155,6 +207,7 @@ def record_ideas(scorecard: dict, ideas: list[dict], opened_at: str) -> None:
                 "reason": idea["reason"],
                 "newsUrl": (idea.get("news") or {}).get("url") or "",
                 "confidence": idea["confidence"],
+                "probableNews": bool(idea.get("probableNews")),
                 "notes": [],
                 "outcome": "",
                 "closedAt": "",
@@ -228,6 +281,16 @@ def _public_trade(trade: dict) -> dict:
         "reason": trade.get("reason") or "",
         "newsUrl": trade.get("newsUrl") or "",
         "confidence": trade.get("confidence") or "",
+        "side": trade.get("side") or ("call" if "CALL" in str(trade.get("action") or "") else "put"),
+        "stockAtEntry": _num(trade.get("stockAtEntry")),
+        "lastStock": _num(trade.get("lastStock")),
+        "lastStockAt": trade.get("lastStockAt") or "",
+        "lastChecked": trade.get("lastChecked") or "",
+        "markHistory": [
+            {"at": point.get("at"), "mark": point.get("mark"), "stock": point.get("stock")}
+            for point in (trade.get("markHistory") or ensure_history(dict(trade)))
+        ],
+        "probableNews": bool(trade.get("probableNews")),
     }
 
 

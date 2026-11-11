@@ -365,6 +365,8 @@ def infer_kind(source: str, text: str) -> str:
     lowered = text.lower()
     if source == "sec":
         return "filing"
+    if source == "fda":
+        return "fda"
     if source == "fed" or "fomc" in lowered or "federal reserve" in lowered:
         return "fed"
     if "fda" in lowered or "advisory committee" in lowered:
@@ -405,6 +407,25 @@ def propose_direction(bull: int, bear: int, positive: int, negative: int) -> str
         return "call"
     if bear >= 1 and negative >= 2 and negative > positive and net <= -2:
         return "put"
+    return None
+
+
+def lean_direction(bull: int, bear: int, positive: int, negative: int) -> str | None:
+    """A weaker read: news that probably helps or probably hurts the company.
+
+    Used only when the strong check in propose_direction finds nothing. Ideas
+    from this path are capped at Low confidence by the Head Trader.
+    """
+    net = (bull - bear) + (1 if positive > negative else -1 if negative > positive else 0)
+    if bull >= 1 and bull > bear and positive >= negative and net >= 1:
+        return "call"
+    if bear >= 1 and bear > bull and negative >= positive and net <= -1:
+        return "put"
+    if bull == 0 and bear == 0:
+        if positive >= 2 and negative == 0:
+            return "call"
+        if negative >= 2 and positive == 0:
+            return "put"
     return None
 
 

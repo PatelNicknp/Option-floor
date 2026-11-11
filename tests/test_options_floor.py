@@ -464,3 +464,178 @@ def test_news_scout_can_be_turned_off_without_losing_the_idea():
     report, _book = run_from_bundle(_bundle(equity, contract, "SoFi raises guidance after a record quarter"), config, empty_scorecard())
     assert report["ideas"]
     assert all(vote["id"] != "news" for vote in report["ideas"][0]["agents"])
+
+
+# --- Open-trade history, price-first, wires, and probable news ---------------------------------
+
+from pipeline.live import parse_calendar_events, parse_spark, price_first_list, wire_tickers  # noqa: E402
+from pipeline.scorecard import ensure_history, public_scorecard  # noqa: E402
+from pipeline.textutil import infer_kind, lean_direction, propose_direction  # noqa: E402
+
+
+def _simple_idea(price=21.5):
+    return {
+        "id": "SOFI-call-22-2026-12-18",
+        "action": "BUY CALL",
+        "ticker": "SOFI",
+        "company": "SoFi",
+        "price": price,
+        "contract": {"symbol": "SOFI261218C00022000", "expiry": "2026-12-18", "strike": 22},
+        "side": "call",
+        "entry": {"mid": 0.40},
+        "contracts": 1,
+        "agents": [{"id": "news", "vote": "yes"}],
+        "tags": [],
+        "lastExitDate": "2026-12-01",
+        "reason": "test",
+        "news": {"url": ""},
+        "confidence": "Low",
+    }
+
+
+def test_new_trades_store_entry_stock_price_and_a_history_that_grows_each_run():
+    book = empty_scorecard()
+    record_ideas(book, [_simple_idea()], "2026-11-05T18:30:00-05:00")
+    trade = book["trades"][0]
+    assert trade["stockAtEntry"] == 21.5
+    assert trade["markHistory"] == [{"at": "2026-11-05T18:30:00-05:00", "mark": 0.40, "stock": 21.5}]
+    mark_trades(book, {"SOFI261218C00022000": 0.55}, date(2026, 11, 6), stocks={"SOFI": 22.4}, at="2026-11-06T10:15:00-05:00")
+    mark_trades(book, {"SOFI261218C00022000": 0.62}, date(2026, 11, 6), stocks={"SOFI": 22.9}, at="2026-11-06T18:30:00-05:00")
+    # Same run twice does not add a duplicate point.
+    mark_trades(book, {"SOFI261218C00022000": 0.62}, date(2026, 11, 6), stocks={"SOFI": 22.9}, at="2026-11-06T18:30:00-05:00")
+    marks = [point["mark"] for point in trade["markHistory"]]
+    assert marks == [0.40, 0.55, 0.62]
+    assert trade["lastStock"] == 22.9
+    public = public_scorecard(book, 800)["open"][0]
+    assert public["stockAtEntry"] == 21.5
+    assert public["lastStock"] == 22.9
+    assert len(public["markHistory"]) == 3
+    assert public["side"] == "call"
+
+
+def test_old_trades_get_a_history_from_stored_prices_only():
+    old = {
+        "id": "FIS-put-25-2027-01-15",
+        "ticker": "FIS",
+        "action": "BUY PUT",
+        "openedAt": "2026-11-05T16:28:59-05:00",
+        "entry": 0.525,
+        "lastMark": 0.65,
+        "lastChecked": "2026-11-10",
+        "status": "open",
+    }
+    history = ensure_history(old)
+    assert history == [
+        {"at": "2026-11-05T16:28:59-05:00", "mark": 0.525, "stock": None},
+        {"at": "2026-11-10", "mark": 0.65, "stock": None},
+    ]
+    same_day = {"openedAt": "2026-11-10T10:00:00-05:00", "entry": 0.5, "lastMark": 0.5, "lastChecked": "2026-11-10"}
+    assert len(ensure_history(same_day)) == 1
+    # An unpriced run keeps the history as is, and never stores a stock price that was not fetched.
+    book = {"trades": [dict(old, contractSymbol="FIS270115P00025000", remainingContracts=1, expiry="2027-01-15", lastExitDate="2027-01-01")]}
+    mark_trades(book, {}, date(2026, 11, 11))
+    assert len(book["trades"][0]["markHistory"]) == 2
+    assert "lastStock" not in book["trades"][0]
+
+
+def test_history_is_capped_but_keeps_the_entry_point():
+    book = empty_scorecard()
+    record_ideas(book, [_simple_idea()], "2026-11-05T18:30:00-05:00")
+    for step in range(10):
+        mark_trades(book, {"SOFI261218C00022000": 0.41 + step * 0.01}, date(2026, 11, 6), at=f"run-{step}", history_max=5)
+    history = book["trades"][0]["markHistory"]
+    assert len(history) == 5
+    assert history[0]["mark"] == 0.40
+    assert history[-1]["at"] == "run-9"
+
+
+def test_price_first_puts_in_range_names_ahead_of_big_names():
+    config = load_config("config.json")
+    config["maxCandidateTickers"] = 4
+    ranked = ["NVDA", "AMD", "SOFI", "XYZ", "BB", "HOOD", "NEWCO"]
+    quick = {"NVDA": 176.0, "AMD": 562.0, "SOFI": 16.4, "XYZ": 3.1, "BB": 9.6, "HOOD": 62.0}
+    chosen, skips = price_first_list(ranked, quick, config)
+    assert chosen == ["SOFI", "BB", "HOOD", "NEWCO"]
+    assert skips == {"NVDA": 176.0, "AMD": 562.0, "XYZ": 3.1}
+    config["priceMax"] = 20
+    config["allowHigherPriceIfCheapLeap"] = False
+    chosen, skips = price_first_list(ranked, quick, config)
+    assert "HOOD" not in chosen and "HOOD" in skips
+
+
+def test_engine_reports_price_first_skips():
+    closes = [10 + index * 0.05 for index in range(220)]
+    contract = OptionContract("SOFI261218C00022000", "call", 22, date(2026, 12, 18), 0.48, 0.52, 0.50, 400, 5000, 0.55)
+    bundle = _bundle(_equity(closes), contract, "SoFi raises guidance after a record quarter")
+    bundle.price_skips = {"NVDA": 176.26}
+    report, _book = run_from_bundle(bundle, load_config("config.json"), empty_scorecard())
+    assert any(row["ticker"] == "NVDA" and "outside" in row["reason"] for row in report["skipped"])
+    assert report["universe"]["priceChecked"] == 2
+
+
+def test_parse_spark_and_calendar_events():
+    payload = {
+        "BRK-B": {"close": [583.2], "chartPreviousClose": 580.0},
+        "BB": {"close": [None, 9.62]},
+        "OLD": {"close": [], "chartPreviousClose": 4.5},
+        "DEAD": {"close": []},
+    }
+    prices = parse_spark(payload, {"BRK-B": "BRK.B", "BB": "BB"})
+    assert prices == {"BRK.B": 583.2, "BB": 9.62, "OLD": 4.5}
+    events = {"quoteSummary": {"result": [{"calendarEvents": {"earnings": {"earningsDate": [{"raw": 1797541200}, {"raw": 1797800000}]}}}]}}
+    assert parse_calendar_events(events) == date(2026, 12, 17)
+    assert parse_calendar_events({"quoteSummary": {"result": []}}) is None
+
+
+def test_wire_tickers_read_exchange_tags():
+    body = "TORONTO, Nov. 11, 2026 /PRNewswire/ - Kinross Gold Corporation (TSX: K) (NYSE: KGC) and Acme Bio (NASDAQ: ACMB) today said"
+    assert wire_tickers(body) == ["KGC", "ACMB"]
+    assert wire_tickers("Berkshire (NYSE: BRK.B) and Foo (Nasdaq GS: FOOO)") == ["BRK.B", "FOOO"]
+    assert wire_tickers("No tags here") == []
+    assert infer_kind("fda", "Family Farmstead Dairy Announces Recall - U.S. Food and Drug Administration") == "fda"
+
+
+def test_lean_direction_only_fills_in_when_the_strong_check_is_empty():
+    # One small positive catalyst: the strong check says no, the lean check says call.
+    assert propose_direction(1, 0, 1, 0) is None
+    assert lean_direction(1, 0, 1, 0) == "call"
+    assert lean_direction(0, 1, 0, 1) == "put"
+    assert lean_direction(0, 0, 2, 0) == "call"
+    assert lean_direction(0, 0, 0, 3) == "put"
+    assert lean_direction(1, 1, 1, 1) is None
+    assert lean_direction(1, 0, 0, 2) is None
+    assert lean_direction(0, 0, 1, 0) is None
+
+
+def test_probable_news_idea_is_capped_at_low_and_can_be_switched_off():
+    closes = [10 + index * 0.05 for index in range(220)]
+    contract = OptionContract("SOFI261218C00022000", "call", 22, date(2026, 12, 18), 0.48, 0.52, 0.50, 400, 5000, 0.55)
+    headline = "SoFi announces partnership with a regional bank"
+    config = load_config("config.json")
+    assert config["acceptProbableNews"] is True
+    report, book = run_from_bundle(_bundle(_equity(closes), contract, headline), config, empty_scorecard())
+    assert report["ideas"], report["skipped"]
+    idea = report["ideas"][0]
+    assert idea["confidence"] == "Low"
+    assert idea["probableNews"] is True
+    assert "probable-news" in idea["tags"]
+    assert book["trades"][0]["probableNews"] is True
+    config["acceptProbableNews"] = False
+    report, _book = run_from_bundle(_bundle(_equity(closes), contract, headline), config, empty_scorecard())
+    assert report["ideas"] == []
+
+
+def test_strong_news_is_not_marked_probable():
+    closes = [10 + index * 0.05 for index in range(220)]
+    contract = OptionContract("SOFI261218C00022000", "call", 22, date(2026, 12, 18), 0.48, 0.52, 0.50, 400, 5000, 0.55)
+    report, _book = run_from_bundle(_bundle(_equity(closes), contract, "SoFi raises guidance after a record quarter"), load_config("config.json"), empty_scorecard())
+    assert report["ideas"][0]["probableNews"] is False
+    assert "probable-news" not in report["ideas"][0]["tags"]
+
+
+def test_new_config_keys_have_defaults():
+    from pipeline.config import DEFAULT_CONFIG
+
+    for key in ("priceFirst", "priceScanTickers", "acceptProbableNews", "earningsBackupTickers", "markHistoryMax"):
+        assert key in DEFAULT_CONFIG
+    assert DEFAULT_CONFIG["acceptProbableNews"] is True

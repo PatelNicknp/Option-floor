@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 import { ChartLegend } from "./components/Chart"
+import { OpenTotalsLine, OpenTradeCard } from "./components/OpenTrades"
 import { FeatureBlock } from "./components/FeatureBlock"
 import { PriceChecker } from "./components/PriceChecker"
 import { TradeCard } from "./components/TradeCard"
@@ -731,20 +732,15 @@ function ScorecardView({ report }: { report: Report | null }) {
       <div>
         <h3 className="text-xl">Open</h3>
         {(book.open ?? []).length === 0 ? <p className="mt-2 text-sm text-muted">No open paper ideas.</p> : (
-          <ul className="mt-2 space-y-2 text-sm">
-            {(book.open ?? []).map((trade) => (
-              <li key={trade.id} className="rounded-lg border border-line bg-card px-4 py-3">
-                <p className="font-medium">{trade.ticker} · {trade.action} · {trade.remainingContracts} left</p>
-                <p className="mt-1 text-muted">
-                  In at {trade.entry != null ? premium(trade.entry) : "?"}
-                  {trade.lastMark != null ? `, last seen ${premium(trade.lastMark)}` : ""}.
-                  Leave by {longDate(trade.lastExitDate)}.
-                  {trade.halfClosed ? " Sold half at a double. The rest is still open." : ""}
-                  {trade.checkNote ? ` ${trade.checkNote}` : ""}
-                </p>
-              </li>
-            ))}
-          </ul>
+          <>
+            <OpenTotalsLine trades={book.open ?? []} />
+            <ul className="mt-3 grid gap-3 md:grid-cols-2">
+              {(book.open ?? []).map((trade) => (
+                <OpenTradeCard key={trade.id} trade={trade} />
+              ))}
+            </ul>
+            <p className="mt-2 text-xs text-muted">Paper only. Prices are checked when the job runs, about twice each weekday. Gains and losses count the contracts still open.</p>
+          </>
         )}
       </div>
       <div>
