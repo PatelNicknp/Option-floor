@@ -10,6 +10,8 @@ GitHub cron is best-effort and is listed for both standard time and daylight tim
 The guard lets through only the cron that lands on a real slot, so summer and winter
 do not double-fetch. A dropped cron is started once by the watchdog or the keeper,
 and only until the next slot. A failed run is not retried here.
+A research run that already started in the last four hours is not started again,
+so a hand run cannot double-record paper trades or price history.
 
 Switches in config.json (missing means on): features.self_heal_schedule, features.self_heal_keeper.
 """
@@ -31,8 +33,10 @@ KEEPER_FILE = "keeper.yml"
 OPEN = (10, 15)
 CLOSE = (18, 30)
 GRACE_MIN = 20
-OVERDUE_MIN = 75
-KEEPER_DEFAULTS = {"check_after_min": 10, "chunk_min": 330, "min_gap_min": 50}
+# Four hours. Morning and evening slots are more than eight hours apart,
+# so this only blocks a second run in the same window (a hand run plus a makeup).
+OVERDUE_MIN = 240
+KEEPER_DEFAULTS = {"check_after_min": 10, "chunk_min": 330, "min_gap_min": 240}
 ACTIVE = {"queued", "in_progress", "waiting", "requested", "pending"}
 NOT_A_RUN = {"cancelled", "skipped", "startup_failure", "stale"}
 HEAL_REASONS = {"watchdog", "keeper", "keeper_retry"}
@@ -206,7 +210,7 @@ def plan(now: dt.datetime, deadline: dt.datetime, after: dt.datetime | None = No
     return "check", when, slot
 
 
-def keeper_decide(now: dt.datetime, slot: dt.datetime, runs: list[dict], min_gap_min: int = 50) -> tuple[str, str]:
+def keeper_decide(now: dt.datetime, slot: dt.datetime, runs: list[dict], min_gap_min: int = 240) -> tuple[str, str]:
     for run in runs:
         if run.get("status") in ACTIVE:
             return "none", "research run %s is %s" % (run.get("id"), run.get("status"))

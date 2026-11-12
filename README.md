@@ -51,7 +51,7 @@ You can also run the job by hand from the Actions tab (“Run workflow”).
 
 Weekdays at 10:15 a.m. and 6:30 p.m. Eastern, including daylight time. The workflow lists both the standard-time and daylight-time UTC clocks. A run that does not land on one of those New York times stops in a few seconds, so summer and winter do not fetch twice.
 
-GitHub sometimes never starts a scheduled run. `watchdog.yml` looks several times an hour and starts the one missed slot. `keeper.yml` stays awake, sleeps until ten minutes after the next slot, and starts that slot if it never ran. Each research run and each watchdog run starts a keeper if none is alive, so a killed job is replaced the next time anything runs. Switches: `features.self_heal_schedule` and `features.self_heal_keeper` in `config.json`. A failed research run is not started again.
+GitHub sometimes never starts a scheduled run. `watchdog.yml` looks several times an hour and starts the one missed slot. `keeper.yml` stays awake, sleeps until ten minutes after the next slot, and starts that slot if it never ran. Each research run and each watchdog run starts a keeper if none is alive, so a killed job is replaced the next time anything runs. Switches: `features.self_heal_schedule` and `features.self_heal_keeper` in `config.json`. A failed research run is not started again. A run that already started in the last four hours is not started again either, so a hand run and a catch-up cannot record the same paper trades twice.
 
 ## What the desk does
 

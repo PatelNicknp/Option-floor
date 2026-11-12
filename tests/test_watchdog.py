@@ -95,3 +95,20 @@ def test_keeper_does_not_start_a_second_copy_and_does_not_repeat_a_slot():
 
 def test_open_and_close_minutes():
     assert OPEN == (10, 15) and CLOSE == (18, 30)
+
+def test_a_hand_run_a_few_hours_before_the_slot_is_not_made_up_again():
+    # Monday 10:45 a.m. Eastern. The 10:15 slot was skipped, but a hand run started at 8:30.
+    now = et(2026, 11, 9, 10, 45)
+    hand = et(2026, 11, 9, 8, 30)
+    action, why = decide(now, [run(hand)])
+    assert action == "none", why
+    assert "under 240 min" in why
+    keeper_action, keeper_why = keeper_decide(now, et(2026, 11, 9, 10, 15), [run(hand)])
+    assert keeper_action == "none", keeper_why
+
+
+def test_yesterdays_evening_run_does_not_block_a_missed_morning():
+    now = et(2026, 11, 9, 10, 45)
+    friday = et(2026, 11, 6, 18, 40)
+    action, why = decide(now, [run(friday)])
+    assert action == "dispatch", why
