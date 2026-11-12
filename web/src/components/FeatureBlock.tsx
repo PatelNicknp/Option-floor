@@ -11,10 +11,11 @@ type Props = {
   onToggle: (next: boolean) => void
   settings?: ReactNode
   help: ReactNode
+  notice?: ReactNode
   children?: ReactNode
 }
 
-export function FeatureBlock({ id, kicker, title, description, enabled, onToggle, settings, help, children }: Props) {
+export function FeatureBlock({ id, kicker, title, description, enabled, onToggle, settings, help, notice, children }: Props) {
   const [showSettings, setShowSettings] = useState(false)
   const [showHelp, setShowHelp] = useState(false)
   return (
@@ -40,8 +41,9 @@ export function FeatureBlock({ id, kicker, title, description, enabled, onToggle
       </div>
       {showSettings ? <div className="mt-3 rounded-lg border border-line bg-card p-4">{settings ?? <p className="text-sm text-muted">Nothing to change here.</p>}</div> : null}
       {showHelp ? <div className="mt-3 rounded-lg border border-dashed border-line bg-card/70 p-4 text-sm leading-relaxed text-ink">{help}</div> : null}
+      {notice ? <div className="mt-4">{notice}</div> : null}
       <div className="mt-6">
-        {enabled ? children : <p className="text-sm text-muted">This part is off. Turn it on to see it.</p>}
+        {enabled ? children : <p className="text-sm text-muted">This part is off. Turn the switch on to see it.</p>}
       </div>
     </section>
   )

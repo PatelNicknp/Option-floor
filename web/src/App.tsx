@@ -6,6 +6,7 @@ import { PriceChecker } from "./components/PriceChecker"
 import { TradeCard } from "./components/TradeCard"
 import { Button } from "./components/ui/button"
 import { Input } from "./components/ui/input"
+import { freshnessNote } from "./lib/freshness"
 import { daySpan, dollars, longDate, outcomePlain, premium, ranAt } from "./lib/format"
 import {
   FEATURE_IDS,
@@ -123,6 +124,20 @@ export function App() {
 
   const visible = useMemo(() => visibleIdeas(report?.ideas ?? [], settings), [report, settings])
   const watches = useMemo(() => visibleIdeas(report?.watch ?? [], settings), [report, settings])
+  const staleNote = freshnessNote(report?.generatedAt)
+  const hiddenIdeas = (report?.ideas ?? []).filter((idea) => !visible.some((shown) => shown.id === idea.id))
+
+  function showFileIdeas() {
+    setSettings((current) => ({
+      ...current,
+      features: { ...current.features, ideas: true },
+      confidence: "all",
+      leapsOnly: false,
+      hideRiskFlags: false,
+      agentYesOnly: {},
+      maxPremium: Math.max(current.maxPremium, report?.configEcho?.maxPremium ?? 0.8, ...hiddenIdeas.map((idea) => idea.ask)),
+    }))
+  }
 
   function toggle(id: FeatureId) {
     setSettings((current) => ({ ...current, features: { ...current.features, [id]: !current.features[id] } }))
@@ -181,6 +196,7 @@ export function App() {
         </div>
       ) : null}
       {report?.banner ? <p className="mt-6 rounded-lg border border-line bg-card px-4 py-3 text-sm leading-relaxed">{report.banner}</p> : null}
+      {staleNote ? <p className="mt-3 rounded-lg border border-copper/40 bg-[#f8efe6] px-4 py-3 text-sm leading-relaxed">{staleNote}</p> : null}
       {report?.stale ? <p className="mt-3 text-sm text-muted">Last good file: {ranAt(report.staleFrom)}.</p> : null}
 
       <FeatureBlock
@@ -219,9 +235,12 @@ export function App() {
           <div className="space-y-2">
             <p>A card is a paper plan. At your broker you look up the same expiration and strike, then use a limit order inside the price range. This site cannot do that for you.</p>
             <p>One option contract controls 100 shares. A price of $0.50 costs about $50.</p>
-            <p>High, medium, and low are how much the desk agrees. They are not a promise.</p>
+            <p>High, medium, and low are how much the desk agrees. They are not a promise. Switches on this page are saved in this browser. They can hide a card that is still in the file.</p>
           </div>
         }
+        notice={hiddenIdeas.length && !settings.features.ideas ? (
+          <p className="text-sm leading-relaxed">The file still has {hiddenIdeas.map((idea) => idea.ticker).join(", ")}. This section is off, so those cards are hidden. Turn the switch on.</p>
+        ) : null}
       >
         {report ? (
           <div className="space-y-4">
@@ -230,9 +249,16 @@ export function App() {
               {report.universe ? ` Looked at ${report.universe.candidates ?? 0} news names, priced ${report.universe.priced ?? 0}, and pulled ${report.universe.chains ?? 0} option chains.` : ""}
             </p>
             {visible.length === 0 ? (
-              <p className="rounded-lg border border-dashed border-line px-4 py-6 text-sm leading-relaxed">
-                No buy made the cut{(report.ideas ?? []).length ? " with these switches" : ""}. That is a normal result. Waiting is allowed.
-              </p>
+              <div className="rounded-lg border border-dashed border-line px-4 py-6 text-sm leading-relaxed">
+                {hiddenIdeas.length ? (
+                  <>
+                    <p>The file has {hiddenIdeas.length} idea{hiddenIdeas.length === 1 ? "" : "s"} ({hiddenIdeas.map((idea) => idea.ticker).join(", ")}). Your saved switches are hiding {hiddenIdeas.length === 1 ? "it" : "them"}.</p>
+                    <Button className="mt-3" variant="default" onClick={showFileIdeas}>Show the ideas in this file</Button>
+                  </>
+                ) : (
+                  <p>No buy made the cut. That is a normal result. Waiting is allowed.</p>
+                )}
+              </div>
             ) : (
               visible.map((idea) => <TradeCard key={idea.id} idea={idea} settings={settings} />)
             )}
