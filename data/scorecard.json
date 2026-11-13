@@ -15,7 +15,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.525,
+      "lastMark": 0.475,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -39,7 +39,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-12",
+      "lastChecked": "2026-11-13",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -70,10 +70,15 @@
           "at": "2026-11-12T13:05:35.140068-05:00",
           "mark": 0.525,
           "stock": 28.97
+        },
+        {
+          "at": "2026-11-13T10:25:17.916517-05:00",
+          "mark": 0.475,
+          "stock": 28.67
         }
       ],
-      "lastStock": 28.97,
-      "lastStockAt": "2026-11-12T13:05:35.140068-05:00"
+      "lastStock": 28.67,
+      "lastStockAt": "2026-11-13T10:25:17.916517-05:00"
     },
     {
       "id": "BB-call-10-2027-01-15",
@@ -90,7 +95,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.88,
+      "lastMark": 0.675,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -113,7 +118,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-12",
+      "lastChecked": "2026-11-13",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -144,10 +149,15 @@
           "at": "2026-11-12T13:05:35.140068-05:00",
           "mark": 0.88,
           "stock": 9.298
+        },
+        {
+          "at": "2026-11-13T10:25:17.916517-05:00",
+          "mark": 0.675,
+          "stock": 8.687
         }
       ],
-      "lastStock": 9.298,
-      "lastStockAt": "2026-11-12T13:05:35.140068-05:00"
+      "lastStock": 8.687,
+      "lastStockAt": "2026-11-13T10:25:17.916517-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -164,7 +174,7 @@
       "halfClosed": false,
       "remainingContracts": 2,
       "status": "open",
-      "lastMark": 0.45,
+      "lastMark": 0.425,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -188,7 +198,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-12",
+      "lastChecked": "2026-11-13",
       "markHistory": [
         {
           "at": "2026-11-06T15:55:44.102843-05:00",
@@ -219,10 +229,15 @@
           "at": "2026-11-12T13:05:35.140068-05:00",
           "mark": 0.45,
           "stock": 7.185
+        },
+        {
+          "at": "2026-11-13T10:25:17.916517-05:00",
+          "mark": 0.425,
+          "stock": 7.11
         }
       ],
-      "lastStock": 7.185,
-      "lastStockAt": "2026-11-12T13:05:35.140068-05:00"
+      "lastStock": 7.11,
+      "lastStockAt": "2026-11-13T10:25:17.916517-05:00"
     },
     {
       "id": "DKNG-put-15-2027-01-15",
@@ -239,7 +254,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.29,
+      "lastMark": 0.31,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -263,7 +278,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-12",
+      "lastChecked": "2026-11-13",
       "markHistory": [
         {
           "at": "2026-11-06T21:57:28.215503-05:00",
@@ -294,10 +309,15 @@
           "at": "2026-11-12T13:05:35.140068-05:00",
           "mark": 0.29,
           "stock": 19.18
+        },
+        {
+          "at": "2026-11-13T10:25:17.916517-05:00",
+          "mark": 0.31,
+          "stock": 19.01
         }
       ],
-      "lastStock": 19.18,
-      "lastStockAt": "2026-11-12T13:05:35.140068-05:00"
+      "lastStock": 19.01,
+      "lastStockAt": "2026-11-13T10:25:17.916517-05:00"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -314,7 +334,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.565,
+      "lastMark": 0.45,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -338,7 +358,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-12",
+      "lastChecked": "2026-11-13",
       "markHistory": [
         {
           "at": "2026-11-09T18:48:18.526313-05:00",
@@ -369,10 +389,15 @@
           "at": "2026-11-12T13:05:35.140068-05:00",
           "mark": 0.565,
           "stock": 29.185
+        },
+        {
+          "at": "2026-11-13T10:25:17.916517-05:00",
+          "mark": 0.45,
+          "stock": 28.755
         }
       ],
-      "lastStock": 29.185,
-      "lastStockAt": "2026-11-12T13:05:35.140068-05:00"
+      "lastStock": 28.755,
+      "lastStockAt": "2026-11-13T10:25:17.916517-05:00"
     }
   ],
   "agentStats": {
@@ -426,6 +451,11 @@
     },
     {
       "weekOf": "2026-11-06",
+      "note": "In the last seven days the desk opened 3 paper idea(s) and finished 0. 0 finished ahead and 0 did not. Finished ideas are flat $0. Scout weights are still even because there are not enough finished ideas yet. Market mood: Market mood is unclear. The market is not a clear calm uptrend or a clear fearful tape. The desk would rather wait than force a side. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
+      "paused": false
+    },
+    {
+      "weekOf": "2026-11-13",
       "note": "In the last seven days the desk opened 3 paper idea(s) and finished 0. 0 finished ahead and 0 did not. Finished ideas are flat $0. Scout weights are still even because there are not enough finished ideas yet. Market mood: Market mood is unclear. The market is not a clear calm uptrend or a clear fearful tape. The desk would rather wait than force a side. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
       "paused": false
     }
