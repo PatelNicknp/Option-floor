@@ -15,7 +15,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.6,
+      "lastMark": 0.65,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -39,7 +39,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-16",
+      "lastChecked": "2026-11-17",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -85,10 +85,15 @@
           "at": "2026-11-16T18:45:56.371232-05:00",
           "mark": 0.6,
           "stock": 28.3
+        },
+        {
+          "at": "2026-11-17T10:25:18.910146-05:00",
+          "mark": 0.65,
+          "stock": 27.86
         }
       ],
-      "lastStock": 28.3,
-      "lastStockAt": "2026-11-16T18:45:56.371232-05:00"
+      "lastStock": 27.86,
+      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
     },
     {
       "id": "BB-call-10-2027-01-15",
@@ -105,7 +110,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.605,
+      "lastMark": 0.485,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -128,7 +133,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-16",
+      "lastChecked": "2026-11-17",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -174,10 +179,15 @@
           "at": "2026-11-16T18:45:56.371232-05:00",
           "mark": 0.605,
           "stock": 8.77
+        },
+        {
+          "at": "2026-11-17T10:25:18.910146-05:00",
+          "mark": 0.485,
+          "stock": 8.367
         }
       ],
-      "lastStock": 8.77,
-      "lastStockAt": "2026-11-16T18:45:56.371232-05:00"
+      "lastStock": 8.367,
+      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -191,11 +201,11 @@
       "side": "put",
       "entry": 0.35,
       "contracts": 2,
-      "halfClosed": false,
-      "remainingContracts": 2,
+      "halfClosed": true,
+      "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.625,
-      "realizedPnl": 0,
+      "lastMark": 0.775,
+      "realizedPnl": 42.5,
       "agentVotes": {
         "news": "yes",
         "policy": "pass",
@@ -214,11 +224,13 @@
       "reason": "Alphatec Holdings, Inc. - is about $7.45. Alphatec Holdings (ATEC) Securities Investigation Notice - Levi & Korsinsky - Morningstar. The daily trend points down. The November 20, 2026 $7.5 put is about $0.35.",
       "newsUrl": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPQ0lwQXJHaHZEd19Lay1lTzcxTDNzLWZiR0dkZmNXM3hQSmxsenM5SnBrU01kRHZYY2tmdnVaTWRmRWlhZ2VEdHVyckhUbmlfbmQ0bF9uR0Jzb2g2aWhZNHE4Ny00UmstRHIzY2V4RGdpZE5kdl9GRjdaSWlJbmx3MU9teEtSMjJVTkNPZTRaV1BxNm9ZUVNSXzlXeUtyMDZkS0lBRWJjYUplaFZnTHVIMERxZnVqSE1jYWh6VVdGZkRoUTZ0bVF3eEt3?oc=5",
       "confidence": "High",
-      "notes": [],
+      "notes": [
+        "Sold half at about $0.77."
+      ],
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-16",
+      "lastChecked": "2026-11-17",
       "markHistory": [
         {
           "at": "2026-11-06T15:55:44.102843-05:00",
@@ -264,10 +276,15 @@
           "at": "2026-11-16T18:45:56.371232-05:00",
           "mark": 0.625,
           "stock": 6.78
+        },
+        {
+          "at": "2026-11-17T10:25:18.910146-05:00",
+          "mark": 0.775,
+          "stock": 6.88
         }
       ],
-      "lastStock": 6.78,
-      "lastStockAt": "2026-11-16T18:45:56.371232-05:00"
+      "lastStock": 6.88,
+      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
     },
     {
       "id": "DKNG-put-15-2027-01-15",
@@ -284,7 +301,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.355,
+      "lastMark": 0.38,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -308,7 +325,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-16",
+      "lastChecked": "2026-11-17",
       "markHistory": [
         {
           "at": "2026-11-06T21:57:28.215503-05:00",
@@ -354,10 +371,15 @@
           "at": "2026-11-16T18:45:56.371232-05:00",
           "mark": 0.355,
           "stock": 18.42
+        },
+        {
+          "at": "2026-11-17T10:25:18.910146-05:00",
+          "mark": 0.38,
+          "stock": 18.29
         }
       ],
-      "lastStock": 18.42,
-      "lastStockAt": "2026-11-16T18:45:56.371232-05:00"
+      "lastStock": 18.29,
+      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -374,7 +396,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.44,
+      "lastMark": 0.36,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -398,7 +420,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-16",
+      "lastChecked": "2026-11-17",
       "markHistory": [
         {
           "at": "2026-11-09T18:48:18.526313-05:00",
@@ -444,10 +466,15 @@
           "at": "2026-11-16T18:45:56.371232-05:00",
           "mark": 0.44,
           "stock": 28.86
+        },
+        {
+          "at": "2026-11-17T10:25:18.910146-05:00",
+          "mark": 0.36,
+          "stock": 28.61
         }
       ],
-      "lastStock": 28.86,
-      "lastStockAt": "2026-11-16T18:45:56.371232-05:00"
+      "lastStock": 28.61,
+      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
     }
   ],
   "agentStats": {
