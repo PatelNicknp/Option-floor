@@ -13,10 +13,10 @@
       "entry": 0.525,
       "contracts": 1,
       "halfClosed": false,
-      "remainingContracts": 1,
-      "status": "open",
-      "lastMark": 0.65,
-      "realizedPnl": 0,
+      "remainingContracts": 0,
+      "status": "closed",
+      "lastMark": 1.325,
+      "realizedPnl": 80.0,
       "agentVotes": {
         "news": "yes",
         "policy": "pass",
@@ -36,8 +36,8 @@
       "newsUrl": "https://news.google.com/rss/articles/CBMipgJBVV95cUxQV3dFU05GakJ1MFhwdlhEMms4V256V1E0SHVmR0RvQUVkMVVNM1diN2wwYlQ5dkRIenFLdDhVZG5WN1JDSW9uNXp2MENlVzVZZnlIT3lFemQ5TkRLUG52NmhFeVdlTjR6eFY0S1VqU0NLS3dlQzVjVE56RURmRmhXempBbTNXN01fblZ5LVJEVll2Tm5JRG9tU1RuNmV0VEVXY2lEeUFnSTZVNXk1TjhJSzRKbWdBZGVBWUxJMmRZTEIzdFdodUkwMmVIRXpWWFJQazVBY1QxeUhXYThSSjExVThTak45VUQ2ZzVCR29wSmFDWm5xcVhDSElzTE0zUnliLUJxbkphS3MxYWdqdl95bzVITWdRWm12NUtwYWo5SEVWb0tVNnc?oc=5",
       "confidence": "High",
       "notes": [],
-      "outcome": "",
-      "closedAt": "",
+      "outcome": "target",
+      "closedAt": "2026-11-17",
       "checkNote": "",
       "lastChecked": "2026-11-17",
       "markHistory": [
@@ -90,10 +90,15 @@
           "at": "2026-11-17T10:25:18.910146-05:00",
           "mark": 0.65,
           "stock": 27.86
+        },
+        {
+          "at": "2026-11-17T22:44:28.294824-05:00",
+          "mark": 1.325,
+          "stock": 27.47
         }
       ],
-      "lastStock": 27.86,
-      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
+      "lastStock": 27.47,
+      "lastStockAt": "2026-11-17T22:44:28.294824-05:00"
     },
     {
       "id": "BB-call-10-2027-01-15",
@@ -110,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.485,
+      "lastMark": 0.41,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -184,10 +189,15 @@
           "at": "2026-11-17T10:25:18.910146-05:00",
           "mark": 0.485,
           "stock": 8.367
+        },
+        {
+          "at": "2026-11-17T22:44:28.294824-05:00",
+          "mark": 0.41,
+          "stock": 8.16
         }
       ],
-      "lastStock": 8.367,
-      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
+      "lastStock": 8.16,
+      "lastStockAt": "2026-11-17T22:44:28.294824-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -204,7 +214,7 @@
       "halfClosed": true,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.775,
+      "lastMark": 0.675,
       "realizedPnl": 42.5,
       "agentVotes": {
         "news": "yes",
@@ -281,10 +291,15 @@
           "at": "2026-11-17T10:25:18.910146-05:00",
           "mark": 0.775,
           "stock": 6.88
+        },
+        {
+          "at": "2026-11-17T22:44:28.294824-05:00",
+          "mark": 0.675,
+          "stock": 6.94
         }
       ],
-      "lastStock": 6.88,
-      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
+      "lastStock": 6.94,
+      "lastStockAt": "2026-11-17T22:44:28.294824-05:00"
     },
     {
       "id": "DKNG-put-15-2027-01-15",
@@ -301,7 +316,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.38,
+      "lastMark": 0.395,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -376,10 +391,15 @@
           "at": "2026-11-17T10:25:18.910146-05:00",
           "mark": 0.38,
           "stock": 18.29
+        },
+        {
+          "at": "2026-11-17T22:44:28.294824-05:00",
+          "mark": 0.395,
+          "stock": 18.0
         }
       ],
-      "lastStock": 18.29,
-      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
+      "lastStock": 18.0,
+      "lastStockAt": "2026-11-17T22:44:28.294824-05:00"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -396,7 +416,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.36,
+      "lastMark": 0.375,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -471,15 +491,73 @@
           "at": "2026-11-17T10:25:18.910146-05:00",
           "mark": 0.36,
           "stock": 28.61
+        },
+        {
+          "at": "2026-11-17T22:44:28.294824-05:00",
+          "mark": 0.375,
+          "stock": 28.47
         }
       ],
-      "lastStock": 28.61,
-      "lastStockAt": "2026-11-17T10:25:18.910146-05:00"
+      "lastStock": 28.47,
+      "lastStockAt": "2026-11-17T22:44:28.294824-05:00"
+    },
+    {
+      "id": "AES-call-15-2028-01-21",
+      "openedAt": "2026-11-17T22:44:28.294824-05:00",
+      "ticker": "AES",
+      "company": "The AES",
+      "action": "BUY CALL",
+      "contractSymbol": "AES280121C00015000",
+      "expiry": "2028-01-21",
+      "strike": 15.0,
+      "side": "call",
+      "entry": 0.115,
+      "contracts": 5,
+      "halfClosed": false,
+      "remainingContracts": 5,
+      "status": "open",
+      "lastMark": 0.115,
+      "stockAtEntry": 14.97,
+      "markHistory": [
+        {
+          "at": "2026-11-17T22:44:28.294824-05:00",
+          "mark": 0.115,
+          "stock": 14.97
+        }
+      ],
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "pass",
+        "policy": "pass",
+        "sentiment": "yes",
+        "chart": "yes",
+        "options": "yes",
+        "risk": "yes",
+        "devil": "pass",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap",
+        "leap",
+        "underpriced",
+        "filing",
+        "probable-news"
+      ],
+      "lastExitDate": "2027-03-17",
+      "reason": "The AES is about $14.97. 8-K - AES CORP (0000874761) (Filer). The daily trend points up. The January 21, 2028 $15 call is about $0.12.",
+      "newsUrl": "https://www.sec.gov/Archives/edgar/data/874761/000114036126044548/0001140361-26-044548-index.htm",
+      "confidence": "Low",
+      "probableNews": true,
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-17"
     }
   ],
   "agentStats": {
     "news": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "weight": 1.0
     },
@@ -489,7 +567,7 @@
       "weight": 1.0
     },
     "sentiment": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "weight": 1.0
     },
@@ -499,27 +577,36 @@
       "weight": 1.0
     },
     "options": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "weight": 1.0
     },
     "risk": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "weight": 1.0
     },
     "devil": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "weight": 1.0
     },
     "head": {
-      "wins": 0,
+      "wins": 1,
       "losses": 0,
       "weight": 1.0
     }
   },
-  "setupStats": {},
+  "setupStats": {
+    "cheap": {
+      "wins": 1,
+      "losses": 0
+    },
+    "underpriced": {
+      "wins": 1,
+      "losses": 0
+    }
+  },
   "reviews": [
     {
       "weekOf": "2026-11-04",
