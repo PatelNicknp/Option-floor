@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.54,
+      "lastMark": 0.595,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -138,7 +138,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-18",
+      "lastChecked": "2026-11-19",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -204,10 +204,15 @@
           "at": "2026-11-18T21:51:21.582864-05:00",
           "mark": 0.54,
           "stock": 8.56
+        },
+        {
+          "at": "2026-11-19T10:25:32.520912-05:00",
+          "mark": 0.595,
+          "stock": 8.611
         }
       ],
-      "lastStock": 8.56,
-      "lastStockAt": "2026-11-18T21:51:21.582864-05:00"
+      "lastStock": 8.611,
+      "lastStockAt": "2026-11-19T10:25:32.520912-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -331,7 +336,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.415,
+      "lastMark": 0.43,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -355,7 +360,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-18",
+      "lastChecked": "2026-11-19",
       "markHistory": [
         {
           "at": "2026-11-06T21:57:28.215503-05:00",
@@ -421,10 +426,15 @@
           "at": "2026-11-18T21:51:21.582864-05:00",
           "mark": 0.415,
           "stock": 17.92
+        },
+        {
+          "at": "2026-11-19T10:25:32.520912-05:00",
+          "mark": 0.43,
+          "stock": 17.68
         }
       ],
-      "lastStock": 17.92,
-      "lastStockAt": "2026-11-18T21:51:21.582864-05:00"
+      "lastStock": 17.68,
+      "lastStockAt": "2026-11-19T10:25:32.520912-05:00"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -563,6 +573,11 @@
           "at": "2026-11-18T21:51:21.582864-05:00",
           "mark": 0.07,
           "stock": 15.02
+        },
+        {
+          "at": "2026-11-19T10:25:32.520912-05:00",
+          "mark": 0.07,
+          "stock": 15.02
         }
       ],
       "realizedPnl": 0,
@@ -592,9 +607,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-18",
+      "lastChecked": "2026-11-19",
       "lastStock": 15.02,
-      "lastStockAt": "2026-11-18T21:51:21.582864-05:00"
+      "lastStockAt": "2026-11-19T10:25:32.520912-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -609,9 +624,9 @@
       "entry": 0.425,
       "contracts": 1,
       "halfClosed": false,
-      "remainingContracts": 1,
-      "status": "open",
-      "lastMark": 0.25,
+      "remainingContracts": 0,
+      "status": "closed",
+      "lastMark": 0.175,
       "stockAtEntry": 15.03,
       "markHistory": [
         {
@@ -623,9 +638,14 @@
           "at": "2026-11-18T21:51:21.582864-05:00",
           "mark": 0.25,
           "stock": 14.45
+        },
+        {
+          "at": "2026-11-19T10:25:32.520912-05:00",
+          "mark": 0.175,
+          "stock": 13.72
         }
       ],
-      "realizedPnl": 0,
+      "realizedPnl": -25.0,
       "agentVotes": {
         "news": "yes",
         "policy": "pass",
@@ -645,12 +665,12 @@
       "confidence": "Low",
       "probableNews": false,
       "notes": [],
-      "outcome": "",
-      "closedAt": "",
+      "outcome": "stop",
+      "closedAt": "2026-11-19",
       "checkNote": "",
-      "lastChecked": "2026-11-18",
-      "lastStock": 14.45,
-      "lastStockAt": "2026-11-18T21:51:21.582864-05:00"
+      "lastChecked": "2026-11-19",
+      "lastStock": 13.72,
+      "lastStockAt": "2026-11-19T10:25:32.520912-05:00"
     },
     {
       "id": "ALK-call-42.5-2026-12-18",
@@ -667,7 +687,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.6,
+      "lastMark": 0.525,
       "stockAtEntry": 36.83,
       "markHistory": [
         {
@@ -679,6 +699,11 @@
           "at": "2026-11-18T21:51:21.582864-05:00",
           "mark": 0.6,
           "stock": 36.66
+        },
+        {
+          "at": "2026-11-19T10:25:32.520912-05:00",
+          "mark": 0.525,
+          "stock": 36.2
         }
       ],
       "realizedPnl": 0,
@@ -707,15 +732,64 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-18",
-      "lastStock": 36.66,
-      "lastStockAt": "2026-11-18T21:51:21.582864-05:00"
+      "lastChecked": "2026-11-19",
+      "lastStock": 36.2,
+      "lastStockAt": "2026-11-19T10:25:32.520912-05:00"
+    },
+    {
+      "id": "AAL-put-12-2027-01-15",
+      "openedAt": "2026-11-19T10:25:32.520912-05:00",
+      "ticker": "AAL",
+      "company": "American Airlines Group, Inc. -",
+      "action": "BUY PUT",
+      "contractSymbol": "AAL270115P00012000",
+      "expiry": "2027-01-15",
+      "strike": 12.0,
+      "side": "put",
+      "entry": 0.56,
+      "contracts": 1,
+      "halfClosed": false,
+      "remainingContracts": 1,
+      "status": "open",
+      "lastMark": 0.56,
+      "stockAtEntry": 12.82,
+      "markHistory": [
+        {
+          "at": "2026-11-19T10:25:32.520912-05:00",
+          "mark": 0.56,
+          "stock": 12.82
+        }
+      ],
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "pass",
+        "sentiment": "yes",
+        "chart": "pass",
+        "options": "yes",
+        "risk": "yes",
+        "devil": "yes",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap"
+      ],
+      "lastExitDate": "2027-01-01",
+      "reason": "American Airlines Group, Inc. - is about $12.82. Alaska Airlines and Aspen Hotels Announce New Atmos\u2122 Rewards Collaboration Across Alaska. The daily chart is mixed. The January 15, 2027 $12 put is about $0.56.",
+      "newsUrl": "https://finance.yahoo.com/media-advertising/articles/alaska-airlines-aspen-hotels-announce-210000243.html?.tsrc=rss",
+      "confidence": "High",
+      "probableNews": false,
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-19"
     }
   ],
   "agentStats": {
     "news": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "weight": 1.0
     },
     "policy": {
@@ -725,22 +799,22 @@
     },
     "sentiment": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "weight": 1.0
     },
     "chart": {
       "wins": 1,
-      "losses": 1,
+      "losses": 2,
       "weight": 1.0
     },
     "options": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "weight": 1.0
     },
     "risk": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "weight": 1.0
     },
     "devil": {
@@ -750,14 +824,14 @@
     },
     "head": {
       "wins": 2,
-      "losses": 1,
+      "losses": 2,
       "weight": 1.0
     }
   },
   "setupStats": {
     "cheap": {
       "wins": 2,
-      "losses": 1
+      "losses": 2
     },
     "underpriced": {
       "wins": 2,
