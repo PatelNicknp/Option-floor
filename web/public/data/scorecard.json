@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.445,
+      "lastMark": 0.41,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -138,7 +138,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-19",
+      "lastChecked": "2026-11-20",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -214,10 +214,15 @@
           "at": "2026-11-19T22:04:07.238379-05:00",
           "mark": 0.445,
           "stock": 8.32
+        },
+        {
+          "at": "2026-11-20T10:25:14.013903-05:00",
+          "mark": 0.41,
+          "stock": 7.965
         }
       ],
-      "lastStock": 8.32,
-      "lastStockAt": "2026-11-19T22:04:07.238379-05:00"
+      "lastStock": 7.965,
+      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -341,7 +346,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.605,
+      "lastMark": 0.585,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -365,7 +370,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-19",
+      "lastChecked": "2026-11-20",
       "markHistory": [
         {
           "at": "2026-11-06T21:57:28.215503-05:00",
@@ -441,10 +446,15 @@
           "at": "2026-11-19T22:04:07.238379-05:00",
           "mark": 0.605,
           "stock": 16.82
+        },
+        {
+          "at": "2026-11-20T10:25:14.013903-05:00",
+          "mark": 0.585,
+          "stock": 16.76
         }
       ],
-      "lastStock": 16.82,
-      "lastStockAt": "2026-11-19T22:04:07.238379-05:00"
+      "lastStock": 16.76,
+      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -593,6 +603,11 @@
           "at": "2026-11-19T22:04:07.238379-05:00",
           "mark": 0.065,
           "stock": 15.02
+        },
+        {
+          "at": "2026-11-20T10:25:14.013903-05:00",
+          "mark": 0.065,
+          "stock": 15.025
         }
       ],
       "realizedPnl": 0,
@@ -622,9 +637,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-19",
-      "lastStock": 15.02,
-      "lastStockAt": "2026-11-19T22:04:07.238379-05:00"
+      "lastChecked": "2026-11-20",
+      "lastStock": 15.025,
+      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -702,7 +717,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.45,
+      "lastMark": 0.475,
       "stockAtEntry": 36.83,
       "markHistory": [
         {
@@ -724,6 +739,11 @@
           "at": "2026-11-19T22:04:07.238379-05:00",
           "mark": 0.45,
           "stock": 35.84
+        },
+        {
+          "at": "2026-11-20T10:25:14.013903-05:00",
+          "mark": 0.475,
+          "stock": 35.53
         }
       ],
       "realizedPnl": 0,
@@ -752,9 +772,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-19",
-      "lastStock": 35.84,
-      "lastStockAt": "2026-11-19T22:04:07.238379-05:00"
+      "lastChecked": "2026-11-20",
+      "lastStock": 35.53,
+      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
     },
     {
       "id": "AAL-put-12-2027-01-15",
@@ -783,6 +803,11 @@
           "at": "2026-11-19T22:04:07.238379-05:00",
           "mark": 0.605,
           "stock": 12.72
+        },
+        {
+          "at": "2026-11-20T10:25:14.013903-05:00",
+          "mark": 0.605,
+          "stock": 12.565
         }
       ],
       "realizedPnl": 0,
@@ -808,9 +833,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-19",
-      "lastStock": 12.72,
-      "lastStockAt": "2026-11-19T22:04:07.238379-05:00"
+      "lastChecked": "2026-11-20",
+      "lastStock": 12.565,
+      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
     }
   ],
   "agentStats": {
@@ -883,6 +908,11 @@
     {
       "weekOf": "2026-11-13",
       "note": "In the last seven days the desk opened 3 paper idea(s) and finished 0. 0 finished ahead and 0 did not. Finished ideas are flat $0. Scout weights are still even because there are not enough finished ideas yet. Market mood: Market mood is unclear. The market is not a clear calm uptrend or a clear fearful tape. The desk would rather wait than force a side. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
+      "paused": false
+    },
+    {
+      "weekOf": "2026-11-20",
+      "note": "In the last seven days the desk opened 4 paper idea(s) and finished 4. 2 finished ahead and 2 did not. Finished ideas are up $190. Sentiment Scout has the best paper record so far, right on 2 of 4 finished ideas it liked. Market mood: Fearful market. The VIX is elevated or the S&P 500 is under its longer averages. The desk prefers puts. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
       "paused": false
     }
   ]
