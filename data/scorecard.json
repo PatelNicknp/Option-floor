@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.41,
+      "lastMark": 0.31,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -219,10 +219,15 @@
           "at": "2026-11-20T10:25:14.013903-05:00",
           "mark": 0.41,
           "stock": 7.965
+        },
+        {
+          "at": "2026-11-20T21:51:57.022444-05:00",
+          "mark": 0.31,
+          "stock": 7.77
         }
       ],
-      "lastStock": 7.965,
-      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
+      "lastStock": 7.77,
+      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -344,10 +349,10 @@
       "entry": 0.495,
       "contracts": 1,
       "halfClosed": false,
-      "remainingContracts": 1,
-      "status": "open",
-      "lastMark": 0.585,
-      "realizedPnl": 0,
+      "remainingContracts": 0,
+      "status": "closed",
+      "lastMark": 1.115,
+      "realizedPnl": 62.0,
       "agentVotes": {
         "news": "yes",
         "policy": "pass",
@@ -367,8 +372,8 @@
       "newsUrl": "https://news.google.com/rss/articles/CBMiggJBVV95cUxOYlBkcnRyYXM5QW81ZUtUQjVMVHMzZ2pJa0s4aUpfcnRGQW5vTmR0dXM3YlV0bHBQdmptNV83cTBHamFzTXd2YlRic3J0TU10TmJETnhzSDVFc2VFb3Q5Q3dycVhRc1RzVlZabDNNbmZ6VW1IVG5QNGRkMzRqWnFkRjY0WE10WE4teHRyWHJQVXVtODZEbEQtU3JUOGIxUnVHM096RGlwZTdobm5mZ0tacFFzRDdTY09FSGtsSXNQeXpiSy15TnJkUGlGVll6Z3RtdXdVdmwwUFloMzdSREhGX0FhYzQ3VWdSU1ZkeVBuYnhJTkNqbGl4SEM0ajhBSEpsMlE?oc=5",
       "confidence": "High",
       "notes": [],
-      "outcome": "",
-      "closedAt": "",
+      "outcome": "target",
+      "closedAt": "2026-11-20",
       "checkNote": "",
       "lastChecked": "2026-11-20",
       "markHistory": [
@@ -451,10 +456,15 @@
           "at": "2026-11-20T10:25:14.013903-05:00",
           "mark": 0.585,
           "stock": 16.76
+        },
+        {
+          "at": "2026-11-20T21:51:57.022444-05:00",
+          "mark": 1.115,
+          "stock": 15.8
         }
       ],
-      "lastStock": 16.76,
-      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
+      "lastStock": 15.8,
+      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
     },
     {
       "id": "PFE-call-31-2027-01-15",
@@ -608,6 +618,11 @@
           "at": "2026-11-20T10:25:14.013903-05:00",
           "mark": 0.065,
           "stock": 15.025
+        },
+        {
+          "at": "2026-11-20T21:51:57.022444-05:00",
+          "mark": 0.065,
+          "stock": 15.02
         }
       ],
       "realizedPnl": 0,
@@ -638,8 +653,8 @@
       "closedAt": "",
       "checkNote": "",
       "lastChecked": "2026-11-20",
-      "lastStock": 15.025,
-      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
+      "lastStock": 15.02,
+      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -715,9 +730,9 @@
       "entry": 0.6,
       "contracts": 1,
       "halfClosed": false,
-      "remainingContracts": 1,
-      "status": "open",
-      "lastMark": 0.475,
+      "remainingContracts": 0,
+      "status": "closed",
+      "lastMark": 0.3,
       "stockAtEntry": 36.83,
       "markHistory": [
         {
@@ -744,9 +759,14 @@
           "at": "2026-11-20T10:25:14.013903-05:00",
           "mark": 0.475,
           "stock": 35.53
+        },
+        {
+          "at": "2026-11-20T21:51:57.022444-05:00",
+          "mark": 0.3,
+          "stock": 33.73
         }
       ],
-      "realizedPnl": 0,
+      "realizedPnl": -30.0,
       "agentVotes": {
         "news": "pass",
         "policy": "pass",
@@ -769,12 +789,12 @@
       "confidence": "Low",
       "probableNews": true,
       "notes": [],
-      "outcome": "",
-      "closedAt": "",
+      "outcome": "stop",
+      "closedAt": "2026-11-20",
       "checkNote": "",
       "lastChecked": "2026-11-20",
-      "lastStock": 35.53,
-      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
+      "lastStock": 33.73,
+      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
     },
     {
       "id": "AAL-put-12-2027-01-15",
@@ -791,7 +811,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.605,
+      "lastMark": 1.02,
       "stockAtEntry": 12.82,
       "markHistory": [
         {
@@ -808,6 +828,11 @@
           "at": "2026-11-20T10:25:14.013903-05:00",
           "mark": 0.605,
           "stock": 12.565
+        },
+        {
+          "at": "2026-11-20T21:51:57.022444-05:00",
+          "mark": 1.02,
+          "stock": 11.9
         }
       ],
       "realizedPnl": 0,
@@ -834,15 +859,15 @@
       "closedAt": "",
       "checkNote": "",
       "lastChecked": "2026-11-20",
-      "lastStock": 12.565,
-      "lastStockAt": "2026-11-20T10:25:14.013903-05:00"
+      "lastStock": 11.9,
+      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
     }
   ],
   "agentStats": {
     "news": {
-      "wins": 2,
+      "wins": 3,
       "losses": 2,
-      "weight": 1.0
+      "weight": 1.05
     },
     "policy": {
       "wins": 0,
@@ -850,8 +875,8 @@
       "weight": 1.0
     },
     "sentiment": {
-      "wins": 2,
-      "losses": 2,
+      "wins": 3,
+      "losses": 3,
       "weight": 1.0
     },
     "chart": {
@@ -860,13 +885,13 @@
       "weight": 1.0
     },
     "options": {
-      "wins": 2,
-      "losses": 2,
+      "wins": 3,
+      "losses": 3,
       "weight": 1.0
     },
     "risk": {
-      "wins": 2,
-      "losses": 2,
+      "wins": 3,
+      "losses": 3,
       "weight": 1.0
     },
     "devil": {
@@ -875,21 +900,25 @@
       "weight": 1.0
     },
     "head": {
-      "wins": 2,
-      "losses": 2,
+      "wins": 3,
+      "losses": 3,
       "weight": 1.0
     }
   },
   "setupStats": {
     "cheap": {
-      "wins": 2,
-      "losses": 2
+      "wins": 3,
+      "losses": 3
     },
     "underpriced": {
-      "wins": 2,
-      "losses": 0
+      "wins": 3,
+      "losses": 1
     },
     "policy": {
+      "wins": 0,
+      "losses": 2
+    },
+    "probable-news": {
       "wins": 0,
       "losses": 1
     }
