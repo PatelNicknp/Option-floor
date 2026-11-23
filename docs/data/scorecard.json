@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.31,
+      "lastMark": 0.435,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -138,7 +138,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-20",
+      "lastChecked": "2026-11-23",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -224,10 +224,15 @@
           "at": "2026-11-20T21:51:57.022444-05:00",
           "mark": 0.31,
           "stock": 7.77
+        },
+        {
+          "at": "2026-11-23T10:25:16.391710-05:00",
+          "mark": 0.435,
+          "stock": 8.58
         }
       ],
-      "lastStock": 7.77,
-      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
+      "lastStock": 8.58,
+      "lastStockAt": "2026-11-23T10:25:16.391710-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -586,7 +591,7 @@
       "halfClosed": false,
       "remainingContracts": 5,
       "status": "open",
-      "lastMark": 0.065,
+      "lastMark": 0.08,
       "stockAtEntry": 14.97,
       "markHistory": [
         {
@@ -623,6 +628,11 @@
           "at": "2026-11-20T21:51:57.022444-05:00",
           "mark": 0.065,
           "stock": 15.02
+        },
+        {
+          "at": "2026-11-23T10:25:16.391710-05:00",
+          "mark": 0.08,
+          "stock": 15.03
         }
       ],
       "realizedPnl": 0,
@@ -652,9 +662,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-20",
-      "lastStock": 15.02,
-      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
+      "lastChecked": "2026-11-23",
+      "lastStock": 15.03,
+      "lastStockAt": "2026-11-23T10:25:16.391710-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -811,7 +821,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 1.02,
+      "lastMark": 0.705,
       "stockAtEntry": 12.82,
       "markHistory": [
         {
@@ -833,6 +843,11 @@
           "at": "2026-11-20T21:51:57.022444-05:00",
           "mark": 1.02,
           "stock": 11.9
+        },
+        {
+          "at": "2026-11-23T10:25:16.391710-05:00",
+          "mark": 0.705,
+          "stock": 12.521
         }
       ],
       "realizedPnl": 0,
@@ -858,9 +873,107 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-20",
-      "lastStock": 11.9,
-      "lastStockAt": "2026-11-20T21:51:57.022444-05:00"
+      "lastChecked": "2026-11-23",
+      "lastStock": 12.521,
+      "lastStockAt": "2026-11-23T10:25:16.391710-05:00"
+    },
+    {
+      "id": "AG-put-11.5-2026-12-04",
+      "openedAt": "2026-11-23T10:25:16.391710-05:00",
+      "ticker": "AG",
+      "company": "First Majestic Silver Corp. Ordinary Shares (Canada)",
+      "action": "BUY PUT",
+      "contractSymbol": "AG261204P00011500",
+      "expiry": "2026-12-04",
+      "strike": 11.5,
+      "side": "put",
+      "entry": 0.565,
+      "contracts": 1,
+      "halfClosed": false,
+      "remainingContracts": 1,
+      "status": "open",
+      "lastMark": 0.565,
+      "stockAtEntry": 11.59,
+      "markHistory": [
+        {
+          "at": "2026-11-23T10:25:16.391710-05:00",
+          "mark": 0.565,
+          "stock": 11.59
+        }
+      ],
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "pass",
+        "sentiment": "yes",
+        "chart": "yes",
+        "options": "yes",
+        "risk": "pass",
+        "devil": "pass",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap"
+      ],
+      "lastExitDate": "2026-12-02",
+      "reason": "First Majestic Silver Corp. Ordinary Shares (Canada) is about $11.59. California AG Bonta filed lawsuit against OpenAI over model security, public safety - Reuters. The daily trend points down. The December 4, 2026 $11.5 put is about $0.56.",
+      "newsUrl": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdmhmeEgxSkU1V2V3QmEtdlJ5RUR2U1FZVm5lajNFT1h3cUJnUW1XQUZRSUNLYnV6QkFFNWhMR0ZtbEtRSDRvQXJ3dThFRWFYMUlfbTNFUkFMN3JwTWVHbC11MjB5LUNia3JVMUxjWUtGV0dSa3V4V1JIMHNMdGpzd2JkOGotTnpRbmh5cHBSQ213NFhwOWs4MVZ4YzBKZ3FsUlRpVzFsMHNQS3VKTXVmRDRvS3dWWGhO?oc=5",
+      "confidence": "Medium",
+      "probableNews": false,
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-23"
+    },
+    {
+      "id": "ALHC-put-6-2026-12-18",
+      "openedAt": "2026-11-23T10:25:16.391710-05:00",
+      "ticker": "ALHC",
+      "company": "Alignment Healthcare, Inc. -",
+      "action": "BUY PUT",
+      "contractSymbol": "ALHC261218P00006000",
+      "expiry": "2026-12-18",
+      "strike": 6.0,
+      "side": "put",
+      "entry": 0.325,
+      "contracts": 2,
+      "halfClosed": false,
+      "remainingContracts": 2,
+      "status": "open",
+      "lastMark": 0.325,
+      "stockAtEntry": 6.42,
+      "markHistory": [
+        {
+          "at": "2026-11-23T10:25:16.391710-05:00",
+          "mark": 0.325,
+          "stock": 6.42
+        }
+      ],
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "pass",
+        "sentiment": "pass",
+        "chart": "yes",
+        "options": "yes",
+        "risk": "pass",
+        "devil": "pass",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap"
+      ],
+      "lastExitDate": "2026-12-16",
+      "reason": "Alignment Healthcare, Inc. - is about $6.42. Alignment Healthcare ($ALHC) Under Securities Fraud Investigation After 16% Stock Drop \u2013 Investors Notified.... The daily trend points down. The December 18, 2026 $6 put is about $0.33.",
+      "newsUrl": "https://news.google.com/rss/articles/CBMiugJBVV95cUxORENPVG1XcnN6S1BuWG5wV3VEa1R1dW1HSVR6bUVWQVRYUzYxa1ptQWEzaUZkUzI5cXVPTjcwSDJpdm1jd1BsWER5S0lWdkdMVGNjZzFqdHFCS2lmbllJRVU0MzNEcUFjQWRFa2hfUHpncEJFdFdXUkRQUmdvdDdDQlRlX0RSOU5ZbGpGZHFzQUJmOEhkU0c4d0pRZDF0LVU0WEdEYTBXazRIUUdoOU1PVkhINWhmY1VDSkh5Tm81WGNPeWpBZ2d6NmswVndBRFNRbDg1V1c2UGRIenFCRmVEUXNGdHZDT21HT2ZLM0hEVlVBUlJuZk8zZlJEWVZnTktXYnJOdjlLemlCdDNJNU1NTi1mNmdQV3ZxUkpOWTlmME43VnlLbEdSdmZqbWp2c2ZNSVFwSTQyYnZJQQ?oc=5",
+      "confidence": "Medium",
+      "probableNews": false,
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-23"
     }
   ],
   "agentStats": {
