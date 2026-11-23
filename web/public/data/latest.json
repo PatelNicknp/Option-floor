@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-23T10:25:16.391710-05:00",
-  "runLabel": "Morning check",
+  "generatedAt": "2026-11-23T18:40:14.262531-05:00",
+  "runLabel": "After the close",
   "disclaimer": "Options Floor is not a broker and not advice. It never places trades, never connects to a brokerage, and does not send alerts. Options can expire worthless. You can lose the whole premium.",
-  "banner": "",
+  "banner": "Every source that was checked answered, and no idea passed the rules. Waiting is a result.",
   "stale": false,
   "sourceHealth": [
     {
@@ -76,19 +76,19 @@
       "id": "prnewswire",
       "label": "PR Newswire",
       "ok": true,
-      "detail": "45 releases"
+      "detail": "52 releases"
     },
     {
       "id": "globenewswire",
       "label": "GlobeNewswire",
       "ok": true,
-      "detail": "58 releases through Google News (the wire's own feed did not answer)"
+      "detail": "59 releases through Google News (the wire's own feed did not answer)"
     },
     {
       "id": "businesswire",
       "label": "Business Wire",
       "ok": true,
-      "detail": "12 releases"
+      "detail": "24 releases"
     },
     {
       "id": "federal_register",
@@ -106,25 +106,25 @@
       "id": "yahoo_quick_prices",
       "label": "Quick price check",
       "ok": true,
-      "detail": "Priced 159 of 163 news names before pulling charts."
+      "detail": "Priced 162 of 163 news names before pulling charts."
     },
     {
       "id": "yahoo_headlines",
       "label": "Yahoo Finance headlines",
       "ok": true,
-      "detail": "60 headlines"
+      "detail": "58 headlines"
     },
     {
       "id": "nasdaq_earnings",
       "label": "Nasdaq earnings calendar",
       "ok": true,
-      "detail": "180 items"
+      "detail": "176 items"
     },
     {
       "id": "finra_short",
       "label": "FINRA short volume",
       "ok": true,
-      "detail": "12412 rows"
+      "detail": "12416 rows"
     },
     {
       "id": "spy",
@@ -148,18 +148,18 @@
       "id": "yahoo_options",
       "label": "Yahoo option chains",
       "ok": true,
-      "detail": "Loaded option chains for 11 of 18 tickers. Skipped MBRX, IGI, KFFB, CDLR, ADV, EVRL, SDSYA."
+      "detail": "Loaded option chains for 11 of 18 tickers. Skipped EROK, ENHA, IGI, CDLR, CNL, HWBK, LSE."
     },
     {
       "id": "paper_marks",
       "label": "Open paper trades",
       "ok": true,
-      "detail": "Checked the price on 3 of 3 open paper ideas."
+      "detail": "Checked the price on 5 of 5 open paper ideas."
     }
   ],
   "regime": {
-    "vix": 27.5,
-    "spyPrice": 727.11,
+    "vix": 26.62,
+    "spyPrice": 722.29,
     "spyAbove50": false,
     "spyAbove200": false,
     "mood": "fear",
@@ -202,1680 +202,61 @@
     }
   },
   "universe": {
-    "candidates": 199,
+    "candidates": 203,
     "priced": 36,
     "chains": 11,
-    "priceChecked": 132,
+    "priceChecked": 129,
     "inRange": 36
   },
-  "ideas": [
-    {
-      "id": "AG-put-11.5-2026-12-04",
-      "ticker": "AG",
-      "company": "First Majestic Silver Corp. Ordinary Shares (Canada)",
-      "price": 11.59,
-      "changePct": 6.23,
-      "action": "BUY PUT",
-      "side": "put",
-      "confidence": "Medium",
-      "probableNews": false,
-      "score": 78,
-      "contract": {
-        "symbol": "AG261204P00011500",
-        "strike": 11.5,
-        "expiry": "2026-12-04",
-        "type": "put",
-        "dte": 11,
-        "isLeap": false
-      },
-      "entry": {
-        "low": 0.38,
-        "high": 0.75,
-        "mid": 0.565
-      },
-      "bid": 0.38,
-      "ask": 0.75,
-      "spreadPct": 0.655,
-      "oi": 415,
-      "volume": 10,
-      "iv": 0.7266,
-      "hv": 0.7511,
-      "ivLabel": "fair",
-      "ivSentence": "The option's implied volatility is 73%, close to the stock's recent 75% swings.",
-      "spend": 56.5,
-      "contracts": 1,
-      "multiplier": 100,
-      "takeProfit": {
-        "multiple": 2,
-        "price": 1.13,
-        "dollars": 113.0,
-        "plain": "You only have 1 contract, and you cannot sell half of one contract. Sell the whole contract if it doubles to about $1.13 (about $113 back)."
-      },
-      "stopLoss": {
-        "multiple": 0.5,
-        "price": 0.28,
-        "dollars": 28.0,
-        "plain": "Sell everything if the option loses half its value, near $0.28 (about $28 left)."
-      },
-      "lastExitDate": "2026-12-02",
-      "lastExitPlain": "Leave the trade by December 2, 2026 even if neither the target nor the stop has hit. Do not hold into the final days without a fresh look.",
-      "reason": "First Majestic Silver Corp. Ordinary Shares (Canada) is about $11.59. California AG Bonta filed lawsuit against OpenAI over model security, public safety - Reuters. The daily trend points down. The December 4, 2026 $11.5 put is about $0.56.",
-      "news": {
-        "title": "California AG Bonta filed lawsuit against OpenAI over model security, public safety - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdmhmeEgxSkU1V2V3QmEtdlJ5RUR2U1FZVm5lajNFT1h3cUJnUW1XQUZRSUNLYnV6QkFFNWhMR0ZtbEtRSDRvQXJ3dThFRWFYMUlfbTNFUkFMN3JwTWVHbC11MjB5LUNia3JVMUxjWUtGV0dSa3V4V1JIMHNMdGpzd2JkOGotTnpRbmh5cHBSQ213NFhwOWs4MVZ4YzBKZ3FsUlRpVzFsMHNQS3VKTXVmRDRvS3dWWGhO?oc=5",
-        "source": "google",
-        "published": "2026-11-23T04:26:00+00:00"
-      },
-      "agents": [
-        {
-          "id": "news",
-          "name": "News Scout",
-          "vote": "yes",
-          "reason": "The headline supports a put: California AG Bonta filed lawsuit against OpenAI over model security, public safety - Reuters",
-          "weight": 1.05
-        },
-        {
-          "id": "policy",
-          "name": "Policy & Politics Scout",
-          "vote": "pass",
-          "reason": "No policy or political item lines up clearly with this company.",
-          "weight": 1.0
-        },
-        {
-          "id": "sentiment",
-          "name": "Sentiment Scout",
-          "vote": "yes",
-          "reason": "The headlines lean grim (2 grim, 0 upbeat).",
-          "weight": 1.0
-        },
-        {
-          "id": "chart",
-          "name": "Chart Reader",
-          "vote": "yes",
-          "reason": "The daily trend points down.",
-          "weight": 1.0
-        },
-        {
-          "id": "options",
-          "name": "Options Picker",
-          "vote": "yes",
-          "reason": "Use the December 4, 2026 $11.5 put. Try to pay $0.38 to $0.75.",
-          "weight": 1.0
-        },
-        {
-          "id": "risk",
-          "name": "Risk Checker",
-          "vote": "pass",
-          "reason": "The market is usable, but there is a caution: The gap between the bid and the ask is wide.",
-          "weight": 1.0
-        },
-        {
-          "id": "devil",
-          "name": "Devil's Advocate",
-          "vote": "pass",
-          "reason": "The gap between the bid and the ask is wide, so you may overpay.",
-          "weight": 1.0
-        },
-        {
-          "id": "head",
-          "name": "Head Trader",
-          "vote": "yes",
-          "reason": "Medium confidence. First Majestic Silver Corp. Ordinary Shares (Canada) is about $11.59. California AG Bonta filed lawsuit against OpenAI over model security, public safety - Reuters. The daily trend points down. The December 4, 2026 $11.5 put is about $0.56.",
-          "weight": 1.0
-        }
-      ],
-      "payoff": {
-        "rows": [
-          {
-            "pct": -20,
-            "stock": 9.27,
-            "value": 222.8,
-            "pnl": 166.3
-          },
-          {
-            "pct": -10,
-            "stock": 10.43,
-            "value": 106.9,
-            "pnl": 50.4
-          },
-          {
-            "pct": -5,
-            "stock": 11.01,
-            "value": 48.95,
-            "pnl": -7.55
-          },
-          {
-            "pct": 5,
-            "stock": 12.17,
-            "value": 0.0,
-            "pnl": -56.5
-          },
-          {
-            "pct": 10,
-            "stock": 12.75,
-            "value": 0.0,
-            "pnl": -56.5
-          },
-          {
-            "pct": 20,
-            "stock": 13.91,
-            "value": 0.0,
-            "pnl": -56.5
-          }
-        ],
-        "note": "These dollars assume you hold to expiration. Before that, a contract with time left is often worth more than this table."
-      },
-      "chart": {
-        "points": [
-          {
-            "c": 15.67,
-            "ma10": 16.02,
-            "ma20": 16.2,
-            "ma50": 17.41,
-            "ma150": 20.47,
-            "ma200": 18.8
-          },
-          {
-            "c": 16.46,
-            "ma10": 15.98,
-            "ma20": 16.2,
-            "ma50": 17.35,
-            "ma150": 20.46,
-            "ma200": 18.8
-          },
-          {
-            "c": 17.58,
-            "ma10": 16.01,
-            "ma20": 16.29,
-            "ma50": 17.31,
-            "ma150": 20.47,
-            "ma200": 18.82
-          },
-          {
-            "c": 17.25,
-            "ma10": 16.09,
-            "ma20": 16.3,
-            "ma50": 17.25,
-            "ma150": 20.47,
-            "ma200": 18.83
-          },
-          {
-            "c": 18.37,
-            "ma10": 16.3,
-            "ma20": 16.37,
-            "ma50": 17.22,
-            "ma150": 20.49,
-            "ma200": 18.85
-          },
-          {
-            "c": 18.82,
-            "ma10": 16.57,
-            "ma20": 16.49,
-            "ma50": 17.19,
-            "ma150": 20.5,
-            "ma200": 18.88
-          },
-          {
-            "c": 18.93,
-            "ma10": 16.89,
-            "ma20": 16.59,
-            "ma50": 17.15,
-            "ma150": 20.52,
-            "ma200": 18.91
-          },
-          {
-            "c": 19.13,
-            "ma10": 17.29,
-            "ma20": 16.71,
-            "ma50": 17.11,
-            "ma150": 20.52,
-            "ma200": 18.95
-          },
-          {
-            "c": 18.75,
-            "ma10": 17.59,
-            "ma20": 16.85,
-            "ma50": 17.07,
-            "ma150": 20.53,
-            "ma200": 18.98
-          },
-          {
-            "c": 19.24,
-            "ma10": 18.02,
-            "ma20": 17.03,
-            "ma50": 17.06,
-            "ma150": 20.53,
-            "ma200": 19.01
-          },
-          {
-            "c": 19.55,
-            "ma10": 18.41,
-            "ma20": 17.21,
-            "ma50": 17.06,
-            "ma150": 20.54,
-            "ma200": 19.04
-          },
-          {
-            "c": 18.46,
-            "ma10": 18.61,
-            "ma20": 17.29,
-            "ma50": 17.09,
-            "ma150": 20.53,
-            "ma200": 19.07
-          },
-          {
-            "c": 20.83,
-            "ma10": 18.93,
-            "ma20": 17.47,
-            "ma50": 17.16,
-            "ma150": 20.54,
-            "ma200": 19.11
-          },
-          {
-            "c": 21.17,
-            "ma10": 19.32,
-            "ma20": 17.71,
-            "ma50": 17.25,
-            "ma150": 20.54,
-            "ma200": 19.15
-          },
-          {
-            "c": 21.07,
-            "ma10": 19.59,
-            "ma20": 17.95,
-            "ma50": 17.36,
-            "ma150": 20.55,
-            "ma200": 19.2
-          },
-          {
-            "c": 20.81,
-            "ma10": 19.79,
-            "ma20": 18.18,
-            "ma50": 17.44,
-            "ma150": 20.55,
-            "ma200": 19.24
-          },
-          {
-            "c": 21.22,
-            "ma10": 20.02,
-            "ma20": 18.46,
-            "ma50": 17.51,
-            "ma150": 20.54,
-            "ma200": 19.3
-          },
-          {
-            "c": 20.97,
-            "ma10": 20.21,
-            "ma20": 18.75,
-            "ma50": 17.55,
-            "ma150": 20.53,
-            "ma200": 19.35
-          },
-          {
-            "c": 21.72,
-            "ma10": 20.5,
-            "ma20": 19.05,
-            "ma50": 17.6,
-            "ma150": 20.51,
-            "ma200": 19.4
-          },
-          {
-            "c": 20.74,
-            "ma10": 20.65,
-            "ma20": 19.34,
-            "ma50": 17.65,
-            "ma150": 20.48,
-            "ma200": 19.44
-          },
-          {
-            "c": 20.57,
-            "ma10": 20.75,
-            "ma20": 19.58,
-            "ma50": 17.7,
-            "ma150": 20.45,
-            "ma200": 19.49
-          },
-          {
-            "c": 19.84,
-            "ma10": 20.89,
-            "ma20": 19.75,
-            "ma50": 17.74,
-            "ma150": 20.41,
-            "ma200": 19.52
-          },
-          {
-            "c": 21.18,
-            "ma10": 20.93,
-            "ma20": 19.93,
-            "ma50": 17.83,
-            "ma150": 20.38,
-            "ma200": 19.57
-          },
-          {
-            "c": 21.37,
-            "ma10": 20.95,
-            "ma20": 20.14,
-            "ma50": 17.94,
-            "ma150": 20.35,
-            "ma200": 19.62
-          },
-          {
-            "c": 20.95,
-            "ma10": 20.94,
-            "ma20": 20.26,
-            "ma50": 18.03,
-            "ma150": 20.35,
-            "ma200": 19.66
-          },
-          {
-            "c": 20.73,
-            "ma10": 20.93,
-            "ma20": 20.36,
-            "ma50": 18.11,
-            "ma150": 20.36,
-            "ma200": 19.71
-          },
-          {
-            "c": 21.16,
-            "ma10": 20.92,
-            "ma20": 20.47,
-            "ma50": 18.2,
-            "ma150": 20.35,
-            "ma200": 19.75
-          },
-          {
-            "c": 20.13,
-            "ma10": 20.84,
-            "ma20": 20.52,
-            "ma50": 18.26,
-            "ma150": 20.34,
-            "ma200": 19.8
-          },
-          {
-            "c": 19.54,
-            "ma10": 20.62,
-            "ma20": 20.56,
-            "ma50": 18.31,
-            "ma150": 20.33,
-            "ma200": 19.84
-          },
-          {
-            "c": 18.78,
-            "ma10": 20.42,
-            "ma20": 20.54,
-            "ma50": 18.33,
-            "ma150": 20.31,
-            "ma200": 19.88
-          },
-          {
-            "c": 18.62,
-            "ma10": 20.23,
-            "ma20": 20.49,
-            "ma50": 18.36,
-            "ma150": 20.28,
-            "ma200": 19.91
-          },
-          {
-            "c": 18.31,
-            "ma10": 20.08,
-            "ma20": 20.48,
-            "ma50": 18.4,
-            "ma150": 20.24,
-            "ma200": 19.93
-          },
-          {
-            "c": 19.47,
-            "ma10": 19.91,
-            "ma20": 20.42,
-            "ma50": 18.47,
-            "ma150": 20.21,
-            "ma200": 19.95
-          },
-          {
-            "c": 19.82,
-            "ma10": 19.75,
-            "ma20": 20.35,
-            "ma50": 18.52,
-            "ma150": 20.2,
-            "ma200": 19.97
-          },
-          {
-            "c": 19.29,
-            "ma10": 19.58,
-            "ma20": 20.26,
-            "ma50": 18.57,
-            "ma150": 20.18,
-            "ma200": 19.99
-          },
-          {
-            "c": 20.3,
-            "ma10": 19.54,
-            "ma20": 20.23,
-            "ma50": 18.65,
-            "ma150": 20.17,
-            "ma200": 20.02
-          },
-          {
-            "c": 19.03,
-            "ma10": 19.33,
-            "ma20": 20.13,
-            "ma50": 18.69,
-            "ma150": 20.15,
-            "ma200": 20.04
-          },
-          {
-            "c": 18.74,
-            "ma10": 19.19,
-            "ma20": 20.01,
-            "ma50": 18.73,
-            "ma150": 20.11,
-            "ma200": 20.05
-          },
-          {
-            "c": 18.99,
-            "ma10": 19.14,
-            "ma20": 19.88,
-            "ma50": 18.79,
-            "ma150": 20.05,
-            "ma200": 20.08
-          },
-          {
-            "c": 17.93,
-            "ma10": 19.05,
-            "ma20": 19.74,
-            "ma50": 18.84,
-            "ma150": 19.98,
-            "ma200": 20.09
-          },
-          {
-            "c": 18.06,
-            "ma10": 18.99,
-            "ma20": 19.61,
-            "ma50": 18.88,
-            "ma150": 19.9,
-            "ma200": 20.1
-          },
-          {
-            "c": 17.67,
-            "ma10": 18.93,
-            "ma20": 19.5,
-            "ma50": 18.9,
-            "ma150": 19.83,
-            "ma200": 20.11
-          },
-          {
-            "c": 17.64,
-            "ma10": 18.75,
-            "ma20": 19.33,
-            "ma50": 18.9,
-            "ma150": 19.74,
-            "ma200": 20.12
-          },
-          {
-            "c": 17.65,
-            "ma10": 18.53,
-            "ma20": 19.14,
-            "ma50": 18.93,
-            "ma150": 19.64,
-            "ma200": 20.12
-          },
-          {
-            "c": 17.49,
-            "ma10": 18.35,
-            "ma20": 18.97,
-            "ma50": 18.95,
-            "ma150": 19.55,
-            "ma200": 20.13
-          },
-          {
-            "c": 17.52,
-            "ma10": 18.07,
-            "ma20": 18.81,
-            "ma50": 18.98,
-            "ma150": 19.48,
-            "ma200": 20.14
-          },
-          {
-            "c": 16.63,
-            "ma10": 17.83,
-            "ma20": 18.58,
-            "ma50": 19.0,
-            "ma150": 19.4,
-            "ma200": 20.14
-          },
-          {
-            "c": 16.96,
-            "ma10": 17.66,
-            "ma20": 18.42,
-            "ma50": 19.03,
-            "ma150": 19.33,
-            "ma200": 20.14
-          },
-          {
-            "c": 17.26,
-            "ma10": 17.48,
-            "ma20": 18.31,
-            "ma50": 19.07,
-            "ma150": 19.28,
-            "ma200": 20.14
-          },
-          {
-            "c": 16.97,
-            "ma10": 17.39,
-            "ma20": 18.22,
-            "ma50": 19.11,
-            "ma150": 19.22,
-            "ma200": 20.14
-          },
-          {
-            "c": 16.31,
-            "ma10": 17.21,
-            "ma20": 18.1,
-            "ma50": 19.12,
-            "ma150": 19.15,
-            "ma200": 20.13
-          },
-          {
-            "c": 15.23,
-            "ma10": 16.97,
-            "ma20": 17.95,
-            "ma50": 19.09,
-            "ma150": 19.08,
-            "ma200": 20.12
-          },
-          {
-            "c": 16.07,
-            "ma10": 16.81,
-            "ma20": 17.78,
-            "ma50": 19.06,
-            "ma150": 19.02,
-            "ma200": 20.12
-          },
-          {
-            "c": 15.96,
-            "ma10": 16.64,
-            "ma20": 17.59,
-            "ma50": 19.04,
-            "ma150": 18.98,
-            "ma200": 20.11
-          },
-          {
-            "c": 15.96,
-            "ma10": 16.49,
-            "ma20": 17.42,
-            "ma50": 18.99,
-            "ma150": 18.94,
-            "ma200": 20.11
-          },
-          {
-            "c": 15.97,
-            "ma10": 16.34,
-            "ma20": 17.2,
-            "ma50": 18.93,
-            "ma150": 18.9,
-            "ma200": 20.11
-          },
-          {
-            "c": 16.07,
-            "ma10": 16.28,
-            "ma20": 17.06,
-            "ma50": 18.88,
-            "ma150": 18.87,
-            "ma200": 20.11
-          },
-          {
-            "c": 15.1,
-            "ma10": 16.09,
-            "ma20": 16.87,
-            "ma50": 18.8,
-            "ma150": 18.85,
-            "ma200": 20.09
-          },
-          {
-            "c": 14.75,
-            "ma10": 15.84,
-            "ma20": 16.66,
-            "ma50": 18.72,
-            "ma150": 18.82,
-            "ma200": 20.07
-          },
-          {
-            "c": 14.83,
-            "ma10": 15.63,
-            "ma20": 16.51,
-            "ma50": 18.63,
-            "ma150": 18.79,
-            "ma200": 20.06
-          },
-          {
-            "c": 15.62,
-            "ma10": 15.56,
-            "ma20": 16.39,
-            "ma50": 18.55,
-            "ma150": 18.76,
-            "ma200": 20.04
-          },
-          {
-            "c": 15.78,
-            "ma10": 15.61,
-            "ma20": 16.29,
-            "ma50": 18.5,
-            "ma150": 18.73,
-            "ma200": 20.02
-          },
-          {
-            "c": 15.31,
-            "ma10": 15.54,
-            "ma20": 16.18,
-            "ma50": 18.39,
-            "ma150": 18.71,
-            "ma200": 20.0
-          },
-          {
-            "c": 14.25,
-            "ma10": 15.37,
-            "ma20": 16.01,
-            "ma50": 18.25,
-            "ma150": 18.66,
-            "ma200": 19.97
-          },
-          {
-            "c": 14.31,
-            "ma10": 15.2,
-            "ma20": 15.85,
-            "ma50": 18.11,
-            "ma150": 18.63,
-            "ma200": 19.94
-          },
-          {
-            "c": 14.09,
-            "ma10": 15.01,
-            "ma20": 15.67,
-            "ma50": 17.98,
-            "ma150": 18.58,
-            "ma200": 19.9
-          },
-          {
-            "c": 15.37,
-            "ma10": 14.94,
-            "ma20": 15.61,
-            "ma50": 17.86,
-            "ma150": 18.53,
-            "ma200": 19.87
-          },
-          {
-            "c": 14.87,
-            "ma10": 14.92,
-            "ma20": 15.51,
-            "ma50": 17.74,
-            "ma150": 18.49,
-            "ma200": 19.83
-          },
-          {
-            "c": 15.14,
-            "ma10": 14.96,
-            "ma20": 15.4,
-            "ma50": 17.61,
-            "ma150": 18.45,
-            "ma200": 19.79
-          },
-          {
-            "c": 15.85,
-            "ma10": 15.06,
-            "ma20": 15.34,
-            "ma50": 17.51,
-            "ma150": 18.41,
-            "ma200": 19.74
-          },
-          {
-            "c": 14.92,
-            "ma10": 14.99,
-            "ma20": 15.28,
-            "ma50": 17.4,
-            "ma150": 18.37,
-            "ma200": 19.69
-          },
-          {
-            "c": 14.75,
-            "ma10": 14.89,
-            "ma20": 15.25,
-            "ma50": 17.3,
-            "ma150": 18.33,
-            "ma200": 19.63
-          },
-          {
-            "c": 13.98,
-            "ma10": 14.75,
-            "ma20": 15.15,
-            "ma50": 17.15,
-            "ma150": 18.29,
-            "ma200": 19.57
-          },
-          {
-            "c": 13.64,
-            "ma10": 14.69,
-            "ma20": 15.03,
-            "ma50": 17.0,
-            "ma150": 18.24,
-            "ma200": 19.51
-          },
-          {
-            "c": 12.67,
-            "ma10": 14.53,
-            "ma20": 14.87,
-            "ma50": 16.83,
-            "ma150": 18.18,
-            "ma200": 19.47
-          },
-          {
-            "c": 12.77,
-            "ma10": 14.4,
-            "ma20": 14.71,
-            "ma50": 16.67,
-            "ma150": 18.13,
-            "ma200": 19.44
-          },
-          {
-            "c": 11.92,
-            "ma10": 14.05,
-            "ma20": 14.5,
-            "ma50": 16.49,
-            "ma150": 18.07,
-            "ma200": 19.38
-          },
-          {
-            "c": 11.32,
-            "ma10": 13.7,
-            "ma20": 14.31,
-            "ma50": 16.31,
-            "ma150": 18.0,
-            "ma200": 19.33
-          },
-          {
-            "c": 10.91,
-            "ma10": 13.27,
-            "ma20": 14.12,
-            "ma50": 16.14,
-            "ma150": 17.93,
-            "ma200": 19.28
-          },
-          {
-            "c": 11.59,
-            "ma10": 12.85,
-            "ma20": 13.95,
-            "ma50": 15.99,
-            "ma150": 17.87,
-            "ma200": 19.23
-          }
-        ],
-        "averages": {
-          "ma10": 12.85,
-          "ma20": 13.95,
-          "ma50": 15.99,
-          "ma150": 17.87,
-          "ma200": 19.23
-        },
-        "trend": "down"
-      },
-      "tags": [
-        "cheap"
-      ],
-      "earningsDate": null,
-      "riskFlags": [
-        "The gap between the bid and the ask is wide."
-      ],
-      "shortRatio": 0.34,
-      "instruction": [
-        "At your own broker, search for AG. This page cannot place the order.",
-        "Open the option chain.",
-        "Find the December 4, 2026 $11.5 put.",
-        "Use a limit order between $0.38 and $0.75.",
-        "Buy 1 contract(s), about $56.",
-        "Write down the double target, the half-loss stop, and the last exit date before you walk away."
-      ]
-    },
-    {
-      "id": "ALHC-put-6-2026-12-18",
-      "ticker": "ALHC",
-      "company": "Alignment Healthcare, Inc. -",
-      "price": 6.42,
-      "changePct": 0.78,
-      "action": "BUY PUT",
-      "side": "put",
-      "confidence": "Medium",
-      "probableNews": false,
-      "score": 72,
-      "contract": {
-        "symbol": "ALHC261218P00006000",
-        "strike": 6.0,
-        "expiry": "2026-12-18",
-        "type": "put",
-        "dte": 25,
-        "isLeap": false
-      },
-      "entry": {
-        "low": 0.25,
-        "high": 0.4,
-        "mid": 0.325
-      },
-      "bid": 0.25,
-      "ask": 0.4,
-      "spreadPct": 0.462,
-      "oi": 2981,
-      "volume": 100,
-      "iv": 0.7656,
-      "hv": 0.8255,
-      "ivLabel": "fair",
-      "ivSentence": "The option's implied volatility is 77%, close to the stock's recent 83% swings.",
-      "spend": 65.0,
-      "contracts": 2,
-      "multiplier": 100,
-      "takeProfit": {
-        "multiple": 2,
-        "price": 0.65,
-        "dollars": 65.0,
-        "plain": "You have 2 contracts, so sell half (1) if the option doubles to about $0.65. That half returns about $65. Keep the rest until the stop or the last exit date."
-      },
-      "stopLoss": {
-        "multiple": 0.5,
-        "price": 0.16,
-        "dollars": 32.0,
-        "plain": "Sell everything if the option loses half its value, near $0.16 (about $32 left)."
-      },
-      "lastExitDate": "2026-12-16",
-      "lastExitPlain": "Leave the trade by December 16, 2026 even if neither the target nor the stop has hit. Do not hold into the final days without a fresh look.",
-      "reason": "Alignment Healthcare, Inc. - is about $6.42. Alignment Healthcare ($ALHC) Under Securities Fraud Investigation After 16% Stock Drop \u2013 Investors Notified.... The daily trend points down. The December 18, 2026 $6 put is about $0.33.",
-      "news": {
-        "title": "Alignment Healthcare ($ALHC) Under Securities Fraud Investigation After 16% Stock Drop \u2013 Investors Notified to Contact BFA Law - WBOC TV",
-        "url": "https://news.google.com/rss/articles/CBMiugJBVV95cUxORENPVG1XcnN6S1BuWG5wV3VEa1R1dW1HSVR6bUVWQVRYUzYxa1ptQWEzaUZkUzI5cXVPTjcwSDJpdm1jd1BsWER5S0lWdkdMVGNjZzFqdHFCS2lmbllJRVU0MzNEcUFjQWRFa2hfUHpncEJFdFdXUkRQUmdvdDdDQlRlX0RSOU5ZbGpGZHFzQUJmOEhkU0c4d0pRZDF0LVU0WEdEYTBXazRIUUdoOU1PVkhINWhmY1VDSkh5Tm81WGNPeWpBZ2d6NmswVndBRFNRbDg1V1c2UGRIenFCRmVEUXNGdHZDT21HT2ZLM0hEVlVBUlJuZk8zZlJEWVZnTktXYnJOdjlLemlCdDNJNU1NTi1mNmdQV3ZxUkpOWTlmME43VnlLbEdSdmZqbWp2c2ZNSVFwSTQyYnZJQQ?oc=5",
-        "source": "google",
-        "published": "2026-11-23T11:07:00+00:00"
-      },
-      "agents": [
-        {
-          "id": "news",
-          "name": "News Scout",
-          "vote": "yes",
-          "reason": "The headline supports a put: Alignment Healthcare ($ALHC) Under Securities Fraud Investigation After 16% Stock Drop \u2013 Investors Notified to Contact BFA Law - WBOC TV",
-          "weight": 1.05
-        },
-        {
-          "id": "policy",
-          "name": "Policy & Politics Scout",
-          "vote": "pass",
-          "reason": "No policy or political item lines up clearly with this company.",
-          "weight": 1.0
-        },
-        {
-          "id": "sentiment",
-          "name": "Sentiment Scout",
-          "vote": "pass",
-          "reason": "The tone is mixed, so it does not push the idea either way.",
-          "weight": 1.0
-        },
-        {
-          "id": "chart",
-          "name": "Chart Reader",
-          "vote": "yes",
-          "reason": "The daily trend points down.",
-          "weight": 1.0
-        },
-        {
-          "id": "options",
-          "name": "Options Picker",
-          "vote": "yes",
-          "reason": "Use the December 18, 2026 $6 put. Try to pay $0.25 to $0.40.",
-          "weight": 1.0
-        },
-        {
-          "id": "risk",
-          "name": "Risk Checker",
-          "vote": "pass",
-          "reason": "The market is usable, but there is a caution: The gap between the bid and the ask is wide.",
-          "weight": 1.0
-        },
-        {
-          "id": "devil",
-          "name": "Devil's Advocate",
-          "vote": "pass",
-          "reason": "The gap between the bid and the ask is wide, so you may overpay.",
-          "weight": 1.0
-        },
-        {
-          "id": "head",
-          "name": "Head Trader",
-          "vote": "yes",
-          "reason": "Medium confidence. Alignment Healthcare, Inc. - is about $6.42. Alignment Healthcare ($ALHC) Under Securities Fraud Investigation After 16% Stock Drop \u2013 Investors Notified.... The daily trend points down. The December 18, 2026 $6 put is about $0.33.",
-          "weight": 1.0
-        }
-      ],
-      "payoff": {
-        "rows": [
-          {
-            "pct": -20,
-            "stock": 5.14,
-            "value": 172.8,
-            "pnl": 107.8
-          },
-          {
-            "pct": -10,
-            "stock": 5.78,
-            "value": 44.4,
-            "pnl": -20.6
-          },
-          {
-            "pct": -5,
-            "stock": 6.1,
-            "value": 0.0,
-            "pnl": -65.0
-          },
-          {
-            "pct": 5,
-            "stock": 6.74,
-            "value": 0.0,
-            "pnl": -65.0
-          },
-          {
-            "pct": 10,
-            "stock": 7.06,
-            "value": 0.0,
-            "pnl": -65.0
-          },
-          {
-            "pct": 20,
-            "stock": 7.7,
-            "value": 0.0,
-            "pnl": -65.0
-          }
-        ],
-        "note": "These dollars assume you hold to expiration. Before that, a contract with time left is often worth more than this table."
-      },
-      "chart": {
-        "points": [
-          {
-            "c": 14.56,
-            "ma10": 18.51,
-            "ma20": 19.71,
-            "ma50": 19.41,
-            "ma150": 19.72,
-            "ma200": 19.3
-          },
-          {
-            "c": 13.52,
-            "ma10": 17.71,
-            "ma20": 19.19,
-            "ma50": 19.35,
-            "ma150": 19.69,
-            "ma200": 19.29
-          },
-          {
-            "c": 13.68,
-            "ma10": 17.0,
-            "ma20": 18.87,
-            "ma50": 19.3,
-            "ma150": 19.65,
-            "ma200": 19.27
-          },
-          {
-            "c": 13.38,
-            "ma10": 16.34,
-            "ma20": 18.49,
-            "ma50": 19.25,
-            "ma150": 19.61,
-            "ma200": 19.25
-          },
-          {
-            "c": 14.37,
-            "ma10": 15.84,
-            "ma20": 18.22,
-            "ma50": 19.22,
-            "ma150": 19.58,
-            "ma200": 19.23
-          },
-          {
-            "c": 13.78,
-            "ma10": 15.35,
-            "ma20": 17.89,
-            "ma50": 19.17,
-            "ma150": 19.54,
-            "ma200": 19.22
-          },
-          {
-            "c": 13.2,
-            "ma10": 14.82,
-            "ma20": 17.49,
-            "ma50": 19.13,
-            "ma150": 19.48,
-            "ma200": 19.2
-          },
-          {
-            "c": 13.52,
-            "ma10": 14.35,
-            "ma20": 17.11,
-            "ma50": 19.14,
-            "ma150": 19.43,
-            "ma200": 19.18
-          },
-          {
-            "c": 13.46,
-            "ma10": 13.83,
-            "ma20": 16.79,
-            "ma50": 19.13,
-            "ma150": 19.38,
-            "ma200": 19.16
-          },
-          {
-            "c": 13.96,
-            "ma10": 13.74,
-            "ma20": 16.45,
-            "ma50": 19.13,
-            "ma150": 19.33,
-            "ma200": 19.14
-          },
-          {
-            "c": 13.46,
-            "ma10": 13.63,
-            "ma20": 16.07,
-            "ma50": 19.09,
-            "ma150": 19.29,
-            "ma200": 19.11
-          },
-          {
-            "c": 13.23,
-            "ma10": 13.6,
-            "ma20": 15.66,
-            "ma50": 19.05,
-            "ma150": 19.23,
-            "ma200": 19.09
-          },
-          {
-            "c": 12.78,
-            "ma10": 13.51,
-            "ma20": 15.26,
-            "ma50": 19.0,
-            "ma150": 19.18,
-            "ma200": 19.07
-          },
-          {
-            "c": 12.93,
-            "ma10": 13.47,
-            "ma20": 14.91,
-            "ma50": 18.88,
-            "ma150": 19.12,
-            "ma200": 19.05
-          },
-          {
-            "c": 13.16,
-            "ma10": 13.35,
-            "ma20": 14.59,
-            "ma50": 18.73,
-            "ma150": 19.06,
-            "ma200": 19.03
-          },
-          {
-            "c": 13.43,
-            "ma10": 13.31,
-            "ma20": 14.33,
-            "ma50": 18.59,
-            "ma150": 19.0,
-            "ma200": 19.01
-          },
-          {
-            "c": 13.59,
-            "ma10": 13.35,
-            "ma20": 14.09,
-            "ma50": 18.47,
-            "ma150": 18.94,
-            "ma200": 18.99
-          },
-          {
-            "c": 13.9,
-            "ma10": 13.39,
-            "ma20": 13.87,
-            "ma50": 18.35,
-            "ma150": 18.87,
-            "ma200": 18.98
-          },
-          {
-            "c": 13.56,
-            "ma10": 13.4,
-            "ma20": 13.62,
-            "ma50": 18.21,
-            "ma150": 18.81,
-            "ma200": 18.97
-          },
-          {
-            "c": 13.62,
-            "ma10": 13.37,
-            "ma20": 13.55,
-            "ma50": 18.05,
-            "ma150": 18.74,
-            "ma200": 18.95
-          },
-          {
-            "c": 13.4,
-            "ma10": 13.36,
-            "ma20": 13.5,
-            "ma50": 17.88,
-            "ma150": 18.67,
-            "ma200": 18.94
-          },
-          {
-            "c": 13.59,
-            "ma10": 13.4,
-            "ma20": 13.5,
-            "ma50": 17.73,
-            "ma150": 18.62,
-            "ma200": 18.92
-          },
-          {
-            "c": 13.59,
-            "ma10": 13.48,
-            "ma20": 13.5,
-            "ma50": 17.57,
-            "ma150": 18.56,
-            "ma200": 18.91
-          },
-          {
-            "c": 13.55,
-            "ma10": 13.54,
-            "ma20": 13.5,
-            "ma50": 17.41,
-            "ma150": 18.5,
-            "ma200": 18.89
-          },
-          {
-            "c": 13.54,
-            "ma10": 13.58,
-            "ma20": 13.46,
-            "ma50": 17.22,
-            "ma150": 18.44,
-            "ma200": 18.88
-          },
-          {
-            "c": 13.46,
-            "ma10": 13.58,
-            "ma20": 13.45,
-            "ma50": 17.03,
-            "ma150": 18.38,
-            "ma200": 18.87
-          },
-          {
-            "c": 13.03,
-            "ma10": 13.52,
-            "ma20": 13.44,
-            "ma50": 16.82,
-            "ma150": 18.32,
-            "ma200": 18.85
-          },
-          {
-            "c": 12.76,
-            "ma10": 13.41,
-            "ma20": 13.4,
-            "ma50": 16.6,
-            "ma150": 18.26,
-            "ma200": 18.83
-          },
-          {
-            "c": 12.61,
-            "ma10": 13.31,
-            "ma20": 13.36,
-            "ma50": 16.37,
-            "ma150": 18.2,
-            "ma200": 18.81
-          },
-          {
-            "c": 12.94,
-            "ma10": 13.25,
-            "ma20": 13.31,
-            "ma50": 16.16,
-            "ma150": 18.14,
-            "ma200": 18.79
-          },
-          {
-            "c": 10.37,
-            "ma10": 12.94,
-            "ma20": 13.15,
-            "ma50": 15.87,
-            "ma150": 18.07,
-            "ma200": 18.75
-          },
-          {
-            "c": 8.71,
-            "ma10": 12.46,
-            "ma20": 12.93,
-            "ma50": 15.57,
-            "ma150": 17.99,
-            "ma200": 18.69
-          },
-          {
-            "c": 8.7,
-            "ma10": 11.97,
-            "ma20": 12.72,
-            "ma50": 15.34,
-            "ma150": 17.92,
-            "ma200": 18.64
-          },
-          {
-            "c": 8.35,
-            "ma10": 11.45,
-            "ma20": 12.49,
-            "ma50": 15.09,
-            "ma150": 17.84,
-            "ma200": 18.59
-          },
-          {
-            "c": 8.33,
-            "ma10": 10.93,
-            "ma20": 12.25,
-            "ma50": 14.86,
-            "ma150": 17.76,
-            "ma200": 18.53
-          },
-          {
-            "c": 7.99,
-            "ma10": 10.38,
-            "ma20": 11.98,
-            "ma50": 14.61,
-            "ma150": 17.68,
-            "ma200": 18.48
-          },
-          {
-            "c": 7.86,
-            "ma10": 9.86,
-            "ma20": 11.69,
-            "ma50": 14.34,
-            "ma150": 17.59,
-            "ma200": 18.42
-          },
-          {
-            "c": 7.67,
-            "ma10": 9.35,
-            "ma20": 11.38,
-            "ma50": 14.08,
-            "ma150": 17.5,
-            "ma200": 18.36
-          },
-          {
-            "c": 8.21,
-            "ma10": 8.91,
-            "ma20": 11.11,
-            "ma50": 13.84,
-            "ma150": 17.42,
-            "ma200": 18.3
-          },
-          {
-            "c": 7.93,
-            "ma10": 8.41,
-            "ma20": 10.83,
-            "ma50": 13.59,
-            "ma150": 17.34,
-            "ma200": 18.25
-          },
-          {
-            "c": 7.91,
-            "ma10": 8.17,
-            "ma20": 10.55,
-            "ma50": 13.32,
-            "ma150": 17.26,
-            "ma200": 18.19
-          },
-          {
-            "c": 8.16,
-            "ma10": 8.11,
-            "ma20": 10.28,
-            "ma50": 13.06,
-            "ma150": 17.18,
-            "ma200": 18.14
-          },
-          {
-            "c": 7.74,
-            "ma10": 8.01,
-            "ma20": 9.99,
-            "ma50": 12.8,
-            "ma150": 17.1,
-            "ma200": 18.08
-          },
-          {
-            "c": 7.94,
-            "ma10": 7.97,
-            "ma20": 9.71,
-            "ma50": 12.55,
-            "ma150": 17.02,
-            "ma200": 18.02
-          },
-          {
-            "c": 8.5,
-            "ma10": 7.99,
-            "ma20": 9.46,
-            "ma50": 12.34,
-            "ma150": 16.95,
-            "ma200": 17.96
-          },
-          {
-            "c": 8.37,
-            "ma10": 8.03,
-            "ma20": 9.2,
-            "ma50": 12.13,
-            "ma150": 16.88,
-            "ma200": 17.9
-          },
-          {
-            "c": 8.55,
-            "ma10": 8.1,
-            "ma20": 8.98,
-            "ma50": 11.93,
-            "ma150": 16.81,
-            "ma200": 17.84
-          },
-          {
-            "c": 8.71,
-            "ma10": 8.2,
-            "ma20": 8.78,
-            "ma50": 11.74,
-            "ma150": 16.75,
-            "ma200": 17.78
-          },
-          {
-            "c": 7.55,
-            "ma10": 8.14,
-            "ma20": 8.52,
-            "ma50": 11.52,
-            "ma150": 16.67,
-            "ma200": 17.72
-          },
-          {
-            "c": 8.09,
-            "ma10": 8.15,
-            "ma20": 8.28,
-            "ma50": 11.38,
-            "ma150": 16.61,
-            "ma200": 17.66
-          },
-          {
-            "c": 8.3,
-            "ma10": 8.19,
-            "ma20": 8.18,
-            "ma50": 11.26,
-            "ma150": 16.54,
-            "ma200": 17.61
-          },
-          {
-            "c": 8.23,
-            "ma10": 8.2,
-            "ma20": 8.15,
-            "ma50": 11.15,
-            "ma150": 16.48,
-            "ma200": 17.55
-          },
-          {
-            "c": 8.15,
-            "ma10": 8.24,
-            "ma20": 8.13,
-            "ma50": 11.04,
-            "ma150": 16.42,
-            "ma200": 17.5
-          },
-          {
-            "c": 8.28,
-            "ma10": 8.27,
-            "ma20": 8.12,
-            "ma50": 10.94,
-            "ma150": 16.36,
-            "ma200": 17.45
-          },
-          {
-            "c": 8.4,
-            "ma10": 8.26,
-            "ma20": 8.13,
-            "ma50": 10.82,
-            "ma150": 16.3,
-            "ma200": 17.39
-          },
-          {
-            "c": 8.51,
-            "ma10": 8.28,
-            "ma20": 8.15,
-            "ma50": 10.72,
-            "ma150": 16.24,
-            "ma200": 17.33
-          },
-          {
-            "c": 8.44,
-            "ma10": 8.27,
-            "ma20": 8.18,
-            "ma50": 10.62,
-            "ma150": 16.17,
-            "ma200": 17.27
-          },
-          {
-            "c": 8.43,
-            "ma10": 8.24,
-            "ma20": 8.22,
-            "ma50": 10.52,
-            "ma150": 16.11,
-            "ma200": 17.2
-          },
-          {
-            "c": 8.06,
-            "ma10": 8.29,
-            "ma20": 8.21,
-            "ma50": 10.41,
-            "ma150": 16.04,
-            "ma200": 17.14
-          },
-          {
-            "c": 7.89,
-            "ma10": 8.27,
-            "ma20": 8.21,
-            "ma50": 10.29,
-            "ma150": 15.98,
-            "ma200": 17.07
-          },
-          {
-            "c": 8.05,
-            "ma10": 8.24,
-            "ma20": 8.22,
-            "ma50": 10.18,
-            "ma150": 15.92,
-            "ma200": 17.01
-          },
-          {
-            "c": 8.18,
-            "ma10": 8.24,
-            "ma20": 8.22,
-            "ma50": 10.08,
-            "ma150": 15.85,
-            "ma200": 16.94
-          },
-          {
-            "c": 8.06,
-            "ma10": 8.23,
-            "ma20": 8.23,
-            "ma50": 9.99,
-            "ma150": 15.8,
-            "ma200": 16.88
-          },
-          {
-            "c": 7.27,
-            "ma10": 8.13,
-            "ma20": 8.2,
-            "ma50": 9.87,
-            "ma150": 15.73,
-            "ma200": 16.81
-          },
-          {
-            "c": 7.0,
-            "ma10": 7.99,
-            "ma20": 8.13,
-            "ma50": 9.75,
-            "ma150": 15.67,
-            "ma200": 16.73
-          },
-          {
-            "c": 7.39,
-            "ma10": 7.88,
-            "ma20": 8.08,
-            "ma50": 9.63,
-            "ma150": 15.6,
-            "ma200": 16.65
-          },
-          {
-            "c": 8.14,
-            "ma10": 7.85,
-            "ma20": 8.06,
-            "ma50": 9.52,
-            "ma150": 15.53,
-            "ma200": 16.58
-          },
-          {
-            "c": 7.56,
-            "ma10": 7.76,
-            "ma20": 8.0,
-            "ma50": 9.39,
-            "ma150": 15.46,
-            "ma200": 16.5
-          },
-          {
-            "c": 7.34,
-            "ma10": 7.69,
-            "ma20": 7.99,
-            "ma50": 9.27,
-            "ma150": 15.38,
-            "ma200": 16.42
-          },
-          {
-            "c": 7.27,
-            "ma10": 7.63,
-            "ma20": 7.95,
-            "ma50": 9.14,
-            "ma150": 15.29,
-            "ma200": 16.34
-          },
-          {
-            "c": 7.67,
-            "ma10": 7.59,
-            "ma20": 7.92,
-            "ma50": 9.03,
-            "ma150": 15.2,
-            "ma200": 16.26
-          },
-          {
-            "c": 7.69,
-            "ma10": 7.54,
-            "ma20": 7.89,
-            "ma50": 8.91,
-            "ma150": 15.11,
-            "ma200": 16.19
-          },
-          {
-            "c": 7.5,
-            "ma10": 7.48,
-            "ma20": 7.86,
-            "ma50": 8.79,
-            "ma150": 15.02,
-            "ma200": 16.12
-          },
-          {
-            "c": 7.36,
-            "ma10": 7.49,
-            "ma20": 7.81,
-            "ma50": 8.66,
-            "ma150": 14.93,
-            "ma200": 16.04
-          },
-          {
-            "c": 7.47,
-            "ma10": 7.54,
-            "ma20": 7.76,
-            "ma50": 8.54,
-            "ma150": 14.84,
-            "ma200": 15.97
-          },
-          {
-            "c": 7.62,
-            "ma10": 7.56,
-            "ma20": 7.72,
-            "ma50": 8.42,
-            "ma150": 14.75,
-            "ma200": 15.89
-          },
-          {
-            "c": 6.72,
-            "ma10": 7.42,
-            "ma20": 7.63,
-            "ma50": 8.3,
-            "ma150": 14.65,
-            "ma200": 15.81
-          },
-          {
-            "c": 6.5,
-            "ma10": 7.31,
-            "ma20": 7.54,
-            "ma50": 8.17,
-            "ma150": 14.56,
-            "ma200": 15.74
-          },
-          {
-            "c": 6.37,
-            "ma10": 7.22,
-            "ma20": 7.45,
-            "ma50": 8.05,
-            "ma150": 14.45,
-            "ma200": 15.66
-          },
-          {
-            "c": 6.42,
-            "ma10": 7.13,
-            "ma20": 7.38,
-            "ma50": 7.92,
-            "ma150": 14.35,
-            "ma200": 15.59
-          }
-        ],
-        "averages": {
-          "ma10": 7.13,
-          "ma20": 7.38,
-          "ma50": 7.92,
-          "ma150": 14.35,
-          "ma200": 15.59
-        },
-        "trend": "down"
-      },
-      "tags": [
-        "cheap"
-      ],
-      "earningsDate": null,
-      "riskFlags": [
-        "The gap between the bid and the ask is wide."
-      ],
-      "shortRatio": 0.312,
-      "instruction": [
-        "At your own broker, search for ALHC. This page cannot place the order.",
-        "Open the option chain.",
-        "Find the December 18, 2026 $6 put.",
-        "Use a limit order between $0.25 and $0.40.",
-        "Buy 2 contract(s), about $65.",
-        "Write down the double target, the half-loss stop, and the last exit date before you walk away."
-      ]
-    }
-  ],
+  "ideas": [],
   "watch": [],
   "skipped": [
     {
-      "ticker": "MNRO",
+      "ticker": "EROK",
+      "reason": "The option chain did not load."
+    },
+    {
+      "ticker": "AMTM",
+      "reason": "Earnings are in the next two days. The option can collapse right after the announcement, so skip it."
+    },
+    {
+      "ticker": "AVAH",
       "reason": "No cheap, tradable contract matched the rules."
     },
     {
-      "ticker": "MBRX",
+      "ticker": "BAND",
       "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "ENHA",
+      "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "GBDC",
+      "reason": "No cheap, tradable contract matched the rules."
     },
     {
       "ticker": "IGI",
       "reason": "The news does not clearly point to a call or a put."
     },
     {
-      "ticker": "BAX",
+      "ticker": "AB",
+      "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "CDLR",
+      "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "MITK",
+      "reason": "No cheap, tradable contract matched the rules."
+    },
+    {
+      "ticker": "GLPI",
+      "reason": "The news does not clearly point to a call or a put."
+    },
+    {
+      "ticker": "PBT",
       "reason": "No cheap, tradable contract matched the rules."
     },
     {
@@ -1883,55 +264,15 @@
       "reason": "No cheap, tradable contract matched the rules."
     },
     {
-      "ticker": "BFST",
-      "reason": "No cheap, tradable contract matched the rules."
-    },
-    {
-      "ticker": "DRVN",
-      "reason": "No cheap, tradable contract matched the rules."
-    },
-    {
-      "ticker": "KFFB",
-      "reason": "The option chain did not load."
-    },
-    {
-      "ticker": "MYE",
-      "reason": "No cheap, tradable contract matched the rules."
-    },
-    {
-      "ticker": "CDLR",
-      "reason": "The news does not clearly point to a call or a put."
-    },
-    {
-      "ticker": "ADV",
+      "ticker": "CNL",
       "reason": "The news does not clearly point to a call or a put."
     },
     {
       "ticker": "CPSS",
       "reason": "No cheap, tradable contract matched the rules."
-    },
-    {
-      "ticker": "EVRL",
-      "reason": "The news does not clearly point to a call or a put."
-    },
-    {
-      "ticker": "IMMR",
-      "reason": "The news does not clearly point to a call or a put."
-    },
-    {
-      "ticker": "RCUS",
-      "reason": "The news does not clearly point to a call or a put."
     }
   ],
   "catalysts": [
-    {
-      "date": "2026-11-18",
-      "kind": "fda",
-      "title": "Class 2 Device Recall Azurion - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBrVHFpNHJYdHdrYXh4RFdPNldxeGVkLW55TllBT09tSFZpM2VTcm9LT3o5VkpUQUUxeE0xZ0R5ekdvX2xmR3EwQzFiZEpMUlJOLXVocnMwM0lGNDE1MW41Q2V3XzRCT2RaRl9oOVpqMnVnTFVLdWN3RXpZeGVERkk?oc=5",
-      "tickers": [],
-      "plain": "Class 2 Device Recall Azurion U.S. Food and Drug Administration (.gov)"
-    },
     {
       "date": "2026-11-18",
       "kind": "fda",
@@ -1951,10 +292,22 @@
     {
       "date": "2026-11-18",
       "kind": "fda",
-      "title": "FDA Approves First Drug to Treat Neurological Symptoms of Type 3 Gaucher Disease - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxOcXhIZGs1N0hiTlZ4NElWOFAwZ1dOR1JCSG1DWmRUaDhvaEV2VkRwelViU3duQV9fb2tOdkphTUdWdFVBLU9PZG5kYlN6WFVqazQyUVBDTG5EY0cwN0F5Tm1lOHVNSVZIc1VPWmFfYXI5TWRoZEZUZXVHWWtRQXlHenVXeFhZc3V4WldRZW1rTWdZbktWSlJtbFJuczlrc203eDNTcUs4OW1kNTlrQ2tkd1hIYVVDV2ctRGR2Rk1iMWFhQTFO?oc=5",
-      "tickers": [],
-      "plain": "FDA Approves First Drug to Treat Neurological Symptoms of Type 3 Gaucher Disease U.S. Food and Drug Administration (.gov)"
+      "title": "Drug Quality Sampling and Testing Programs - U.S. Food and Drug Administration (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQVjJpSXI3YUVnRGRHaTBLY1M0WVUzYjlyUkRqUlJDTjlVOXkwYy1Lb1pWVWg0S1M5YWFHTmF0b0Y2X3pLNFEyaUoxVGZJTnMtSEJQQ1lZVHVwS043YzFvT3JwTDUxUFFsM0EwQzVoZVhBRXd5alJDRndHdzdFV0FBdXNlR2l2OGtrMzhhdEo3dUJWVGVubFFNTW5zYw?oc=5",
+      "tickers": [
+        "QIND"
+      ],
+      "plain": "Drug Quality Sampling and Testing Programs U.S. Food and Drug Administration (.gov)"
+    },
+    {
+      "date": "2026-11-18",
+      "kind": "fda",
+      "title": "Early Alert: Outset Medical Updates Use Instructions for the Tablo Console and the TabloCart with Prefiltration Drawer - U.S. Food and Drug Administration (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMihwJBVV95cUxQTVZ1VnVQWnR3OHlfeW5kb0tSVUpubFBlMVFmNUVGc09SNzU0UXRqLW8wQ0wtdWw5b3ZGRko1dHVRYTBscExmUGx3U0Q5QUVvb1NFVEpIMFVqdDE5dEpTMUlBV3pwakZDb2N6SVJxVXhZd2JsX003ejd5Qm82TWpqZ3RRRmlBYzhkWWFfMmMzLWpUcWdKZFNIUFdNQ2ZBMFFrUVg0LUhSamttWUZIXzE5eTg5QkpzRVdVUlpQbGYwQU42azNZVkRiRWF4MlpycE9sYkI5RTkxU3BncU1iblduWjJfSzFHdDVZajJOQkNDSnJYR1NhT3NDdmI5dFZ0eVpvUjBTc29taw?oc=5",
+      "tickers": [
+        "OM"
+      ],
+      "plain": "Early Alert: Outset Medical Updates Use Instructions for the Tablo Console and the TabloCart with Prefiltration Drawer U.S. Food and Drug Administration (.gov)"
     },
     {
       "date": "2026-11-18",
@@ -1971,6 +324,14 @@
       "url": "https://www.whitehouse.gov/fact-sheets/2026/11/fact-sheet-president-donald-j-trump-secures-historic-economic-deals-for-american-workers-and-strengthens-americas-leadership-in-asia/",
       "tickers": [],
       "plain": "SUPPORTING AMERICAN JOBS AND STRENGTHENING U.S. DIPLOMATIC LEADERSHIP IN THE INDO-PACIFIC: Today, President Donald J. Trump concluded a two-day visit to the Philippines for a State Visit and the Association of Southeast Asian Nations (ASEAN) Summit, where he announced over $17 billion in commercial deals and strategic investments for U.S. companies that will support tens of [\u2026] The post Fact Sheet: President Donald J. Trump Secures Historic Economic Deals for American Workers and Strengthens Ame"
+    },
+    {
+      "date": "2026-11-18",
+      "kind": "fda",
+      "title": "Forms - U.S. Food and Drug Administration (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE53UlRKQWk3MjdlNURsTEFlZG9pUWNPUUpWTXNJZHBFajVBbVlUX3hGcnRtT2lQd1JrYjhieHd6MTZOVE5lZjQtZGlfWmd3ZlhWWlNzTFQ3TGtPbG0wN1U4SmZHanFWNXRo?oc=5",
+      "tickers": [],
+      "plain": "Forms U.S. Food and Drug Administration (.gov)"
     },
     {
       "date": "2026-11-18",
@@ -1997,22 +358,6 @@
       "url": "https://www.whitehouse.gov/releases/2026/11/no-indication-of-a-cyberattack-dni-clayton-and-secretary-rubio-on-recent-tech-outages/",
       "tickers": [],
       "plain": "The Trump Administration sees no indication of a coordinated cyberattack, state-sponsored activity, or malign actor behind the recent tech outages. Director of National Intelligence Jay Clayton and National Security Adviser Marco Rubio made clear that these are separate incidents caused by companies patching vulnerabilities and upgrading outdated systems, with America leading the effort to harden [\u2026] The post \u201cNo Indication of a Cyberattack\u201d: DNI Clayton and Secretary Rubio on Recent Tech Outage"
-    },
-    {
-      "date": "2026-11-19",
-      "kind": "fda",
-      "title": "Class 1 Device Recall STREAMLINE BLOODLINE SET FOR DIALOG - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE81dEJoZllvbkNDeDJtQ3dTZHNTbF9wSUFOVXdQSnM0NjVkdFZKS2xGUnZtRE5lMDN0aXlkNUZkdGd1QXFwY0lfWE5JUzFURzJKQkNxdDVmY1RTb2ZnZGFJTXg4dUhCcUxfc2lieDM5dUh0SWFsMndENTJSRmpfWnc?oc=5",
-      "tickers": [],
-      "plain": "Class 1 Device Recall STREAMLINE BLOODLINE SET FOR DIALOG U.S. Food and Drug Administration (.gov)"
-    },
-    {
-      "date": "2026-11-19",
-      "kind": "fda",
-      "title": "Class 2 Device Recall RayStation 6.1.1, RayStation 6 SP2 - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1sdDhsSXVVVTR4bENaTTdPM2hXbXNncjNZWnY0cUlxSzlBQzFuTWs1TFk0czhzdXlBOGhfelJxUTFBa085TUpvU3Y2UUprV1QyQkhXNThaZndhV3BvWkhHTEpRMTdoNy1MTllRako4NDhyZTVMdTdZUGs1T2EwR00?oc=5",
-      "tickers": [],
-      "plain": "Class 2 Device Recall RayStation 6.1.1, RayStation 6 SP2 U.S. Food and Drug Administration (.gov)"
     },
     {
       "date": "2026-11-19",
@@ -2063,6 +408,16 @@
     {
       "date": "2026-11-19",
       "kind": "fda",
+      "title": "Ridley Block Operations Recalls a Batch of Crystalyx\u00aeHE-20% for Beef Cattle and Bison Due to Excess Levels of Non-Protein Nitrogen (NPN) - U.S. Food and Drug Administration (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxOU19yOFBZYWl5T1dRUGk0SEtiNEN0cm9Nb2UxUTV3U29rWkZIOU9FeUJVN241WXBNcWV2a1g1VDVNRlY4NWxJcV9PWmlzZFNPLXhWY3BZdlBGUzZUNTdZSzVhSkJIV1dfZHcxYzE3Z2tFenRYbFpUSHVPSk53czlpOVM2OVNTWEM2LVRnZTRVUXlDRmlpakNyMWI0N1dXZVhNLVpkQy1KZlhGOVdZWlZHZ29pRmFDWExZZWg3b2V6NlJ2T2gwdFZLNVRUOElaaFM1V2s3U2VUZWgyTWRmUnJOQWdGRDlQVDdYbHJmbVdIb3kyUlZWTDd2RQ?oc=5",
+      "tickers": [
+        "HE"
+      ],
+      "plain": "Ridley Block Operations Recalls a Batch of Crystalyx\u00aeHE-20% for Beef Cattle and Bison Due to Excess Levels of Non-Protein Nitrogen (NPN) U.S. Food and Drug Administration (.gov)"
+    },
+    {
+      "date": "2026-11-19",
+      "kind": "fda",
       "title": "Statement on Deramiocel BLA for Duchenne Muscular Dystrophy - U.S. Food and Drug Administration (.gov)",
       "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxOdjBBSVM4cDZwMHlRTGp3NTE4Q0dFV0czRXNRZzdfVjZwclhZNWF6VXRqd2o4VEoxVXc2NGR6V2tKR3hxRjF0M0NwMUVQOXhZUGtPRUJhSGgzaEtuRGVaQkJlTllkNGlmZTc5TllNNmlvWU1WZmQ1YU5jV3BoQWtYN1hxcjRfRXQwNmpmbW9iWmFQUHhqM3VzUEtWQ09pcm1Hbjl6azRUY0pLMjFhX1JRUC1jcHlwOUsz?oc=5",
       "tickers": [],
@@ -2077,6 +432,14 @@
         "STT"
       ],
       "plain": "Donald J. Trump, President of the United States of America, Vladimir Putin, President of the Russian Federation, and Xi Jinping, State Chairman of the People\u2019s Republic of China, met in Shenzhen on November 19, 2026. The U.S. and Russian heads of state expressed appreciation to China for hosting this historic trilateral Summit. The three heads [\u2026] The post U.S.-Russia-China Heads of State Declaration toward Peace appeared first on The White House ."
+    },
+    {
+      "date": "2026-11-20",
+      "kind": "fed",
+      "title": "3 Growth Stocks To Watch As Fed Rate Expectations Hit Tech Valuations",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/3-growth-stocks-watch-fed-151245422.html?.tsrc=rss",
+      "tickers": [],
+      "plain": "Fed policy is back on center stage. With the next FOMC meeting on December 8\u20139, 2026 and fresh projections already shaping interest rate expectations, growth stocks that react sharply to yield moves are under the microscope again. Investors watching this setup see the risk of being caught flat footed. This article explains how that news filters into three Fed sensitive tech and communication stocks from our screener and why their reactions matter for your portfolio. The three examples below..."
     },
     {
       "date": "2026-11-20",
@@ -2099,56 +462,12 @@
     {
       "date": "2026-11-20",
       "kind": "fda",
-      "title": "CAPR Stock Gains Ahead Of Weekend FDA Deramiocel Decision After Rough Week - TradingView",
-      "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxPckRSQTQ0Z09ITU1ubEpYOGhkZkgtTEd2cWRrbXlqelh6WDZ1cmhWenhrQWNLaWFFdWFsbERmX3QtMDJwSDFidzBEYkJNNG5JMGt0c3o0eXFUSHhNSDdId2k3OGhfTTR5WkZzODZkYzc1NDlpeDlnUHFKUDFaN2gtVmZtU3FBNEZKV3NscjBDb3NfR0tIb3JtcDhSeWdBT2dLbk55SGlYNTl2MURCS2w5NkY1RjBhdy1LMHE2LTNSaktBUjgtSmg3VmxsTjVNQ3dh?oc=5",
-      "tickers": [
-        "CAPR"
-      ],
-      "plain": "CAPR Stock Gains Ahead Of Weekend FDA Deramiocel Decision After Rough Week TradingView"
-    },
-    {
-      "date": "2026-11-20",
-      "kind": "fda",
       "title": "Capricor's Duchenne treatment fails to get FDA approval, shares sink - Reuters",
       "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxNUUJ5QjBndGJPNTFwMHRqRzZVNHRqd0JpaW1oc2UxeGd0RXpYNDNWQlE2Yl9vLVBfbUxZS3ZqeG1iTnh3Um1vZXJRWU5aenBiaFlYRmRBVy00eFpYRVJFNHN0NTk2TVdWOXNfbHZKckxpRi05WDNJM2VaLWRjR1l0c3JrYkYyZEU0UFItS2NQR19Pb1cwWG1BNW43Y19mZE9EajUwZHA4RUJTOVFoOWdnbG5tT1pzdDhvVlI3MEZlcU50YWd0a2c?oc=5",
       "tickers": [
         "CAPR"
       ],
       "plain": "Capricor's Duchenne treatment fails to get FDA approval, shares sink Reuters"
-    },
-    {
-      "date": "2026-11-20",
-      "kind": "fda",
-      "title": "Class 2 Device Recall 3DIMENSIONS MAMMOGRAPHY SYSTEM - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE5zLTVhQ2lGYWNabk9WN0psS2VleXk3Ym52NHNMWFRmU2RaNk1Ja3hLMXkyQ1dNU3hqajBIYWNwckZmcTBsTUlVX1hKVm9rOGpMRHM0aVBhclFLUlFPTVhWVGJDY3pPTmFoMUhna1M3dlF5N1hZdl9EV3NlUEkyQTA?oc=5",
-      "tickers": [],
-      "plain": "Class 2 Device Recall 3DIMENSIONS MAMMOGRAPHY SYSTEM U.S. Food and Drug Administration (.gov)"
-    },
-    {
-      "date": "2026-11-20",
-      "kind": "fda",
-      "title": "Class 2 Device Recall ATTUNE CR FEMORAL Knee - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBiQ3g5TEdDSnc0dy15U00zbFlMUnM2OVV6MTlNVXN0b3NuNmRnX3Y5SHY5WmdBaVhXYU9pRHlCVzh2UTFMa0ZBMEZjQktJM2FGNV9aNXU3MmJpalNzTV9fRTJmLVBkbjBQZkNUUFl3NElPLXdjNjZJVXhrcHM5Z0E?oc=5",
-      "tickers": [
-        "CR"
-      ],
-      "plain": "Class 2 Device Recall ATTUNE CR FEMORAL Knee U.S. Food and Drug Administration (.gov)"
-    },
-    {
-      "date": "2026-11-20",
-      "kind": "fda",
-      "title": "Class 2 Device Recall Aris Transobturator Kit - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1rTExMNmo3dmZsTjhEaW9mRUJuSEM2VFVia1E1c25IeWZWYjI4bXV2YmtxYUZyV01vOEY0Qm9sbjlUZDBiNDBGdlFMdWRjLVk5dXk3MHRzVDg3UUN2T0pXV2ZnY1NmZUxtaTBnVDJLdVdmMXNqeFBGTUphMnNDRmc?oc=5",
-      "tickers": [],
-      "plain": "Class 2 Device Recall Aris Transobturator Kit U.S. Food and Drug Administration (.gov)"
-    },
-    {
-      "date": "2026-11-20",
-      "kind": "fda",
-      "title": "Class 2 Device Recall VERIGENE Processor SP - U.S. Food and Drug Administration (.gov)",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE9CWm1DaVlPaC0wZG1IZFY5Zm80LVI5bm05X1F2cXo5cGRyUlA4WU0temFZTXdQeHNSXzVzOWl3eGZ3NFdOMVppZlgya1dHeHJWQXE4cXNHRjMxM2pTZEZWMHZPaGdaR2FvVHdDaGtGRlZ4QkI1UWtqbDZPVXNZQms?oc=5",
-      "tickers": [],
-      "plain": "Class 2 Device Recall VERIGENE Processor SP U.S. Food and Drug Administration (.gov)"
     },
     {
       "date": "2026-11-20",
@@ -2220,14 +539,6 @@
     },
     {
       "date": "2026-11-20",
-      "kind": "fda",
-      "title": "Novo Gets FDA Approval For First-Of-Its-Kind Weekly Growth Hormone Treatment For Children With Turner Syndrome - Stocktwits",
-      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxNSThuZWNtWHJGUjA4QU1YdlM2WEx2TGgtdzFkWl8zTGRSUmxzMTR5czF0TGhCTDl0cm9vNlJlUXlOUlZ6RXpVbnIwdEtNOXdzQmlrNXFaXzN2Q0Q2VDNlQU5PX2t5ZmU3WmtVQkl1b252dGRYSjRnU2JmNElMWHdUaW5JbkRhSVNJQ0E5SjRWbG1WZGhRTFluTE5ibWRHNS1NcDJ5dlROekM4bWZCRHRlWDNHU2RIYzEybGMzNVBOUDJ1YmszMHhYdGxMS0x6QXp1S0w5aDdGY0ZOTXBqbzBkeHR4bklySWVfRmRSSVdRZ2JNSmhXVVQ3VFRxYUZBYVNEZThobg?oc=5",
-      "tickers": [],
-      "plain": "Novo Gets FDA Approval For First-Of-Its-Kind Weekly Growth Hormone Treatment For Children With Turner Syndrome Stocktwits"
-    },
-    {
-      "date": "2026-11-20",
       "kind": "policy",
       "title": "PROTECTING THE EXECUTIVE\u2019S PRIVILEGES AND ENHANCING EFFICIENCIES IN FEDERAL CONTRACTING",
       "url": "https://www.whitehouse.gov/presidential-actions/2026/11/protecting-the-executives-privileges-and-enhancing-efficiencies-in-federal-contracting/",
@@ -2255,12 +566,10 @@
     {
       "date": "2026-11-20",
       "kind": "fda",
-      "title": "US FDA declines to approve Capricor's cell therapy for Duchenne muscular dystrophy; shares slump - Yahoo Finance",
-      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxObWQzQS05bDNFY2VhUUdjelhYeHJXOTZHdDNYS0EtNk5udlY2XzVJTmJFQk12bzlRWDJWZGVJaDRoUFhXSjFzbmxSMUIwZUhuM3hpRVRHSUlUbVJNeDZNb2ZoanNqUUhzQVRGUXlERjZLeURxLThZS1dPbWxtNmFGTDJJcVIzX0MzNTJxNDNqYl9GdzEtZ0xSdlF3?oc=5",
-      "tickers": [
-        "CAPR"
-      ],
-      "plain": "US FDA declines to approve Capricor's cell therapy for Duchenne muscular dystrophy; shares slump Yahoo Finance"
+      "title": "Shanghai San Niu Food Co., LTD. Is Recalling Sanniu Evergeen Biscuits Due to Undeclared Milk and Sanniu Salt and Pepper Soda Biscuits Due to Undeclared Milk and Shrimp - U.S. Food and Drug Administration (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxNalJVNU1nZXR3TTFSd052VXJyeFdFTXJ5S3YxOWw5QUpHeFNCeVVsQVliWW41UmhTMlpka012WTYyZFZpS2VyR1NyX21wZzFqcnZUNWNGU0V6QU1jRHY4MXJPVmROaXFOX2VHOTdreml3THJGNklacmhLNndqOFRDdTVvUWtOV2Vwa0xZM3Qtc05LdHN2eVlMc25UNVlSTlIzejRpczZfLXA1cVpQWFVST1RfaHBYNTNXcU56Q1loUFpXN28yVlpRTy0zLTBDbzJuNlNTdXBGVnhBWmJwQVdZU1c0dlV6X3Zhck10UWNGTXNsa2xUU2lTQm5yVQ?oc=5",
+      "tickers": [],
+      "plain": "Shanghai San Niu Food Co., LTD. Is Recalling Sanniu Evergeen Biscuits Due to Undeclared Milk and Sanniu Salt and Pepper Soda Biscuits Due to Undeclared Milk and Shrimp U.S. Food and Drug Administration (.gov)"
     },
     {
       "date": "2026-11-20",
@@ -2269,909 +578,193 @@
       "url": "https://www.whitehouse.gov/releases/2026/11/what-they-are-saying-send-the-bipartisan-american-affordability-and-jobs-act-to-president-trumps-desk/",
       "tickers": [],
       "plain": "\u201cLast night, landmark permitting reform legislation passed the Senate. It\u2019s one of the biggest things that you will see. It\u2019s a big deal\u2026 It\u2019s projected to put at least $1,300 a year back in the pockets of hardworking Americans.\u201d \u2013 President Donald J. Trump President Donald J. Trump is committed to fixing America\u2019s broken permitting system \u2014 [\u2026] The post WHAT THEY ARE SAYING: Send the Bipartisan American Affordability and Jobs Act to President Trump\u2019s Desk appeared first on The White House ."
-    }
-  ],
-  "flow": [
+    },
     {
-      "ticker": "AG",
-      "contract": "AG261127C00011500",
-      "side": "call",
-      "strike": 11.5,
-      "expiry": "2026-11-27",
-      "volume": 1084,
-      "oi": 107,
-      "ratio": 10.13,
-      "note": "AG call $11.5 expiring 2026-11-27 traded 1084 contracts versus 107 open. That is a jump, not a reason by itself to copy the trade."
+      "date": "2026-11-21",
+      "kind": "fda",
+      "title": "Key facts: 2027 FDA bid, Phase 3 trials; analysts cut targets - TradingView",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxPanF1WC11TDdWcGhVZHQzdm9DdDJ0OGVZYnNVTkdRWE9uMV82MndsdTJoT0poTmp4WktrLXFLSXhwZnp6RW1zY3lGNXlxQllaZTU2d2pfU1RaWW1BYndZa2NDWUEtSnlwT21BUHJRcHd0Rm5TdmUzTFZKX3padlAzV1A1TXJRcGNfM0VJSlZHNjZHNWxtSXZZSHlfUDk5VlpLNTE3UVRsNVlyY29zQmt1NzFSanFlcFNueUNWOQ?oc=5",
+      "tickers": [],
+      "plain": "Key facts: 2027 FDA bid, Phase 3 trials; analysts cut targets TradingView"
+    },
+    {
+      "date": "2026-11-22",
+      "kind": "fda",
+      "title": "FDA approves giredestrant - U.S. Food and Drug Administration (.gov)",
+      "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxOTnhCcHFkX1FSY0ZTanFtYzhKYjRXSnpXLUxOLVBmTUF3VzNuNmdWdXdnMXdmWGRrOW4wNWtyXzQwRFl5Y1REUmxxdW5NNnhHVXR6MkdUdV93WW1UNV9Tb01EQXZCMVd1UkFIUUFYcnBDWVJOdFVjcGZCYXF1Y09Zb0NuN3duMkNYc3VuRGFtY0lIcHBuSzRtZks4Sl9YS1d5ZS13TVd3bTBuTVlKX3A2TWxBMjc0aHEwdUdpdnIxeV9JSGtNTktYQ0IwbHMweUt1a241R05B?oc=5",
+      "tickers": [],
+      "plain": "FDA approves giredestrant U.S. Food and Drug Administration (.gov)"
+    },
+    {
+      "date": "2026-11-23",
+      "kind": "filing",
+      "title": "8-K - Awaysis Capital, Inc. (0001021917) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/1021917/000149315226053802/0001493152-26-053802-index.htm",
+      "tickers": [
+        "AWCA"
+      ],
+      "plain": "Filed: 2026-11-23 AccNo: 0001493152-26-053802 Size: 210 KB Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers Item 9.01: Financial Statements and Exhibits"
+    },
+    {
+      "date": "2026-11-23",
+      "kind": "filing",
+      "title": "8-K - CNL Strategic Residential Credit, Inc. (0002066337) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2066337/000143774926038095/0001437749-26-038095-index.htm",
+      "tickers": [
+        "CNL"
+      ],
+      "plain": "Filed: 2026-11-23 AccNo: 0001437749-26-038095 Size: 203 KB Item 8.01: Other Events"
+    },
+    {
+      "date": "2026-11-23",
+      "kind": "filing",
+      "title": "8-K - Conexeu Sciences Inc. (0002066836) (Filer)",
+      "url": "https://www.sec.gov/Archives/edgar/data/2066836/000106299326006229/0001062993-26-006229-index.htm",
+      "tickers": [
+        "CNXU"
+      ],
+      "plain": "Filed: 2026-11-23 AccNo: 0001062993-26-006229 Size: 257 KB Item 5.02: Departure of Directors or Certain Officers; Election of Directors; Appointment of Certain Officers: Compensatory Arrangements of Certain Officers Item 8.01: Other Events Item 9.01: Financial Statements and Exhibits"
     }
   ],
+  "flow": [],
   "squeezes": [
     {
-      "ticker": "MYE",
-      "shortRatio": 0.57,
-      "headline": "FDA Approval for REYATAZ issued to BRISTOL MYERS SQUIBB - Quantisnow",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWlRZTUxLeWszYTJ2bmpENXJveDBDQ1I5RlgwcDVpUV84bDNSSExQanBGbkVZSHVncmNBZEZCTFAxMk1aWnR3VUk2TU45eFRSRU5ZMThuSDFXUFZUb0c0a0cwbWlYaFp6OVRoWUpjdDNWaTN2eTBQVm0wN0hibVdPUDdaTkhVbjNqdnhJTlNFVy14d0RfZWZMVEtweHlSUVU?oc=5",
-      "note": "About 57% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+      "ticker": "ESTC",
+      "shortRatio": 0.748,
+      "headline": "All You Need to Know About Elastic (ESTC) Rating Upgrade to Buy - Yahoo! Finance Canada",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPOGFUb2J2VDdYUmFEbmF1RmlOQWMzYVJ1Q0lNMFFHc1NnMk51dHFCYkZnVDZLSlEzaW84QXkxVmtRSG5TTjVHX0RzeEtPRU5pUlR1TkJwbm0xX0RaTm5uOWdJeUFnS0JGeThKU0U2czdIalg5TzlaTjI4NDlYcUc3d3ZWQ29yLXpy?oc=5",
+      "note": "About 75% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
     },
     {
-      "ticker": "RACE",
-      "shortRatio": 0.519,
-      "headline": "FERRARI N.V.: PERIODIC REPORT ON THE BUYBACK PROGRAM - GlobeNewswire",
-      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPdkNHMWJ5VVdYZUVvVmZGZ1hrWFdNcXhkVC1rV014XzZzYUNXY3plR1F4ZU9DOG5qdWVQU084SWhUOWJmRzhZWXNsNWJSRGpEY0k2Q2NwU0VybWpuWUREM2xzd2tvT01FTlE3Z25ReE5rcVQ5cE1aTnRpNEJkZVJSVVk4NG9DTERsVTZSRjZhdXVMXzJIQ2ZmZWFvbUE4eE14cFpqSW43blM0anlqSFNpSWUxSm1LVld3TWlueHdpYw?oc=5",
-      "note": "About 52% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+      "ticker": "ASM",
+      "shortRatio": 0.661,
+      "headline": "ASM share buyback update November 16 \u2013 20, 2026 - GlobeNewswire",
+      "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOVnFFUkY3bHBrVTFtTVFLc29BUWdVUjk2NHlnM0ZpLXlyMVZIX0RkRk9zSF9XN0FEeDN1Tzh2T2tmUWYza2ItMWRLZVdVV1lzZl9QNmNhWU5aMmVuTVZFX0lqeEtTaHN1aFBYVzRDOUlNWWJzZWExS0FXX0pyU0FjbTBIdmtWU0NLZkZNeTRrSDNtODdsSTFDcW91dkFwT21WNllGWkJ2X05BWG9SMUNwYm1QMUxSVDg?oc=5",
+      "note": "About 66% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
     },
     {
-      "ticker": "GILD",
-      "shortRatio": 0.507,
-      "headline": "FDA Approval for DESCOVY issued to GILEAD SCIENCES INC - Quantisnow",
-      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOR3BWM0JsQThqeWR4cndnWGE2SUhXQTVOemdZb1o5VkpPWDgzUEpBaU95RGt3ZlZ4V3piQzNaMS13a0Y4ZTNQVUl6UjlTWGRSWUVxOV9YN0h4RVhKVHFLSUc2X0MtYnJnbnFobHVfSW5BcUpIb3F0ZnNRUzNETVA0MXhEQ2ZMYUg5cnZBQlp1M05nTWkwcElGLVB3SWF2QQ?oc=5",
+      "ticker": "AGO",
+      "shortRatio": 0.544,
+      "headline": "All You Need to Know About Assured Guaranty (AGO) Rating Upgrade to Strong Buy - Yahoo Finance UK",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQmM2dURzclZzQllUSjNRcFlGLW9FaFRXclVWV3lvTjE3dlVRS3pzVUpGTEFNOWVHOTZuM1k5RVAzQWpoX1B5UlVnVi1RQk0tQ2plNTNnUDJXRmctRnBDenk4NGtHTF8waUQ4cDZ0dl9mNGdZNlE4TGdQdUhSMTNuSWw1bGg0MjJ5?oc=5",
+      "note": "About 54% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
+    },
+    {
+      "ticker": "MNDY",
+      "shortRatio": 0.509,
+      "headline": "Why One Analyst Upgrade Sent SpaceX Soaring on Monday - The Motley Fool",
+      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPb2hNNnhMNUs2dmpvdk5qZVB6dGlHQjRMLXhDQzhZcGZ4LUt3Z2FCSWNBNEI3ZllyeW9MTWVkcmhZcWZDbC1oQ0MzaHlhUEQwX3lWWTEybll2V18wQzVFVXJIMXlQbkdhRDlSeFU3NzBDXzg3RWxudFRTRVNFMVFHTl9lZUxNRUF5b1h5UWtTVGFOT185OFRHeEIzM1k?oc=5",
       "note": "About 51% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
-    },
-    {
-      "ticker": "BAX",
-      "shortRatio": 0.478,
-      "headline": "FDA Approval for SUPRANE issued to BAXTER HLTHCARE - Quantisnow",
-      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPVDU2eWtXMGZzUjdadUZYOVBsN3A2OTN4aURJdjVjcV85MXl2dmhzVnR1TTZQYkdYZVU2V25iLWJpcU9PM1BRV3NiU3ZMeHQyLXplZG9jMXVnaVhoQ3IxeDlqM2tQM2N3QmlyZmx3YURwTlpEcW9mVWUtWDhmVmV3S1hVODlOdm1ZZ2JLTG15NHMyLVk?oc=5",
-      "note": "About 48% of today's reported volume was short sales, and the news is positive. A squeeze is only a guess. Short volume is not the same as short interest as a percent of the whole company."
     }
   ],
   "priceChecks": [
     {
-      "ticker": "AG",
-      "company": "First Majestic Silver Corp. Ordinary Shares (Canada)",
-      "price": 11.59,
-      "hv20": 0.7511,
-      "hv60": 0.603,
+      "ticker": "AB",
+      "company": "AllianceBernstein Holding L.P.  Units",
+      "price": 31.41,
+      "hv20": 0.1769,
+      "hv60": 0.1597,
       "earningsDate": null,
       "expirations": [
         {
-          "expiry": "2026-11-27",
+          "expiry": "2026-12-18",
           "calls": [
-            {
-              "strike": 5.0,
-              "bid": 6.35,
-              "ask": 7.1,
-              "oi": 0,
-              "iv": 4.9531,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 7.5,
-              "bid": 3.3,
-              "ask": 5.65,
-              "oi": 1,
-              "iv": 3.9297,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 8.0,
-              "bid": 3.3,
-              "ask": 4.9,
-              "oi": 1,
-              "iv": 3.9141,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 9.0,
-              "bid": 2.45,
-              "ask": 2.95,
-              "oi": 1,
-              "iv": 1.7734,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 10.0,
-              "bid": 1.37,
-              "ask": 1.75,
-              "oi": 6,
-              "iv": 1.3594,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 10.5,
-              "bid": 1.0,
-              "ask": 1.24,
-              "oi": 80,
-              "iv": 0.6328,
-              "ivPercentile": 33
-            },
-            {
-              "strike": 11.0,
-              "bid": 0.62,
-              "ask": 0.83,
-              "oi": 1283,
-              "iv": 0.6797,
-              "ivPercentile": 52
-            },
-            {
-              "strike": 11.5,
-              "bid": 0.35,
-              "ask": 0.45,
-              "oi": 107,
-              "iv": 0.6602,
-              "ivPercentile": 46
-            },
-            {
-              "strike": 12.0,
-              "bid": 0.17,
-              "ask": 0.22,
-              "oi": 774,
-              "iv": 0.6641,
-              "ivPercentile": 47
-            },
-            {
-              "strike": 12.5,
-              "bid": 0.05,
-              "ask": 0.09,
-              "oi": 2062,
-              "iv": 0.6328,
-              "ivPercentile": 33
-            },
-            {
-              "strike": 13.0,
-              "bid": 0.02,
-              "ask": 0.03,
-              "oi": 285,
-              "iv": 0.6406,
-              "ivPercentile": 37
-            }
-          ],
-          "puts": [
-            {
-              "strike": 10.0,
-              "bid": 0.01,
-              "ask": 0.04,
-              "oi": 63,
-              "iv": 0.7969,
-              "ivPercentile": 73
-            },
-            {
-              "strike": 10.5,
-              "bid": 0.02,
-              "ask": 0.11,
-              "oi": 96,
-              "iv": 0.7578,
-              "ivPercentile": 63
-            },
-            {
-              "strike": 11.0,
-              "bid": 0.12,
-              "ask": 0.36,
-              "oi": 161,
-              "iv": 0.9063,
-              "ivPercentile": 87
-            },
-            {
-              "strike": 11.5,
-              "bid": 0.31,
-              "ask": 0.39,
-              "oi": 168,
-              "iv": 0.7266,
-              "ivPercentile": 59
-            },
-            {
-              "strike": 12.0,
-              "bid": 0.51,
-              "ask": 0.74,
-              "oi": 300,
-              "iv": 0.6953,
-              "ivPercentile": 54
-            },
-            {
-              "strike": 12.5,
-              "bid": 0.88,
-              "ask": 1.17,
-              "oi": 37,
-              "iv": 0.7422,
-              "ivPercentile": 62
-            },
-            {
-              "strike": 13.0,
-              "bid": 1.34,
-              "ask": 1.6,
-              "oi": 172,
-              "iv": 0.7813,
-              "ivPercentile": 69
-            },
-            {
-              "strike": 13.5,
-              "bid": 1.24,
-              "ask": 2.19,
-              "oi": 246,
-              "iv": 1.6055,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 14.0,
-              "bid": 2.32,
-              "ask": 2.71,
-              "oi": 86,
-              "iv": 1.3047,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 14.5,
-              "bid": 2.43,
-              "ask": 3.3,
-              "oi": 12,
-              "iv": 2.2813,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 15.0,
-              "bid": 2.05,
-              "ask": 4.1,
-              "oi": 106,
-              "iv": 3.1445,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 15.5,
-              "bid": 3.85,
-              "ask": 4.05,
-              "oi": 19,
-              "iv": 1.4141,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 16.0,
-              "bid": 4.05,
-              "ask": 4.55,
-              "oi": 48,
-              "iv": 2.0547,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 16.5,
-              "bid": 4.05,
-              "ask": 5.25,
-              "oi": 6,
-              "iv": 2.8398,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 17.0,
-              "bid": 4.65,
-              "ask": 5.6,
-              "oi": 0,
-              "iv": 2.5156,
-              "ivPercentile": 100
-            }
-          ]
-        },
-        {
-          "expiry": "2026-12-04",
-          "calls": [
-            {
-              "strike": 1.0,
-              "bid": 9.85,
-              "ask": 12.15,
-              "oi": 1,
-              "iv": 13.1875,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 5.0,
-              "bid": 5.25,
-              "ask": 8.2,
-              "oi": 1,
-              "iv": 3.1953,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 7.0,
-              "bid": 3.75,
-              "ask": 5.95,
-              "oi": 1,
-              "iv": 2.4883,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 7.5,
-              "bid": 3.7,
-              "ask": 4.9,
-              "oi": 10,
-              "iv": 2.082,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 10.0,
-              "bid": 1.33,
-              "ask": 2.28,
-              "oi": 24,
-              "iv": 0.9844,
-              "ivPercentile": 91
-            },
-            {
-              "strike": 10.5,
-              "bid": 1.0,
-              "ask": 2.28,
-              "oi": 13,
-              "iv": 1.2617,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 11.0,
-              "bid": 0.82,
-              "ask": 1.11,
-              "oi": 61,
-              "iv": 0.7715,
-              "ivPercentile": 65
-            },
-            {
-              "strike": 11.5,
-              "bid": 0.56,
-              "ask": 0.81,
-              "oi": 265,
-              "iv": 0.7695,
-              "ivPercentile": 65
-            },
-            {
-              "strike": 12.0,
-              "bid": 0.34,
-              "ask": 0.49,
-              "oi": 100,
-              "iv": 0.7031,
-              "ivPercentile": 56
-            },
-            {
-              "strike": 12.5,
-              "bid": 0.17,
-              "ask": 0.5,
-              "oi": 116,
-              "iv": 0.8047,
-              "ivPercentile": 75
-            },
-            {
-              "strike": 13.0,
-              "bid": 0.07,
-              "ask": 0.17,
-              "oi": 128,
-              "iv": 0.6406,
-              "ivPercentile": 37
-            },
-            {
-              "strike": 13.5,
-              "bid": 0.07,
-              "ask": 0.11,
-              "oi": 99,
-              "iv": 0.7031,
-              "ivPercentile": 56
-            },
-            {
-              "strike": 14.0,
-              "bid": 0.01,
-              "ask": 0.05,
-              "oi": 170,
-              "iv": 0.6328,
-              "ivPercentile": 33
-            }
-          ],
-          "puts": [
-            {
-              "strike": 9.5,
-              "bid": 0.01,
-              "ask": 0.28,
-              "oi": 4,
-              "iv": 1.0313,
-              "ivPercentile": 93
-            },
-            {
-              "strike": 10.5,
-              "bid": 0.1,
-              "ask": 0.4,
-              "oi": 8,
-              "iv": 0.8203,
-              "ivPercentile": 77
-            },
-            {
-              "strike": 11.0,
-              "bid": 0.05,
-              "ask": 0.86,
-              "oi": 179,
-              "iv": 0.8691,
-              "ivPercentile": 85
-            },
-            {
-              "strike": 11.5,
-              "bid": 0.38,
-              "ask": 0.75,
-              "oi": 415,
-              "iv": 0.7266,
-              "ivPercentile": 59
-            },
-            {
-              "strike": 12.0,
-              "bid": 0.42,
-              "ask": 1.06,
-              "oi": 364,
-              "iv": 0.5938,
-              "ivPercentile": 22
-            },
-            {
-              "strike": 12.5,
-              "bid": 0.63,
-              "ask": 1.33,
-              "oi": 172,
-              "iv": 0.9082,
-              "ivPercentile": 88
-            },
-            {
-              "strike": 13.0,
-              "bid": 1.45,
-              "ask": 1.77,
-              "oi": 64,
-              "iv": 0.7676,
-              "ivPercentile": 65
-            },
-            {
-              "strike": 13.5,
-              "bid": 1.05,
-              "ask": 2.38,
-              "oi": 99,
-              "iv": 1.3106,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 14.0,
-              "bid": 1.88,
-              "ask": 2.64,
-              "oi": 50,
-              "iv": 1.0879,
-              "ivPercentile": 96
-            },
-            {
-              "strike": 14.5,
-              "bid": 2.45,
-              "ask": 3.15,
-              "oi": 43,
-              "iv": 1.2266,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 15.0,
-              "bid": 3.0,
-              "ask": 3.7,
-              "oi": 96,
-              "iv": 1.4297,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 15.5,
-              "bid": 3.15,
-              "ask": 4.35,
-              "oi": 28,
-              "iv": 1.7891,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 16.0,
-              "bid": 3.65,
-              "ask": 4.85,
-              "oi": 27,
-              "iv": 1.8984,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 16.5,
-              "bid": 4.15,
-              "ask": 5.35,
-              "oi": 6,
-              "iv": 2.0039,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 17.0,
-              "bid": 4.6,
-              "ask": 6.45,
-              "oi": 4,
-              "iv": 1.4258,
-              "ivPercentile": 100
-            }
-          ]
-        },
-        {
-          "expiry": "2027-03-19",
-          "calls": [
-            {
-              "strike": 3.0,
-              "bid": 8.15,
-              "ask": 9.95,
-              "oi": 2,
-              "iv": 2.2109,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 5.0,
-              "bid": 6.4,
-              "ask": 7.6,
-              "oi": 4,
-              "iv": 1.3887,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 8.0,
-              "bid": 3.75,
-              "ask": 4.75,
-              "oi": 72,
-              "iv": 0.9043,
-              "ivPercentile": 87
-            },
-            {
-              "strike": 10.0,
-              "bid": 2.55,
-              "ask": 3.15,
-              "oi": 347,
-              "iv": 0.8105,
-              "ivPercentile": 76
-            },
-            {
-              "strike": 11.0,
-              "bid": 1.93,
-              "ask": 2.38,
-              "oi": 111,
-              "iv": 0.7295,
-              "ivPercentile": 59
-            },
-            {
-              "strike": 12.0,
-              "bid": 1.57,
-              "ask": 1.97,
-              "oi": 531,
-              "iv": 0.7451,
-              "ivPercentile": 62
-            },
-            {
-              "strike": 13.0,
-              "bid": 1.22,
-              "ask": 1.5,
-              "oi": 271,
-              "iv": 0.7217,
-              "ivPercentile": 58
-            },
-            {
-              "strike": 14.0,
-              "bid": 0.96,
-              "ask": 1.17,
-              "oi": 638,
-              "iv": 0.7168,
-              "ivPercentile": 58
-            },
-            {
-              "strike": 15.0,
-              "bid": 0.8,
-              "ask": 0.88,
-              "oi": 2615,
-              "iv": 0.7168,
-              "ivPercentile": 58
-            },
-            {
-              "strike": 16.0,
-              "bid": 0.53,
-              "ask": 0.71,
-              "oi": 1414,
-              "iv": 0.6982,
-              "ivPercentile": 55
-            },
-            {
-              "strike": 17.0,
-              "bid": 0.42,
-              "ask": 0.77,
-              "oi": 1438,
-              "iv": 0.7539,
-              "ivPercentile": 63
-            },
-            {
-              "strike": 18.0,
-              "bid": 0.35,
-              "ask": 0.56,
-              "oi": 3562,
-              "iv": 0.7432,
-              "ivPercentile": 62
-            },
-            {
-              "strike": 19.0,
-              "bid": 0.27,
-              "ask": 0.39,
-              "oi": 561,
-              "iv": 0.7227,
-              "ivPercentile": 58
-            },
-            {
-              "strike": 20.0,
-              "bid": 0.23,
-              "ask": 0.38,
-              "oi": 6102,
-              "iv": 0.7539,
-              "ivPercentile": 63
-            },
-            {
-              "strike": 21.0,
-              "bid": 0.16,
-              "ask": 0.34,
-              "oi": 334,
-              "iv": 0.7588,
-              "ivPercentile": 63
-            }
-          ],
-          "puts": [
-            {
-              "strike": 6.0,
-              "bid": 0.08,
-              "ask": 0.27,
-              "oi": 130,
-              "iv": 0.877,
-              "ivPercentile": 86
-            },
-            {
-              "strike": 8.0,
-              "bid": 0.11,
-              "ask": 0.56,
-              "oi": 504,
-              "iv": 0.6856,
-              "ivPercentile": 54
-            },
-            {
-              "strike": 10.0,
-              "bid": 0.86,
-              "ask": 1.15,
-              "oi": 960,
-              "iv": 0.6953,
-              "ivPercentile": 54
-            },
-            {
-              "strike": 11.0,
-              "bid": 1.27,
-              "ask": 1.53,
-              "oi": 1802,
-              "iv": 0.6611,
-              "ivPercentile": 47
-            },
-            {
-              "strike": 12.0,
-              "bid": 1.86,
-              "ask": 2.22,
-              "oi": 3351,
-              "iv": 0.6895,
-              "ivPercentile": 54
-            },
-            {
-              "strike": 13.0,
-              "bid": 2.44,
-              "ask": 2.76,
-              "oi": 2034,
-              "iv": 0.6543,
-              "ivPercentile": 43
-            },
-            {
-              "strike": 14.0,
-              "bid": 3.05,
-              "ask": 3.4,
-              "oi": 1469,
-              "iv": 0.6143,
-              "ivPercentile": 28
-            },
-            {
-              "strike": 15.0,
-              "bid": 3.85,
-              "ask": 4.25,
-              "oi": 1711,
-              "iv": 0.6289,
-              "ivPercentile": 32
-            },
-            {
-              "strike": 16.0,
-              "bid": 4.75,
-              "ask": 5.05,
-              "oi": 378,
-              "iv": 0.6338,
-              "ivPercentile": 34
-            },
-            {
-              "strike": 17.0,
-              "bid": 5.25,
-              "ask": 5.95,
-              "oi": 553,
-              "iv": 0.5195,
-              "ivPercentile": 8
-            },
-            {
-              "strike": 18.0,
-              "bid": 6.05,
-              "ask": 6.85,
-              "oi": 1617,
-              "iv": 0.7324,
-              "ivPercentile": 60
-            },
-            {
-              "strike": 19.0,
-              "bid": 6.95,
-              "ask": 7.8,
-              "oi": 181,
-              "iv": 0.7568,
-              "ivPercentile": 63
-            },
-            {
-              "strike": 20.0,
-              "bid": 7.9,
-              "ask": 8.75,
-              "oi": 798,
-              "iv": 0.7744,
-              "ivPercentile": 66
-            },
-            {
-              "strike": 21.0,
-              "bid": 8.85,
-              "ask": 9.7,
-              "oi": 47,
-              "iv": 0.7852,
-              "ivPercentile": 70
-            },
-            {
-              "strike": 22.0,
-              "bid": 9.8,
-              "ask": 10.7,
-              "oi": 597,
-              "iv": 0.8262,
-              "ivPercentile": 78
-            }
-          ]
-        },
-        {
-          "expiry": "2027-09-17",
-          "calls": [
-            {
-              "strike": 5.0,
-              "bid": 6.65,
-              "ask": 7.65,
-              "oi": 2,
-              "iv": 0.9678,
-              "ivPercentile": 91
-            },
-            {
-              "strike": 10.0,
-              "bid": 3.45,
-              "ask": 4.05,
-              "oi": 493,
-              "iv": 0.7568,
-              "ivPercentile": 63
-            },
-            {
-              "strike": 13.0,
-              "bid": 2.28,
-              "ask": 2.84,
-              "oi": 410,
-              "iv": 0.7393,
-              "ivPercentile": 61
-            },
-            {
-              "strike": 15.0,
-              "bid": 1.75,
-              "ask": 2.26,
-              "oi": 1179,
-              "iv": 0.7354,
-              "ivPercentile": 60
-            },
-            {
-              "strike": 17.0,
-              "bid": 1.32,
-              "ask": 1.5,
-              "oi": 1357,
-              "iv": 0.6904,
-              "ivPercentile": 54
-            },
-            {
-              "strike": 20.0,
-              "bid": 0.86,
-              "ask": 1.2,
-              "oi": 608,
-              "iv": 0.7061,
-              "ivPercentile": 56
-            },
-            {
-              "strike": 22.0,
-              "bid": 0.7,
-              "ask": 1.11,
-              "oi": 8820,
-              "iv": 0.7319,
-              "ivPercentile": 60
-            },
             {
               "strike": 25.0,
-              "bid": 0.44,
-              "ask": 0.92,
-              "oi": 400,
-              "iv": 0.7383,
-              "ivPercentile": 61
-            },
-            {
-              "strike": 27.0,
-              "bid": 0.33,
-              "ask": 0.79,
-              "oi": 108,
-              "iv": 0.7397,
-              "ivPercentile": 62
+              "bid": 5.3,
+              "ask": 8.0,
+              "oi": 1,
+              "iv": 0.6699,
+              "ivPercentile": 100
             },
             {
               "strike": 30.0,
-              "bid": 0.3,
-              "ask": 0.66,
-              "oi": 1072,
-              "iv": 0.7647,
-              "ivPercentile": 65
-            },
-            {
-              "strike": 32.0,
-              "bid": 0.16,
-              "ask": 0.59,
-              "oi": 82,
-              "iv": 0.752,
-              "ivPercentile": 63
-            },
-            {
-              "strike": 35.0,
-              "bid": 0.15,
-              "ask": 0.51,
-              "oi": 157,
-              "iv": 0.7744,
-              "ivPercentile": 66
+              "bid": 1.6,
+              "ask": 2.0,
+              "oi": 16,
+              "iv": 0.3555,
+              "ivPercentile": 92
             }
           ],
           "puts": [
             {
-              "strike": 5.0,
-              "bid": 0.08,
-              "ask": 0.33,
-              "oi": 1,
-              "iv": 0.7051,
-              "ivPercentile": 56
+              "strike": 30.0,
+              "bid": 0.25,
+              "ask": 0.35,
+              "oi": 19,
+              "iv": 0.2695,
+              "ivPercentile": 84
             },
             {
-              "strike": 10.0,
-              "bid": 1.61,
-              "ask": 1.78,
-              "oi": 212,
-              "iv": 0.6265,
-              "ivPercentile": 31
-            },
-            {
-              "strike": 13.0,
-              "bid": 3.15,
-              "ask": 3.55,
-              "oi": 276,
-              "iv": 0.5894,
-              "ivPercentile": 19
-            },
-            {
-              "strike": 15.0,
-              "bid": 4.5,
-              "ask": 5.0,
-              "oi": 719,
-              "iv": 0.5737,
-              "ivPercentile": 16
-            },
-            {
-              "strike": 17.0,
-              "bid": 5.95,
-              "ask": 6.55,
-              "oi": 930,
-              "iv": 0.541,
-              "ivPercentile": 10
-            },
+              "strike": 35.0,
+              "bid": 3.5,
+              "ask": 3.9,
+              "oi": 76,
+              "iv": 0.4111,
+              "ivPercentile": 96
+            }
+          ]
+        },
+        {
+          "expiry": "2027-04-16",
+          "calls": [
             {
               "strike": 20.0,
-              "bid": 8.5,
-              "ask": 9.15,
-              "oi": 110,
-              "iv": 0.5137,
-              "ivPercentile": 6
+              "bid": 9.5,
+              "ask": 13.6,
+              "oi": 1,
+              "iv": 1.0117,
+              "ivPercentile": 100
             },
             {
-              "strike": 22.0,
-              "bid": 10.1,
-              "ask": 11.5,
-              "oi": 46,
-              "iv": 0.5596,
-              "ivPercentile": 12
+              "strike": 30.0,
+              "bid": 2.3,
+              "ask": 2.95,
+              "oi": 1171,
+              "iv": 0.2817,
+              "ivPercentile": 87
+            },
+            {
+              "strike": 35.0,
+              "bid": 0.45,
+              "ask": 0.55,
+              "oi": 1271,
+              "iv": 0.2166,
+              "ivPercentile": 70
+            },
+            {
+              "strike": 40.0,
+              "bid": 0.05,
+              "ask": 0.2,
+              "oi": 688,
+              "iv": 0.2666,
+              "ivPercentile": 84
+            }
+          ],
+          "puts": [
+            {
+              "strike": 30.0,
+              "bid": 1.3,
+              "ask": 1.7,
+              "oi": 505,
+              "iv": 0.3032,
+              "ivPercentile": 88
+            },
+            {
+              "strike": 35.0,
+              "bid": 4.2,
+              "ask": 4.7,
+              "oi": 477,
+              "iv": 0.301,
+              "ivPercentile": 88
+            },
+            {
+              "strike": 40.0,
+              "bid": 7.2,
+              "ask": 10.4,
+              "oi": 25,
+              "iv": 0.5591,
+              "ivPercentile": 100
             }
           ]
         }
@@ -3180,29 +773,37 @@
     {
       "ticker": "ALHC",
       "company": "Alignment Healthcare, Inc. - Common Stock",
-      "price": 6.42,
-      "hv20": 0.8255,
-      "hv60": 0.8671,
+      "price": 6.38,
+      "hv20": 0.824,
+      "hv60": 0.8666,
       "earningsDate": null,
       "expirations": [
         {
           "expiry": "2026-12-18",
           "calls": [
             {
+              "strike": 1.0,
+              "bid": 4.2,
+              "ask": 6.6,
+              "oi": 2,
+              "iv": 3.5,
+              "ivPercentile": 100
+            },
+            {
               "strike": 5.0,
               "bid": 0.6,
               "ask": 2.05,
               "oi": 29,
-              "iv": 2.0313,
+              "iv": 2.082,
               "ivPercentile": 100
             },
             {
               "strike": 6.0,
-              "bid": 0.65,
-              "ask": 1.15,
+              "bid": 0.6,
+              "ask": 1.1,
               "oi": 50,
-              "iv": 1.0195,
-              "ivPercentile": 89
+              "iv": 0.9766,
+              "ivPercentile": 85
             }
           ],
           "puts": [
@@ -3211,31 +812,31 @@
               "bid": 0.25,
               "ask": 0.4,
               "oi": 2981,
-              "iv": 0.7656,
-              "ivPercentile": 63
+              "iv": 0.748,
+              "ivPercentile": 62
             },
             {
               "strike": 7.5,
-              "bid": 1.15,
-              "ask": 1.35,
+              "bid": 0.8,
+              "ask": 1.65,
               "oi": 3593,
-              "iv": 0.7383,
-              "ivPercentile": 61
+              "iv": 0.6328,
+              "ivPercentile": 44
             },
             {
               "strike": 9.0,
               "bid": 2.1,
               "ask": 3.9,
               "oi": 35,
-              "iv": 1.6445,
+              "iv": 1.6016,
               "ivPercentile": 100
             },
             {
               "strike": 10.0,
-              "bid": 2.6,
-              "ask": 4.3,
+              "bid": 3.4,
+              "ask": 5.0,
               "oi": 468,
-              "iv": 2.3906,
+              "iv": 2.1934,
               "ivPercentile": 100
             },
             {
@@ -3243,7 +844,7 @@
               "bid": 5.1,
               "ask": 7.3,
               "oi": 72,
-              "iv": 1.668,
+              "iv": 1.5547,
               "ivPercentile": 100
             },
             {
@@ -3267,7 +868,7 @@
               "bid": 11.5,
               "ask": 13.9,
               "oi": 0,
-              "iv": 3.0352,
+              "iv": 2.9609,
               "ivPercentile": 100
             }
           ]
@@ -3280,32 +881,32 @@
               "bid": 1.2,
               "ask": 2.4,
               "oi": 20,
-              "iv": 0.832,
-              "ivPercentile": 75
+              "iv": 0.8633,
+              "ivPercentile": 78
             },
             {
               "strike": 6.0,
               "bid": 0.3,
               "ask": 1.8,
               "oi": 9,
-              "iv": 0.6787,
-              "ivPercentile": 52
+              "iv": 0.6973,
+              "ivPercentile": 53
             },
             {
               "strike": 7.5,
-              "bid": 0.4,
-              "ask": 0.75,
+              "bid": 0.5,
+              "ask": 0.95,
               "oi": 569,
-              "iv": 0.7559,
-              "ivPercentile": 62
+              "iv": 0.8887,
+              "ivPercentile": 78
             },
             {
               "strike": 9.0,
               "bid": 0.05,
-              "ask": 0.65,
+              "ask": 0.3,
               "oi": 315,
-              "iv": 0.8262,
-              "ivPercentile": 74
+              "iv": 0.6504,
+              "ivPercentile": 46
             }
           ],
           "puts": [
@@ -3314,32 +915,32 @@
               "bid": 0.2,
               "ask": 1.2,
               "oi": 3,
-              "iv": 0.7344,
-              "ivPercentile": 61
+              "iv": 0.7227,
+              "ivPercentile": 59
             },
             {
               "strike": 7.5,
               "bid": 0.9,
               "ask": 2.05,
               "oi": 10,
-              "iv": 0.6025,
-              "ivPercentile": 37
+              "iv": 0.582,
+              "ivPercentile": 36
             },
             {
               "strike": 10.0,
               "bid": 3.2,
               "ask": 4.4,
               "oi": 28,
-              "iv": 0.8125,
-              "ivPercentile": 68
+              "iv": 0.7773,
+              "ivPercentile": 65
             },
             {
               "strike": 12.5,
               "bid": 5.2,
               "ask": 7.5,
               "oi": 71,
-              "iv": 1.1172,
-              "ivPercentile": 98
+              "iv": 1.082,
+              "ivPercentile": 95
             }
           ]
         },
@@ -3347,37 +948,29 @@
           "expiry": "2027-12-17",
           "calls": [
             {
-              "strike": 7.5,
-              "bid": 1.2,
-              "ask": 3.5,
-              "oi": 96,
-              "iv": 1.0479,
-              "ivPercentile": 91
-            },
-            {
               "strike": 10.0,
-              "bid": 0.75,
-              "ask": 3.0,
+              "bid": 0.05,
+              "ask": 1.5,
               "oi": 1099,
-              "iv": 1.0625,
-              "ivPercentile": 94
+              "iv": 0.6465,
+              "ivPercentile": 46
             }
           ],
           "puts": [
             {
               "strike": 7.5,
-              "bid": 0.75,
-              "ask": 4.0,
+              "bid": 0.8,
+              "ask": 3.9,
               "oi": 11,
-              "iv": 0.6328,
-              "ivPercentile": 44
+              "iv": 0.6172,
+              "ivPercentile": 40
             },
             {
               "strike": 10.0,
               "bid": 1.0,
               "ask": 5.5,
               "oi": 64,
-              "iv": 1.0781,
+              "iv": 1.0723,
               "ivPercentile": 95
             },
             {
@@ -3385,8 +978,8 @@
               "bid": 5.0,
               "ask": 8.1,
               "oi": 170,
-              "iv": 0.6387,
-              "ivPercentile": 45
+              "iv": 0.626,
+              "ivPercentile": 42
             },
             {
               "strike": 15.0,
@@ -3441,534 +1034,81 @@
       ]
     },
     {
-      "ticker": "BAX",
-      "company": "Baxter International Inc. Common Stock",
-      "price": 26.08,
-      "hv20": 0.4959,
-      "hv60": 0.3573,
-      "earningsDate": null,
-      "expirations": [
-        {
-          "expiry": "2026-11-27",
-          "calls": [
-            {
-              "strike": 15.0,
-              "bid": 9.5,
-              "ask": 12.1,
-              "oi": 0,
-              "iv": 4.9609,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 21.0,
-              "bid": 3.6,
-              "ask": 6.0,
-              "oi": 2,
-              "iv": 2.5156,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 22.0,
-              "bid": 2.6,
-              "ask": 5.0,
-              "oi": 3,
-              "iv": 2.1797,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 23.0,
-              "bid": 2.0,
-              "ask": 3.5,
-              "oi": 11,
-              "iv": 1.291,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 24.0,
-              "bid": 1.15,
-              "ask": 2.5,
-              "oi": 14,
-              "iv": 1.0098,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 24.5,
-              "bid": 0.55,
-              "ask": 2.05,
-              "oi": 1,
-              "iv": 0.916,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 25.0,
-              "bid": 0.35,
-              "ask": 1.7,
-              "oi": 60,
-              "iv": 0.9023,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 25.5,
-              "bid": 0.45,
-              "ask": 0.7,
-              "oi": 2,
-              "iv": 0.2754,
-              "ivPercentile": 20
-            },
-            {
-              "strike": 26.0,
-              "bid": 0.3,
-              "ask": 0.5,
-              "oi": 642,
-              "iv": 0.377,
-              "ivPercentile": 47
-            },
-            {
-              "strike": 27.0,
-              "bid": 0.05,
-              "ask": 0.35,
-              "oi": 82,
-              "iv": 0.5801,
-              "ivPercentile": 90
-            }
-          ],
-          "puts": [
-            {
-              "strike": 25.0,
-              "bid": 0.05,
-              "ask": 0.5,
-              "oi": 55,
-              "iv": 0.5742,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 25.5,
-              "bid": 0.35,
-              "ask": 0.65,
-              "oi": 4,
-              "iv": 0.627,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 26.0,
-              "bid": 0.05,
-              "ask": 0.95,
-              "oi": 31,
-              "iv": 0.8145,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 27.0,
-              "bid": 0.6,
-              "ask": 2.1,
-              "oi": 1,
-              "iv": 0.6523,
-              "ivPercentile": 91
-            },
-            {
-              "strike": 28.0,
-              "bid": 1.3,
-              "ask": 2.95,
-              "oi": 0,
-              "iv": 0.6641,
-              "ivPercentile": 92
-            },
-            {
-              "strike": 29.0,
-              "bid": 2.1,
-              "ask": 4.4,
-              "oi": 1,
-              "iv": 1.0137,
-              "ivPercentile": 100
-            }
-          ]
-        },
-        {
-          "expiry": "2026-12-04",
-          "calls": [
-            {
-              "strike": 15.0,
-              "bid": 9.4,
-              "ask": 12.3,
-              "oi": 1,
-              "iv": 3.4258,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 17.0,
-              "bid": 7.4,
-              "ask": 10.4,
-              "oi": 1,
-              "iv": 2.9453,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 22.0,
-              "bid": 2.7,
-              "ask": 5.0,
-              "oi": 1,
-              "iv": 1.4082,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 22.5,
-              "bid": 2.1,
-              "ask": 4.5,
-              "oi": 2,
-              "iv": 1.3008,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 23.0,
-              "bid": 2.0,
-              "ask": 3.9,
-              "oi": 2,
-              "iv": 1.126,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 24.0,
-              "bid": 0.5,
-              "ask": 2.8,
-              "oi": 6,
-              "iv": 0.8525,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 25.0,
-              "bid": 0.35,
-              "ask": 2.05,
-              "oi": 16,
-              "iv": 0.7832,
-              "ivPercentile": 98
-            },
-            {
-              "strike": 25.5,
-              "bid": 0.25,
-              "ask": 1.65,
-              "oi": 1,
-              "iv": 0.7188,
-              "ivPercentile": 92
-            },
-            {
-              "strike": 26.0,
-              "bid": 0.05,
-              "ask": 1.5,
-              "oi": 15,
-              "iv": 0.7754,
-              "ivPercentile": 97
-            },
-            {
-              "strike": 27.0,
-              "bid": 0.05,
-              "ask": 1.1,
-              "oi": 1663,
-              "iv": 0.5039,
-              "ivPercentile": 84
-            },
-            {
-              "strike": 28.0,
-              "bid": 0.05,
-              "ask": 0.2,
-              "oi": 27,
-              "iv": 0.4238,
-              "ivPercentile": 63
-            }
-          ],
-          "puts": [
-            {
-              "strike": 23.5,
-              "bid": 0.05,
-              "ask": 1.5,
-              "oi": 3,
-              "iv": 0.9922,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 24.0,
-              "bid": 0.05,
-              "ask": 0.6,
-              "oi": 22,
-              "iv": 0.582,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 24.5,
-              "bid": 0.05,
-              "ask": 1.5,
-              "oi": 1,
-              "iv": 0.7813,
-              "ivPercentile": 98
-            },
-            {
-              "strike": 25.0,
-              "bid": 0.05,
-              "ask": 0.85,
-              "oi": 7,
-              "iv": 0.7148,
-              "ivPercentile": 92
-            },
-            {
-              "strike": 27.0,
-              "bid": 0.8,
-              "ask": 2.3,
-              "oi": 1,
-              "iv": 0.5342,
-              "ivPercentile": 88
-            },
-            {
-              "strike": 28.0,
-              "bid": 1.6,
-              "ask": 3.1,
-              "oi": 0,
-              "iv": 0.585,
-              "ivPercentile": 90
-            }
-          ]
-        },
-        {
-          "expiry": "2027-02-19",
-          "calls": [
-            {
-              "strike": 17.5,
-              "bid": 7.5,
-              "ask": 10.0,
-              "oi": 10,
-              "iv": 0.541,
-              "ivPercentile": 88
-            },
-            {
-              "strike": 20.0,
-              "bid": 5.0,
-              "ask": 7.7,
-              "oi": 2,
-              "iv": 0.8789,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 22.5,
-              "bid": 2.95,
-              "ask": 5.0,
-              "oi": 346,
-              "iv": 0.6011,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 25.0,
-              "bid": 2.2,
-              "ask": 3.2,
-              "oi": 657,
-              "iv": 0.523,
-              "ivPercentile": 87
-            },
-            {
-              "strike": 27.5,
-              "bid": 1.0,
-              "ask": 2.2,
-              "oi": 196,
-              "iv": 0.5425,
-              "ivPercentile": 88
-            },
-            {
-              "strike": 30.0,
-              "bid": 0.35,
-              "ask": 1.65,
-              "oi": 159,
-              "iv": 0.5894,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 32.5,
-              "bid": 0.15,
-              "ask": 0.65,
-              "oi": 53,
-              "iv": 0.4785,
-              "ivPercentile": 77
-            },
-            {
-              "strike": 35.0,
-              "bid": 0.05,
-              "ask": 1.7,
-              "oi": 46,
-              "iv": 0.6338,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 37.5,
-              "bid": 0.05,
-              "ask": 1.1,
-              "oi": 3,
-              "iv": 0.6289,
-              "ivPercentile": 90
-            }
-          ],
-          "puts": [
-            {
-              "strike": 20.0,
-              "bid": 0.05,
-              "ask": 1.5,
-              "oi": 200,
-              "iv": 0.6314,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 22.5,
-              "bid": 0.25,
-              "ask": 1.5,
-              "oi": 295,
-              "iv": 0.6201,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 25.0,
-              "bid": 1.15,
-              "ask": 2.3,
-              "oi": 91,
-              "iv": 0.5598,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 27.5,
-              "bid": 2.5,
-              "ask": 4.1,
-              "oi": 20,
-              "iv": 0.6362,
-              "ivPercentile": 90
-            }
-          ]
-        },
-        {
-          "expiry": "2027-09-17",
-          "calls": [
-            {
-              "strike": 12.5,
-              "bid": 11.8,
-              "ask": 16.0,
-              "oi": 1,
-              "iv": 0.5713,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 17.5,
-              "bid": 7.4,
-              "ask": 11.2,
-              "oi": 1,
-              "iv": 0.7825,
-              "ivPercentile": 98
-            },
-            {
-              "strike": 25.0,
-              "bid": 3.0,
-              "ask": 6.0,
-              "oi": 274,
-              "iv": 0.5974,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 27.5,
-              "bid": 1.7,
-              "ask": 5.0,
-              "oi": 26,
-              "iv": 0.5945,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 30.0,
-              "bid": 0.85,
-              "ask": 4.1,
-              "oi": 78,
-              "iv": 0.5857,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 32.5,
-              "bid": 1.65,
-              "ask": 2.7,
-              "oi": 1,
-              "iv": 0.5078,
-              "ivPercentile": 85
-            },
-            {
-              "strike": 35.0,
-              "bid": 0.1,
-              "ask": 2.0,
-              "oi": 141,
-              "iv": 0.489,
-              "ivPercentile": 78
-            },
-            {
-              "strike": 37.5,
-              "bid": 0.05,
-              "ask": 2.5,
-              "oi": 35,
-              "iv": 0.5994,
-              "ivPercentile": 90
-            }
-          ],
-          "puts": [
-            {
-              "strike": 17.5,
-              "bid": 0.05,
-              "ask": 3.0,
-              "oi": 93,
-              "iv": 0.5991,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 20.0,
-              "bid": 0.05,
-              "ask": 3.3,
-              "oi": 57,
-              "iv": 0.7192,
-              "ivPercentile": 92
-            },
-            {
-              "strike": 25.0,
-              "bid": 1.5,
-              "ask": 4.3,
-              "oi": 132,
-              "iv": 0.5278,
-              "ivPercentile": 88
-            },
-            {
-              "strike": 30.0,
-              "bid": 4.4,
-              "ask": 7.7,
-              "oi": 68,
-              "iv": 0.552,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 37.5,
-              "bid": 10.5,
-              "ask": 14.1,
-              "oi": 2,
-              "iv": 0.6201,
-              "ivPercentile": 90
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ticker": "BFST",
-      "company": "Business First Bancshares, Inc. - Common Stock",
-      "price": 30.98,
-      "hv20": 0.1985,
-      "hv60": 0.1672,
-      "earningsDate": null,
+      "ticker": "AMTM",
+      "company": "Amentum Holdings, Inc. Common Stock",
+      "price": 20.65,
+      "hv20": 0.3582,
+      "hv60": 0.3457,
+      "earningsDate": "2026-11-23",
       "expirations": [
         {
           "expiry": "2026-12-18",
-          "calls": [],
+          "calls": [
+            {
+              "strike": 15.0,
+              "bid": 4.5,
+              "ask": 7.1,
+              "oi": 1,
+              "iv": 0.8594,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 17.5,
+              "bid": 1.9,
+              "ask": 4.9,
+              "oi": 1,
+              "iv": 0.6113,
+              "ivPercentile": 85
+            },
+            {
+              "strike": 22.5,
+              "bid": 0.55,
+              "ask": 0.8,
+              "oi": 104,
+              "iv": 0.6152,
+              "ivPercentile": 85
+            },
+            {
+              "strike": 25.0,
+              "bid": 0.15,
+              "ask": 0.3,
+              "oi": 301,
+              "iv": 0.6152,
+              "ivPercentile": 85
+            }
+          ],
           "puts": [
             {
-              "strike": 35.0,
-              "bid": 2.5,
-              "ask": 5.2,
-              "oi": 1,
-              "iv": 0.7803,
-              "ivPercentile": 100
+              "strike": 17.5,
+              "bid": 0.25,
+              "ask": 0.55,
+              "oi": 18,
+              "iv": 0.7256,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 20.0,
+              "bid": 1.0,
+              "ask": 1.25,
+              "oi": 85,
+              "iv": 0.6602,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 22.5,
+              "bid": 2.35,
+              "ask": 2.65,
+              "oi": 63,
+              "iv": 0.6025,
+              "ivPercentile": 85
+            },
+            {
+              "strike": 25.0,
+              "bid": 3.8,
+              "ask": 6.1,
+              "oi": 14,
+              "iv": 0.8662,
+              "ivPercentile": 94
             }
           ]
         },
@@ -3976,22 +1116,717 @@
           "expiry": "2027-04-16",
           "calls": [
             {
+              "strike": 12.5,
+              "bid": 7.4,
+              "ask": 10.5,
+              "oi": 6,
+              "iv": 0.854,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 15.0,
+              "bid": 5.3,
+              "ask": 8.2,
+              "oi": 0,
+              "iv": 0.7148,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 17.5,
+              "bid": 3.3,
+              "ask": 6.1,
+              "oi": 1,
+              "iv": 0.5996,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 20.0,
+              "bid": 1.85,
+              "ask": 4.5,
+              "oi": 97,
+              "iv": 0.5581,
+              "ivPercentile": 79
+            },
+            {
+              "strike": 22.5,
+              "bid": 0.95,
+              "ask": 3.5,
+              "oi": 46,
+              "iv": 0.5676,
+              "ivPercentile": 79
+            },
+            {
+              "strike": 25.0,
+              "bid": 0.05,
+              "ask": 2.05,
+              "oi": 59,
+              "iv": 0.676,
+              "ivPercentile": 93
+            },
+            {
               "strike": 30.0,
-              "bid": 1.5,
-              "ask": 6.0,
-              "oi": 2,
-              "iv": 0.7231,
+              "bid": 0.1,
+              "ask": 2.45,
+              "oi": 25,
+              "iv": 0.7178,
+              "ivPercentile": 94
+            }
+          ],
+          "puts": [
+            {
+              "strike": 17.5,
+              "bid": 0.25,
+              "ask": 3.6,
+              "oi": 342,
+              "iv": 0.687,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 20.0,
+              "bid": 2.05,
+              "ask": 2.4,
+              "oi": 6526,
+              "iv": 0.5332,
+              "ivPercentile": 77
+            },
+            {
+              "strike": 22.5,
+              "bid": 1.65,
+              "ask": 5.7,
+              "oi": 72,
+              "iv": 0.8813,
+              "ivPercentile": 96
+            },
+            {
+              "strike": 27.5,
+              "bid": 5.6,
+              "ask": 8.6,
+              "oi": 7,
+              "iv": 0.7288,
+              "ivPercentile": 94
+            }
+          ]
+        },
+        {
+          "expiry": "2027-12-17",
+          "calls": [
+            {
+              "strike": 5.0,
+              "bid": 13.5,
+              "ask": 18.5,
+              "oi": 10,
+              "iv": 0.9834,
               "ivPercentile": 100
+            },
+            {
+              "strike": 12.5,
+              "bid": 7.4,
+              "ask": 11.7,
+              "oi": 297,
+              "iv": 0.6545,
+              "ivPercentile": 91
+            },
+            {
+              "strike": 15.0,
+              "bid": 5.8,
+              "ask": 9.9,
+              "oi": 274,
+              "iv": 0.6235,
+              "ivPercentile": 85
+            },
+            {
+              "strike": 17.5,
+              "bid": 4.0,
+              "ask": 8.1,
+              "oi": 169,
+              "iv": 0.5542,
+              "ivPercentile": 78
+            },
+            {
+              "strike": 20.0,
+              "bid": 4.6,
+              "ask": 5.3,
+              "oi": 641,
+              "iv": 0.5586,
+              "ivPercentile": 79
+            },
+            {
+              "strike": 22.5,
+              "bid": 3.5,
+              "ask": 5.9,
+              "oi": 375,
+              "iv": 0.6384,
+              "ivPercentile": 88
+            },
+            {
+              "strike": 25.0,
+              "bid": 1.65,
+              "ask": 4.2,
+              "oi": 242,
+              "iv": 0.5164,
+              "ivPercentile": 77
+            },
+            {
+              "strike": 27.5,
+              "bid": 1.25,
+              "ask": 4.1,
+              "oi": 241,
+              "iv": 0.5579,
+              "ivPercentile": 79
+            },
+            {
+              "strike": 30.0,
+              "bid": 0.6,
+              "ask": 2.35,
+              "oi": 293,
+              "iv": 0.5779,
+              "ivPercentile": 80
+            },
+            {
+              "strike": 32.5,
+              "bid": 0.35,
+              "ask": 3.6,
+              "oi": 31,
+              "iv": 0.5815,
+              "ivPercentile": 80
+            }
+          ],
+          "puts": [
+            {
+              "strike": 17.5,
+              "bid": 1.2,
+              "ask": 3.9,
+              "oi": 1195,
+              "iv": 0.5061,
+              "ivPercentile": 76
+            },
+            {
+              "strike": 20.0,
+              "bid": 1.1,
+              "ask": 5.4,
+              "oi": 57,
+              "iv": 0.6973,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 22.5,
+              "bid": 2.65,
+              "ask": 6.6,
+              "oi": 36,
+              "iv": 0.6448,
+              "ivPercentile": 90
+            },
+            {
+              "strike": 25.0,
+              "bid": 4.4,
+              "ask": 8.7,
+              "oi": 0,
+              "iv": 0.6841,
+              "ivPercentile": 93
+            },
+            {
+              "strike": 30.0,
+              "bid": 8.0,
+              "ask": 12.7,
+              "oi": 1063,
+              "iv": 0.6992,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 37.5,
+              "bid": 13.5,
+              "ask": 18.5,
+              "oi": 3,
+              "iv": 0.6221,
+              "ivPercentile": 85
+            },
+            {
+              "strike": 40.0,
+              "bid": 17.5,
+              "ask": 20.4,
+              "oi": 1,
+              "iv": 0.5654,
+              "ivPercentile": 79
+            },
+            {
+              "strike": 45.0,
+              "bid": 16.5,
+              "ask": 21.0,
+              "oi": 6,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 50.0,
+              "bid": 20.5,
+              "ask": 25.5,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 55.0,
+              "bid": 25.5,
+              "ask": 28.7,
+              "oi": 16,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "AVAH",
+      "company": "Aveanna Healthcare Holdings Inc. - Common Stock",
+      "price": 11.6,
+      "hv20": 0.5933,
+      "hv60": 0.4087,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2026-12-18",
+          "calls": [
+            {
+              "strike": 2.5,
+              "bid": 3.8,
+              "ask": 5.0,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 5.0,
+              "bid": 5.2,
+              "ask": 8.0,
+              "oi": 114,
+              "iv": 1.25,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 7.5,
+              "bid": 3.0,
+              "ask": 5.2,
+              "oi": 69,
+              "iv": 0.6875,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 10.0,
+              "bid": 1.65,
+              "ask": 1.85,
+              "oi": 688,
+              "iv": 0.5859,
+              "ivPercentile": 87
+            }
+          ],
+          "puts": [
+            {
+              "strike": 10.0,
+              "bid": 0.05,
+              "ask": 0.55,
+              "oi": 86,
+              "iv": 0.7656,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 12.5,
+              "bid": 0.1,
+              "ask": 3.1,
+              "oi": 737,
+              "iv": 0.8506,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 15.0,
+              "bid": 2.8,
+              "ask": 4.2,
+              "oi": 9,
+              "iv": 0.7012,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 17.5,
+              "bid": 3.7,
+              "ask": 4.9,
+              "oi": 7,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        },
+        {
+          "expiry": "2027-03-19",
+          "calls": [
+            {
+              "strike": 5.0,
+              "bid": 7.8,
+              "ask": 9.5,
+              "oi": 5,
+              "iv": 2.9063,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 7.5,
+              "bid": 2.95,
+              "ask": 6.3,
+              "oi": 36,
+              "iv": 0.916,
+              "ivPercentile": 98
+            },
+            {
+              "strike": 10.0,
+              "bid": 2.3,
+              "ask": 2.7,
+              "oi": 212,
+              "iv": 0.6509,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 12.5,
+              "bid": 0.05,
+              "ask": 2.7,
+              "oi": 167,
+              "iv": 0.6621,
+              "ivPercentile": 92
+            },
+            {
+              "strike": 15.0,
+              "bid": 0.1,
+              "ask": 1.85,
+              "oi": 240,
+              "iv": 0.7715,
+              "ivPercentile": 92
+            }
+          ],
+          "puts": [
+            {
+              "strike": 10.0,
+              "bid": 0.65,
+              "ask": 2.3,
+              "oi": 10,
+              "iv": 0.9053,
+              "ivPercentile": 98
+            },
+            {
+              "strike": 12.5,
+              "bid": 0.85,
+              "ask": 2.9,
+              "oi": 7,
+              "iv": 0.5078,
+              "ivPercentile": 76
+            },
+            {
+              "strike": 15.0,
+              "bid": 3.5,
+              "ask": 4.5,
+              "oi": 7,
+              "iv": 0.6094,
+              "ivPercentile": 88
+            },
+            {
+              "strike": 20.0,
+              "bid": 6.5,
+              "ask": 7.7,
+              "oi": 1,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 22.5,
+              "bid": 8.8,
+              "ask": 10.0,
+              "oi": 2,
+              "iv": 0.0,
+              "ivPercentile": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "BAND",
+      "company": "Bandwidth Inc. - Class A Common Stock",
+      "price": 38.92,
+      "hv20": 1.2485,
+      "hv60": 1.0891,
+      "earningsDate": null,
+      "expirations": [
+        {
+          "expiry": "2026-12-18",
+          "calls": [
+            {
+              "strike": 22.5,
+              "bid": 15.2,
+              "ask": 18.4,
+              "oi": 2,
+              "iv": 1.4316,
+              "ivPercentile": 84
+            },
+            {
+              "strike": 25.0,
+              "bid": 12.4,
+              "ask": 16.0,
+              "oi": 2,
+              "iv": 1.1172,
+              "ivPercentile": 72
+            },
+            {
+              "strike": 30.0,
+              "bid": 8.1,
+              "ask": 11.7,
+              "oi": 28,
+              "iv": 1.0811,
+              "ivPercentile": 69
+            },
+            {
+              "strike": 35.0,
+              "bid": 4.3,
+              "ask": 8.0,
+              "oi": 5,
+              "iv": 0.9893,
+              "ivPercentile": 63
+            },
+            {
+              "strike": 40.0,
+              "bid": 3.1,
+              "ask": 4.5,
+              "oi": 36,
+              "iv": 1.0313,
+              "ivPercentile": 65
+            },
+            {
+              "strike": 45.0,
+              "bid": 0.85,
+              "ask": 2.5,
+              "oi": 17,
+              "iv": 0.8994,
+              "ivPercentile": 56
+            },
+            {
+              "strike": 55.0,
+              "bid": 0.15,
+              "ask": 0.8,
+              "oi": 48,
+              "iv": 0.9561,
+              "ivPercentile": 61
+            }
+          ],
+          "puts": [
+            {
+              "strike": 35.0,
+              "bid": 0.05,
+              "ask": 2.85,
+              "oi": 629,
+              "iv": 0.7676,
+              "ivPercentile": 48
+            },
+            {
+              "strike": 40.0,
+              "bid": 4.2,
+              "ask": 4.7,
+              "oi": 780,
+              "iv": 0.9272,
+              "ivPercentile": 59
+            },
+            {
+              "strike": 45.0,
+              "bid": 6.2,
+              "ask": 9.9,
+              "oi": 34,
+              "iv": 0.9785,
+              "ivPercentile": 62
+            },
+            {
+              "strike": 50.0,
+              "bid": 10.2,
+              "ask": 13.8,
+              "oi": 4,
+              "iv": 0.9404,
+              "ivPercentile": 60
+            }
+          ]
+        },
+        {
+          "expiry": "2027-02-19",
+          "calls": [
+            {
+              "strike": 20.0,
+              "bid": 17.9,
+              "ask": 21.2,
+              "oi": 3,
+              "iv": 1.0342,
+              "ivPercentile": 65
+            },
+            {
+              "strike": 22.5,
+              "bid": 21.3,
+              "ask": 25.0,
+              "oi": 4,
+              "iv": 2.397,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 25.0,
+              "bid": 14.0,
+              "ask": 16.9,
+              "oi": 12,
+              "iv": 1.0005,
+              "ivPercentile": 64
+            },
+            {
+              "strike": 30.0,
+              "bid": 10.0,
+              "ask": 12.9,
+              "oi": 17,
+              "iv": 0.8896,
+              "ivPercentile": 56
+            },
+            {
+              "strike": 35.0,
+              "bid": 7.6,
+              "ask": 10.3,
+              "oi": 15,
+              "iv": 0.9448,
+              "ivPercentile": 61
+            },
+            {
+              "strike": 45.0,
+              "bid": 3.6,
+              "ask": 6.1,
+              "oi": 4,
+              "iv": 0.9167,
+              "ivPercentile": 58
+            },
+            {
+              "strike": 50.0,
+              "bid": 2.2,
+              "ask": 4.7,
+              "oi": 5,
+              "iv": 0.8984,
+              "ivPercentile": 56
+            },
+            {
+              "strike": 55.0,
+              "bid": 1.45,
+              "ask": 3.8,
+              "oi": 19,
+              "iv": 0.9141,
+              "ivPercentile": 58
+            },
+            {
+              "strike": 60.0,
+              "bid": 1.05,
+              "ask": 3.5,
+              "oi": 22,
+              "iv": 0.9709,
+              "ivPercentile": 62
+            },
+            {
+              "strike": 65.0,
+              "bid": 0.2,
+              "ask": 3.2,
+              "oi": 22,
+              "iv": 0.9666,
+              "ivPercentile": 62
+            },
+            {
+              "strike": 70.0,
+              "bid": 0.05,
+              "ask": 3.0,
+              "oi": 101,
+              "iv": 1.0151,
+              "ivPercentile": 65
             }
           ],
           "puts": [
             {
               "strike": 30.0,
-              "bid": 0.05,
-              "ask": 2.8,
+              "bid": 0.55,
+              "ask": 4.6,
+              "oi": 75,
+              "iv": 0.898,
+              "ivPercentile": 56
+            },
+            {
+              "strike": 35.0,
+              "bid": 3.2,
+              "ask": 5.6,
+              "oi": 47,
+              "iv": 0.8535,
+              "ivPercentile": 54
+            },
+            {
+              "strike": 40.0,
+              "bid": 5.9,
+              "ask": 8.6,
+              "oi": 46,
+              "iv": 0.8682,
+              "ivPercentile": 55
+            },
+            {
+              "strike": 45.0,
+              "bid": 9.2,
+              "ask": 11.9,
+              "oi": 68,
+              "iv": 0.8672,
+              "ivPercentile": 55
+            },
+            {
+              "strike": 50.0,
+              "bid": 13.0,
+              "ask": 15.7,
+              "oi": 18,
+              "iv": 0.8735,
+              "ivPercentile": 56
+            },
+            {
+              "strike": 55.0,
+              "bid": 16.7,
+              "ask": 20.2,
+              "oi": 43,
+              "iv": 0.8755,
+              "ivPercentile": 56
+            },
+            {
+              "strike": 60.0,
+              "bid": 20.9,
+              "ask": 24.6,
+              "oi": 73,
+              "iv": 0.8684,
+              "ivPercentile": 55
+            },
+            {
+              "strike": 65.0,
+              "bid": 25.3,
+              "ask": 29.0,
+              "oi": 109,
+              "iv": 0.8403,
+              "ivPercentile": 54
+            },
+            {
+              "strike": 70.0,
+              "bid": 30.0,
+              "ask": 33.7,
               "oi": 6,
-              "iv": 0.4275,
-              "ivPercentile": 100
+              "iv": 0.8442,
+              "ivPercentile": 54
+            },
+            {
+              "strike": 80.0,
+              "bid": 35.9,
+              "ask": 39.2,
+              "oi": 5,
+              "iv": 0.0,
+              "ivPercentile": 0
+            },
+            {
+              "strike": 90.0,
+              "bid": 48.7,
+              "ask": 51.6,
+              "oi": 4,
+              "iv": 0.999,
+              "ivPercentile": 64
             }
           ]
         }
@@ -4000,9 +1835,9 @@
     {
       "ticker": "CDNL",
       "company": "Cardinal Infrastructure Group Inc. - Class A Common Stock",
-      "price": 5.21,
-      "hv20": 3.6646,
-      "hv60": 2.2104,
+      "price": 5.46,
+      "hv20": 3.6928,
+      "hv60": 2.2239,
       "earningsDate": null,
       "expirations": [
         {
@@ -4010,60 +1845,52 @@
           "calls": [
             {
               "strike": 2.5,
-              "bid": 0.7,
-              "ask": 3.0,
+              "bid": 1.0,
+              "ask": 3.9,
               "oi": 109,
-              "iv": 3.0938,
-              "ivPercentile": 96
-            },
-            {
-              "strike": 7.5,
-              "bid": 0.1,
-              "ask": 0.2,
-              "oi": 349,
-              "iv": 1.2656,
-              "ivPercentile": 87
+              "iv": 5.6953,
+              "ivPercentile": 100
             }
           ],
           "puts": [
             {
               "strike": 7.5,
-              "bid": 1.05,
-              "ask": 3.8,
+              "bid": 1.2,
+              "ask": 4.5,
               "oi": 110,
-              "iv": 1.2266,
-              "ivPercentile": 87
+              "iv": 2.4258,
+              "ivPercentile": 96
             },
             {
               "strike": 10.0,
               "bid": 3.4,
               "ask": 6.1,
               "oi": 4,
-              "iv": 4.2305,
-              "ivPercentile": 100
+              "iv": 1.9063,
+              "ivPercentile": 96
             },
             {
               "strike": 12.5,
               "bid": 5.2,
-              "ask": 9.3,
+              "ask": 9.0,
               "oi": 42,
-              "iv": 5.9883,
-              "ivPercentile": 100
+              "iv": 1.7656,
+              "ivPercentile": 89
             },
             {
               "strike": 15.0,
               "bid": 8.2,
-              "ask": 11.8,
+              "ask": 11.5,
               "oi": 1,
-              "iv": 2.7578,
+              "iv": 2.9297,
               "ivPercentile": 96
             },
             {
               "strike": 17.5,
               "bid": 10.7,
-              "ask": 14.3,
+              "ask": 14.0,
               "oi": 0,
-              "iv": 3.0156,
+              "iv": 3.1953,
               "ivPercentile": 96
             }
           ]
@@ -4073,68 +1900,76 @@
           "calls": [
             {
               "strike": 2.5,
-              "bid": 1.0,
+              "bid": 1.2,
               "ask": 5.2,
               "oi": 3,
-              "iv": 1.4824,
+              "iv": 1.2617,
               "ivPercentile": 87
             },
             {
               "strike": 5.0,
-              "bid": 0.15,
-              "ask": 2.8,
+              "bid": 1.0,
+              "ask": 3.6,
               "oi": 34,
-              "iv": 1.0859,
-              "ivPercentile": 75
+              "iv": 1.6387,
+              "ivPercentile": 87
             }
           ],
           "puts": [
             {
+              "strike": 5.0,
+              "bid": 0.75,
+              "ask": 1.1,
+              "oi": 62,
+              "iv": 0.8789,
+              "ivPercentile": 46
+            },
+            {
               "strike": 7.5,
-              "bid": 1.65,
-              "ask": 4.4,
+              "bid": 1.7,
+              "ask": 4.9,
               "oi": 50,
-              "iv": 1.0508,
-              "ivPercentile": 60
+              "iv": 1.3555,
+              "ivPercentile": 87
             },
             {
               "strike": 10.0,
               "bid": 3.7,
               "ask": 6.6,
               "oi": 3,
-              "iv": 1.0156,
-              "ivPercentile": 56
+              "iv": 1.1729,
+              "ivPercentile": 83
             },
             {
               "strike": 12.5,
               "bid": 6.1,
               "ask": 8.8,
               "oi": 45,
-              "iv": 0.9648,
-              "ivPercentile": 50
+              "iv": 1.1973,
+              "ivPercentile": 87
             },
             {
               "strike": 15.0,
               "bid": 8.7,
-              "ask": 10.3,
+              "ask": 11.8,
               "oi": 25,
-              "iv": 1.4961,
+              "iv": 1.6094,
               "ivPercentile": 87
             },
             {
               "strike": 17.5,
-              "bid": 11.0,
-              "ask": 13.7,
+              "bid": 11.2,
+              "ask": 14.5,
               "oi": 3,
-              "iv": 1.0,
-              "ivPercentile": 54
+              "iv": 1.8145,
+              "ivPercentile": 90
             },
             {
               "strike": 20.0,
               "bid": 13.6,
               "ask": 16.2,
               "oi": 17,
-              "iv": 1.2031,
+              "iv": 1.5059,
               "ivPercentile": 87
             },
             {
@@ -4149,277 +1984,142 @@
         },
         {
           "expiry": "2027-10-15",
-          "calls": [
-            {
-              "strike": 5.0,
-              "bid": 0.85,
-              "ask": 3.7,
-              "oi": 16,
-              "iv": 1.1836,
-              "ivPercentile": 85
-            },
-            {
-              "strike": 10.0,
-              "bid": 0.35,
-              "ask": 2.35,
-              "oi": 10,
-              "iv": 1.2129,
-              "ivPercentile": 87
-            }
-          ],
+          "calls": [],
           "puts": [
             {
               "strike": 5.0,
-              "bid": 0.4,
-              "ask": 2.85,
+              "bid": 1.2,
+              "ask": 1.7,
               "oi": 246,
-              "iv": 0.9258,
-              "ivPercentile": 48
+              "iv": 0.8701,
+              "ivPercentile": 45
             },
             {
               "strike": 7.5,
-              "bid": 2.05,
-              "ask": 4.9,
+              "bid": 3.0,
+              "ask": 3.5,
               "oi": 78,
-              "iv": 0.9297,
-              "ivPercentile": 49
+              "iv": 0.8789,
+              "ivPercentile": 46
             },
             {
               "strike": 10.0,
-              "bid": 4.1,
-              "ask": 7.0,
+              "bid": 2.85,
+              "ask": 7.5,
               "oi": 1,
-              "iv": 0.9082,
-              "ivPercentile": 47
+              "iv": 0.7949,
+              "ivPercentile": 39
             },
             {
               "strike": 12.5,
-              "bid": 6.7,
-              "ask": 9.2,
+              "bid": 5.1,
+              "ask": 10.0,
               "oi": 1,
-              "iv": 0.9863,
-              "ivPercentile": 51
+              "iv": 0.8584,
+              "ivPercentile": 44
             }
           ]
         }
       ]
     },
     {
-      "ticker": "CPSS",
-      "company": "Consumer Portfolio Services, Inc. - Common Stock",
-      "price": 8.88,
-      "hv20": 0.4629,
-      "hv60": 0.4516,
+      "ticker": "GBDC",
+      "company": "GOLUB CAPITAL BDC, Inc.",
+      "price": 12.46,
+      "hv20": 0.2366,
+      "hv60": 0.1872,
       "earningsDate": null,
-      "expirations": [
-        {
-          "expiry": "2027-01-15",
-          "calls": [],
-          "puts": [
-            {
-              "strike": 10.0,
-              "bid": 0.1,
-              "ask": 4.4,
-              "oi": 240,
-              "iv": 1.1328,
-              "ivPercentile": 100
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ticker": "DRVN",
-      "company": "Driven Brands Holdings Inc. - Common Stock",
-      "price": 10.4,
-      "hv20": 0.5721,
-      "hv60": 0.4461,
-      "earningsDate": "2026-11-24",
       "expirations": [
         {
           "expiry": "2026-12-18",
           "calls": [
             {
               "strike": 10.0,
-              "bid": 0.75,
-              "ask": 3.6,
-              "oi": 10012,
-              "iv": 1.8066,
-              "ivPercentile": 100
-            }
-          ],
-          "puts": [
-            {
-              "strike": 10.0,
-              "bid": 0.05,
-              "ask": 0.4,
-              "oi": 11,
-              "iv": 0.5469,
-              "ivPercentile": 71
-            },
-            {
-              "strike": 20.0,
-              "bid": 5.8,
-              "ask": 7.2,
-              "oi": 0,
-              "iv": 0.0,
-              "ivPercentile": 0
-            }
-          ]
-        },
-        {
-          "expiry": "2027-03-19",
-          "calls": [
-            {
-              "strike": 10.0,
-              "bid": 0.05,
-              "ask": 3.6,
+              "bid": 0.9,
+              "ask": 3.9,
               "oi": 10,
-              "iv": 0.6953,
-              "ivPercentile": 92
+              "iv": 2.1074,
+              "ivPercentile": 100
             },
             {
               "strike": 12.5,
-              "bid": 0.5,
-              "ask": 0.9,
-              "oi": 174,
-              "iv": 0.5879,
-              "ivPercentile": 80
+              "bid": 0.1,
+              "ask": 0.25,
+              "oi": 43,
+              "iv": 0.2031,
+              "ivPercentile": 60
             }
           ],
-          "puts": [
-            {
-              "strike": 12.5,
-              "bid": 0.7,
-              "ask": 3.6,
-              "oi": 160,
-              "iv": 0.9531,
-              "ivPercentile": 92
-            }
-          ]
-        },
-        {
-          "expiry": "2027-12-17",
-          "calls": [],
-          "puts": [
-            {
-              "strike": 12.5,
-              "bid": 1.0,
-              "ask": 6.0,
-              "oi": 1,
-              "iv": 1.0947,
-              "ivPercentile": 92
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ticker": "IMMR",
-      "company": "Immersion Corporation - Common Stock",
-      "price": 6.87,
-      "hv20": 0.3672,
-      "hv60": 0.3149,
-      "earningsDate": null,
-      "expirations": [
-        {
-          "expiry": "2026-12-18",
-          "calls": [
-            {
-              "strike": 5.0,
-              "bid": 1.1,
-              "ask": 2.6,
-              "oi": 1,
-              "iv": 2.4102,
-              "ivPercentile": 100
-            }
-          ],
-          "puts": [
-            {
-              "strike": 7.5,
-              "bid": 0.2,
-              "ask": 1.4,
-              "oi": 402,
-              "iv": 0.5313,
-              "ivPercentile": 84
-            }
-          ]
+          "puts": []
         },
         {
           "expiry": "2027-02-19",
           "calls": [
             {
-              "strike": 5.0,
-              "bid": 1.15,
-              "ask": 2.6,
-              "oi": 1417,
-              "iv": 1.3027,
+              "strike": 10.0,
+              "bid": 1.75,
+              "ask": 4.6,
+              "oi": 4,
+              "iv": 0.7598,
               "ivPercentile": 100
             },
             {
-              "strike": 7.5,
-              "bid": 0.4,
-              "ask": 0.6,
-              "oi": 2428,
-              "iv": 0.5508,
-              "ivPercentile": 84
+              "strike": 12.5,
+              "bid": 0.2,
+              "ask": 0.5,
+              "oi": 273,
+              "iv": 0.2114,
+              "ivPercentile": 65
             }
           ],
           "puts": [
             {
-              "strike": 7.5,
-              "bid": 0.95,
-              "ask": 1.3,
-              "oi": 684,
-              "iv": 0.543,
-              "ivPercentile": 84
-            },
-            {
-              "strike": 10.0,
-              "bid": 2.2,
-              "ask": 4.3,
-              "oi": 1,
-              "iv": 0.5957,
-              "ivPercentile": 84
+              "strike": 25.0,
+              "bid": 11.3,
+              "ask": 13.9,
+              "oi": 0,
+              "iv": 0.7227,
+              "ivPercentile": 100
             }
           ]
         }
       ]
     },
     {
-      "ticker": "MNRO",
-      "company": "Monro, Inc.  - Common Stock",
-      "price": 8.17,
-      "hv20": 0.9515,
-      "hv60": 0.7198,
+      "ticker": "GLPI",
+      "company": "Gaming and Leisure Properties, Inc. - Common Stock",
+      "price": 37.81,
+      "hv20": 0.1835,
+      "hv60": 0.1891,
       "earningsDate": null,
       "expirations": [
         {
           "expiry": "2026-12-18",
-          "calls": [],
+          "calls": [
+            {
+              "strike": 40.0,
+              "bid": 0.05,
+              "ask": 0.5,
+              "oi": 109,
+              "iv": 0.3174,
+              "ivPercentile": 100
+            }
+          ],
           "puts": [
             {
-              "strike": 10.0,
-              "bid": 0.7,
-              "ask": 2.25,
-              "oi": 72,
-              "iv": 1.1191,
-              "ivPercentile": 99
-            },
-            {
-              "strike": 12.5,
-              "bid": 3.1,
-              "ask": 4.9,
-              "oi": 40,
-              "iv": 1.8789,
+              "strike": 40.0,
+              "bid": 0.95,
+              "ask": 4.4,
+              "oi": 0,
+              "iv": 0.7705,
               "ivPercentile": 100
             },
             {
-              "strike": 15.0,
-              "bid": 5.6,
-              "ask": 7.3,
-              "oi": 84,
-              "iv": 2.1289,
+              "strike": 42.5,
+              "bid": 4.1,
+              "ask": 6.8,
+              "oi": 0,
+              "iv": 0.5659,
               "ivPercentile": 100
             }
           ]
@@ -4428,203 +2128,77 @@
           "expiry": "2027-04-16",
           "calls": [
             {
-              "strike": 7.5,
-              "bid": 1.7,
-              "ask": 3.9,
-              "oi": 168,
-              "iv": 1.29,
+              "strike": 30.0,
+              "bid": 5.8,
+              "ask": 10.1,
+              "oi": 49,
+              "iv": 0.6292,
               "ivPercentile": 100
             },
             {
-              "strike": 10.0,
-              "bid": 0.6,
-              "ask": 2.35,
-              "oi": 1503,
-              "iv": 1.0234,
-              "ivPercentile": 93
-            },
-            {
-              "strike": 12.5,
-              "bid": 0.35,
-              "ask": 1.0,
-              "oi": 3586,
-              "iv": 0.8721,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 15.0,
-              "bid": 0.1,
-              "ask": 0.9,
-              "oi": 255,
-              "iv": 0.9404,
-              "ivPercentile": 90
-            }
-          ],
-          "puts": [
-            {
-              "strike": 10.0,
-              "bid": 1.25,
-              "ask": 3.0,
-              "oi": 128,
-              "iv": 0.8594,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 12.5,
-              "bid": 3.0,
-              "ask": 5.8,
-              "oi": 34,
-              "iv": 1.2666,
-              "ivPercentile": 100
-            }
-          ]
-        },
-        {
-          "expiry": "2027-12-17",
-          "calls": [
-            {
-              "strike": 5.0,
-              "bid": 2.7,
-              "ask": 5.8,
-              "oi": 151,
-              "iv": 0.9131,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 7.5,
-              "bid": 1.5,
-              "ask": 4.4,
-              "oi": 300,
-              "iv": 0.834,
-              "ivPercentile": 87
-            },
-            {
-              "strike": 10.0,
-              "bid": 1.55,
-              "ask": 2.95,
-              "oi": 665,
-              "iv": 0.854,
-              "ivPercentile": 89
-            },
-            {
-              "strike": 12.5,
+              "strike": 37.5,
               "bid": 0.65,
-              "ask": 2.95,
-              "oi": 147,
-              "iv": 0.8774,
-              "ivPercentile": 90
-            },
-            {
-              "strike": 17.5,
-              "bid": 0.1,
-              "ask": 1.0,
-              "oi": 3012,
-              "iv": 0.6729,
-              "ivPercentile": 74
-            }
-          ],
-          "puts": [
-            {
-              "strike": 10.0,
-              "bid": 1.8,
-              "ask": 4.7,
-              "oi": 23,
-              "iv": 0.6011,
-              "ivPercentile": 66
-            },
-            {
-              "strike": 15.0,
-              "bid": 5.4,
-              "ask": 8.4,
-              "oi": 1,
-              "iv": 0.9189,
-              "ivPercentile": 90
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "ticker": "MYE",
-      "company": "Myers Industries, Inc. Common Stock",
-      "price": 26.95,
-      "hv20": 0.4983,
-      "hv60": 0.3611,
-      "earningsDate": null,
-      "expirations": [
-        {
-          "expiry": "2026-12-18",
-          "calls": [
-            {
-              "strike": 12.5,
-              "bid": 19.0,
-              "ask": 23.5,
-              "oi": 1,
-              "iv": 7.4102,
+              "ask": 4.5,
+              "oi": 52,
+              "iv": 0.4602,
               "ivPercentile": 100
             },
             {
-              "strike": 17.5,
-              "bid": 13.0,
-              "ask": 17.5,
-              "oi": 3,
-              "iv": 4.4609,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 20.0,
-              "bid": 4.6,
-              "ask": 8.8,
-              "oi": 45,
-              "iv": 1.832,
-              "ivPercentile": 100
-            },
-            {
-              "strike": 22.5,
-              "bid": 2.5,
-              "ask": 6.7,
-              "oi": 11,
-              "iv": 0.5195,
-              "ivPercentile": 89
-            },
-            {
-              "strike": 25.0,
+              "strike": 40.0,
               "bid": 0.05,
-              "ask": 4.9,
-              "oi": 2,
-              "iv": 1.4004,
+              "ask": 4.2,
+              "oi": 273,
+              "iv": 0.5364,
               "ivPercentile": 100
-            }
-          ],
-          "puts": []
-        },
-        {
-          "expiry": "2027-03-19",
-          "calls": [
+            },
             {
-              "strike": 20.0,
-              "bid": 5.5,
-              "ask": 10.0,
-              "oi": 1,
-              "iv": 0.5962,
-              "ivPercentile": 92
+              "strike": 47.5,
+              "bid": 0.1,
+              "ask": 1.5,
+              "oi": 28,
+              "iv": 0.4597,
+              "ivPercentile": 100
             }
           ],
           "puts": [
             {
               "strike": 35.0,
-              "bid": 4.0,
-              "ask": 8.5,
-              "oi": 2,
-              "iv": 0.4058,
-              "ivPercentile": 65
+              "bid": 0.05,
+              "ask": 4.3,
+              "oi": 44,
+              "iv": 0.6152,
+              "ivPercentile": 100
             },
             {
-              "strike": 50.0,
-              "bid": 20.5,
-              "ask": 25.3,
-              "oi": 3,
-              "iv": 1.1753,
+              "strike": 37.5,
+              "bid": 0.95,
+              "ask": 4.7,
+              "oi": 27,
+              "iv": 0.5149,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 40.0,
+              "bid": 2.0,
+              "ask": 6.0,
+              "oi": 16,
+              "iv": 0.4956,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 42.5,
+              "bid": 4.0,
+              "ask": 8.3,
+              "oi": 139,
+              "iv": 0.563,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 45.0,
+              "bid": 6.3,
+              "ask": 10.5,
+              "oi": 4,
+              "iv": 0.6064,
               "ivPercentile": 100
             }
           ]
@@ -4632,11 +2206,306 @@
       ]
     },
     {
-      "ticker": "RCUS",
-      "company": "Arcus Biosciences, Inc. Common Stock",
-      "price": 16.22,
-      "hv20": 0.5624,
-      "hv60": 0.6727,
+      "ticker": "MITK",
+      "company": "Mitek Systems, Inc. - Common Stock",
+      "price": 16.27,
+      "hv20": 0.7461,
+      "hv60": 0.5987,
+      "earningsDate": "2026-12-10",
+      "expirations": [
+        {
+          "expiry": "2026-12-18",
+          "calls": [
+            {
+              "strike": 12.5,
+              "bid": 3.1,
+              "ask": 5.7,
+              "oi": 14,
+              "iv": 1.2939,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 15.0,
+              "bid": 1.75,
+              "ask": 3.5,
+              "oi": 10,
+              "iv": 1.1582,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 17.5,
+              "bid": 0.9,
+              "ask": 1.05,
+              "oi": 685,
+              "iv": 0.8418,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 20.0,
+              "bid": 0.3,
+              "ask": 0.45,
+              "oi": 574,
+              "iv": 0.8281,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 22.5,
+              "bid": 0.1,
+              "ask": 0.3,
+              "oi": 3038,
+              "iv": 0.9141,
+              "ivPercentile": 94
+            }
+          ],
+          "puts": [
+            {
+              "strike": 15.0,
+              "bid": 0.3,
+              "ask": 1.9,
+              "oi": 208,
+              "iv": 1.001,
+              "ivPercentile": 98
+            },
+            {
+              "strike": 17.5,
+              "bid": 1.8,
+              "ask": 3.2,
+              "oi": 155,
+              "iv": 1.0176,
+              "ivPercentile": 98
+            },
+            {
+              "strike": 20.0,
+              "bid": 2.7,
+              "ask": 5.0,
+              "oi": 3,
+              "iv": 0.5879,
+              "ivPercentile": 69
+            }
+          ]
+        },
+        {
+          "expiry": "2027-04-16",
+          "calls": [
+            {
+              "strike": 2.5,
+              "bid": 12.5,
+              "ask": 15.9,
+              "oi": 0,
+              "iv": 2.4219,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 5.0,
+              "bid": 10.2,
+              "ask": 13.6,
+              "oi": 1,
+              "iv": 1.7207,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 12.5,
+              "bid": 4.1,
+              "ask": 7.1,
+              "oi": 15,
+              "iv": 0.9546,
+              "ivPercentile": 96
+            },
+            {
+              "strike": 15.0,
+              "bid": 2.6,
+              "ask": 4.9,
+              "oi": 6,
+              "iv": 0.7891,
+              "ivPercentile": 91
+            },
+            {
+              "strike": 17.5,
+              "bid": 1.85,
+              "ask": 4.0,
+              "oi": 38,
+              "iv": 0.835,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 20.0,
+              "bid": 0.8,
+              "ask": 2.15,
+              "oi": 427,
+              "iv": 0.6592,
+              "ivPercentile": 86
+            },
+            {
+              "strike": 25.0,
+              "bid": 0.15,
+              "ask": 1.35,
+              "oi": 28,
+              "iv": 0.6939,
+              "ivPercentile": 88
+            },
+            {
+              "strike": 30.0,
+              "bid": 0.05,
+              "ask": 1.75,
+              "oi": 2,
+              "iv": 0.9082,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 35.0,
+              "bid": 0.05,
+              "ask": 0.25,
+              "oi": 1,
+              "iv": 0.6816,
+              "ivPercentile": 87
+            }
+          ],
+          "puts": [
+            {
+              "strike": 10.0,
+              "bid": 0.05,
+              "ask": 0.85,
+              "oi": 3,
+              "iv": 0.7412,
+              "ivPercentile": 90
+            },
+            {
+              "strike": 12.5,
+              "bid": 0.05,
+              "ask": 3.1,
+              "oi": 10,
+              "iv": 0.874,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 15.0,
+              "bid": 0.85,
+              "ask": 2.55,
+              "oi": 4,
+              "iv": 0.584,
+              "ivPercentile": 67
+            },
+            {
+              "strike": 17.5,
+              "bid": 2.05,
+              "ask": 4.9,
+              "oi": 24,
+              "iv": 0.6694,
+              "ivPercentile": 87
+            },
+            {
+              "strike": 20.0,
+              "bid": 3.1,
+              "ask": 6.4,
+              "oi": 1,
+              "iv": 0.542,
+              "ivPercentile": 53
+            }
+          ]
+        },
+        {
+          "expiry": "2028-01-21",
+          "calls": [
+            {
+              "strike": 5.0,
+              "bid": 10.3,
+              "ask": 14.5,
+              "oi": 12,
+              "iv": 1.2539,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 7.5,
+              "bid": 8.2,
+              "ask": 11.5,
+              "oi": 15,
+              "iv": 0.856,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 10.0,
+              "bid": 6.7,
+              "ask": 9.7,
+              "oi": 12,
+              "iv": 0.8118,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 12.5,
+              "bid": 5.5,
+              "ask": 8.4,
+              "oi": 20,
+              "iv": 0.8091,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 15.0,
+              "bid": 4.5,
+              "ask": 7.3,
+              "oi": 39,
+              "iv": 0.8027,
+              "ivPercentile": 94
+            },
+            {
+              "strike": 17.5,
+              "bid": 4.0,
+              "ask": 5.2,
+              "oi": 26,
+              "iv": 0.7327,
+              "ivPercentile": 88
+            },
+            {
+              "strike": 20.0,
+              "bid": 2.55,
+              "ask": 4.5,
+              "oi": 82,
+              "iv": 0.6802,
+              "ivPercentile": 87
+            },
+            {
+              "strike": 22.5,
+              "bid": 2.45,
+              "ask": 3.6,
+              "oi": 0,
+              "iv": 0.6919,
+              "ivPercentile": 88
+            },
+            {
+              "strike": 25.0,
+              "bid": 0.95,
+              "ask": 4.0,
+              "oi": 37,
+              "iv": 0.6809,
+              "ivPercentile": 87
+            }
+          ],
+          "puts": [
+            {
+              "strike": 15.0,
+              "bid": 2.25,
+              "ask": 5.1,
+              "oi": 11,
+              "iv": 0.6497,
+              "ivPercentile": 86
+            },
+            {
+              "strike": 17.5,
+              "bid": 3.7,
+              "ask": 6.6,
+              "oi": 5,
+              "iv": 0.6331,
+              "ivPercentile": 83
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "ticker": "PBT",
+      "company": "Permian Basin Royalty Trust Common Stock",
+      "price": 28.26,
+      "hv20": 0.4595,
+      "hv60": 0.3629,
       "earningsDate": null,
       "expirations": [
         {
@@ -4644,136 +2513,114 @@
           "calls": [
             {
               "strike": 12.5,
-              "bid": 9.1,
-              "ask": 14.0,
-              "oi": 15,
-              "iv": 7.2891,
+              "bid": 15.1,
+              "ask": 19.1,
+              "oi": 1,
+              "iv": 3.1699,
               "ivPercentile": 100
             },
             {
               "strike": 15.0,
-              "bid": 0.2,
-              "ask": 5.0,
-              "oi": 5,
-              "iv": 1.1572,
+              "bid": 18.0,
+              "ask": 21.5,
+              "oi": 1,
+              "iv": 5.9336,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 22.5,
+              "bid": 5.2,
+              "ask": 8.5,
+              "oi": 4,
+              "iv": 1.1836,
+              "ivPercentile": 100
+            },
+            {
+              "strike": 25.0,
+              "bid": 1.45,
+              "ask": 5.5,
+              "oi": 68,
+              "iv": 1.292,
               "ivPercentile": 100
             }
           ],
           "puts": [
             {
-              "strike": 12.5,
-              "bid": 0.05,
-              "ask": 5.0,
-              "oi": 15,
-              "iv": 2.7754,
-              "ivPercentile": 100
+              "strike": 30.0,
+              "bid": 0.8,
+              "ask": 4.7,
+              "oi": 102,
+              "iv": 0.563,
+              "ivPercentile": 86
             },
+            {
+              "strike": 35.0,
+              "bid": 4.8,
+              "ask": 8.0,
+              "oi": 6,
+              "iv": 1.1045,
+              "ivPercentile": 100
+            }
+          ]
+        },
+        {
+          "expiry": "2027-03-19",
+          "calls": [
             {
               "strike": 15.0,
-              "bid": 0.05,
-              "ask": 1.3,
-              "oi": 11,
-              "iv": 0.7188,
-              "ivPercentile": 75
-            },
-            {
-              "strike": 17.5,
-              "bid": 0.3,
-              "ask": 5.0,
-              "oi": 1007,
-              "iv": 1.0938,
+              "bid": 17.6,
+              "ask": 21.4,
+              "oi": 2,
+              "iv": 2.7183,
               "ivPercentile": 100
             },
             {
               "strike": 20.0,
-              "bid": 3.6,
-              "ask": 6.5,
-              "oi": 374,
-              "iv": 1.4522,
+              "bid": 6.5,
+              "ask": 10.5,
+              "oi": 2,
+              "iv": 1.0132,
               "ivPercentile": 100
             },
             {
               "strike": 22.5,
               "bid": 4.5,
               "ask": 8.5,
-              "oi": 13,
-              "iv": 0.9648,
-              "ivPercentile": 97
-            },
-            {
-              "strike": 35.0,
-              "bid": 11.5,
-              "ask": 16.5,
               "oi": 1,
-              "iv": 0.0,
-              "ivPercentile": 0
-            }
-          ]
-        },
-        {
-          "expiry": "2027-03-19",
-          "calls": [],
-          "puts": [
-            {
-              "strike": 17.5,
-              "bid": 1.4,
-              "ask": 5.9,
-              "oi": 7,
-              "iv": 0.7886,
-              "ivPercentile": 82
-            }
-          ]
-        },
-        {
-          "expiry": "2027-12-17",
-          "calls": [
-            {
-              "strike": 2.5,
-              "bid": 11.0,
-              "ask": 16.0,
-              "oi": 1,
-              "iv": 3.9609,
+              "iv": 0.9053,
               "ivPercentile": 100
             },
             {
-              "strike": 12.5,
-              "bid": 3.5,
-              "ask": 8.5,
-              "oi": 44,
-              "iv": 0.665,
-              "ivPercentile": 68
+              "strike": 25.0,
+              "bid": 2.5,
+              "ask": 6.6,
+              "oi": 0,
+              "iv": 0.8049,
+              "ivPercentile": 100
             },
             {
-              "strike": 17.5,
-              "bid": 1.5,
-              "ask": 6.5,
-              "oi": 2,
-              "iv": 0.6753,
-              "ivPercentile": 69
-            },
-            {
-              "strike": 20.0,
-              "bid": 0.6,
-              "ask": 5.5,
-              "oi": 10,
-              "iv": 0.6416,
-              "ivPercentile": 65
+              "strike": 30.0,
+              "bid": 0.1,
+              "ask": 4.9,
+              "oi": 38,
+              "iv": 0.5029,
+              "ivPercentile": 77
             }
           ],
           "puts": [
             {
-              "strike": 15.0,
-              "bid": 1.0,
-              "ask": 6.0,
-              "oi": 30,
-              "iv": 0.6475,
-              "ivPercentile": 65
+              "strike": 30.0,
+              "bid": 1.85,
+              "ask": 5.9,
+              "oi": 107,
+              "iv": 0.7634,
+              "ivPercentile": 98
             },
             {
-              "strike": 40.0,
-              "bid": 12.0,
-              "ask": 17.0,
-              "oi": 8,
+              "strike": 35.0,
+              "bid": 2.0,
+              "ask": 6.0,
+              "oi": 21,
               "iv": 0.0,
               "ivPercentile": 0
             }
@@ -4796,7 +2643,7 @@
         "strike": 10.0,
         "expiry": "2027-01-15",
         "entry": 0.57,
-        "lastMark": 0.435,
+        "lastMark": 0.395,
         "contracts": 1,
         "remainingContracts": 1,
         "status": "open",
@@ -4812,8 +2659,8 @@
         "confidence": "Low",
         "side": "call",
         "stockAtEntry": null,
-        "lastStock": 8.58,
-        "lastStockAt": "2026-11-23T10:25:16.391710-05:00",
+        "lastStock": 8.37,
+        "lastStockAt": "2026-11-23T18:40:14.262531-05:00",
         "lastChecked": "2026-11-23",
         "markHistory": [
           {
@@ -4905,6 +2752,11 @@
             "at": "2026-11-23T10:25:16.391710-05:00",
             "mark": 0.435,
             "stock": 8.58
+          },
+          {
+            "at": "2026-11-23T18:40:14.262531-05:00",
+            "mark": 0.395,
+            "stock": 8.37
           }
         ],
         "probableNews": false
@@ -4917,7 +2769,7 @@
         "strike": 15.0,
         "expiry": "2028-01-21",
         "entry": 0.115,
-        "lastMark": 0.08,
+        "lastMark": 0.065,
         "contracts": 5,
         "remainingContracts": 5,
         "status": "open",
@@ -4934,7 +2786,7 @@
         "side": "call",
         "stockAtEntry": 14.97,
         "lastStock": 15.03,
-        "lastStockAt": "2026-11-23T10:25:16.391710-05:00",
+        "lastStockAt": "2026-11-23T18:40:14.262531-05:00",
         "lastChecked": "2026-11-23",
         "markHistory": [
           {
@@ -4976,6 +2828,11 @@
             "at": "2026-11-23T10:25:16.391710-05:00",
             "mark": 0.08,
             "stock": 15.03
+          },
+          {
+            "at": "2026-11-23T18:40:14.262531-05:00",
+            "mark": 0.065,
+            "stock": 15.03
           }
         ],
         "probableNews": true
@@ -4988,7 +2845,7 @@
         "strike": 12.0,
         "expiry": "2027-01-15",
         "entry": 0.56,
-        "lastMark": 0.705,
+        "lastMark": 0.55,
         "contracts": 1,
         "remainingContracts": 1,
         "status": "open",
@@ -5004,8 +2861,8 @@
         "confidence": "High",
         "side": "put",
         "stockAtEntry": 12.82,
-        "lastStock": 12.521,
-        "lastStockAt": "2026-11-23T10:25:16.391710-05:00",
+        "lastStock": 12.72,
+        "lastStockAt": "2026-11-23T18:40:14.262531-05:00",
         "lastChecked": "2026-11-23",
         "markHistory": [
           {
@@ -5032,6 +2889,11 @@
             "at": "2026-11-23T10:25:16.391710-05:00",
             "mark": 0.705,
             "stock": 12.521
+          },
+          {
+            "at": "2026-11-23T18:40:14.262531-05:00",
+            "mark": 0.55,
+            "stock": 12.72
           }
         ],
         "probableNews": false
@@ -5044,7 +2906,7 @@
         "strike": 11.5,
         "expiry": "2026-12-04",
         "entry": 0.565,
-        "lastMark": 0.565,
+        "lastMark": 0.63,
         "contracts": 1,
         "remainingContracts": 1,
         "status": "open",
@@ -5060,14 +2922,19 @@
         "confidence": "Medium",
         "side": "put",
         "stockAtEntry": 11.59,
-        "lastStock": null,
-        "lastStockAt": "",
+        "lastStock": 11.26,
+        "lastStockAt": "2026-11-23T18:40:14.262531-05:00",
         "lastChecked": "2026-11-23",
         "markHistory": [
           {
             "at": "2026-11-23T10:25:16.391710-05:00",
             "mark": 0.565,
             "stock": 11.59
+          },
+          {
+            "at": "2026-11-23T18:40:14.262531-05:00",
+            "mark": 0.63,
+            "stock": 11.26
           }
         ],
         "probableNews": false
@@ -5096,14 +2963,19 @@
         "confidence": "Medium",
         "side": "put",
         "stockAtEntry": 6.42,
-        "lastStock": null,
-        "lastStockAt": "",
+        "lastStock": 6.38,
+        "lastStockAt": "2026-11-23T18:40:14.262531-05:00",
         "lastChecked": "2026-11-23",
         "markHistory": [
           {
             "at": "2026-11-23T10:25:16.391710-05:00",
             "mark": 0.325,
             "stock": 6.42
+          },
+          {
+            "at": "2026-11-23T18:40:14.262531-05:00",
+            "mark": 0.325,
+            "stock": 6.38
           }
         ],
         "probableNews": false
