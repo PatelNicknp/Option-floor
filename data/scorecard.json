@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.4,
+      "lastMark": 0.435,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -239,10 +239,15 @@
           "at": "2026-11-24T10:25:18.259049-05:00",
           "mark": 0.4,
           "stock": 8.23
+        },
+        {
+          "at": "2026-11-24T18:55:29.657437-05:00",
+          "mark": 0.435,
+          "stock": 8.41
         }
       ],
-      "lastStock": 8.23,
-      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
+      "lastStock": 8.41,
+      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -653,6 +658,11 @@
           "at": "2026-11-24T10:25:18.259049-05:00",
           "mark": 0.07,
           "stock": 15.035
+        },
+        {
+          "at": "2026-11-24T18:55:29.657437-05:00",
+          "mark": 0.07,
+          "stock": 15.02
         }
       ],
       "realizedPnl": 0,
@@ -683,8 +693,8 @@
       "closedAt": "",
       "checkNote": "",
       "lastChecked": "2026-11-24",
-      "lastStock": 15.035,
-      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
+      "lastStock": 15.02,
+      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -841,7 +851,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.615,
+      "lastMark": 0.635,
       "stockAtEntry": 12.82,
       "markHistory": [
         {
@@ -878,6 +888,11 @@
           "at": "2026-11-24T10:25:18.259049-05:00",
           "mark": 0.615,
           "stock": 12.445
+        },
+        {
+          "at": "2026-11-24T18:55:29.657437-05:00",
+          "mark": 0.635,
+          "stock": 12.605
         }
       ],
       "realizedPnl": 0,
@@ -904,8 +919,8 @@
       "closedAt": "",
       "checkNote": "",
       "lastChecked": "2026-11-24",
-      "lastStock": 12.445,
-      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
+      "lastStock": 12.605,
+      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
     },
     {
       "id": "AG-put-11.5-2026-12-04",
@@ -922,7 +937,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.755,
+      "lastMark": 1.025,
       "stockAtEntry": 11.59,
       "markHistory": [
         {
@@ -939,6 +954,11 @@
           "at": "2026-11-24T10:25:18.259049-05:00",
           "mark": 0.755,
           "stock": 10.86
+        },
+        {
+          "at": "2026-11-24T18:55:29.657437-05:00",
+          "mark": 1.025,
+          "stock": 10.76
         }
       ],
       "realizedPnl": 0,
@@ -965,8 +985,8 @@
       "closedAt": "",
       "checkNote": "",
       "lastChecked": "2026-11-24",
-      "lastStock": 10.86,
-      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
+      "lastStock": 10.76,
+      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
     },
     {
       "id": "ALHC-put-6-2026-12-18",
@@ -983,7 +1003,7 @@
       "halfClosed": false,
       "remainingContracts": 2,
       "status": "open",
-      "lastMark": 0.3,
+      "lastMark": 0.275,
       "stockAtEntry": 6.42,
       "markHistory": [
         {
@@ -1000,6 +1020,11 @@
           "at": "2026-11-24T10:25:18.259049-05:00",
           "mark": 0.3,
           "stock": 6.485
+        },
+        {
+          "at": "2026-11-24T18:55:29.657437-05:00",
+          "mark": 0.275,
+          "stock": 6.48
         }
       ],
       "realizedPnl": 0,
@@ -1026,8 +1051,8 @@
       "closedAt": "",
       "checkNote": "",
       "lastChecked": "2026-11-24",
-      "lastStock": 6.485,
-      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
+      "lastStock": 6.48,
+      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
     }
   ],
   "agentStats": {
