@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.395,
+      "lastMark": 0.4,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -138,7 +138,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-23",
+      "lastChecked": "2026-11-24",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -234,10 +234,15 @@
           "at": "2026-11-23T18:40:14.262531-05:00",
           "mark": 0.395,
           "stock": 8.37
+        },
+        {
+          "at": "2026-11-24T10:25:18.259049-05:00",
+          "mark": 0.4,
+          "stock": 8.23
         }
       ],
-      "lastStock": 8.37,
-      "lastStockAt": "2026-11-23T18:40:14.262531-05:00"
+      "lastStock": 8.23,
+      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -596,7 +601,7 @@
       "halfClosed": false,
       "remainingContracts": 5,
       "status": "open",
-      "lastMark": 0.065,
+      "lastMark": 0.07,
       "stockAtEntry": 14.97,
       "markHistory": [
         {
@@ -643,6 +648,11 @@
           "at": "2026-11-23T18:40:14.262531-05:00",
           "mark": 0.065,
           "stock": 15.03
+        },
+        {
+          "at": "2026-11-24T10:25:18.259049-05:00",
+          "mark": 0.07,
+          "stock": 15.035
         }
       ],
       "realizedPnl": 0,
@@ -672,9 +682,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-23",
-      "lastStock": 15.03,
-      "lastStockAt": "2026-11-23T18:40:14.262531-05:00"
+      "lastChecked": "2026-11-24",
+      "lastStock": 15.035,
+      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -831,7 +841,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.55,
+      "lastMark": 0.615,
       "stockAtEntry": 12.82,
       "markHistory": [
         {
@@ -863,6 +873,11 @@
           "at": "2026-11-23T18:40:14.262531-05:00",
           "mark": 0.55,
           "stock": 12.72
+        },
+        {
+          "at": "2026-11-24T10:25:18.259049-05:00",
+          "mark": 0.615,
+          "stock": 12.445
         }
       ],
       "realizedPnl": 0,
@@ -888,9 +903,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-23",
-      "lastStock": 12.72,
-      "lastStockAt": "2026-11-23T18:40:14.262531-05:00"
+      "lastChecked": "2026-11-24",
+      "lastStock": 12.445,
+      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
     },
     {
       "id": "AG-put-11.5-2026-12-04",
@@ -907,7 +922,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.63,
+      "lastMark": 0.755,
       "stockAtEntry": 11.59,
       "markHistory": [
         {
@@ -919,6 +934,11 @@
           "at": "2026-11-23T18:40:14.262531-05:00",
           "mark": 0.63,
           "stock": 11.26
+        },
+        {
+          "at": "2026-11-24T10:25:18.259049-05:00",
+          "mark": 0.755,
+          "stock": 10.86
         }
       ],
       "realizedPnl": 0,
@@ -944,9 +964,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-23",
-      "lastStock": 11.26,
-      "lastStockAt": "2026-11-23T18:40:14.262531-05:00"
+      "lastChecked": "2026-11-24",
+      "lastStock": 10.86,
+      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
     },
     {
       "id": "ALHC-put-6-2026-12-18",
@@ -963,7 +983,7 @@
       "halfClosed": false,
       "remainingContracts": 2,
       "status": "open",
-      "lastMark": 0.325,
+      "lastMark": 0.3,
       "stockAtEntry": 6.42,
       "markHistory": [
         {
@@ -975,6 +995,11 @@
           "at": "2026-11-23T18:40:14.262531-05:00",
           "mark": 0.325,
           "stock": 6.38
+        },
+        {
+          "at": "2026-11-24T10:25:18.259049-05:00",
+          "mark": 0.3,
+          "stock": 6.485
         }
       ],
       "realizedPnl": 0,
@@ -1000,9 +1025,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-23",
-      "lastStock": 6.38,
-      "lastStockAt": "2026-11-23T18:40:14.262531-05:00"
+      "lastChecked": "2026-11-24",
+      "lastStock": 6.485,
+      "lastStockAt": "2026-11-24T10:25:18.259049-05:00"
     }
   ],
   "agentStats": {
