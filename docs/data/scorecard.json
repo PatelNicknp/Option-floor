@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.435,
+      "lastMark": 0.385,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -138,7 +138,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-24",
+      "lastChecked": "2026-11-25",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -244,10 +244,15 @@
           "at": "2026-11-24T18:55:29.657437-05:00",
           "mark": 0.435,
           "stock": 8.41
+        },
+        {
+          "at": "2026-11-25T10:25:17.548161-05:00",
+          "mark": 0.385,
+          "stock": 8.05
         }
       ],
-      "lastStock": 8.41,
-      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
+      "lastStock": 8.05,
+      "lastStockAt": "2026-11-25T10:25:17.548161-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -663,6 +668,11 @@
           "at": "2026-11-24T18:55:29.657437-05:00",
           "mark": 0.07,
           "stock": 15.02
+        },
+        {
+          "at": "2026-11-25T10:25:17.548161-05:00",
+          "mark": 0.07,
+          "stock": 15.025
         }
       ],
       "realizedPnl": 0,
@@ -692,9 +702,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-24",
-      "lastStock": 15.02,
-      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
+      "lastChecked": "2026-11-25",
+      "lastStock": 15.025,
+      "lastStockAt": "2026-11-25T10:25:17.548161-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -851,7 +861,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.635,
+      "lastMark": 0.835,
       "stockAtEntry": 12.82,
       "markHistory": [
         {
@@ -893,6 +903,11 @@
           "at": "2026-11-24T18:55:29.657437-05:00",
           "mark": 0.635,
           "stock": 12.605
+        },
+        {
+          "at": "2026-11-25T10:25:17.548161-05:00",
+          "mark": 0.835,
+          "stock": 12.125
         }
       ],
       "realizedPnl": 0,
@@ -918,9 +933,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-24",
-      "lastStock": 12.605,
-      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
+      "lastChecked": "2026-11-25",
+      "lastStock": 12.125,
+      "lastStockAt": "2026-11-25T10:25:17.548161-05:00"
     },
     {
       "id": "AG-put-11.5-2026-12-04",
@@ -935,9 +950,9 @@
       "entry": 0.565,
       "contracts": 1,
       "halfClosed": false,
-      "remainingContracts": 1,
-      "status": "open",
-      "lastMark": 1.025,
+      "remainingContracts": 0,
+      "status": "closed",
+      "lastMark": 1.345,
       "stockAtEntry": 11.59,
       "markHistory": [
         {
@@ -959,9 +974,14 @@
           "at": "2026-11-24T18:55:29.657437-05:00",
           "mark": 1.025,
           "stock": 10.76
+        },
+        {
+          "at": "2026-11-25T10:25:17.548161-05:00",
+          "mark": 1.345,
+          "stock": 10.11
         }
       ],
-      "realizedPnl": 0,
+      "realizedPnl": 78.0,
       "agentVotes": {
         "news": "yes",
         "policy": "pass",
@@ -981,12 +1001,12 @@
       "confidence": "Medium",
       "probableNews": false,
       "notes": [],
-      "outcome": "",
-      "closedAt": "",
+      "outcome": "target",
+      "closedAt": "2026-11-25",
       "checkNote": "",
-      "lastChecked": "2026-11-24",
-      "lastStock": 10.76,
-      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
+      "lastChecked": "2026-11-25",
+      "lastStock": 10.11,
+      "lastStockAt": "2026-11-25T10:25:17.548161-05:00"
     },
     {
       "id": "ALHC-put-6-2026-12-18",
@@ -1003,7 +1023,7 @@
       "halfClosed": false,
       "remainingContracts": 2,
       "status": "open",
-      "lastMark": 0.275,
+      "lastMark": 0.3,
       "stockAtEntry": 6.42,
       "markHistory": [
         {
@@ -1025,6 +1045,11 @@
           "at": "2026-11-24T18:55:29.657437-05:00",
           "mark": 0.275,
           "stock": 6.48
+        },
+        {
+          "at": "2026-11-25T10:25:17.548161-05:00",
+          "mark": 0.3,
+          "stock": 6.345
         }
       ],
       "realizedPnl": 0,
@@ -1050,16 +1075,67 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-24",
-      "lastStock": 6.48,
-      "lastStockAt": "2026-11-24T18:55:29.657437-05:00"
+      "lastChecked": "2026-11-25",
+      "lastStock": 6.345,
+      "lastStockAt": "2026-11-25T10:25:17.548161-05:00"
+    },
+    {
+      "id": "HPQ-call-32-2026-12-04",
+      "openedAt": "2026-11-25T10:25:17.548161-05:00",
+      "ticker": "HPQ",
+      "company": "HP",
+      "action": "BUY CALL",
+      "contractSymbol": "HPQ261204C00032000",
+      "expiry": "2026-12-04",
+      "strike": 32.0,
+      "side": "call",
+      "entry": 0.665,
+      "contracts": 1,
+      "halfClosed": false,
+      "remainingContracts": 1,
+      "status": "open",
+      "lastMark": 0.665,
+      "stockAtEntry": 30.92,
+      "markHistory": [
+        {
+          "at": "2026-11-25T10:25:17.548161-05:00",
+          "mark": 0.665,
+          "stock": 30.92
+        }
+      ],
+      "realizedPnl": 0,
+      "agentVotes": {
+        "news": "yes",
+        "policy": "pass",
+        "sentiment": "yes",
+        "chart": "pass",
+        "options": "yes",
+        "risk": "yes",
+        "devil": "no",
+        "head": "yes"
+      },
+      "tags": [
+        "cheap",
+        "squeeze",
+        "underpriced"
+      ],
+      "lastExitDate": "2026-12-02",
+      "reason": "HP is about $30.92. HP Shares Decline 1.65% as PC Margin Pressure and Cautious Earnings Outlook Overshadow Quarterly Beat - Yah.... The daily chart is mixed. The December 4, 2026 $32 call is about $0.67.",
+      "newsUrl": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNV19FRFliY29kTFFzQjJmUUE4c0UtRUVrNWdYT0RXM1B6SUFROEtDVmoyTGh1X2xUUWNiQUVoUFQwTlc3OWpoYU5DMDhYN2gxOGF0cGM3Ul8xVHhuR25hVEFGb3NtY2dTT0Q0STlOUE5uSktyMjVqTy1xdnptbU5uRlJnV3hhdE9Ya0g1RXZndGg?oc=5",
+      "confidence": "Medium",
+      "probableNews": false,
+      "notes": [],
+      "outcome": "",
+      "closedAt": "",
+      "checkNote": "",
+      "lastChecked": "2026-11-25"
     }
   ],
   "agentStats": {
     "news": {
-      "wins": 3,
+      "wins": 4,
       "losses": 2,
-      "weight": 1.05
+      "weight": 1.083
     },
     "policy": {
       "wins": 0,
@@ -1067,19 +1143,19 @@
       "weight": 1.0
     },
     "sentiment": {
-      "wins": 3,
+      "wins": 4,
       "losses": 3,
-      "weight": 1.0
+      "weight": 1.036
     },
     "chart": {
-      "wins": 1,
+      "wins": 2,
       "losses": 2,
       "weight": 1.0
     },
     "options": {
-      "wins": 3,
+      "wins": 4,
       "losses": 3,
-      "weight": 1.0
+      "weight": 1.036
     },
     "risk": {
       "wins": 3,
@@ -1092,14 +1168,14 @@
       "weight": 1.0
     },
     "head": {
-      "wins": 3,
+      "wins": 4,
       "losses": 3,
-      "weight": 1.0
+      "weight": 1.036
     }
   },
   "setupStats": {
     "cheap": {
-      "wins": 3,
+      "wins": 4,
       "losses": 3
     },
     "underpriced": {
