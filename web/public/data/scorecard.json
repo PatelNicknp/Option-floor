@@ -115,7 +115,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.43,
+      "lastMark": 0.46,
       "realizedPnl": 0,
       "agentVotes": {
         "news": "yes",
@@ -138,7 +138,7 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-25",
+      "lastChecked": "2026-11-27",
       "markHistory": [
         {
           "at": "2026-11-05T16:28:59.059584-05:00",
@@ -254,10 +254,15 @@
           "at": "2026-11-25T18:39:56.004362-05:00",
           "mark": 0.43,
           "stock": 8.5
+        },
+        {
+          "at": "2026-11-27T10:25:15.716268-05:00",
+          "mark": 0.46,
+          "stock": 8.738
         }
       ],
-      "lastStock": 8.5,
-      "lastStockAt": "2026-11-25T18:39:56.004362-05:00"
+      "lastStock": 8.738,
+      "lastStockAt": "2026-11-27T10:25:15.716268-05:00"
     },
     {
       "id": "ATEC-put-7.5-2026-11-20",
@@ -683,6 +688,11 @@
           "at": "2026-11-25T18:39:56.004362-05:00",
           "mark": 0.07,
           "stock": 15.02
+        },
+        {
+          "at": "2026-11-27T10:25:15.716268-05:00",
+          "mark": 0.07,
+          "stock": 15.035
         }
       ],
       "realizedPnl": 0,
@@ -712,9 +722,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-25",
-      "lastStock": 15.02,
-      "lastStockAt": "2026-11-25T18:39:56.004362-05:00"
+      "lastChecked": "2026-11-27",
+      "lastStock": 15.035,
+      "lastStockAt": "2026-11-27T10:25:15.716268-05:00"
     },
     {
       "id": "KLAR-call-17.5-2027-01-15",
@@ -871,7 +881,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.67,
+      "lastMark": 0.63,
       "stockAtEntry": 12.82,
       "markHistory": [
         {
@@ -923,6 +933,11 @@
           "at": "2026-11-25T18:39:56.004362-05:00",
           "mark": 0.67,
           "stock": 12.57
+        },
+        {
+          "at": "2026-11-27T10:25:15.716268-05:00",
+          "mark": 0.63,
+          "stock": 12.615
         }
       ],
       "realizedPnl": 0,
@@ -948,9 +963,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-25",
-      "lastStock": 12.57,
-      "lastStockAt": "2026-11-25T18:39:56.004362-05:00"
+      "lastChecked": "2026-11-27",
+      "lastStock": 12.615,
+      "lastStockAt": "2026-11-27T10:25:15.716268-05:00"
     },
     {
       "id": "AG-put-11.5-2026-12-04",
@@ -1070,6 +1085,11 @@
           "at": "2026-11-25T18:39:56.004362-05:00",
           "mark": 0.25,
           "stock": 6.61
+        },
+        {
+          "at": "2026-11-27T10:25:15.716268-05:00",
+          "mark": 0.25,
+          "stock": 6.67
         }
       ],
       "realizedPnl": 0,
@@ -1095,9 +1115,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-25",
-      "lastStock": 6.61,
-      "lastStockAt": "2026-11-25T18:39:56.004362-05:00"
+      "lastChecked": "2026-11-27",
+      "lastStock": 6.67,
+      "lastStockAt": "2026-11-27T10:25:15.716268-05:00"
     },
     {
       "id": "HPQ-call-32-2026-12-04",
@@ -1114,7 +1134,7 @@
       "halfClosed": false,
       "remainingContracts": 1,
       "status": "open",
-      "lastMark": 0.775,
+      "lastMark": 0.655,
       "stockAtEntry": 30.92,
       "markHistory": [
         {
@@ -1126,6 +1146,11 @@
           "at": "2026-11-25T18:39:56.004362-05:00",
           "mark": 0.775,
           "stock": 31.15
+        },
+        {
+          "at": "2026-11-27T10:25:15.716268-05:00",
+          "mark": 0.655,
+          "stock": 31.585
         }
       ],
       "realizedPnl": 0,
@@ -1153,9 +1178,9 @@
       "outcome": "",
       "closedAt": "",
       "checkNote": "",
-      "lastChecked": "2026-11-25",
-      "lastStock": 31.15,
-      "lastStockAt": "2026-11-25T18:39:56.004362-05:00"
+      "lastChecked": "2026-11-27",
+      "lastStock": 31.585,
+      "lastStockAt": "2026-11-27T10:25:15.716268-05:00"
     }
   ],
   "agentStats": {
@@ -1237,6 +1262,11 @@
     {
       "weekOf": "2026-11-20",
       "note": "In the last seven days the desk opened 4 paper idea(s) and finished 4. 2 finished ahead and 2 did not. Finished ideas are up $190. Sentiment Scout has the best paper record so far, right on 2 of 4 finished ideas it liked. Market mood: Fearful market. The VIX is elevated or the S&P 500 is under its longer averages. The desk prefers puts. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
+      "paused": false
+    },
+    {
+      "weekOf": "2026-11-27",
+      "note": "In the last seven days the desk opened 3 paper idea(s) and finished 3. 2 finished ahead and 1 did not. Finished ideas are up $110. News Scout has the best paper record so far, right on 4 of 6 finished ideas it liked. Market mood: Fearful market. The VIX is elevated or the S&P 500 is under its longer averages. The desk prefers puts. Next week, keep each idea inside the small-bet band and skip headlines that are not clearly good or bad news.",
       "paused": false
     }
   ]
